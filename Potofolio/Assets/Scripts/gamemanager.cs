@@ -4,7 +4,7 @@ public class gamemanager : MonoBehaviour
 {
     public static gamemanager instance;
     public WeaponPrafabTable WeaponPrafabTable;
-    public PlayerMovement Player;
+    public PlayerMovement PlayerMovement;
     public PlayerAttack playerAttack;
     public UIManager UIManager;
     // Start is called once before the first execution of Update after the MonoBehaviour is created

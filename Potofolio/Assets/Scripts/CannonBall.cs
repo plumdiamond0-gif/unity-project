@@ -1,15 +1,44 @@
 using UnityEngine;
+using static WeaponPrafabTable;
 
 public class CannonBall : MonoBehaviour
 {
     public float damage;
     public float speed;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    WeaponPrafabTableData data;
+
+    public void SetWeaponData(WeaponPrafabTableData weaponData)
+    {
+        data = weaponData;
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Ground"))
+        if(other.CompareTag("Enemy"))
         {
-            Destroy(gameObject);    
+            
+            GameObject target = other.gameObject;
+            target.GetComponent<EnemyMovement>().TakeDamage(data.damage);
+            Debug.Log("Àû¿ë");
+            foreach (var effectobjs in data.effects)
+            {
+                if(effectobjs is IWeaponEffect effect)
+                {
+                    effect.Apply(target);
+                }
+            }
+        }
+
+
+
+
+        else if (other.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
         }
     }
+
+
+
+
 }

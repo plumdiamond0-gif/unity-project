@@ -26,7 +26,11 @@ public class WeaponPrafabTable : ScriptableObject
         public bool canCharge;
         public float snappiness;
         public float returnSpeed;
-
+        public List<ScriptableObject> effects;
+        /*Unity에서 인터페이스는 Inspector에 직접 안 보임
+        -> 드래그 & 드롭 안 됨,에셋 연결 안 됨
+        -> 그래서 우회로로:ScriptableObject로 타입 지정
+         */
 
 
     }

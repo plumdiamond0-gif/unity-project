@@ -5,20 +5,18 @@ public class UIManager : MonoBehaviour
 {
 
     public Image HealthBarFill;
-    private float MaxHp;
-    private float CurrentHp;
+
     public Image AttackGuageBarFill;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        MaxHp = gamemanager.instance.Player.PlayerHp;
-        CurrentHp = gamemanager.instance.Player.PlayerHp;
+       
     }
 
-    public void UpdatePlayerHealth()
+    public void UpdatePlayerHealth(float MaxHp, float CurrentHp)
     {
-        CurrentHp = gamemanager.instance.Player.PlayerHp;
+        CurrentHp = gamemanager.instance.PlayerMovement.PlayerHp;
         HealthBarFill.fillAmount = CurrentHp/ MaxHp;
     }
     // Update is called once per frame

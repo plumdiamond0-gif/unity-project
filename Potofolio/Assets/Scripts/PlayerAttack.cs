@@ -119,10 +119,10 @@ public class PlayerAttack : MonoBehaviour
             isCharging = ispressed;
             if(!ispressed)
             {
-                Debug.Log("비율 적용 이전 데미지 : " + currentweapondata.damage);
-                Debug.Log("비율 : " + AttackRatio);
+                //Debug.Log("비율 적용 이전 데미지 : " + currentweapondata.damage);
+                //Debug.Log("비율 : " + AttackRatio);
                 currentweapondata.damage += AttackRatio*10;
-                Debug.Log("비율 적용 이후 데미지 : " + currentweapondata.damage);
+                //Debug.Log("비율 적용 이후 데미지 : " + currentweapondata.damage);
                 Fire();
                 currentweapondata.damage -= AttackRatio * 10;
 
@@ -157,15 +157,21 @@ public class PlayerAttack : MonoBehaviour
         float currnetRecoilX = baseRecoilX * (1f + (AttackRatio * maxChargeBonus));
         cameraMovement.FireRecoil(currnetRecoilX, 0.5f, 0.5f);
 
-        GameObject CBcoy = gamemanager.instance.GetPrefab
+        GameObject CBcopy = gamemanager.instance.GetPrefab
             (currentweapondata.WeaponName, Aim.transform.position, Quaternion.identity);
-        if (CBcoy == null)
+        CannonBall cannonBall = CBcopy.GetComponent<CannonBall>();
+        if (cannonBall != null)
+        {
+            cannonBall.SetWeaponData(currentweapondata);
+        }
+
+        if (CBcopy == null)
         {
             Debug.Log("캐논볼 없음");
             return;
 
         }
-        Rigidbody CanonBallRB = CBcoy.GetComponent<Rigidbody>();
+        Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
         if (CanonBallRB != null)
         {
 

@@ -19,4 +19,9 @@ public class EnemyMovement : MonoBehaviour
             agent.SetDestination(player.position);
         }
     }
+
+    public void TakeDamage(float Getdamage)
+    {
+
+    }    
 }
