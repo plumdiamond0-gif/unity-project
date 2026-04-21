@@ -23,7 +23,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool isGrounded;
     bool isSprint;
-
+    Animator anim;
 
 
 
@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     {
         //TODO:Aim = StartWeapon.transform.Find("Aim");
 
-
+        anim = GetComponentInChildren<Animator>();
 
 
         isSprint = false;
@@ -49,14 +49,20 @@ public class PlayerMovement : MonoBehaviour
         Rb.freezeRotation = true;
     }
 
-    private void Update()
+    void Update()
     {
-
         Rotate();
+
+        float speed = Mathf.Clamp01(new Vector2(MovementX, MovementY).magnitude);
+
+        anim.SetFloat("MoveX", MovementX);
+        anim.SetFloat("MoveY", MovementY);
+        anim.SetFloat("Speed", speed);
+        anim.SetBool("IsGrounded", isGrounded);
     }
 
 
-        void OnMove(InputValue inputValue)
+    void OnMove(InputValue inputValue)
         {
             Vector2 Movevalue = inputValue.Get<Vector2>();
             MovementX = Movevalue.x;
@@ -73,7 +79,8 @@ public class PlayerMovement : MonoBehaviour
             Rb.AddForce(transform.up * JumpPower, ForceMode.Impulse);
             isGrounded = false;
 
-        }
+            anim.SetTrigger("Jump");
+    }
         void OnSprint()
         {
             if (!isSprint)

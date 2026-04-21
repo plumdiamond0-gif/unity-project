@@ -1,0 +1,4 @@
+Blend Tree로 애니메이션 적용하기
+
+MoveX,MoveY 파라미터를 선언하고 SetFloat으로 적용
+math.clamp로 
