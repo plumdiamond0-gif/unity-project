@@ -15,6 +15,7 @@ public class CameraMovement : MonoBehaviour
 
     private void Update()
     {
+
         targetRotation =
             Vector3.Lerp
             (targetRotation, Vector3.zero, 

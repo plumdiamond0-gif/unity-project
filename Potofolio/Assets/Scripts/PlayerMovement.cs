@@ -25,9 +25,10 @@ public class PlayerMovement : MonoBehaviour
     bool isSprint;
     Animator anim;
 
+    float currentSpeed;
+    public float walkSpeed = 5f;
+    public float runSpeed = 10f;
 
-
-  
     Camera cam;
     Rigidbody Rb;
     public PlayerAttack PlayerAttack;
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
         anim = GetComponentInChildren<Animator>();
 
-
+        PlayerSpeed = walkSpeed;
         isSprint = false;
         cam = Camera.main;
         Cursor.lockState = CursorLockMode.Confined;
@@ -53,11 +54,21 @@ public class PlayerMovement : MonoBehaviour
     {
         Rotate();
 
-        float speed = Mathf.Clamp01(new Vector2(MovementX, MovementY).magnitude);
+        float inputMagnitude = new Vector2(MovementX, MovementY).magnitude;
+
+        float targetSpeed = 0f;
+
+        if (inputMagnitude > 0)
+        {
+            targetSpeed = isSprint ? 1f : 0.5f;
+        }
+       
+        currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, 26f * Time.deltaTime);
+
+        anim.SetFloat("Speed", currentSpeed);
 
         anim.SetFloat("MoveX", MovementX);
         anim.SetFloat("MoveY", MovementY);
-        anim.SetFloat("Speed", speed);
         anim.SetBool("IsGrounded", isGrounded);
     }
 
@@ -83,18 +94,10 @@ public class PlayerMovement : MonoBehaviour
     }
         void OnSprint()
         {
-            if (!isSprint)
-            {
-                PlayerSpeed += SprintSpeed;
-                isSprint = true;
-            }
-
-            else
-            {
-                PlayerSpeed -= SprintSpeed;
-                isSprint = false;
-            }
-        }
+        Debug.Log("Sprint");
+        isSprint = !isSprint;
+        PlayerSpeed = isSprint ? runSpeed : walkSpeed;
+    }
     
    
 
@@ -113,9 +116,21 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Vector3 MoveDir = ((transform.right * MovementX) + (transform.forward * MovementY)).normalized;
-        Rb.linearVelocity = new Vector3(MoveDir.x * PlayerSpeed, Rb.linearVelocity.y, MoveDir.z * PlayerSpeed);
+        Vector3 targetVel = MoveDir * PlayerSpeed;
 
+        Vector3 currentVel = Rb.linearVelocity;
 
+        Vector3 newVel = Vector3.Lerp(
+            new Vector3(currentVel.x, 0, currentVel.z),
+            targetVel,
+            10f * Time.deltaTime
+        );
+
+        Rb.linearVelocity = new Vector3(
+            newVel.x,
+            currentVel.y, 
+            newVel.z
+        );
         // transform.position = new Vector3(MovementX, transform.position.y, MovementY); 
 
 
