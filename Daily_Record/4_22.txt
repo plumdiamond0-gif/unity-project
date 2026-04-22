@@ -1,4 +1,98 @@
-Blend Tree로 애니메이션 적용하기
+애니메이터 파라미터들
 
-MoveX,MoveY 파라미터를 선언하고 SetFloat으로 적용
-math.clamp로 
+MoveX (float)
+MoveY (float)
+Speed (float)
+IsGrounded (bool)
+Jump (trigger)
+
+
+애니메이션 자체에 “이동 정보”가 들어있는데 이것을 
+**루트모션 (Root Motion)**이라고 함
+ 
+ 
+
+
+Blend Tree : 여러 애니메이션들을 if문으로 딱딱하게 바꾸는 게 아니라
+부드럽게 이어지게 만드는 것
+
+기존 코드와 연결 : playerinput 으로 움직이는 값을 받고 있기에 
+그대로 파라미터 값에 적용시키면 됨.
+
+float speed = new Vector2(MovementX, MovementY)
+.normalized.magnitude;
+Magnitude 는 백터의 방향을 크기로 바꿔줌.
+대각선은 1.41 값이 나오기에 normalized로 정상화
+
+그러나 speed의 값이 항상 1이 됨 -> 
+노멀라이즈드 빼면 1.41이 나오는데 이건 범위 벗어나서 
+블랜드 트리 조건 꼬일 수 있음 -> 
+그냥 Mathf.Clamp01사용
+
+float speed = Mathf.Clamp01(new Vector2
+(MovementX, MovementY).magnitude);
+
+이렇게 Mathf.Clamp01로 값 자체를 0과 1사이로 고정시켜도 됨.
+
+
+Speed를 쓰는 이유
+
+MoveX/Y만 쓰면
+(0,0)일 때만 Idle 판단 가능
+애매한 입력 (0.01 같은 값) 처리 어려움
+
+speed 쓰면
+“조금 움직임 vs 완전 멈춤” 구분 가능
+부드러운 전환 가능
+
+상위 블랜드 트리를 1D 타입으로 지정 후 파라미터(speed)로 
+idle,Move,Sprint를 나눔
+
+
+스피드가 0이면 idle
+0.5면 walk 
+1이면 Run
+
+bool isSprint;
+
+float targetSpeed = isSprint ? 1f : 0.5f;
+anim.SetFloat("Speed", targetSpeed);
+
+//스프린트 수정(기존에는 if 문으로 추가되는 속도를 더했다 뺐다 했음
+(버그 나기 쉬움, 값 꼬일 수 있음) ->
+float currentSpeed = isSprint ? PlayerSpeed + SprintSpeed : PlayerSpeed;
+void OnSprint()
+{
+    isSprint = !isSprint;
+}
+anim.SetFloat("Speed", isSprint ? 1f : 0.5f);
+
+
+
+//플레이어 이동 방식 수정, 추가적 개념 이해
+
+Linearvelocity -> 
+매 프래임마다 속도 고정,기존 물리 무시(강제로 덮어버림)
+천천히 느려지며 멈추는 게 아니라 한순간에 딱 멈춤
+
+Addforce -> 특정 방향으로 힘 더하기,속도 조정
+“힘을 추가”만 하고 "멈추는 로직”이 없음
+방향 전환이 느림
+계속 에드포스하면 속도가 무한히 증가됨.
+애니메이션은 일정 속도로 실행되지만 
+실제 이동속도는 계속 바껴서 싱크 안 맞음.
+
+Vector3 targetVel = MoveDir * speed;
+목표로 하는 속도
+Rb.velocity = Vector3.Lerp(Rb.velocity, targetVel, 10f * Time.deltaTime);
+Lerp -> 현재 값에서 목표 값으로 천천히 이동
+
+velocity + Lerp : 
+Addforce처럼 물리적이지만 더 컨트롤 가능
+Velocity 처럼 즉각 반응하면서 튀지 않음
+
+Deltatime 곱하는 이유 :30,60,144든 프레임마다 속도 일정 유지 위함
+Lerp는 시간 기반이 아니라 비율 기반
+시간 기반은 특정 시간에 딱 도착.
+비율 기반은 남은 거리의 특정 비율만큼씩 이동
+그래서 절대 목표값에 정확히 도달 안 함
