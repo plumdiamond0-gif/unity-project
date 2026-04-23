@@ -16,7 +16,6 @@ public class PlayerMovement : MonoBehaviour
     private float mouseY;
 
     public float PlayerSpeed;
-    public float PlayerHp;
     public float JumpPower;
     public float MouseSpeed;
     public float SprintSpeed;
@@ -80,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
             MovementY = Movevalue.y;
 
         }
-        void OnJump(InputValue inputValue)
+    void OnJump(InputValue inputValue)
         {
             if (!isGrounded)
             {
@@ -92,14 +91,25 @@ public class PlayerMovement : MonoBehaviour
 
             anim.SetTrigger("Jump");
     }
-        void OnSprint()
+    void OnSprint()
         {
         Debug.Log("Sprint");
         isSprint = !isSprint;
         PlayerSpeed = isSprint ? runSpeed : walkSpeed;
     }
-    
-   
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Item"))
+        {
+            Item item = other.GetComponent<Item>();
+            if(item != null)
+            {
+                item.Use();
+            }
+        }
+    }
+
 
     private void OnCollisionEnter(Collision collision)
     {

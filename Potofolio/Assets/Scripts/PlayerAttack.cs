@@ -179,7 +179,10 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-
+    public void Damage(float val)
+    {
+        currentweapondata.damage += val;
+    }
 }
 
 

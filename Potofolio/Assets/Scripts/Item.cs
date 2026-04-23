@@ -1,17 +1,33 @@
 using UnityEngine;
 
-public class Item : MonoBehaviour
+public abstract class Item : MonoBehaviour
 {
     float dir = 1;
     Vector3 pos;
+    public PlayerAttack playerAttack;
+    public Health PlayerHealth;
+    bool isused = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         pos= transform.position;
-
- 
-
     }
+
+    public void Use()
+    {
+        if(isused)
+        {
+            return;
+        }
+        isused = true;
+        Onuse();
+        
+    }
+
+    public virtual void Onuse()
+    {
+
+    }    
 
     // Update is called once per frame
     void Update()
