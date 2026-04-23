@@ -1,0 +1,106 @@
+플레이어 움직임, 애니메이션 수정
+
+문제1:
+float speed = Mathf.Clamp01(new Vector2 (MovementX, MovementY).magnitude);
+이건 0이랑 1이라는 값밖에 안 나옴
+문제2:
+애니메이션이 확 바뀜
+
+->
+
+
+
+float inputMagnitude = new Vector2(MovementX, MovementY).magnitude;
+
+float targetSpeed = 0f;
+
+if (inputMagnitude > 0)
+{
+    targetSpeed = isSprint ? 1f : 0.5f;
+}
+
+currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, 10f * Time.deltaTime);
+
+anim.SetFloat("Speed", currentSpeed);
+
+
+문제3:
+Vector3 targetVel = MoveDir * PlayerSpeed; Rb.linearVelocity =
+Vector3.Lerp(Rb.linearVelocity, targetVel, 10f * Time.deltaTime);
+
+
+더 나은 움직임을 위해 수정한 이 코드가 점프 코드의 linearVelocity와 충돌해서 점프가 약해진 것처럼 보임
+전에는 AddForce였어서 충돌 없었음
+
+targetval의 y값은 0이기에 lerp가 점프파워로 인해 증가된 y값을 점점 0으로 감소시킴.
+
+Vector3 currentVel = Rb.linearVelocity;
+
+Vector3 newVel = Vector3.Lerp(
+    new Vector3(currentVel.x, 0, currentVel.z),
+    targetVel,
+    10f * Time.deltaTime
+);
+
+Rb.linearVelocity = new Vector3(
+    newVel.x,
+    currentVel.y,
+    newVel.z
+);
+
+y값을 제외하고 계산
+
+
+
+
+/////////////////////////////////////////////////////////////////////////////////
+
+
+원래 구상 :
+플레이어가 아이템 먹고 인벤토리 4칸에 차례대로 템들이 쌓이고 키보드 1,2,3,4로 사용하는 시스템.
+딕셔너리 사용해 먼저 얻은 순서대로 딕셔너리에 그 값을 키로, 얻은 아이템 정보를 발류로 넣는 식.
+이미 딕셔너리에 해당 키가 있다면 추가 안 함.
+만약 1,2,3,4 버튼 누르면 해당 키값의 아이템 정보에서 enum 타입을 확인 후 아이템 클래스에 함수로 넘겨줌.
+아이템 클래스에서 회복,데미지 증가 등 효과 적용
+만약 인벤토리가 꽉 찬 상태에서 2,3번 아이템을 썼다 하면 2,3번 키값이 딕셔너리에 있는지 확인 후 더 작은 키 값으로 발류 추가.
+
+
+최종 결정 :
+딕셔너리는 순서를 보장하지 않음 -> 리스트가 더 나음.
+
+아이템을 먹었을 때 for문을 돌며 null이 아닌 곳에 아이템 정보 저장
+키보드 입력값에서 1을 뺀 거 = 리스트의 인덱스
+아이템 사용 함수 호출 후 널로 초기화
+
+enum은 아이템 종류가 늘어나면 코드도 길어짐.
+public abstract class Item
+{
+    public abstract void Use();
+}
+
+// HealItem.cs
+public class HealItem : Item
+{
+    public override void Use()
+    {
+        // 회복 로직
+    }
+}
+abstract (다형성)을 사용해 아이템 클래스들이 메인 클래스의 함수 오버라이드하면 확장성 증가
+아이템들의 공통 속성(이름, 아이콘) 등을 넣기 좋음.
+
+
+인터페이스와 오버라이드의 차이
+
+인터페이스 : 무조건 구현해야 함.
+틀만 있고 내용은 상속받은 자식들이 정함.
+“이 기능 무조건 가져”
+
+오버라이드 : 부모 함수 덮어쓰기.
+부모에 기본 구조 있고(없어도 됨) 자식들이 거기서 확장함.
+“이 틀을 기반으로 만들어"
+
+
+ 
+게임매니저 안에 static class GM만들어서 매니저들 갖고 오기.
+GameManager.instance할 필요 없음. 코드 짧음.
