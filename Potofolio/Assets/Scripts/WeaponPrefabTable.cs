@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 
 [CreateAssetMenu(menuName = "Data/WeaponPrafabTable")]
-public class WeaponPrafabTable : ScriptableObject
+public class WeaponPrefabTable : ScriptableObject
 
 {
     [System.Serializable]
-    public class WeaponPrafabTableData
+    public class WeaponPrefabTableData
     {
         public enum WeaponState
         {
@@ -34,6 +34,6 @@ public class WeaponPrafabTable : ScriptableObject
 
 
     }
-    public List<WeaponPrafabTableData> weaponPrafabTableDatas =
-        new List<WeaponPrafabTableData>();
+    public List<WeaponPrefabTableData> weaponPrafabTableDatas =
+        new List<WeaponPrefabTableData>();
 }

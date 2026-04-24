@@ -1,13 +1,13 @@
 using UnityEngine;
-using static WeaponPrafabTable;
+using static WeaponPrefabTable;
 
 public class CannonBall : MonoBehaviour
 {
     public float damage;
     public float speed;
-    WeaponPrafabTableData data;
+    WeaponPrefabTableData data;
 
-    public void SetWeaponData(WeaponPrafabTableData weaponData)
+    public void SetWeaponData(WeaponPrefabTableData weaponData)
     {
         data = weaponData;
     }

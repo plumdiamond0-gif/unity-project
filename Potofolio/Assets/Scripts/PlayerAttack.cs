@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-using static WeaponPrafabTable;
+using static WeaponPrefabTable;
 
 public class PlayerAttack : MonoBehaviour
 {
@@ -22,7 +22,7 @@ public class PlayerAttack : MonoBehaviour
     public float maxChargeBonus;
 
     [Header("¼öµ¿")]
-    public List<WeaponPrafabTableData> weaponList = new();
+    public List<WeaponPrefabTableData> weaponList = new();
 
     private Transform WeaponSpawnPos;
     private bool isCharging;
@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
     Camera cam;
     Rigidbody Rb;
     public GameObject spawnedWeapon;
-    public WeaponPrafabTableData currentweapondata;
+    public WeaponPrefabTableData currentweapondata;
 
 
 
@@ -40,6 +40,7 @@ public class PlayerAttack : MonoBehaviour
     //public Dictionary<int, WeaponState> weaponDic = new();
     void Start()
     {
+        weaponList = GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas;
         cam = Camera.main;
         cameraMovement = cam.GetComponentInChildren<CameraMovement>();
         WeaponSpawnPos = transform.Find("WeaponSpawnPos");

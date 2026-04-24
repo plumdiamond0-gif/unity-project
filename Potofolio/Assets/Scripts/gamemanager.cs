@@ -32,7 +32,7 @@ public class gamemanager : MonoBehaviour
 
     public GameObject GetPrefab(string prefabname, Vector3 spawnpos, Quaternion spawnrot)
     {
-        var data = prefabManager.WeaponPrafabTable.weaponPrafabTableDatas.Find(x => x.WeaponName == prefabname);
+        var data = prefabManager.WeaponPrefabTable.weaponPrafabTableDatas.Find(x => x.WeaponName == prefabname);
         if (data != null)
         {
             GameObject CBcoy = Instantiate(data.WeaponBullet, spawnpos, spawnrot);

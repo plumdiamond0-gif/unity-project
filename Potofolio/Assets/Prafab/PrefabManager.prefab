@@ -44,4 +44,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c09b1108edb66d438defef168b89f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PrefabManager
-  WeaponPrafabTable: {fileID: 11400000, guid: 76f437e013b28404eaae784b37208b4a, type: 2}
+  WeaponPrefabTable: {fileID: 11400000, guid: 76f437e013b28404eaae784b37208b4a, type: 2}

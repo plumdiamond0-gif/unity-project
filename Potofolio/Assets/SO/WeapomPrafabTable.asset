@@ -17,11 +17,11 @@ MonoBehaviour:
     WeaponName: Pistol
     Weapon: {fileID: 5127384509388819661, guid: 14b409b589254a842b2696eb66cda203, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: 1881ef916111c3d4d9f10ef03c2564c4, type: 3}
-    damage: 5
+    damage: 62.00002
     Attackspeed: 5
-    canCharge: 0
-    snappiness: 0
-    returnSpeed: 0
+    canCharge: 1
+    snappiness: 5
+    returnSpeed: 3
     effects:
     - {fileID: 0}
   - weaponState: 1

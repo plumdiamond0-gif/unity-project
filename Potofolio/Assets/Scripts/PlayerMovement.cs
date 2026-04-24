@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
-using static WeaponPrafabTable;
+using static WeaponPrefabTable;
 
 public class PlayerMovement : MonoBehaviour
 {

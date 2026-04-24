@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PrefabManager : MonoBehaviour
 {
-    public WeaponPrafabTable WeaponPrafabTable;
+    public WeaponPrefabTable WeaponPrefabTable;
     public static PrefabManager CreatePrefabManager(GameObject res, Transform parent)
     {
         if(res == null)
