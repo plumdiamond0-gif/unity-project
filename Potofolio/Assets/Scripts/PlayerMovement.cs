@@ -168,6 +168,8 @@ public class PlayerMovement : MonoBehaviour
         PlayerAttack.spawnedWeapon.transform.rotation = Quaternion.Euler(xRotation,yRotation, 0);
      
     }
+
+
 }
 /* 1ÀÎÄª
 

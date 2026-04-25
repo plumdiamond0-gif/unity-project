@@ -21,6 +21,8 @@ public class WeaponPrefabTable : ScriptableObject
         public string WeaponName;
         public GameObject Weapon;
         public GameObject WeaponBullet;
+        public CannonBall ball;
+        
         public float damage;
         public float Attackspeed;
         public bool canCharge;

@@ -3,9 +3,9 @@ using static WeaponPrefabTable;
 
 public class CannonBall : MonoBehaviour
 {
-    public float damage;
-    public float speed;
     WeaponPrefabTableData data;
+
+
 
     public void SetWeaponData(WeaponPrefabTableData weaponData)
     {

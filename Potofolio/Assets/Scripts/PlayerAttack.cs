@@ -24,31 +24,34 @@ public class PlayerAttack : MonoBehaviour
     [Header("수동")]
     public List<WeaponPrefabTableData> weaponList = new();
 
-    private Transform WeaponSpawnPos;
+   // [SerializeField] private Transform WeaponSpawnPos;
     private bool isCharging;
     private float AttackRatio;
     CameraMovement cameraMovement;
-    private Transform Aim;
+    Transform Aim;
     Camera cam;
     Rigidbody Rb;
     public GameObject spawnedWeapon;
     public WeaponPrefabTableData currentweapondata;
+    [SerializeField] private Transform Firepos;
 
-
+    Animator anim;
 
 
     //public Dictionary<int, WeaponState> weaponDic = new();
     void Start()
     {
+        anim = GetComponentInChildren<Animator>();    
         weaponList = GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas;
+       
         cam = Camera.main;
         cameraMovement = cam.GetComponentInChildren<CameraMovement>();
-        WeaponSpawnPos = transform.Find("WeaponSpawnPos");
+        //WeaponSpawnPos = transform.Find("WeaponSpawnPos");
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
 
         currentweapondata = weaponList[0];
-        GameObject startweapon = Instantiate(currentweapondata.Weapon, WeaponSpawnPos.position, WeaponSpawnPos.rotation, transform);
+        GameObject startweapon = Instantiate(currentweapondata.Weapon, Firepos.position, Firepos.rotation, Firepos);
         spawnedWeapon = startweapon;
         Aim = spawnedWeapon.transform.Find("Aim");
     }
@@ -105,7 +108,7 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
         Debug.Log("CurrntWeapon : " + currentweapondata.WeaponName);
-       spawnedWeapon = Instantiate(currentweapondata.Weapon, WeaponSpawnPos.position, WeaponSpawnPos.rotation, gameObject.transform);
+       spawnedWeapon = Instantiate(currentweapondata.Weapon, Firepos.position, Firepos.rotation, Firepos);
         Transform aimTrans = spawnedWeapon.transform.Find("Aim");
         Aim = aimTrans;
     }
@@ -113,6 +116,7 @@ public class PlayerAttack : MonoBehaviour
     
     void OnAttack(InputValue value)
     {
+
         bool ispressed = value.isPressed;
 
         if (currentweapondata.canCharge)
@@ -120,12 +124,14 @@ public class PlayerAttack : MonoBehaviour
             isCharging = ispressed;
             if(!ispressed)
             {
+
                 //Debug.Log("비율 적용 이전 데미지 : " + currentweapondata.damage);
                 //Debug.Log("비율 : " + AttackRatio);
                 currentweapondata.damage += AttackRatio*10;
                 //Debug.Log("비율 적용 이후 데미지 : " + currentweapondata.damage);
                 Fire();
                 currentweapondata.damage -= AttackRatio * 10;
+                anim.SetTrigger("Attack");
 
                 RestCharge();
             }
@@ -133,9 +139,10 @@ public class PlayerAttack : MonoBehaviour
         else
         {
             if(ispressed)
+                anim.SetTrigger("Attack");
+
             Fire();
         }
-
 
         //if()
 

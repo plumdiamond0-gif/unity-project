@@ -33,17 +33,18 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (agent != null & player != null)
+        if (agent != null && player != null)
         {
             agent.SetDestination(player.position);
         }
 
 
-        if (Vector3.Distance( transform.position, player.position) <= detectRange)
+        if (Vector3.Distance(transform.position, player.position) <= detectRange)
         {
             agent.isStopped = false;
             anim.SetFloat(MoveHash, 1f);
         }
+        
     }
 
     public void TakeDamage(float Getdamage)
