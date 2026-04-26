@@ -59,6 +59,7 @@ public class EnemyMovement : MonoBehaviour
             if (playerhealth != null)
             {
                 anim.SetTrigger(AttackHash);
+                Debug.Log("wfe");
                 playerhealth.TakeHealth(-damage);
             }
         }
