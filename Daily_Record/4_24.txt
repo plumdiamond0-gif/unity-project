@@ -1,0 +1,115 @@
+이전 : 플레이어 움직임 스크립트에서 체력까지 담당하고 있었음.
+적 체력 구현하려면 플레이어 체력 코드 복붙해야함.
+
+적,보스,다른 오브젝트들에서 재사용하기 위해 Health 스크립트 만듦.
+
+///////////////////////////////////////////////////////////////
+
+아이템 추상 클래스 방식에서 자식들은 이미 부모 클래스 내용 가지고 있음.
+오브젝트에 부모(Item) 스크립트 달 필요 없음.
+애초에 abstract 는 유니티에서 아직 완성되지 않은 불안정한 코드르 인식해 오브젝트에 못 붙임.
+
+///////////////////////////////////////////////////////////////
+if (other.CompareTag("Item"))
+
+{
+Item item = other.GetComponent<Item>();
+if(item != null)
+{
+item.Use();
+}
+
+}
+
+public override void Use()
+
+{
+
+PlayerHealth.TakeHealth(26);
+
+Debug.Log("UseHealth");
+
+Destroy(gameObject);
+
+}
+
+여기서 아이템 효과가 중복되는 오류가 발생.
+
+방법1
+Item:
+if (isUsed) return;
+isUsed = true;
+
+HealItem : 
+base.Use();
+
+
+방법2
+bool isUsed = false;
+
+public void Use()
+{
+if (isUsed) return;
+isUsed = true;
+
+OnUse();
+}
+
+protected abstract void OnUse();
+
+public class HealItem : Item
+{
+protected override void OnUse()
+{
+PlayerHealth.TakeHealth(26);
+Destroy(gameObject);
+}
+}
+
+방법2의 장점
+중복 방지 로직 = 부모가 책임
+자식은 효과만 구현
+실수로 체크 빠뜨릴 일 없음
+
+방법1:자식이 중복 로직 실행(자식이 규칙 지켜야 함)
+방법2:부모가 규칙 강제(Template Method)
+///////////////////////////////////////////////////////////////
+
+Virtual,abstract,interface 
+
+공통점 :
+함수 형태를 “확장”하거나 “구현”하게 만듦
+다형성 사용 가능 (Item item = new HealItem();)
+코드 재사용 / 구조 설계에 쓰임
+
+소속
+virtual, abstract : 클래스
+interface : 별도의 인터페이스
+
+
+virtual 함수는 부모 클래스에서 이미 구현이 존재하며, 자식 클래스에서 필요에 따라 override를 통해 기능을 변경할 수 있다. 즉, 기본 기능을 제공하면서 선택적으로 재정의가 가능한 구조이다. 또한 virtual은 상속 관계에서만 사용되며, 하나의 부모 클래스만 상속할 수 있기 때문에 다중 사용은 불가능하다.
+
+abstract는 클래스에 속하지만, 함수의 구현이 없는 추상 메서드를 포함할 수 있다. 이러한 함수는 자식 클래스에서 반드시 override를 통해 구현해야 하며, 이를 구현하지 않으면 컴파일 에러가 발생한다. 또한 abstract 클래스는 일반 함수처럼 일부 기능을 구현할 수도 있기 때문에 공통 구조를 제공하면서도 일부 기능을 강제하는 역할을 한다. abstract 역시 상속을 기반으로 하며, 다중 상속은 불가능하다.
+
+interface는 함수의 구현을 전혀 포함하지 않고, 오직 함수의 형태만 정의하는 역할을 한다. 이를 구현하는 클래스는 반드시 해당 함수를 구현해야 하며, 구현하지 않을 경우 컴파일 에러가 발생한다. 인터페이스는 클래스가 아니기 때문에 상속이 아니라 “구현”의 개념으로 사용되며, 하나의 클래스가 여러 인터페이스를 동시에 구현할 수 있다는 점에서 차별화된다. 따라서 여러 기능을 조합하여 사용할 때 유용하다.
+
+정리하면, virtual은 기본 기능을 제공하고 선택적으로 수정할 수 있는 구조이며, abstract는 공통 틀을 제공하면서 일부 기능을 강제하는 구조이다. 그리고 interface는 기능의 구현 없이 반드시 가져야 할 기능만을 정의하는 구조라고 볼 수 있다.
+
+
+
+아이템에서 abstract 사용한 이유는 회전, 위아래로 왔다 갔다라는 공통 로직(일반 함수)가 있기 때문.
+
+
+
+
+1️⃣ 제어 가능 여부
+virtual / abstract → 부모가 흐름 제어 가능
+interface → 제어 못함
+
+2️⃣ 공통 기능
+virtual / abstract → 있음
+interface → 없음
+
+3️⃣가중 사용
+
+interface만 사용 가능

@@ -14,7 +14,13 @@ public class gamemanager : MonoBehaviour
     {
         return prefabManager;
     }
-        void Awake()
+    public UIManager GetUIManager()
+    {
+        return UIManager;
+    }
+
+
+    void Awake()
         {
             // ½Ì±ÛÅæ ÃÊ±âÈ­ ·ÎÁ÷ (ÇÊ¼ö!)
             if (instance != null && instance != this)
@@ -26,8 +32,10 @@ public class gamemanager : MonoBehaviour
 
         {
             prefabManager = PrefabManager.CreatePrefabManager(prefabManager.gameObject, transform);
+            UIManager = UIManager.CreateUIManager(UIManager.gameObject, transform);
+
         }
-        }
+    }
 
 
     public GameObject GetPrefab(string prefabname, Vector3 spawnpos, Quaternion spawnrot)
@@ -51,7 +59,13 @@ public static class GM
 {
     public static PrefabManager GetPrefabManager()
     {
+
         return gamemanager.instance.GetPrefabManager();
+    }
+    public static UIManager GetUIManager()
+    {
+        Debug.Log("GetUIManager");
+        return gamemanager.instance.GetUIManager();
     }
 }
 

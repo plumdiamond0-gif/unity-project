@@ -4,9 +4,8 @@ public abstract class Item : MonoBehaviour
 {
     float dir = 1;
     Vector3 pos;
-    public PlayerAttack playerAttack;
-    public Health PlayerHealth;
     bool isused = false;
+    public Sprite sprite;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -21,7 +20,9 @@ public abstract class Item : MonoBehaviour
         }
         isused = true;
         Onuse();
-        
+        GM.GetUIManager().Inventory.GetSprite(sprite);
+
+
     }
 
     public virtual void Onuse()

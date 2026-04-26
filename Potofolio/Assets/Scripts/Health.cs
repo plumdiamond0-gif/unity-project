@@ -20,7 +20,6 @@ public void TakeHealth(float value)
         }
         StartCoroutine(InvincibleTimer());
 
-        Debug.Log("weff");
 
         Hp += value;
     }

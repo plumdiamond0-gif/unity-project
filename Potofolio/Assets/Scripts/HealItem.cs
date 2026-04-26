@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class HealItem : Item
 {
+    public Health PlayerHealth;
+
     public override void Onuse()
     {
         PlayerHealth.TakeHealth(26);
