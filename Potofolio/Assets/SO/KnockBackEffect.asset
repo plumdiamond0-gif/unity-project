@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: KnockBackEffect
   m_EditorClassIdentifier: Assembly-CSharp::KnockBackEffect
   radius: 5
-  force: 20
+  force: 10
   upModifier: 3
   knockbackTime: 1

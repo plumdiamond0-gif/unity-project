@@ -27,6 +27,7 @@ public class KnockBackEffect : ScriptableObject, IWeaponEffect
             Rigidbody rb = hit.GetComponent<Rigidbody>();
             if (rb != null)
             {
+                explosionPoint = target.transform.position - Vector3.up * 1f;
                 // 3. 폭발 물리 적용 (중심점에서 밖으로 날려버림)
                 rb.AddExplosionForce(force, explosionPoint, radius, upModifier, ForceMode.Impulse);
 
@@ -35,7 +36,7 @@ public class KnockBackEffect : ScriptableObject, IWeaponEffect
             EnemyMovement enemy = hit.GetComponent<EnemyMovement>();
             if (enemy != null)
             {
-                enemy.ApplyKnockBack(force);
+                enemy.ApplyKnockBack(knockbackTime);
             }
 
 

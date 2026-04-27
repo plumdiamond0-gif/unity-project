@@ -1,0 +1,52 @@
+플레이어가 넉백 탄환 쏨 ->
+
+에너미가 공중에 뜨거나 바닥으로 가라앉거나 둘 중 하나 ->
+
+-바닥에 가라 앉았을 때 : 
+*NavMesh가 베이스 오프셋을 조절해 바로 다시 지상으로 올라옴*
+NavMeshAgent 활성화 시 : 내 캐릭터는 NavMesh 위에 있어야 함
+이라서 Base Offset 기준으로 다시 지면 위로 보정함.
+정상적인 “NavMesh 복구 동작”
+
+
+-공중에 떴을 때 : 
+1. *일정 높이가 되면 네브메쉬가 알아서 지면으로 이동시킴*
+Agent 다시 켜지는 순간 : 현재 위치 무시, 가장 가까운 NavMesh 위치로 강제 스냅
+그래서 떨어지는 게 아니라 순간 보정 이동처럼 보임.
+
+2. 워프 코드로 지면에 반쯤 박힘(네브메쉬 꺼져 있음, 이즈트리거 인식 못 함)
+-> 피봇을 에너미의 아래로 지정했더니 에너미들이 공중에 뜬 상태로 이동하고 
+워프했을 때는 지면에 제대로 올라와 있으나 이즈트리거는 여전히 인식 못 함
+
+3. (워프 코드 빼면) 계속 공중에 떠 있음 (네브메쉬 꺼져있음, 중력과 키네마틱 모두 켜져 있음)
+-> Freeze Position Y 킨 거 아님
+-> 콜라이더 겹친 것도 아님
+-> 부모 자식 구조 제대로 함
+
+
+
+마지막 해결방법 : 
+(1) 
+NavMeshAgent와 Rigidbody 분리
+EnemyRoot (NavMeshAgent)
+ └ Body (Mesh + Rigidbody + Collider)
+
+또는
+
+넉백 시 Agent 끄고 Root 전체를 물리로 움직이기
+
+(2)
+물리 넉백 버리고 NavMesh 이동 넉백
+Vector3 dir = (enemy - explosion).normalized;
+StartCoroutine(KnockMove(dir));
+IEnumerator KnockMove(Vector3 dir)
+{
+    float t = 0.3f;
+
+    while(t > 0)
+    {
+        agent.Move(dir * 8f * Time.deltaTime);
+        t -= Time.deltaTime;
+        yield return null;
+    }
+}

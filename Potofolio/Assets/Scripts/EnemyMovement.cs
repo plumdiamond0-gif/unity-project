@@ -35,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
     static readonly int CanAttackHash = Animator.StringToHash("CanAttack");
 
 
-
+    bool isGrounded;
 
     Animator anim;
 
@@ -136,26 +136,37 @@ public class EnemyMovement : MonoBehaviour
     }
     IEnumerator KnockbackRoutine(float time)
     {
+        isGrounded = false;
         isKnockbacking = true;
         currentState = EnemyState.Knockback;
         agent.enabled = false;  
         rb.isKinematic = false;
 
         yield return new WaitForSeconds(time);
-
+        rb.linearVelocity = Vector3.zero;
+        rb.angularVelocity = Vector3.zero;
         rb.isKinematic = true;
 
+
+
+
         NavMeshHit hit;
-        if (NavMesh.SamplePosition(transform.position, out hit, 200f, NavMesh.AllAreas))
+        if (NavMesh.SamplePosition(transform.position, out hit, 2000f, NavMesh.AllAreas))
         {
             agent.Warp(hit.position);
         }
+        //yield return null;
+        if(isGrounded == true)
+        {
+            Debug.Log("¹Ù°¢");
+            agent.enabled = true;
+            agent.nextPosition = transform.position;
+            currentState = EnemyState.Chase;
+            isKnockbacking = false;
+        }
 
-        agent.enabled = true;
 
 
-        currentState = EnemyState.Chase;
-        isKnockbacking = false;
 
 
 
@@ -174,7 +185,14 @@ public class EnemyMovement : MonoBehaviour
         }
     }
     */
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+ 
+    }
 
 
 }
