@@ -12,3 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d7226ee604ad1488f6cd856d85008a, type: 3}
   m_Name: KnockBackEffect
   m_EditorClassIdentifier: Assembly-CSharp::KnockBackEffect
+  radius: 5
+  force: 20
+  upModifier: 3
+  knockbackTime: 1
