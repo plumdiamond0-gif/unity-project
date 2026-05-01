@@ -17,10 +17,8 @@ MonoBehaviour:
     WeaponName: Pistol
     Weapon: {fileID: 5127384509388819661, guid: 14b409b589254a842b2696eb66cda203, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: 1881ef916111c3d4d9f10ef03c2564c4, type: 3}
-    ball: {fileID: 0}
-    damage: 62.000015
+    damage: 83
     Attackspeed: 5
-    canCharge: 1
     snappiness: 5
     returnSpeed: 3
     effects:
@@ -29,10 +27,8 @@ MonoBehaviour:
     WeaponName: Cannon
     Weapon: {fileID: 5127384509388819661, guid: ccf64cd1413417c41b2d3decf6cb532e, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: 2a5548c3d0139ee4db798ae4915ef60b, type: 3}
-    ball: {fileID: 0}
-    damage: 0
+    damage: 57
     Attackspeed: 0
-    canCharge: 0
     snappiness: 0
     returnSpeed: 0
     effects: []
@@ -40,10 +36,8 @@ MonoBehaviour:
     WeaponName: SlimeGun
     Weapon: {fileID: 5127384509388819661, guid: a77f20bdeb076fd4b80db4c76e875050, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: 9f2fb37adc018c94bb9d582a10b5bcba, type: 3}
-    ball: {fileID: 0}
     damage: 0
     Attackspeed: 0
-    canCharge: 0
     snappiness: 0
     returnSpeed: 0
     effects: []
@@ -51,10 +45,8 @@ MonoBehaviour:
     WeaponName: PulseGun
     Weapon: {fileID: 5127384509388819661, guid: b854af823e97f9f40978e717e99bca5c, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: 86e81e14019f1c24b94f906625201ac6, type: 3}
-    ball: {fileID: 0}
     damage: 0
     Attackspeed: 0
-    canCharge: 0
     snappiness: 0
     returnSpeed: 0
     effects: []
@@ -62,10 +54,8 @@ MonoBehaviour:
     WeaponName: MissileLauncher
     Weapon: {fileID: 5127384509388819661, guid: d0b877da444deeb4db96a82fe854b0b2, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: d6cf077bc527d724c9378e118b0fb2f9, type: 3}
-    ball: {fileID: 0}
     damage: 0
     Attackspeed: 0
-    canCharge: 0
     snappiness: 0
     returnSpeed: 0
     effects: []

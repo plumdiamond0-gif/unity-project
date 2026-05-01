@@ -4,9 +4,11 @@ using static WeaponPrefabTable;
 public class CannonBall : MonoBehaviour
 {
     WeaponPrefabTableData data;
+    float damage;
 
-
-
+    public void SetDamage(float finalDamage) {
+        damage = finalDamage;
+    }
     public void SetWeaponData(WeaponPrefabTableData weaponData)
     {
         data = weaponData;
@@ -18,7 +20,7 @@ public class CannonBall : MonoBehaviour
         {
             
             GameObject target = other.gameObject;
-            target.GetComponent<EnemyMovement>().TakeDamage(data.damage);
+            target.GetComponent<EnemyMovement>().TakeDamage(damage);
             Debug.Log("Àû¿ë");
             foreach (var effectobjs in data.effects)
             {

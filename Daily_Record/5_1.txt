@@ -1,0 +1,47 @@
+-MonoBehaviour(씬 오브젝트의 변수)
+
+씬에 배치된 오브젝트의 컴포넌트 값은 플레이 모드 동안 임시 인스턴스에서 변경.
+
+게임 실행 → 현재 씬 복사본 만들어서 실행
+플레이 중 값 변경
+플레이 종료 → 복사본 폐기
+원래 씬 데이터 복원
+
+그래서 값이 원래대로 돌아옴.
+
+-ScriptableObject
+
+ScriptableObject는 씬 오브젝트가 아니라 프로젝트 에셋 파일(.asset) 임
+
+프로젝트 폴더에 저장된 실제 데이터
+플레이 중 값을 바꾸면 그 에셋 자체가 수정될 수 있음
+그래서 플레이 종료해도 값이 그대로 남음
+
+즉, 메모리 복사본이 아니라 원본 자산을 건드린 것에 가까워.
+
+
+
+데미지 증가 아이템 먹었을 때 증가된 값이 씬이 중단되도 계속 누적됐음 
+이유 :
+weaponList = GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas;
+(새 리스트를 만든 게 아니라
+원본 리스트 주소를 그대로 weaponList에 넣은 것)
+currentweapondata = weaponList[index];
+currentweapondata.damage += 10;
+
+currentweapondata
+weaponList[index]
+원본 ScriptableObject 데이터
+
+전부 같은 객체를 가리켜서 원본 값도 같이 변함.
+
+값형(struct/int/float)은 복사되지만
+클래스, ScriptableObject, List는 참조 복사됨.
+
+->
+
+foreach(var data in originalList)
+{
+    weaponList.Add(Instantiate(data));
+}
+weaponList 내부 요소들이 전부 런타임 복제본이라 안전

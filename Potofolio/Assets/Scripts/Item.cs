@@ -2,7 +2,7 @@ using UnityEngine;
 
 public abstract class Item : MonoBehaviour
 {
-    float dir = 1;
+    //float dir = 1;
     Vector3 pos;
     bool isused = false;
     public Sprite sprite;

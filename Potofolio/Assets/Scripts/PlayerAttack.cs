@@ -21,9 +21,6 @@ public class PlayerAttack : MonoBehaviour
     public float baseRecoilX;
     public float maxChargeBonus;
 
-    [Header("수동")]
-    public List<WeaponPrefabTableData> weaponList = new();
-
    // [SerializeField] private Transform WeaponSpawnPos;
     private bool isCharging;
     private float AttackRatio;
@@ -34,15 +31,20 @@ public class PlayerAttack : MonoBehaviour
     public GameObject spawnedWeapon;
     public WeaponPrefabTableData currentweapondata;
     [SerializeField] private Transform Firepos;
-
+    private float addDamage = 0;
     Animator anim;
+    public List<WeaponPrefabTableData> weaponList = new();
 
 
     //public Dictionary<int, WeaponState> weaponDic = new();
     void Start()
     {
+        foreach (var weapon in GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas)
+        {
+            weaponList.Add(weapon);
+        }
         anim = GetComponentInChildren<Animator>();    
-        weaponList = GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas;
+        //weaponList = GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas;
        
         cam = Camera.main;
         cameraMovement = cam.GetComponentInChildren<CameraMovement>();
@@ -110,6 +112,8 @@ public class PlayerAttack : MonoBehaviour
         Debug.Log("CurrntWeapon : " + currentweapondata.WeaponName);
        spawnedWeapon = Instantiate(currentweapondata.Weapon, Firepos.position, Firepos.rotation, Firepos);
         Transform aimTrans = spawnedWeapon.transform.Find("Aim");
+        //WeaponPrefabTableData data = spawnedWeapon.GetComponent<WeaponPrefabTableData>();
+
         Aim = aimTrans;
     }
 
@@ -119,30 +123,24 @@ public class PlayerAttack : MonoBehaviour
 
         bool ispressed = value.isPressed;
 
-        if (currentweapondata.canCharge)
-        {
+        
             isCharging = ispressed;
             if(!ispressed)
             {
-
+            float finalDamage;
                 //Debug.Log("비율 적용 이전 데미지 : " + currentweapondata.damage);
                 //Debug.Log("비율 : " + AttackRatio);
-                currentweapondata.damage += AttackRatio*10;
+               finalDamage = currentweapondata.damage + (addDamage + AttackRatio*10);
                 //Debug.Log("비율 적용 이후 데미지 : " + currentweapondata.damage);
+                CannonBall currentBall = currentweapondata.WeaponBullet.GetComponent<CannonBall>(); 
+                currentBall.SetDamage(finalDamage);
+            Debug.Log(finalDamage);
                 Fire();
-                currentweapondata.damage -= AttackRatio * 10;
                 anim.SetTrigger("Attack");
-
+                
                 RestCharge();
             }
-        }
-        else
-        {
-            if(ispressed)
-                anim.SetTrigger("Attack");
-
-            Fire();
-        }
+    
 
         //if()
 
@@ -187,9 +185,10 @@ public class PlayerAttack : MonoBehaviour
         }
     }
 
-    public void Damage(float val)
+    public void DamageUpdate(float val)
     {
-        currentweapondata.damage += val;
+        addDamage += val;
+
     }
 }
 
