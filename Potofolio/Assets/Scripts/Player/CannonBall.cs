@@ -34,7 +34,7 @@ public class CannonBall : MonoBehaviour
 
 
 
-        else if (other.CompareTag("Ground"))
+        else if (other.CompareTag("Ground") || other.CompareTag("Enemy"))
         {
             Destroy(gameObject);
         }

@@ -5,6 +5,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.Utilities;
+using UnityEngine.Rendering.Universal;
 using static UnityEngine.GraphicsBuffer;
 
 public enum EnemyState
@@ -21,8 +22,8 @@ public class EnemyMovement : MonoBehaviour
 
     public GameObject player;
     Transform playerTrans;
-    public float detectRange = 10f;
-    public float attackRange = 2f;
+    public float detectRange = 20f;
+    public float attackRange = 5f;
 
     private NavMeshAgent agent;
     private Rigidbody rb;
@@ -34,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
     static readonly int AttackHash = Animator.StringToHash("Attack");
     static readonly int CanAttackHash = Animator.StringToHash("CanAttack");
 
+    bool isSlow;
 
     bool isGrounded;
 
@@ -45,7 +47,7 @@ public class EnemyMovement : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         playerTrans = player.transform;
-        rb.isKinematic = true; // 평소엔 물리 OFF
+        rb.isKinematic = true; 
         anim = GetComponentInChildren<Animator>();
 
         anim.SetFloat(MoveHash, 0);
@@ -58,6 +60,15 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
 
+        //if(transform.position.y > 1)
+        //{
+        //    isGrounded = false;
+        //}
+
+        //if(!isGrounded)
+        //{
+        //    agent.isStopped = false;
+        //}
      
         if (currentState == EnemyState.Knockback || currentState == EnemyState.Stun)
             return;
@@ -85,8 +96,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void HandleState()
     {
-        if(agent.enabled == false)
-            { return; }
+    
         switch (currentState)
         {
             case EnemyState.Idle:
@@ -128,49 +138,42 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
-    public void ApplyKnockBack(float knockbackTime)
+    public void ApplyKnockBack()
     {
         if (isKnockbacking)
             return;
-        StartCoroutine(KnockbackRoutine(knockbackTime));
-    }
-    IEnumerator KnockbackRoutine(float time)
-    {
-        isGrounded = false;
         isKnockbacking = true;
         currentState = EnemyState.Knockback;
-        agent.enabled = false;  
+        agent.enabled = false;
         rb.isKinematic = false;
-
-        yield return new WaitForSeconds(time);
-        rb.linearVelocity = Vector3.zero;
-        rb.angularVelocity = Vector3.zero;
-        rb.isKinematic = true;
-
-
-
-
-        NavMeshHit hit;
-        if (NavMesh.SamplePosition(transform.position, out hit, 2000f, NavMesh.AllAreas))
-        {
-            agent.Warp(hit.position);
-        }
-        //yield return null;
-        if(isGrounded == true)
-        {
-            Debug.Log("바각");
-            agent.enabled = true;
-            agent.nextPosition = transform.position;
-            currentState = EnemyState.Chase;
-            isKnockbacking = false;
-        }
-
-
-
-
-
-
     }
+
+
+    /* IEnumerator KnockbackRoutine(float time)
+     {
+         isGrounded = false;
+         isKnockbacking = true;
+         currentState = EnemyState.Knockback;
+         agent.enabled = false;
+         rb.isKinematic = false;
+
+         yield return new WaitForSeconds(time);
+         rb.linearVelocity = Vector3.zero;
+         rb.angularVelocity = Vector3.zero;
+         rb.isKinematic = true;
+
+
+
+
+         NavMeshHit hit;
+         if (NavMesh.SamplePosition(transform.position, out hit, 2000f, NavMesh.AllAreas))
+         {
+             agent.Warp(hit.position);
+         }
+
+
+
+     }*/
     /*private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -190,8 +193,38 @@ public class EnemyMovement : MonoBehaviour
         if(other.CompareTag("Ground"))
         {
             isGrounded = true;
+            if(isKnockbacking)
+            {
+                rb.linearVelocity = Vector3.zero;
+                rb.angularVelocity = Vector3.zero;
+                Debug.Log("바각");
+                agent.enabled = true;
+                rb.isKinematic = true;
+                agent.nextPosition = transform.position;
+                currentState = EnemyState.Chase;
+                isKnockbacking = false;
+            }
+
         }
- 
+    }
+
+    public void beSlow(float slowTime)
+    {
+        if(isSlow)
+        {
+            return;
+        }
+        StartCoroutine(Slow(slowTime));
+
+    }
+
+    IEnumerator Slow(float slowTime)
+    {
+        isSlow = true;
+        agent.speed = 1;
+        yield return new WaitForSeconds(slowTime);
+        isSlow = false;
+        yield return null;
     }
 
 

@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEditor.ShaderGraph.Internal;
@@ -21,6 +22,7 @@ public class PlayerAttack : MonoBehaviour
     public float baseRecoilX;
     public float maxChargeBonus;
 
+    bool canAttack;
    // [SerializeField] private Transform WeaponSpawnPos;
     private bool isCharging;
     private float AttackRatio;
@@ -55,7 +57,9 @@ public class PlayerAttack : MonoBehaviour
         currentweapondata = weaponList[0];
         GameObject startweapon = Instantiate(currentweapondata.Weapon, Firepos.position, Firepos.rotation, Firepos);
         spawnedWeapon = startweapon;
+        maxCharge = currentweapondata.chargeAmount;
         Aim = spawnedWeapon.transform.Find("Aim");
+        canAttack = true;
     }
 
     private void Update()
@@ -112,39 +116,44 @@ public class PlayerAttack : MonoBehaviour
         Debug.Log("CurrntWeapon : " + currentweapondata.WeaponName);
        spawnedWeapon = Instantiate(currentweapondata.Weapon, Firepos.position, Firepos.rotation, Firepos);
         Transform aimTrans = spawnedWeapon.transform.Find("Aim");
-        //WeaponPrefabTableData data = spawnedWeapon.GetComponent<WeaponPrefabTableData>();
-
+        maxCharge = currentweapondata.chargeAmount;
+        baseRecoilX = currentweapondata.BaseRecoilX;
         Aim = aimTrans;
     }
 
-    
+
     void OnAttack(InputValue value)
     {
+        if (currentweapondata.canCharge)
+        {
+            bool isPressed = value.isPressed;
 
-        bool ispressed = value.isPressed;
-
-        
-            isCharging = ispressed;
-            if(!ispressed)
+            if (isPressed)
             {
-            float finalDamage;
-                //Debug.Log("비율 적용 이전 데미지 : " + currentweapondata.damage);
-                //Debug.Log("비율 : " + AttackRatio);
-               finalDamage = currentweapondata.damage + (addDamage + AttackRatio*10);
-                //Debug.Log("비율 적용 이후 데미지 : " + currentweapondata.damage);
-                CannonBall currentBall = currentweapondata.WeaponBullet.GetComponent<CannonBall>(); 
-                currentBall.SetDamage(finalDamage);
-            Debug.Log(finalDamage);
-                Fire();
-                anim.SetTrigger("Attack");
-                
+                isCharging = true;
+            }
+            else
+            {
+                isCharging = false;
+                ReadyAttack();
                 RestCharge();
             }
-    
 
-        //if()
+            return;
+        }
 
+        ReadyAttack(); // 일반 무기
+    }
 
+    void ReadyAttack()
+    {
+        float finalDamage;
+        finalDamage = currentweapondata.damage + (addDamage + AttackRatio * 10);
+        CannonBall currentBall = currentweapondata.WeaponBullet.GetComponent<CannonBall>();
+        currentBall.SetDamage(finalDamage);
+        Debug.Log(finalDamage);
+        Fire();
+        anim.SetTrigger("Attack");
     }
 
     public void RestCharge()
@@ -159,9 +168,18 @@ public class PlayerAttack : MonoBehaviour
 
     public void Fire()
     {
-        Debug.Log("발사;");
-        float currnetRecoilX = baseRecoilX * (1f + (AttackRatio * maxChargeBonus));
-        cameraMovement.FireRecoil(currnetRecoilX, 0.5f, 0.5f);
+       
+
+        if (!canAttack)
+        {
+            return;
+        }
+        StartCoroutine(coolTimeRouctine());
+
+            float currnetRecoilX = baseRecoilX * (1f + (AttackRatio * maxChargeBonus));
+            cameraMovement.FireRecoil(currnetRecoilX, 0.5f, 0.5f);
+        
+        
 
         GameObject CBcopy = gamemanager.instance.GetPrefab
             (currentweapondata.WeaponName, Aim.transform.position, Quaternion.identity);
@@ -180,9 +198,15 @@ public class PlayerAttack : MonoBehaviour
         Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
         if (CanonBallRB != null)
         {
-
             CanonBallRB.AddForce(Aim.transform.forward * CanonBallspeed, ForceMode.Impulse);
         }
+    }
+
+    IEnumerator coolTimeRouctine()
+    {
+        canAttack = false;
+        yield return new WaitForSeconds(currentweapondata.coolTime);
+        canAttack = true;
     }
 
     public void DamageUpdate(float val)
