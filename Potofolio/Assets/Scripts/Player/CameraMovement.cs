@@ -58,7 +58,7 @@ public class CameraMovement : MonoBehaviour
 
     public void FireRecoil(float RecoilX, float RecoilY, float RecoilZ)
     {
-        targetRotation += new Vector3(RecoilX,
+        targetRotation += new Vector3(-RecoilX,
             Random.Range(-RecoilY, RecoilY), Random.Range(-RecoilZ, RecoilZ));
     }
     /*

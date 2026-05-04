@@ -221,8 +221,11 @@ public class EnemyMovement : MonoBehaviour
     IEnumerator Slow(float slowTime)
     {
         isSlow = true;
+        Debug.Log("Slowed");
+        float orispeed = agent.speed;
         agent.speed = 1;
         yield return new WaitForSeconds(slowTime);
+        agent.speed = orispeed;
         isSlow = false;
         yield return null;
     }

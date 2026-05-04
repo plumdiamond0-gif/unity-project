@@ -30,6 +30,13 @@ public class WeaponPrefabTable : ScriptableObject
         public float coolTime;
         public float BaseRecoilX;
         public List<ScriptableObject> effects;
+        public float maxChargeBonus;
+        public float YZRecoil;
+        public float radius;
+        public float force;
+        public float upModifier;
+
+
         /*Unity에서 인터페이스는 Inspector에 직접 안 보임
         -> 드래그 & 드롭 안 됨,에셋 연결 안 됨
         -> 그래서 우회로로:ScriptableObject로 타입 지정

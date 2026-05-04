@@ -3,76 +3,76 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\player\\weaponeffects\\knockbackeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\knockbackeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\prefabtable\\weaponprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\prefabtable\\weaponprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\cameramovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cameramovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\prefabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\prefabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\player\\weaponeffects\\sloweffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\sloweffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\sloweffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\player\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\cannonball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cannonball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\player\\weaponeffects\\iweaponeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\iweaponeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\iweaponeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\item\\healitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\item\\healitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\item\\healitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\player\\cannonball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cannonball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\prefabtable\\enemyprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\prefabtable\\enemyprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\prefabtable\\enemyprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\prefabtable\\weaponprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\prefabtable\\weaponprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\manager\\prefabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\prefabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\item\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\item\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\item\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\item\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\item\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\item\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\item\\damageitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\item\\damageitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\item\\damageitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\player\\cameramovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cameramovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -81,103 +81,101 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 671,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 422,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Health.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Health.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Health.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Health.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Health.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAADwvxUAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:30:08.574Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SlowEffect.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
-              "ViewState": "AgIAAAQAAAAAAAAAAAAmwBMAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:35.493Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "KnockBackEffect.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAAwCMAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:42.317Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "EnemyMovement.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\EnemyMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyMovement.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\EnemyMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\EnemyMovement.cs",
-              "ViewState": "AgIAADMAAAAAAAAAAAAIwDsAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAMgAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-02T06:30:07.73Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "PlayerAttack.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerAttack.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerAttack.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerAttack.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAAwCgAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAHsAAAAAAAAAAAAiwJAAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-02T06:29:46.827Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "HealItem.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\HealItem.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\HealItem.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\HealItem.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Item\\HealItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwUAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "KnockBackEffect.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAACMAAAA7AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:52.969Z",
+              "WhenOpened": "2026-05-02T06:29:42.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CameraMovement.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CameraMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CameraMovement.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CameraMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\CameraMovement.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAYwEAAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:29:45.679Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "IWeaponEffect.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAbAAAAAAAAAA==",
+              "Title": "SlowEffect.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAADwvxMAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:43.412Z",
+              "WhenOpened": "2026-05-02T06:29:35.493Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 16,
+              "Title": "Item.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Item.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\Item.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Item.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Item\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:29:53.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Inventory.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\Inventory.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Inventory.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Item\\Inventory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:29:54.947Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
@@ -185,12 +183,78 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovement.cs",
               "ViewState": "AgIAAAYAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:48.497Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T06:29:48.497Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 10,
+              "Title": "IWeaponEffect.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwcAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:29:43.412Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HealItem.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\HealItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\HealItem.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\HealItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Item\\HealItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:29:52.969Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Health.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Health.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Health.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Health.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Health.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvxUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:30:08.574Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "DamageItem.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\DamageItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\DamageItem.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\DamageItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Item\\DamageItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:29:52.04Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CannonBall.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CannonBall.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CannonBall.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CannonBall.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Player\\CannonBall.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACQAAABJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:29:47.731Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 260,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "PrefabManager.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\PrefabManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\PrefabManager.cs",
@@ -203,78 +267,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "Inventory.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Inventory.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\Inventory.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Inventory.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Item\\Inventory.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:54.947Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Item.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Item.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\Item.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Item.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Item\\Item.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:53.845Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "DamageItem.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\DamageItem.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\DamageItem.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\DamageItem.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Item\\DamageItem.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:52.04Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "CannonBall.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CannonBall.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CannonBall.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CannonBall.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\CannonBall.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:47.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "CameraMovement.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CameraMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CameraMovement.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CameraMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Player\\CameraMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:45.679Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 11,
-          "SelectedChildIndex": 0,
-          "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "gamemanager.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\gamemanager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\gamemanager.cs",
@@ -287,20 +280,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "UIManager.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\UIManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\UIManager.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\UIManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Manager\\UIManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "WeaponPrefabTable.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAIwB4AAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:59.85Z",
+              "WhenOpened": "2026-05-02T06:30:04.295Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "EnemyPrefabTable.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\EnemyPrefabTable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PrefabTable\\EnemyPrefabTable.cs",
@@ -308,21 +301,19 @@
               "RelativeToolTip": "Assets\\Scripts\\PrefabTable\\EnemyPrefabTable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:30:05.27Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T06:30:05.27Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "WeaponPrefabTable.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
+              "DocumentIndex": 13,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\UIManager.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\UIManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:30:04.295Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-02T06:29:59.85Z"
             }
           ]
         }

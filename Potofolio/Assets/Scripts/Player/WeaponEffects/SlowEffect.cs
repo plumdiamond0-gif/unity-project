@@ -18,6 +18,7 @@ public class SlowEffect : ScriptableObject, IWeaponEffect
         if (enemy != null)
         {
             enemy.beSlow(slowTime);
+            Debug.Log("slow");
         }
 
     }

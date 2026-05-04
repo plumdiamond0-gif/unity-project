@@ -1,4 +1,5 @@
 using UnityEngine;
+using static WeaponPrefabTable;
 
 
     public interface IWeaponEffect

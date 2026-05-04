@@ -35,7 +35,11 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField] private Transform Firepos;
     private float addDamage = 0;
     Animator anim;
-    public List<WeaponPrefabTableData> weaponList = new();
+     List<WeaponPrefabTableData> weaponList = new();
+
+
+
+    public KnockBackEffect knock;
 
 
     //public Dictionary<int, WeaponState> weaponDic = new();
@@ -118,6 +122,7 @@ public class PlayerAttack : MonoBehaviour
         Transform aimTrans = spawnedWeapon.transform.Find("Aim");
         maxCharge = currentweapondata.chargeAmount;
         baseRecoilX = currentweapondata.BaseRecoilX;
+        maxChargeBonus = currentweapondata.maxChargeBonus;
         Aim = aimTrans;
     }
 
@@ -136,6 +141,8 @@ public class PlayerAttack : MonoBehaviour
             {
                 isCharging = false;
                 ReadyAttack();
+                
+                knock.GetKnockVal(currentCharge, currentweapondata);
                 RestCharge();
             }
 
@@ -177,7 +184,8 @@ public class PlayerAttack : MonoBehaviour
         StartCoroutine(coolTimeRouctine());
 
             float currnetRecoilX = baseRecoilX * (1f + (AttackRatio * maxChargeBonus));
-            cameraMovement.FireRecoil(currnetRecoilX, 0.5f, 0.5f);
+        float YZRecoil = currentweapondata.YZRecoil;
+            cameraMovement.FireRecoil(currnetRecoilX, YZRecoil, YZRecoil);
         
         
 
