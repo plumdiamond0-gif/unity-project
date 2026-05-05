@@ -1,0 +1,8 @@
+슬로우 이펙트 추가
+
+        radius = data.radius * (1+charge);
+        force = data.force * (1+charge);
+        upModifier = data.upModifier * (1+charge);
+
+무기에 저장되어 있는 기본 값에다가 차지한만큼 곱함.
+1을 더해줌으로써 차지 안 했을 때(값이 0임)이여서 결과가 0이 되는 거 방지

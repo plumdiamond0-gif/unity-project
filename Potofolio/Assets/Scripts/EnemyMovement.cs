@@ -24,6 +24,8 @@ public class EnemyMovement : MonoBehaviour
     Transform playerTrans;
     public float detectRange = 20f;
     public float attackRange = 5f;
+    Health health;
+
 
     private NavMeshAgent agent;
     private Rigidbody rb;
@@ -36,6 +38,11 @@ public class EnemyMovement : MonoBehaviour
     static readonly int CanAttackHash = Animator.StringToHash("CanAttack");
 
     bool isSlow;
+    bool isStun;
+    bool isdotdam;
+    bool isdot;
+
+
 
     bool isGrounded;
 
@@ -43,7 +50,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Awake()
     {
-
+        health = GetComponent<Health>();    
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
         playerTrans = player.transform;
@@ -229,6 +236,56 @@ public class EnemyMovement : MonoBehaviour
         isSlow = false;
         yield return null;
     }
+
+    public void beStun(float stunTime)
+    {
+        if (isStun)
+        {
+            return;
+        }
+        StartCoroutine(Slow(stunTime));
+
+    }
+
+    IEnumerator Stun(float stunTime)
+    {
+        isStun = true;
+        Debug.Log("Slowed");
+        agent.isStopped = true;
+        yield return new WaitForSeconds(stunTime);
+        isStun = false;
+        agent.isStopped = false;
+        yield return null;
+    }
+
+    public void dotdam(float dotDamage, float dotTime)
+    {
+        if (isdotdam)
+        {
+            return;
+        }
+        StartCoroutine(_dotdma(dotDamage, dotTime));
+
+    }
+
+    IEnumerator _dotdma(float dotDamage, float dotTime)
+    {
+        isdotdam = true;
+        Debug.Log("Slowed");
+        for (int i = 0; i < dotTime; i++)
+        {
+            
+            health.Hp -= dotDamage;
+            Debug.Log(dotDamage);
+            yield return new WaitForSeconds(0.8f);
+            
+        }
+        isdotdam = false;
+        yield return null;
+    }
+
+  
+
 
 
 }

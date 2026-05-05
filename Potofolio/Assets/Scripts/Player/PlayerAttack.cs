@@ -58,11 +58,7 @@ public class PlayerAttack : MonoBehaviour
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
 
-        currentweapondata = weaponList[0];
-        GameObject startweapon = Instantiate(currentweapondata.Weapon, Firepos.position, Firepos.rotation, Firepos);
-        spawnedWeapon = startweapon;
-        maxCharge = currentweapondata.chargeAmount;
-        Aim = spawnedWeapon.transform.Find("Aim");
+        SelectWeapon(0);
         canAttack = true;
     }
 
@@ -124,6 +120,14 @@ public class PlayerAttack : MonoBehaviour
         baseRecoilX = currentweapondata.BaseRecoilX;
         maxChargeBonus = currentweapondata.maxChargeBonus;
         Aim = aimTrans;
+        if(currentweapondata.canCharge)
+        {
+            GM.GetUIManager().ChargeBarActive(true);
+        }
+        else
+        {
+            GM.GetUIManager().ChargeBarActive(false);
+        }
     }
 
 

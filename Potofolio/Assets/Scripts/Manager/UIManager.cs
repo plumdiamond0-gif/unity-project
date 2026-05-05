@@ -4,7 +4,9 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
 
-    public Image HealthBarFill;
+
+
+    public GameObject AttackGuageBar;
 
     public Image AttackGuageBarFill;
 
@@ -21,18 +23,24 @@ public class UIManager : MonoBehaviour
         GameObject gameObject = Instantiate(res, parent);
 
         return gameObject.GetComponent<UIManager>();
-
-
     }
 
     public void UpdatePlayerHealth(float MaxHp, float CurrentHp)
     {
         CurrentHp = PlayerHealth.Hp;
-        HealthBarFill.fillAmount = CurrentHp/ MaxHp;
+        //TODO : HealthBarFill.fillAmount = CurrentHp/ MaxHp;
     }
-    // Update is called once per frame
-    void Update()
+     
+
+    public void ChargeBarActive(bool canCharge)
     {
-        
+        if (canCharge)
+        {
+            AttackGuageBar.SetActive(true);
+        }
+        else
+        {
+            AttackGuageBar.SetActive(false);
+        }
     }
 }

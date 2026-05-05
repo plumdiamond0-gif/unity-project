@@ -24,8 +24,8 @@ MonoBehaviour:
     chargeAmount: 1
     canCharge: 0
     coolTime: 0.1
-    BaseRecoilX: 2
     effects: []
+    BaseRecoilX: 2
     maxChargeBonus: 0
     YZRecoil: 0.3
     radius: 0
@@ -42,9 +42,9 @@ MonoBehaviour:
     chargeAmount: 2
     canCharge: 1
     coolTime: 1
-    BaseRecoilX: 5
     effects:
     - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
+    BaseRecoilX: 5
     maxChargeBonus: 7
     YZRecoil: 0.5
     radius: 5
@@ -60,10 +60,10 @@ MonoBehaviour:
     returnSpeed: 3
     chargeAmount: 0
     canCharge: 0
-    coolTime: 3
-    BaseRecoilX: 0
+    coolTime: 1.7
     effects:
     - {fileID: 11400000, guid: 470680d02b3fd294fb63be42c2dcf57e, type: 2}
+    BaseRecoilX: 3
     maxChargeBonus: 0
     YZRecoil: 0.3
     radius: 0
@@ -73,17 +73,19 @@ MonoBehaviour:
     WeaponName: PulseGun
     Weapon: {fileID: 5127384509388819661, guid: b854af823e97f9f40978e717e99bca5c, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: 86e81e14019f1c24b94f906625201ac6, type: 3}
-    damage: 0
-    Attackspeed: 0
-    snappiness: 0
-    returnSpeed: 0
-    chargeAmount: 0
-    canCharge: 0
-    coolTime: 0
-    BaseRecoilX: 0
-    effects: []
-    maxChargeBonus: 0
-    YZRecoil: 0
+    damage: 20
+    Attackspeed: 20
+    snappiness: 7
+    returnSpeed: 7
+    chargeAmount: 5
+    canCharge: 1
+    coolTime: 3
+    effects:
+    - {fileID: 11400000, guid: 837b7099aafc8eb4a91c466f3d71c615, type: 2}
+    - {fileID: 11400000, guid: 4f61d25e1f1b25a4591b7e47309dd9d7, type: 2}
+    BaseRecoilX: 2
+    maxChargeBonus: 40
+    YZRecoil: 2.5
     radius: 0
     force: 0
     upModifier: 0
@@ -98,10 +100,12 @@ MonoBehaviour:
     chargeAmount: 0
     canCharge: 0
     coolTime: 0
-    BaseRecoilX: 0
-    effects: []
-    maxChargeBonus: 0
-    YZRecoil: 0
-    radius: 0
-    force: 0
-    upModifier: 0
+    effects:
+    - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
+    - {fileID: 0}
+    BaseRecoilX: 0.5
+    maxChargeBonus: 100
+    YZRecoil: 1
+    radius: 10
+    force: 10
+    upModifier: 1

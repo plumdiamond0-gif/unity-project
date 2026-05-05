@@ -556,8 +556,8 @@ MonoBehaviour:
     chargeAmount: 0
     canCharge: 0
     coolTime: 0
-    BaseRecoilX: 0
     effects: []
+    BaseRecoilX: 0
     maxChargeBonus: 0
     YZRecoil: 0
     radius: 0
@@ -1516,6 +1516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   HealthBarFill: {fileID: 1941613872}
+  AttackGuageBar: {fileID: 632610581}
   AttackGuageBarFill: {fileID: 1256729237}
   PlayerHealth: {fileID: 384408930}
   Inventory: {fileID: 279954758}
@@ -1786,7 +1787,7 @@ MonoBehaviour:
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0

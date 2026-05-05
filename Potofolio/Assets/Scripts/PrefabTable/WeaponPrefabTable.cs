@@ -28,8 +28,8 @@ public class WeaponPrefabTable : ScriptableObject
         public float chargeAmount;
         public bool canCharge;
         public float coolTime;
-        public float BaseRecoilX;
         public List<ScriptableObject> effects;
+        public float BaseRecoilX;
         public float maxChargeBonus;
         public float YZRecoil;
         public float radius;

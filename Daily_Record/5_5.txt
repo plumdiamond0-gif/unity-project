@@ -1,0 +1,32 @@
+도트 데미지, 스턴 이펙트 추가
+  public void dotdam(float dotDamage, float dotTime)
+    {
+        if (isdotdam)
+        {
+            return;
+        }
+        StartCoroutine(_dotdma(dotDamage, dotTime));
+
+    }
+
+    IEnumerator _dotdma(float dotDamage, float dotTime)
+    {
+        isdotdam = true;
+        Debug.Log("Slowed");
+        for (int i = 0; i < dotTime; i++)
+        {
+            
+            health.Hp -= dotDamage;
+            Debug.Log(dotDamage);
+            yield return new WaitForSeconds(0.8f);
+            
+        }
+        isdotdam = false;
+        yield return null;
+    }
+
+
+반복문 돌려서 0.8초 간격으로 도트 데미지 줌, 일정 시간동안 반복.
+
+스턴도 마찬가지로 이너머레이떠 써서 isStopped 함수로 구현.
+
