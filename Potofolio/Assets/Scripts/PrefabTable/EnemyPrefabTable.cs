@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Data/WeaponPrafabTable")]
+[CreateAssetMenu(menuName = "Data/EnemyPrafabTable")]
 
 public class EnemyPrefabTable : ScriptableObject
 {
@@ -12,9 +12,8 @@ public class EnemyPrefabTable : ScriptableObject
         public string EnemyName;
         public GameObject Enemy;
         public GameObject EnemyBullet;
-        public float damage;
         public float Attackspeed;
-        public List<ScriptableObject> effects;
+        public float CoinNum;
         
 
 

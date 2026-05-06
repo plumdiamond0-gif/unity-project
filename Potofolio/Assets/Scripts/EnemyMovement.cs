@@ -6,7 +6,10 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.Utilities;
 using UnityEngine.Rendering.Universal;
+using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
+using static UnityEngine.EventSystems.EventTrigger;
 using static UnityEngine.GraphicsBuffer;
+using Random = UnityEngine.Random;
 
 public enum EnemyState
 {
@@ -14,17 +17,20 @@ public enum EnemyState
     Chase,
     Attack,
     Knockback,
-    Stun
+    Stun,
+    Die
 }
 public class EnemyMovement : MonoBehaviour
 {
     public EnemyState currentState;
 
-    public GameObject player;
+    [SerializeField] private GameObject player;
     Transform playerTrans;
-    public float detectRange = 20f;
-    public float attackRange = 5f;
+    [SerializeField] private float detectRange = 20f;
+    [SerializeField] private float attackRange = 5f;
     Health health;
+    [SerializeField] private GameObject Coin;
+    [SerializeField] private float CoinNum;
 
 
     private NavMeshAgent agent;
@@ -33,6 +39,7 @@ public class EnemyMovement : MonoBehaviour
     private bool isKnockbacking = false;
 
     public float damage;
+
     static readonly int MoveHash = Animator.StringToHash("Move");
     static readonly int AttackHash = Animator.StringToHash("Attack");
     static readonly int CanAttackHash = Animator.StringToHash("CanAttack");
@@ -67,18 +74,14 @@ public class EnemyMovement : MonoBehaviour
     void Update()
     {
 
-        //if(transform.position.y > 1)
-        //{
-        //    isGrounded = false;
-        //}
-
-        //if(!isGrounded)
-        //{
-        //    agent.isStopped = false;
-        //}
-     
-        if (currentState == EnemyState.Knockback || currentState == EnemyState.Stun)
+        if (currentState == EnemyState.Knockback || currentState == EnemyState.Stun || currentState == EnemyState.Die)
             return;
+
+        if (health.Hp <= 0)
+        {
+            Die();
+            return;
+        }
 
         float dist = Vector3.Distance(transform.position, playerTrans.position);
 
@@ -103,7 +106,6 @@ public class EnemyMovement : MonoBehaviour
 
     private void HandleState()
     {
-    
         switch (currentState)
         {
             case EnemyState.Idle:
@@ -142,7 +144,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void TakeDamage(float Getdamage)
     {
-
+        health.Hp -= Getdamage;
     }
 
     public void ApplyKnockBack()
@@ -204,7 +206,6 @@ public class EnemyMovement : MonoBehaviour
             {
                 rb.linearVelocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
-                Debug.Log("바각");
                 agent.enabled = true;
                 rb.isKinematic = true;
                 agent.nextPosition = transform.position;
@@ -213,6 +214,22 @@ public class EnemyMovement : MonoBehaviour
             }
 
         }
+    }
+
+    public void Die()
+    {
+        currentState = EnemyState.Die;
+        float distance = 1.2f;
+      
+        for (int i = 0; i < CoinNum; i++)
+        {
+            Vector2 rand = Random.insideUnitCircle.normalized; // 랜덤 방향
+            Vector3 offset = new Vector3(rand.x, 0, rand.y) * distance;
+            Vector3 spawnPos = transform.position + offset;
+            Instantiate(Coin, spawnPos, Quaternion.identity);
+        }
+        Destroy(gameObject); 
+
     }
 
     public void beSlow(float slowTime)
@@ -275,7 +292,7 @@ public class EnemyMovement : MonoBehaviour
         for (int i = 0; i < dotTime; i++)
         {
             
-            health.Hp -= dotDamage;
+            TakeDamage(dotDamage);
             Debug.Log(dotDamage);
             yield return new WaitForSeconds(0.8f);
             

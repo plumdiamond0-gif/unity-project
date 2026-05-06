@@ -8,6 +8,7 @@ TagManager:
   - PlayerCannonBall
   - Enemy
   - Item
+  - Coin
   layers:
   - Default
   - TransparentFX
