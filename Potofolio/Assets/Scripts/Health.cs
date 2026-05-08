@@ -4,14 +4,16 @@ using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
-    public float Hp;
+    public float CurrentHp;
+    public float MaxHp;
     bool isInvincible = false;
-    public Image HealthBarFill;
+    [SerializeField] private  Image HealthBarFill;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        HealthBarFill = GetComponent<Image>();
+        CurrentHp = MaxHp;
     }
 
 public void TakeHealth(float value)
@@ -20,10 +22,11 @@ public void TakeHealth(float value)
         {
             return;
         }
+        CurrentHp += value;
+        HealthBarFill.fillAmount = CurrentHp / MaxHp;   
         StartCoroutine(InvincibleTimer());
 
 
-        Hp += value;
     }
 
     IEnumerator InvincibleTimer()

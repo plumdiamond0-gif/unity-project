@@ -111,6 +111,8 @@ MonoBehaviour:
   player: {fileID: 0}
   detectRange: 10
   attackRange: 2
+  Coin: {fileID: 0}
+  CoinNum: 0
   damage: 5
 --- !u!195 &161969272750697792
 NavMeshAgent:
@@ -196,7 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f825e20244a9b88418f9a31123e7de52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  Hp: 20
+  CurrentHp: 0
+  MaxHp: 0
   HealthBarFill: {fileID: 0}
 --- !u!1001 &2407596782986065159
 PrefabInstance:

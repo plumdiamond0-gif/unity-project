@@ -10,28 +10,37 @@ public class CannonBall : MonoBehaviour
         damage = finalDamage;
     }
     public void SetWeaponData(WeaponPrefabTableData weaponData)
-    {
+    {   
         data = weaponData;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            
+
             GameObject target = other.gameObject;
-            target.GetComponent<EnemyMovement>().TakeDamage(damage);
-            Debug.Log("적용");
-            foreach (var effectobjs in data.effects)
+            Health EnemyHealth = target.GetComponent<Health>();
+            if (EnemyHealth != null)
             {
-                if(effectobjs is IWeaponEffect effect)
+                EnemyHealth.TakeHealth(damage);
+                Debug.Log("캐논볼 에너미 데미지" + damage);
+            }
+            else
+            {
+                Debug.Log("AWEFGWE");
+
+                Debug.Log("적용");
+                foreach (var effectobjs in data.effects)
                 {
-                    effect.Apply(target);
+                    if (effectobjs is IWeaponEffect effect)
+                    {
+                        effect.Apply(target);
+                    }
                 }
             }
+
         }
-
-
 
 
         else if (other.CompareTag("Ground") || other.CompareTag("Enemy"))

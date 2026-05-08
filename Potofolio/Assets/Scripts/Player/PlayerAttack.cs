@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using static UnityEngine.GraphicsBuffer;
 using static WeaponPrefabTable;
 
 public class PlayerAttack : MonoBehaviour
@@ -88,7 +89,6 @@ public class PlayerAttack : MonoBehaviour
 
         if(isCharging)
         {
-            Debug.Log("IsCharging");
             currentCharge += Time.deltaTime;
             currentCharge = Mathf.Clamp(currentCharge, 0f, maxCharge);
             AttackRatio = currentCharge / maxCharge;
@@ -120,7 +120,7 @@ public class PlayerAttack : MonoBehaviour
         baseRecoilX = currentweapondata.BaseRecoilX;
         maxChargeBonus = currentweapondata.maxChargeBonus;
         Aim = aimTrans;
-        if(currentweapondata.canCharge)
+        if (currentweapondata.canCharge)
         {
             GM.GetUIManager().ChargeBarActive(true);
         }
@@ -144,33 +144,35 @@ public class PlayerAttack : MonoBehaviour
             else
             {
                 isCharging = false;
-                ReadyAttack();
-                
+                Fire();
+           
                 knock.GetKnockVal(currentCharge, currentweapondata);
-                RestCharge();
+               
             }
 
             return;
         }
 
-        ReadyAttack(); // 일반 무기
+        Fire(); // 일반 무기
     }
 
-    void ReadyAttack()
-    {
-        float finalDamage;
-        finalDamage = currentweapondata.damage + (addDamage + AttackRatio * 10);
-        CannonBall currentBall = currentweapondata.WeaponBullet.GetComponent<CannonBall>();
-        currentBall.SetDamage(finalDamage);
-        Debug.Log(finalDamage);
-        Fire();
-        anim.SetTrigger("Attack");
-    }
+    //void ReadyAttack()
+    //{
+    //    float finalDamage;
+    //    finalDamage = currentweapondata.damage + (addDamage + AttackRatio * 10);
+    //    CannonBall currentBall = currentweapondata.WeaponBullet.GetComponent<CannonBall>();
+    //    currentBall.SetWeaponData(currentweapondata);
+    //    currentBall.SetDamage(finalDamage);
+    //    Debug.Log(finalDamage);
+    //    Fire();
+    //    anim.SetTrigger("Attack");
+    //}
 
     public void RestCharge()
     {
         isCharging = false;
         currentCharge = 0;
+        AttackRatio = 0;
         if (gamemanager.instance.UIManager != null)
         {
             gamemanager.instance.UIManager.AttackGuageBarFill.fillAmount = 0;
@@ -186,27 +188,24 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
         StartCoroutine(coolTimeRouctine());
-
-            float currnetRecoilX = baseRecoilX * (1f + (AttackRatio * maxChargeBonus));
-        float YZRecoil = currentweapondata.YZRecoil;
-            cameraMovement.FireRecoil(currnetRecoilX, YZRecoil, YZRecoil);
-        
-        
+        anim.SetTrigger("Attack");
 
         GameObject CBcopy = gamemanager.instance.GetPrefab
             (currentweapondata.WeaponName, Aim.transform.position, Quaternion.identity);
-        CannonBall cannonBall = CBcopy.GetComponent<CannonBall>();
-        if (cannonBall != null)
-        {
-            cannonBall.SetWeaponData(currentweapondata);
-        }
 
-        if (CBcopy == null)
-        {
-            Debug.Log("캐논볼 없음");
-            return;
+        float finalDamage;
+        CannonBall currentBall = CBcopy.GetComponent<CannonBall>();
 
-        }
+        finalDamage = currentweapondata.damage + (addDamage + AttackRatio * 10);
+        currentBall.SetWeaponData(currentweapondata);
+        currentBall.SetDamage(finalDamage);
+        Debug.Log(finalDamage);
+
+        float currnetRecoilX = baseRecoilX * (1f + (AttackRatio * maxChargeBonus));
+        float YZRecoil = currentweapondata.YZRecoil;
+        cameraMovement.FireRecoil(currnetRecoilX, YZRecoil, YZRecoil);
+
+        RestCharge();
         Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
         if (CanonBallRB != null)
         {
@@ -224,7 +223,6 @@ public class PlayerAttack : MonoBehaviour
     public void DamageUpdate(float val)
     {
         addDamage += val;
-
     }
 }
 

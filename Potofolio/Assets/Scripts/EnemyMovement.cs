@@ -77,7 +77,7 @@ public class EnemyMovement : MonoBehaviour
         if (currentState == EnemyState.Knockback || currentState == EnemyState.Stun || currentState == EnemyState.Die)
             return;
 
-        if (health.Hp <= 0)
+        if (health.CurrentHp <= 0)
         {
             Die();
             return;
@@ -144,7 +144,7 @@ public class EnemyMovement : MonoBehaviour
 
     public void TakeDamage(float Getdamage)
     {
-        health.Hp -= Getdamage;
+        health.CurrentHp -= Getdamage;
     }
 
     public void ApplyKnockBack()

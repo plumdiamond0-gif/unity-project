@@ -25,12 +25,7 @@ public class UIManager : MonoBehaviour
         return gameObject.GetComponent<UIManager>();
     }
 
-    public void UpdatePlayerHealth(float MaxHp, float CurrentHp)
-    {
-        CurrentHp = PlayerHealth.Hp;
-        //TODO : HealthBarFill.fillAmount = CurrentHp/ MaxHp;
-    }
-     
+
 
     public void ChargeBarActive(bool canCharge)
     {
