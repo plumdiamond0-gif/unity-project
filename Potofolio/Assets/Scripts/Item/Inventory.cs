@@ -4,7 +4,6 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     public Image[] Images;
-    Sprite[] Sprites; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void GetSprite(Sprite sprite)
     {

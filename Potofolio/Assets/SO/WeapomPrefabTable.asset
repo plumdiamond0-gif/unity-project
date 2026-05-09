@@ -48,8 +48,8 @@ MonoBehaviour:
     maxChargeBonus: 7
     YZRecoil: 0.5
     radius: 5
-    force: 2
-    upModifier: 0.5
+    force: 5
+    upModifier: 3
   - weaponState: 4
     WeaponName: SlimeGun
     Weapon: {fileID: 5127384509388819661, guid: a77f20bdeb076fd4b80db4c76e875050, type: 3}

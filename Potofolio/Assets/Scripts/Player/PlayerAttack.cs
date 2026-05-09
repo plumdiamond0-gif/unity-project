@@ -34,7 +34,7 @@ public class PlayerAttack : MonoBehaviour
     public GameObject spawnedWeapon;
     public WeaponPrefabTableData currentweapondata;
     [SerializeField] private Transform Firepos;
-    private float addDamage = 0;
+    private float addDamage;
     Animator anim;
      List<WeaponPrefabTableData> weaponList = new();
 
@@ -46,6 +46,7 @@ public class PlayerAttack : MonoBehaviour
     //public Dictionary<int, WeaponState> weaponDic = new();
     void Start()
     {
+        
         foreach (var weapon in GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas)
         {
             weaponList.Add(weapon);
@@ -61,6 +62,7 @@ public class PlayerAttack : MonoBehaviour
 
         SelectWeapon(0);
         canAttack = true;
+        addDamage = 0;
     }
 
     private void Update()
@@ -144,9 +146,10 @@ public class PlayerAttack : MonoBehaviour
             else
             {
                 isCharging = false;
+                knock.GetKnockVal(currentCharge, currentweapondata);
+
                 Fire();
            
-                knock.GetKnockVal(currentCharge, currentweapondata);
                
             }
 
