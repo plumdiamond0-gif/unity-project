@@ -123,7 +123,7 @@ public class EnemyMovement : MonoBehaviour
                 if (playerhealth != null)
                 {
                     anim.SetTrigger(AttackHash);
-                    playerhealth.TakeHealth(-damage);
+                    playerhealth.TakeDamage(damage);
                 }
                 agent.ResetPath();
                 break;

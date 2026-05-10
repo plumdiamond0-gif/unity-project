@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
 using static WeaponPrefabTable;
 
@@ -41,6 +42,10 @@ public class PlayerAttack : MonoBehaviour
 
 
     public KnockBackEffect knock;
+
+    public GameObject AttackGuageBar;
+
+    public Image AttackGuageBarFill;
 
 
     //public Dictionary<int, WeaponState> weaponDic = new();
@@ -94,10 +99,8 @@ public class PlayerAttack : MonoBehaviour
             currentCharge += Time.deltaTime;
             currentCharge = Mathf.Clamp(currentCharge, 0f, maxCharge);
             AttackRatio = currentCharge / maxCharge;
-            if (gamemanager.instance.UIManager != null)
-            {
-                gamemanager.instance.UIManager.AttackGuageBarFill.fillAmount = AttackRatio;
-            }
+            AttackGuageBarFill.fillAmount = AttackRatio;
+            
         }
         
     }
@@ -123,13 +126,13 @@ public class PlayerAttack : MonoBehaviour
         maxChargeBonus = currentweapondata.maxChargeBonus;
         Aim = aimTrans;
         if (currentweapondata.canCharge)
-        {
-            GM.GetUIManager().ChargeBarActive(true);
-        }
-        else
-        {
-            GM.GetUIManager().ChargeBarActive(false);
-        }
+            {
+                AttackGuageBar.SetActive(true);
+            }
+            else
+            {
+                AttackGuageBar.SetActive(false);
+            }
     }
 
 
@@ -176,10 +179,8 @@ public class PlayerAttack : MonoBehaviour
         isCharging = false;
         currentCharge = 0;
         AttackRatio = 0;
-        if (gamemanager.instance.UIManager != null)
-        {
-            gamemanager.instance.UIManager.AttackGuageBarFill.fillAmount = 0;
-        }
+        AttackGuageBarFill.fillAmount = 0;
+        
     }
 
     public void Fire()

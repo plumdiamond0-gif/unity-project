@@ -6,7 +6,7 @@ public class HealItem : Item
 
     public override void Onuse()
     {
-        PlayerHealth.TakeHealth(26);
+        PlayerHealth.Heal(50);
         Debug.Log("UseHealth");
         Destroy(gameObject);
 

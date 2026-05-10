@@ -6,9 +6,6 @@ public class UIManager : MonoBehaviour
 
 
 
-    public GameObject AttackGuageBar;
-
-    public Image AttackGuageBarFill;
 
     public Health PlayerHealth;
 
@@ -27,15 +24,5 @@ public class UIManager : MonoBehaviour
 
 
 
-    public void ChargeBarActive(bool canCharge)
-    {
-        if (canCharge)
-        {
-            AttackGuageBar.SetActive(true);
-        }
-        else
-        {
-            AttackGuageBar.SetActive(false);
-        }
-    }
+  
 }

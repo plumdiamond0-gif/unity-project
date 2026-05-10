@@ -12,24 +12,38 @@ public class Health : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        HealthBarFill = GetComponent<Image>();
+        
         CurrentHp = MaxHp;
     }
 
-public void TakeHealth(float value)
+public void TakeDamage(float value)
     {
         if(isInvincible)
         {
             return;
         }
-        CurrentHp += value;
+        CurrentHp -= value;
+        CurrentHp = Mathf.Clamp(CurrentHp, 0, MaxHp);
         HealthBarFill.fillAmount = CurrentHp / MaxHp;   
         StartCoroutine(InvincibleTimer());
 
 
     }
 
-    IEnumerator InvincibleTimer()
+    public void Heal(float value)
+    {
+        if (isInvincible)
+        {
+            return;
+        }
+        CurrentHp += value;
+        CurrentHp = Mathf.Clamp(CurrentHp, 0, MaxHp);
+
+        HealthBarFill.fillAmount = CurrentHp / MaxHp;
+
+
+    }
+        IEnumerator InvincibleTimer()
     {
         isInvincible = true;
         yield return new WaitForSeconds(0.5f);
