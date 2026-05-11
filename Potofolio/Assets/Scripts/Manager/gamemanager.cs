@@ -1,46 +1,83 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
-public class gamemanager : MonoBehaviour
+public class GameManager : SingletonObject<GameManager>
 {
-    public static gamemanager instance;
-   [SerializeField] private PrefabManager prefabManager;
-    public PlayerMovement PlayerMovement;
-    public PlayerAttack playerAttack;
-    public UIManager UIManager;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
- 
+    public bool Initialized { get; private set; } = false;
+    public Action OnInit { get; private set; }
 
-    public PrefabManager GetPrefabManager()
+    public PrefabManager GetPrefabManager { get; private set; } = null;
+    public UIManager GetUIManager { get; private set; } = null;
+
+
+    public PrefabManager Get_PrefabManager()
     {
-        return prefabManager;
+        return GetPrefabManager;
     }
-    public UIManager GetUIManager()
+    public UIManager Get_UIManager()
     {
-        return UIManager;
+        return GetUIManager;
     }
 
 
     void Awake()
-        {
-            // 싱글톤 초기화 로직 (필수!)
-            if (instance != null && instance != this)
-            {
+    {
+        base.Awake();
 
-            }
-        instance = this;
-        DontDestroyOnLoad(gameObject);
 
-        {
-            prefabManager = PrefabManager.CreatePrefabManager(prefabManager.gameObject, transform);
-            UIManager = UIManager.CreateUIManager(UIManager.gameObject, transform);
+        //prefabManager = PrefabManager.CreatePrefabManager(prefabManager.gameObject, transform);
+        //UIManager = UIManager.CreateUIManager(UIManager.gameObject, transform);
 
-        }
+
     }
 
+    public void Init(Action OnInit)
+    {
+        if (Initialized)
+        {
+            OnInit?.Invoke();
+            return;
+        }
+        this.OnInit = OnInit;
+        StartCoroutine(ProcessInit());
+    }
+
+    IEnumerator ProcessInit()
+    {
+        { 
+            Debug.Log("매니저 초기화 시작");
+
+            {
+                GameObject go = new GameObject("PrefabManager");
+                go.transform.parent = transform;
+                go.transform.localPosition = Vector3.zero;
+                go.transform.localRotation = Quaternion.identity;
+                GetPrefabManager = go.AddComponent<PrefabManager>();
+
+                Debug.Log("UIManager 초기화 완료");
+            }
+            {
+                GameObject go = new GameObject("UIManager");
+                go.transform.parent = transform;
+                go.transform.localPosition = Vector3.zero;
+                go.transform.localRotation = Quaternion.identity;
+                GetUIManager = go.AddComponent<UIManager>();
+
+                Debug.Log("PrefabManager 초기화 완료");
+
+            }
+            Debug.Log("매니저 초기화 완료");
+
+        }
+        Initialized = true;
+        OnInit?.Invoke();
+        yield return null;
+    }
 
     public GameObject GetPrefab(string prefabname, Vector3 spawnpos, Quaternion spawnrot)
     {
-        var data = prefabManager.WeaponPrefabTable.weaponPrafabTableDatas.Find(x => x.WeaponName == prefabname);
+        var data = GetPrefabManager.WeaponPrefabTable.weaponPrafabTableDatas.Find(x => x.WeaponName == prefabname);
         if (data != null)
         {
             GameObject CBcoy = Instantiate(data.WeaponBullet, spawnpos, spawnrot);
@@ -60,12 +97,12 @@ public static class GM
     public static PrefabManager GetPrefabManager()
     {
 
-        return gamemanager.instance.GetPrefabManager();
+        return GameManager.instance.Get_PrefabManager();
     }
     public static UIManager GetUIManager()
     {
         Debug.Log("GetUIManager");
-        return gamemanager.instance.GetUIManager();
+        return GameManager.instance.Get_UIManager();
     }
 }
 

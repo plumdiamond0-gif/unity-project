@@ -194,7 +194,7 @@ public class PlayerAttack : MonoBehaviour
         StartCoroutine(coolTimeRouctine());
         anim.SetTrigger("Attack");
 
-        GameObject CBcopy = gamemanager.instance.GetPrefab
+        GameObject CBcopy = GameManager.instance.GetPrefab
             (currentweapondata.WeaponName, Aim.transform.position, Quaternion.identity);
 
         float finalDamage;

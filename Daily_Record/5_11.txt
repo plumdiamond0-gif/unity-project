@@ -1,3 +1,6 @@
+왜 instance와 Oninstance로 나누는가
+
+SceneInit에서 NextSceneLoad를 함수로 넘겨주는 이유 : 게임 매니정에서 다른 매니저들 다 초기화한 이휴 다음 씬ㅇ으로 넘ㅇ어가려고
 
 
 using UnityEngine;
@@ -358,6 +361,7 @@ else
 string name = typeof(T).Name;
 
 GameObject go = new GameObject(name, typeof(T));
+//name이라는 이름의 빈 게임 오브젝트 만들고 T 타입의 스크립트 넣기.
 
 _instance = go.GetComponent<T>();
 
@@ -377,8 +381,12 @@ return _instance;
 }
 
 }
-
-
+//일반적인 클래스들과는 달리 게임매니저는 모노비헤이버를 상속받고 있기에 반드시 씬의 오브젝트 안에 붙어 있어야지만 존재 가능.
+일반 클래스		MonoBehaviour
+new 가능	        	new 불가능
+엔진과 무관		유니티 엔진 관리
+씬에 안 존재해도 됨	GameObject 필요
+순수 메모리 객체		씬 오브젝트 기반
 
 public virtual void Awake()
 
@@ -407,4 +415,3 @@ DontDestroyOnLoad(this);
 }
 
 }
-
