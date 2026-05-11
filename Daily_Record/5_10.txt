@@ -1,0 +1,26 @@
+IEnumerator FadeIn()
+{
+canvasGroup.alpha = 0;
+//처음에는 투명
+float time = 0;
+
+while (time < fadeTime)
+{
+time += Time.deltaTime;
+
+canvasGroup.alpha = time / fadeTime;
+
+yield return null;
+}
+
+canvasGroup.alpha = 1;
+//마지막에 완전히 선명하게.
+}
+캔버스 그룹 쓰면 이미지 뿐만 아니라 자식으로 지닌 애들(텍스트 등) 전부 효과 적용.
+
+
+float alpha = (Mathf.Sin(Time.time * 2f) + 1) * 0.5f;
+Mathf.Sin : -1과 1 사이의 값으로 반환
+2f : 속도
++1 : -값을 없애기 위함.(0~2)
+×0.5f : 0~1

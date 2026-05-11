@@ -1,0 +1,410 @@
+
+
+using UnityEngine;
+
+public class SceneInit : MonoBehaviour
+
+{
+
+void Start()
+
+{
+
+Debug.Log("SceneInit Start On");
+
+
+
+Debug.Log("BI 연출 시작");
+
+Debug.Log("BI 연출 마무리");
+
+
+
+Debug.Log("GameManager 생성");
+
+GameManager.Instance.Init( () => 
+
+{
+
+Debug.Log("씬 이동..");
+
+
+
+OnNextLoadScene();
+
+});
+
+
+
+Debug.Log("SceneInit Start Off");
+
+}
+
+
+
+private void OnNextLoadScene()
+
+{
+
+GameManager.Instance.GetSceneLoadManager.NextLoadScene("00_Scenes_Scene_Title.unity", () =>
+
+{
+
+Debug.Log("00_Scenes_Scene_Title 완료");
+
+
+
+});
+
+}
+
+}
+
+using UnityEngine;
+
+using System.Collections.Generic;
+
+using System.Collections;
+
+using System;
+
+public class GameManager : SingletonObject<GameManager>
+
+{
+
+public bool Initialized { get; private set; } = false;
+
+public Action OnInit { get; private set; } = null;
+
+
+
+
+
+public AssetManager GetAssetManager { get; private set;} = null;
+
+public SceneLoadManager GetSceneLoadManager { get; private set; } = null;
+
+public UIManager GetUIManager { get; private set; } = null;
+
+public TimerManager GetTimerManager { get; private set; } = null;
+
+public SaveManager GetSaveManager { get; private set; } = null;
+
+
+
+public override void Awake()
+
+{
+
+base.Awake();
+
+}
+
+
+
+//모든 초기 매니저를 생성
+
+public void Init(Action OnInit)
+
+{
+
+if (Initialized)
+
+{
+
+OnInit?.Invoke();
+
+return;
+
+}
+
+
+
+this.OnInit = OnInit;
+//SceneInit 에서 넘긴 함수 저장.
+
+
+StartCoroutine(ProcessInit());
+
+Debug.Log("GameManager ProcessInit");
+
+}
+
+
+
+private IEnumerator ProcessInit()
+
+{
+
+{ //모든 매니저를 이곳에서..
+
+Debug.Log("매니저 초기화 시작");
+
+
+
+{
+
+GameObject go = new GameObject("AssetManager");
+
+go.transform.parent = transform;
+
+go.transform.localPosition = Vector3.zero;
+
+go.transform.localRotation = Quaternion.identity;
+
+GetAssetManager = go.AddComponent<AssetManager>();
+
+
+
+Debug.Log("AssetManager 초기화 완료");
+
+}
+
+
+
+{
+
+GameObject go = new GameObject("SceneLoadManager");
+
+go.transform.parent = transform;
+
+go.transform.localPosition = Vector3.zero;
+
+go.transform.localRotation = Quaternion.identity;
+
+GetSceneLoadManager = go.AddComponent<SceneLoadManager>();
+
+GetSceneLoadManager.Init(GetAssetManager);
+
+
+
+Debug.Log("SceneLoadManager 초기화 완료");
+
+}
+
+
+
+{
+
+GameObject go = new GameObject("UIManager");
+
+go.transform.parent = transform;
+
+go.transform.localPosition = Vector3.zero;
+
+go.transform.localRotation = Quaternion.identity;
+
+GetUIManager = go.AddComponent<UIManager>();
+
+
+
+Debug.Log("UIManager 초기화 완료");
+
+}
+
+
+
+{
+
+GameObject go = new GameObject("TimerManager");
+
+go.transform.parent = transform;
+
+go.transform.localPosition = Vector3.zero;
+
+go.transform.localRotation = Quaternion.identity;
+
+GetTimerManager = go.AddComponent<TimerManager>();
+
+
+
+Debug.Log("UIManager 초기화 완료");
+
+}
+
+
+
+{
+
+GameObject go = new GameObject("SaveManager");
+
+go.transform.parent = transform;
+
+go.transform.localPosition = Vector3.zero;
+
+go.transform.localRotation = Quaternion.identity;
+
+GetSaveManager = go.AddComponent<SaveManager>();
+
+
+
+Debug.Log("SaveManager 초기화 완료");
+
+}
+
+
+
+Debug.Log("매니저 초기화 완료");
+
+}
+
+
+
+Initialized = true;
+
+
+
+OnInit?.Invoke();
+
+
+
+yield return null; ;
+
+}
+
+}
+
+
+
+
+
+
+
+
+
+
+using System;
+
+using UnityEngine;
+
+public class SingletonObject<T> : MonoBehaviour where T : Component
+
+//<T> : 제네릭(타입 나중에 정함)
+//제네릭 없으면 각 타입대로 하나하나 다 만들어야 하나 있으면 하나로 전부 해결.
+
+//where T : Component
+//T의 타입 제한, GetComponent 써야 하기에 컴포넌트 계열이어야만 함.
+{
+
+private static T _instance = null;
+
+
+
+protected static Action OnInstace { get; set; } = null;
+
+
+
+public static T Instance
+//SceneInit에서 GameManager.Instance 실행시키
+면 T는 GameManager 가 됨.
+{(public static GameManager Instance)
+//
+get
+
+{
+
+if (_instance == null)
+
+{
+
+T[] finds = FindObjectsOfType(typeof(T)) as T[];
+//씬 안에서 T 타입 객체를 모두 찾고
+//그 결과를 T 배열로 변환해서
+//finds에 저장한다
+
+//FindObjectsOfType()는 제네릭 기반이 아니라 반환 타입이 애매
+결과가 사실상 Object[] 느낌이라 바로 T[]에 넣기 애매.->as T[]
+오브젝트들 안에 라이트나 카메라 등이 석여있을 수 있기 때문.(내부 데이터는 맞는데 Object [] 느낌으로 반환되니 컴파일러 입장에서 T가 맞는지 확신 못해서 캐스팅)
+실제론 T 타입만 오지만 함수 "반환 타입 정의 자체"가 옛날 방식이라 애매.
+
+FindObjectsByType<T>() : 최신방식,제네릭 기반
+처음부터 T 타입 반환이라고 명확히 선언됨.
+
+FindObjectsOfType(typeof(T)) as T[]
+:타입 애매,캐스팅 필요,느림,obsolete 예정
+FindObjectsByType<T>(FindObjectsSortMode.None)
+:타입 명확,캐스팅 불필요,더 빠름,최신 API
+
+
+
+
+if (finds.Length > 0)
+
+{
+
+if (finds.Length == 1)
+
+{
+
+_instance = finds[0];
+//게임 매니저 있고 수가 하나면 _instance 를 그걸로 지정.
+}
+
+else
+
+{
+
+Debug.LogWarning("Class: " + typeof(T).Name + "finds.Length: " + finds.Length);
+//2개 이상이면 경고 출력
+
+}
+
+}
+
+else
+
+{
+
+string name = typeof(T).Name;
+
+GameObject go = new GameObject(name, typeof(T));
+
+_instance = go.GetComponent<T>();
+
+//없으면 생성해서 넣어줌.
+유니티는 컴포넌트 생성되면 자동으로 Awake 함수 호출.
+Base.awake->돈디스토로이 설정
+OnInstace?.Invoke();
+
+}
+
+}
+
+
+
+return _instance;
+//instance 에 게임매니저 넣어줌.
+}
+
+}
+
+
+
+public virtual void Awake()
+
+{
+
+Debug.Log($"SingletonObject {typeof(T).Name} Awake");
+
+
+
+if(_instance != null && _instance != this)
+
+{
+
+Destroy(gameObject);
+
+}
+
+else
+
+{
+
+DontDestroyOnLoad(this);
+
+}
+
+}
+
+}
+
