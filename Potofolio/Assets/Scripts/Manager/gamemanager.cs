@@ -10,7 +10,7 @@ public class GameManager : SingletonObject<GameManager>
     public PrefabManager GetPrefabManager { get; private set; } = null;
     public UIManager GetUIManager { get; private set; } = null;
 
-
+    public AssetManager GetAssetManager { get; private set; } = null;
     public PrefabManager Get_PrefabManager()
     {
         return GetPrefabManager;
@@ -18,6 +18,10 @@ public class GameManager : SingletonObject<GameManager>
     public UIManager Get_UIManager()
     {
         return GetUIManager;
+    }
+    public AssetManager Get_AssetManager()
+    {
+        return GetAssetManager;
     }
 
 
@@ -67,6 +71,15 @@ public class GameManager : SingletonObject<GameManager>
                 Debug.Log("PrefabManager 초기화 완료");
 
             }
+            {
+                GameObject go = new GameObject("AssetManager");
+                go.transform.parent = transform;
+                go.transform.localPosition = Vector3.zero;
+                go.transform.localRotation = Quaternion.identity;
+                GetAssetManager = go.AddComponent<AssetManager>();
+
+                Debug.Log("AssetManager 초기화 완료");
+            }
             Debug.Log("매니저 초기화 완료");
 
         }
@@ -103,6 +116,11 @@ public static class GM
     {
         Debug.Log("GetUIManager");
         return GameManager.instance.Get_UIManager();
+    }
+    public static AssetManager GetAssetManager()
+    {
+        Debug.Log("GetUIManager");
+        return GameManager.instance.Get_AssetManager();
     }
 }
 

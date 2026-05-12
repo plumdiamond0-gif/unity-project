@@ -1,16 +1,11 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
+using UnityEngine.ResourceManagement.AsyncOperations;
 
-
-
-public class DamagaeItem : Item
+public class DamageItem : MonoBehaviour
 {
-    public PlayerAttack playerAttack;
-
-    public override void Onuse()
-    {
-        playerAttack.DamageUpdate(57);
-        Debug.Log("UseDamage");
-        Destroy(gameObject);
-        
-    }
+   
 }

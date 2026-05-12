@@ -1,0 +1,190 @@
+using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class UIManager : MonoBehaviour
+{
+    private readonly Dictionary<string, PanelBase> _dicContentsPanels = new Dictionary<string, PanelBase>();
+//패널 저장 딕셔너리, "나중에 다시 찾기 위해 보관
+
+    private Transform RootCanvas;
+//UI가 생성될 부모 Canvas.
+
+    public void SetRootCanvas(Transform rootCanvas) => RootCanvas = rootCanvas;
+//UI 생성 위치(Canvas)를 등록.
+
+    public void ReleaseRootCanvas()=> RootCanvas = null;
+//Canvas 연결 끊기.
+
+    public void CreateUIPanel(string panelName, Action<GameObject> callback)
+//GameObject 타입을 파라미터로 받는 함수를 전달받음, 로드 시작 몇프레임 후 로드가 완료되면 실행시키기 위해.
+    {
+        string uiTitle = $"UI_{panelName}.prefab";
+        //TODO: AssetManager를 통해서 리소스 로드 후 생성 > RootCanvas 아래에 위치
+        GameManager.Instance.GetAssetManager.LoadAsset<GameObject>(uiTitle,
+            (go) =>
+//go는 씬에 존재하는 Ui가 아니라 메모리에 로드된 프리팹 원본 데이터
+            {
+                if (RootCanvas == null)
+                {
+                    Debug.LogError("RootCanvas == null");
+                    return;
+                }
+
+                RectTransform rt = Instantiate(go).GetComponent<RectTransform>();
+                // 부모 변경
+                rt.SetParent(RootCanvas, false); // worldPositionStays = false -> 로컬 기준으로 초기화
+		//RectTransform이 달린 GameObject의 부모 설정,그 Transform을 가진 GameObject의 부모 변경
+
+                // 위치, 회전, 스케일 초기화
+                rt.localPosition = Vector3.zero;
+                rt.localRotation = Quaternion.identity;
+                rt.localScale = Vector3.one;
+
+                PanelBase panelBase = go.GetComponent<PanelBase>();
+
+                if (panelBase != null)
+                {
+                    string name = panelName.Replace("_", "");
+                    if (!_dicContentsPanels.ContainsKey(name))
+                    {
+                        _dicContentsPanels[name] = panelBase;
+                    }
+
+                    panelBase.Init();
+                    panelBase.Hide();
+                }
+
+                callback?.Invoke(go);
+            });
+    }
+
+    public T GetPanel<T>() where T : PanelBase
+    {
+        string name = typeof(T).ToString();
+
+        Debug.Log("name: " + name);
+
+        PanelBase panel = null;
+        _dicContentsPanels.TryGetValue(name, out panel);
+
+        return (T)panel;
+    }
+}
+
+using System;
+using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
+public class SceneLoadManager : MonoBehaviour
+{
+    private AssetManager _assetManager;
+
+    public string NextSceneName { get; private set; }
+    public string CurrentSceneName => SceneManager.GetActiveScene().name;
+    //현재 활성화된 씬의 이름 가져옴
+    public void Init(AssetManager assetManager)
+    {
+        _assetManager = assetManager;
+    }
+
+    public void NextLoadScene(string nextSceneName, Action OnSceneCompleted)
+    {
+        if (string.IsNullOrEmpty(nextSceneName))
+        {
+            Debug.LogError("nextSceneName IsNullOrEmpty");
+            return;
+        }
+
+        NextSceneName = nextSceneName;
+
+        StartCoroutine(ProcessEmptyScene(OnSceneCompleted));
+    }
+//한가지 함수로 처리하지 않고 이너머레이터로 나누는 이유 : 작업이 끝날 때까지 기다린 후
+//다음 코드를 실행하기 위해(순차 처리, 비동기 방식)
+
+//비동기(Asynchronous) : "오래 걸리는 작업이 끝날 때까지 멈춰서 기다리지 않는 방식"
+//오래 걸리는 작업은 뒤에서 돌리고 다른 작업 계속 진행
+//중요한 이유 : 게임은 매 프래임마다 돌아가야 하는데 동기로 씬 로드하면 로딩 끝날 때까지 게임 정지함.
+
+//동기 로딩
+SceneManager.LoadScene("Game");
+특징:
+화면 멈춤 가능
+프레임 끊김
+로딩 중 게임 정지
+
+//비동기 로딩
+SceneManager.LoadSceneAsync("Game");
+특징:
+백그라운드 로딩
+로딩바 가능
+게임 안 멈춤
+
+기능 비동기 사용 이유
+씬 로드 오래 걸림
+에셋 로드 텍스처/모델 무거움
+서버 통신 인터넷 느림
+다운로드 시간 오래 걸림
+애니메이션 연출 시간 흐름 필요
+
+코루틴과 비동기 차이
+
+개념   의미
+비동기   오래 걸리는 작업 방식
+Coroutinne 그 흐름을 관리하는 방법
+
+비동기 작업을 코루틴으로 기다리는 것
+
+    private IEnumerator ProcessEmptyScene(Action OnSceneCompleted)
+    {
+        yield return unloadUnusedAssets();
+
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("Scene_Empty");
+
+        yield return asyncOperation;
+
+        yield return GlobalCallback.SetWaitUntil(
+            () =>
+            {
+                return asyncOperation.isDone;
+            },
+            () =>
+            {
+                StartCoroutine(ProcessNextScene(OnSceneCompleted));
+            }
+        );
+    }
+
+    private IEnumerator ProcessNextScene(Action OnSceneCompleted)
+    {
+        if (string.IsNullOrEmpty(NextSceneName))
+        {
+            Debug.LogError("nextSceneName IsNullOrEmpty");
+            yield break;
+        }
+
+        if (_assetManager == null)
+        {
+            yield break;
+        }
+
+        _assetManager.LoadScene(NextSceneName, OnSceneCompleted);
+
+        yield return unloadUnusedAssets();
+    }
+
+    private IEnumerator unloadUnusedAssets()
+    {
+        AsyncOperation async = Resources.UnloadUnusedAssets();
+        yield return async;
+
+        GC.Collect();
+        GC.Collect();
+        GC.Collect();
+        GC.Collect();
+        GC.Collect();
+    }
+}
+

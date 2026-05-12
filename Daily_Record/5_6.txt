@@ -1,0 +1,43 @@
+적 죽이면 코인 생성.
+적 주위 일정 범위 안에 랜덤한 좌표에 생성.
+입데이트에서 플레이어와 거리 체크해서 일정 거리 안에 들어오면 플레이어한테 다가오게.
+
+
+transform.position = Vector3.Lerp(
+transform.position,
+player.position,
+speed * Time.deltaTime
+);
+
+if (dist < 0.5f)
+{
+Collect();
+}
+
+-> 자석처럼 따라오는 느낌.
+가까이 갈수록 더 빨리 따라옴.
+
+일정 거리 안에 오면 바로 먹어지게.
+
+
+에너미 프리팹 테이블 만들기
+떨어뜨릴 코인 양 정하기
+
+체력 UI도 health 스크립트에서 관리
+
+
+Vector2 rand = Random.insideUnitCircle.normalized; // 랜덤 방향
+Vector3 offset = new Vector3(rand.x, 0, rand.y) * distance;
+Vector3 spawnPos = enemy.position + offset;
+
+
+Random.insideUnitCircle;
+
+반지름이 1인 원(유닛 서클) 안에서
+랜덤한 위치(Vector2) 를 반환함
+
+결과 예시
+
+(0.2, -0.5)
+(-0.8, 0.1)
+(0.0, 0.9)
