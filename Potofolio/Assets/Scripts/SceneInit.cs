@@ -14,6 +14,16 @@ public class SceneInit : MonoBehaviour
         GameManager.instance.Init( () =>
         {
             Debug.Log("여기서 씬 이동");
+            OnNextSceneLoad();
+
+        });
+    }
+
+    private void OnNextSceneLoad()
+    {
+        GM.GetSceneLoadManager().NextLoadScene("SceneOpening", ()=>
+            {
+            Debug.Log("SceneOpening 완료");
         });
     }
 

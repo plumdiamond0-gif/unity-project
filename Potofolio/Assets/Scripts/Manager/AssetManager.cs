@@ -13,6 +13,14 @@ public class AssetManager : MonoBehaviour
     {
         StartCoroutine(ProcessLoad(key, callback));
     }
+    public void LoadScene(string key, Action callback)
+    {
+        AsyncOperationHandle handle = Addressables.LoadSceneAsync(key);
+        handle.Completed += (item) => {
+            callback?.Invoke();
+        };
+    }
+
 
     private IEnumerator ProcessLoad<T>(string key, Action<T> callback)
     {
