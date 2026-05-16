@@ -1,0 +1,35 @@
+   public void LoadScene(string key, Action callback)
+   {
+       AsyncOperationHandle<SceneInstance> handle = Addressables.LoadSceneAsync(key);
+       handle.Completed += (item) => {
+           callback?.Invoke();
+       };
+   }
+
+//SceneInstance는 로드된 씬 정보를 담는 객체
+//AsyncOperationHandle handle : 이건 그냥 "어떤 작업이든 담을 수 있는 일반 핸들"
+//씬을 로드하면 실제로는 Unity가 이런 걸 반환함 : AsyncOperationHandle<SceneInstance>
+//AsyncOperationHandle<SceneInstance> : 작업 결과 타입을 미리 지정한 핸들
+
+
+
+Assets\Scripts\EnemyMovement.cs(9,26):
+error CS0234: The type or namespace name 'ShaderGraph' does not exist in the namespace 'UnityEditor'
+
+Assets\Scripts\Player\PlayerAttack.cs(4,19):
+error CS0234: The type or namespace name 'ShaderGraph' does not exist in the namespace 'UnityEditor'
+
+UnityEditor 계열은:
+에디터 안에서만 동작
+게임 실행/빌드 시 사용 안 됨
+Addressables 빌드할 때도 문제를 일으킴 -> 어드레서블 빌드 시 오류
+
+
+
+
+
+
+
+
+
+

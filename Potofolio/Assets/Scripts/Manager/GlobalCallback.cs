@@ -26,6 +26,7 @@ public class GlobalCallback : MonoBehaviour
     public static IEnumerator SetWaitUntil(Func<bool> predicate, Action callback)
     {
         yield return new WaitUntil(predicate);
-        callback.Invoke();  
+        callback.Invoke();
+        Debug.Log("www");
     }
 }

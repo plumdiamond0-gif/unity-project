@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 using UnityEngine.ResourceManagement.AsyncOperations;
+using UnityEngine.ResourceManagement.ResourceProviders;
+using UnityEngine.SceneManagement;
 
 public class AssetManager : MonoBehaviour
 {
@@ -11,26 +13,28 @@ public class AssetManager : MonoBehaviour
 
     public void LoadAsset<T>(string key, Action<T> callback)
     {
+        Debug.Log(key);
         StartCoroutine(ProcessLoad(key, callback));
     }
-    public void LoadScene(string key, Action callback)
-    {
-        AsyncOperationHandle handle = Addressables.LoadSceneAsync(key);
-        handle.Completed += (item) => {
-            callback?.Invoke();
-        };
-    }
+    //public void LoadScene(string key, Action callback)
+    //{
+    //    AsyncOperationHandle<SceneInstance> handle = Addressables.LoadSceneAsync(key);
+    //    handle.Completed += (item) =>
+    //    {
+    //        callback?.Invoke();
+    //    };
+    //}
 
 
     private IEnumerator ProcessLoad<T>(string key, Action<T> callback)
     {
-        if(_dicHandles.TryGetValue(key, out AsyncOperationHandle asyncOperationHandle))
+        if (_dicHandles.TryGetValue(key, out AsyncOperationHandle asyncOperationHandle))
         {
-            yield return GlobalCallback.SetWaitUntil(()=>
+            yield return GlobalCallback.SetWaitUntil(() =>
             {
                 return asyncOperationHandle.IsDone;
             },
-            ()=>
+            () =>
             {
                 callback.Invoke((T)asyncOperationHandle.Result);
             });
@@ -38,7 +42,7 @@ public class AssetManager : MonoBehaviour
         }
         AsyncOperationHandle handle = Addressables.LoadAssetAsync<T>(key);
         yield return handle;
-        if(handle.Status == AsyncOperationStatus.Succeeded)
+        if (handle.Status == AsyncOperationStatus.Succeeded)
         {
             Debug.Log($"리소스 로드 완료: {key}");
             callback.Invoke((T)handle.Result);

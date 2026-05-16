@@ -6,7 +6,6 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.Utilities;
 using UnityEngine.Rendering.Universal;
-using static UnityEditor.ShaderGraph.Internal.KeywordDependentCollection;
 using static UnityEngine.EventSystems.EventTrigger;
 using static UnityEngine.GraphicsBuffer;
 using Random = UnityEngine.Random;

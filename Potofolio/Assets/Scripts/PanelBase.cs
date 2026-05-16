@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class PanelBase : MonoBehaviour
 {
-    public Action OnBeforShow { get; set; } = null;
+    public Action OnBeforeShow { get; set; } = null;
     public Action OnFinishedHide { get; set; } = null;
 
     public virtual void Init() { }
@@ -20,7 +20,7 @@ public class PanelBase : MonoBehaviour
 
     public virtual void Show() 
     { 
-        OnBeforShow?.Invoke();    
+        OnBeforeShow?.Invoke();    
     }
 
     public virtual void Hide()

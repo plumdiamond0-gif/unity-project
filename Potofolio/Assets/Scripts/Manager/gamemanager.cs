@@ -90,6 +90,7 @@ public class GameManager : SingletonObject<GameManager>
                 go.transform.localPosition = Vector3.zero;
                 go.transform.localRotation = Quaternion.identity;
                 GetSceneLoadManager = go.AddComponent<SceneLoadManager>();
+                GetSceneLoadManager.Init(GetAssetManager);
 
                 Debug.Log("SceneLoadManager 초기화 완료");
             }
@@ -137,7 +138,7 @@ public static class GM
     }
     public static SceneLoadManager GetSceneLoadManager()
     {
-        Debug.Log("GetUIManager");
+        Debug.Log("GetSceneLoadManager");
         return GameManager.instance.Get_SceneLoadManager();
     }
 }

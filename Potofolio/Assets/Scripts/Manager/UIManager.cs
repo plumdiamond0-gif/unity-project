@@ -32,21 +32,23 @@ public class UIManager : MonoBehaviour
                 rt.localRotation = Quaternion.identity;
                 rt.localScale = Vector3.one;
 
-                PanelBase panelBase = go.GetComponent<PanelBase>();
+                //TODO: 오프닝 이미지에 패널베이스 상속받는 스프킬븥 넣기, 처음 불러와질 때, 숨길 때 페이드 인으로 
 
-                if(panelBase != null)
-                {
-                    string name = panelName.Replace("_", "");
-                    if(!_dicContentPanels.ContainsKey(name))
-                    {
-                        _dicContentPanels[name] = panelBase;
-                    }
+                //PanelBase panelBase = go.GetComponent<PanelBase>();
 
-                    panelBase.Init();
-                    panelBase.Hide();
-                }
+                //if (panelBase != null)
+                //{
+                //    string name = panelName.Replace("_", "");
+                //    if (!_dicContentPanels.ContainsKey(name))
+                //    {
+                //        _dicContentPanels[name] = panelBase;
+                //    }
 
-                callback?.Invoke(go);
+                //    panelBase.Init();
+                //    panelBase.Hide();
+                //}
+
+                callback?.Invoke(rt.gameObject);
             });
     }
 

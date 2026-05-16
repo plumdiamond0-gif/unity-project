@@ -32,20 +32,13 @@ public class SceneLoadManager : MonoBehaviour
     {
         yield return unloadUnusedAssets();
 
-        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync("SceneEmpty");
 
-        yield return asyncOperation;
+        yield return SceneManager.LoadSceneAsync("SceneEmpty");
 
-        yield return GlobalCallback.SetWaitUntil(
-            () =>
-            {
-                return asyncOperation.isDone;
-            },
-            () =>
-            {
-                StartCoroutine(ProcessNextScene(OnSceneCompleted));
-            }
-        );
+
+        StartCoroutine(ProcessNextScene(OnSceneCompleted));
+            
+        
     }
 
     private IEnumerator ProcessNextScene(Action OnSceneCompleted)
@@ -60,9 +53,10 @@ public class SceneLoadManager : MonoBehaviour
         {
             yield break;
         }
-
-        _assetManager.LoadScene(NextSceneName, OnSceneCompleted);
-
+        //_assetManager.LoadScene(NextSceneName, OnSceneCompleted);
+        AsyncOperation handle =  SceneManager.LoadSceneAsync("SceneOpening");
+        yield return handle;
+        OnSceneCompleted?.Invoke();
         yield return unloadUnusedAssets();
     }
 

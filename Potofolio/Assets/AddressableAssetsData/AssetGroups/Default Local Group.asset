@@ -15,8 +15,13 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 002ed3db3bf68f4419aae9fba78e6e91
   m_SerializeEntries:
-  - m_GUID: 084ba6b5ed1ff304193dc712a4bb11bb
-    m_Address: Assets/Prefab/SceneOpening.prefab
+  - m_GUID: 42d02b2b165722549945dc896debd06f
+    m_Address: UI_GameStart.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cc20ce353a01f1d468b09887758cf7fb
+    m_Address: SceneOpening
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
