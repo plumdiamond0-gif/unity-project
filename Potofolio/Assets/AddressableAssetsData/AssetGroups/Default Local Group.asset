@@ -15,13 +15,33 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 002ed3db3bf68f4419aae9fba78e6e91
   m_SerializeEntries:
+  - m_GUID: 1253341fe94ac2e41bf3f9f1a2650aea
+    m_Address: UI_cutScene_1.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 3725306f41eabf9499fb10b1942cc884
+    m_Address: UI_cutScene_2.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 42d02b2b165722549945dc896debd06f
     m_Address: UI_GameStart.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c487b4c3fe67dbd408fe4874e2c508b2
+    m_Address: UI_cutScene_4.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cc20ce353a01f1d468b09887758cf7fb
     m_Address: SceneOpening
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: dab2cf6ee83badb4daa95e821f2ed473
+    m_Address: UI_cutScene_3.prefab
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

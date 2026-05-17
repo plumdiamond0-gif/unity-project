@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -7,33 +8,56 @@ using UnityEngine.UI;
 
 public class SceneOpening : MonoBehaviour
 {
-    public float fadeTime = 2f;
     bool CanStart;
-    bool IsStart;
-    string canvasName;
     public Canvas Rootcanvas;
-    TMP_Text text;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    GameObject currentPanel;
+    TMP_Text currnetText;
+
+    List<string> panelList = new List<string>
+    {
+        "GameStart",
+        "cutScene_1",
+        "cutScene_2",
+        "cutScene_3",
+        "cutScene_4",
+    };
+
+    int nextPanelNum = 0;
+
     void Start()
     {
         CanStart = false;
-        IsStart = false;
-        canvasName = "GameStart";
         GM.GetUIManager().GetRootCanvas(Rootcanvas.transform);
-        GM.GetUIManager().CreateUIPanel(canvasName,
+        panelNext(2f);
+    }
+    void panelNext(float fadeTime)
+    {
+        if(nextPanelNum >= panelList.Count)
+        {
+            Debug.Log("컷씬 종료");
+            return;
+        }
+        if (nextPanelNum != 0)
+        {
+            // CanvasGroup canvas = currentPanel.GetComponent<CanvasGroup>();
+            // FadeOut(canvas, fadeTime);
+            Destroy(currentPanel);
+            currentPanel = null;
+        }
+        string panelName = panelList[nextPanelNum];
+        GM.GetUIManager().CreateUIPanel(panelName,
             (go) =>
             {
-                CanvasGroup image = go.GetComponent<CanvasGroup>();
-                text = go.GetComponentInChildren<TMP_Text>();
-                Debug.Log($"{canvasName} load");
-                StartCoroutine(FadeIn(image));
+                nextPanelNum++;
+                currentPanel = go;
+                CanvasGroup panel = go.GetComponent<CanvasGroup>();
+                currnetText = currentPanel.GetComponentInChildren<TMP_Text>();
+                Debug.Log($"{panelName} load");
+                StartCoroutine(FadeIn(panel, fadeTime));
             });
-
-       
     }
-
-    IEnumerator FadeIn(CanvasGroup canvasGroup)
+    IEnumerator FadeIn(CanvasGroup canvasGroup, float fadeTime)
     {
         canvasGroup.alpha = 0;
 
@@ -49,37 +73,58 @@ public class SceneOpening : MonoBehaviour
         }
 
         canvasGroup.alpha = 1;
+        yield return  GlobalCallback.WaitForSeconds(1f);
         CanStart = true;
-
-
     }
+    //IEnumerator FadeOut(CanvasGroup canvasGroup, float fadeTime)
+    //{
+    //    canvasGroup.alpha = 1;
+
+    //    float time = 0;
+
+    //    while (time < fadeTime)
+    //    {
+    //        time += Time.deltaTime;
+
+    //        canvasGroup.alpha = 1-( time / fadeTime);
+
+    //        yield return null;
+    //    }
+
+    //    canvasGroup.alpha = 0;
+    //    Destroy(currentPanel);
+
+
+
+    //}
 
 
     // Update is called once per frame
 
     void Update()
     {
-
         if (CanStart)
         {
+            if (currnetText != null)
+            {
+                float alpha = (Mathf.Sin(Time.time * 3f) + 1) * 0.5f;
+                currnetText.alpha = alpha;
+            }
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                OpeningStart();
-                Debug.Log("게임시작");
+                panelNext(1f);
+                //Debug.Log("게임시작");
+                CanStart = false;
             }
-            float alpha = (Mathf.Sin(Time.time * 3f) + 1) * 0.5f;
-            if(text!= null)
-            {
-                text.alpha = alpha;
+           
+                
+            
 
-            }
         }
 
     }
-
-    void OpeningStart()
-    {
-
-    }
-
 }
+
+ 
+
+
