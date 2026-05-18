@@ -36,12 +36,15 @@ public class SceneOpening : MonoBehaviour
         if(nextPanelNum >= panelList.Count)
         {
             Debug.Log("컷씬 종료");
+            GM.GetSceneLoadManager().NextLoadScene("SceneBase",
+                () =>
+                {
+                    Debug.Log("SceneBase 로드 완료");
+                });
             return;
         }
         if (nextPanelNum != 0)
         {
-            // CanvasGroup canvas = currentPanel.GetComponent<CanvasGroup>();
-            // FadeOut(canvas, fadeTime);
             Destroy(currentPanel);
             currentPanel = null;
         }
@@ -49,58 +52,21 @@ public class SceneOpening : MonoBehaviour
         GM.GetUIManager().CreateUIPanel(panelName,
             (go) =>
             {
+
                 nextPanelNum++;
                 currentPanel = go;
-                CanvasGroup panel = go.GetComponent<CanvasGroup>();
-                currnetText = currentPanel.GetComponentInChildren<TMP_Text>();
                 Debug.Log($"{panelName} load");
-                StartCoroutine(FadeIn(panel, fadeTime));
+                StartCoroutine(WaitStart());
             });
     }
-    IEnumerator FadeIn(CanvasGroup canvasGroup, float fadeTime)
+    IEnumerator WaitStart()
     {
-        canvasGroup.alpha = 0;
+        CanStart = false;
 
-        float time = 0;
+        yield return GlobalCallback.WaitForSeconds(2f);
 
-        while (time < fadeTime)
-        {
-            time += Time.deltaTime;
-
-            canvasGroup.alpha = time / fadeTime;
-
-            yield return null;
-        }
-
-        canvasGroup.alpha = 1;
-        yield return  GlobalCallback.WaitForSeconds(1f);
         CanStart = true;
     }
-    //IEnumerator FadeOut(CanvasGroup canvasGroup, float fadeTime)
-    //{
-    //    canvasGroup.alpha = 1;
-
-    //    float time = 0;
-
-    //    while (time < fadeTime)
-    //    {
-    //        time += Time.deltaTime;
-
-    //        canvasGroup.alpha = 1-( time / fadeTime);
-
-    //        yield return null;
-    //    }
-
-    //    canvasGroup.alpha = 0;
-    //    Destroy(currentPanel);
-
-
-
-    //}
-
-
-    // Update is called once per frame
-
     void Update()
     {
         if (CanStart)
@@ -113,7 +79,6 @@ public class SceneOpening : MonoBehaviour
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
                 panelNext(1f);
-                //Debug.Log("게임시작");
                 CanStart = false;
             }
            

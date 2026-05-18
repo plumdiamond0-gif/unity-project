@@ -4,7 +4,7 @@ using UnityEngine;
 public class PanelBase : MonoBehaviour
 {
     public Action OnBeforeShow { get; set; } = null;
-    public Action OnFinishedHide { get; set; } = null;
+    public Action OnHideCompleted { get; set; } = null;
 
     public virtual void Init() { }
 
@@ -25,6 +25,7 @@ public class PanelBase : MonoBehaviour
 
     public virtual void Hide()
     {
-        OnFinishedHide?.Invoke();
+        OnHideCompleted?.Invoke();
     }
+
 }

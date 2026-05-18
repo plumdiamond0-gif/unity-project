@@ -2521,7 +2521,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1235465533626532907, guid: 1d40263852fcdc64ba9dfe71613975b5, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1532360809487390033, guid: 1d40263852fcdc64ba9dfe71613975b5, type: 3}
       propertyPath: AttackGuageBar

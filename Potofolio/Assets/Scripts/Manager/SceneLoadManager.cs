@@ -54,7 +54,7 @@ public class SceneLoadManager : MonoBehaviour
             yield break;
         }
         //_assetManager.LoadScene(NextSceneName, OnSceneCompleted);
-        AsyncOperation handle =  SceneManager.LoadSceneAsync("SceneOpening");
+        AsyncOperation handle =  SceneManager.LoadSceneAsync(NextSceneName);
         yield return handle;
         OnSceneCompleted?.Invoke();
         yield return unloadUnusedAssets();
