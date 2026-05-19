@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 
-public class panelOpening : PanelBase
+public class PanelOpening : PanelBase
 {
     CanvasGroup canvasGroup;
     [SerializeField] private float fadeTime;
