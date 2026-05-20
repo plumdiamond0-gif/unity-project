@@ -24,13 +24,18 @@ MonoBehaviour:
     chargeAmount: 1
     canCharge: 0
     coolTime: 0.1
-    effects: []
     BaseRecoilX: 2
     maxChargeBonus: 0
     YZRecoil: 0.3
     radius: 0
     force: 0
     upModifier: 0
+    WeaponImage: {fileID: 21300000, guid: a6522a1a49f746146b933c60795429b7, type: 3}
+    effects: []
+    upgradeCosts:
+    - {fileID: 11400000, guid: 5ba0da31882db804f8e117635a340042, type: 2}
+    upgradeEffects:
+    - {fileID: 11400000, guid: 2ec06e565e6aa7f4dbf27ecdd0984b59, type: 2}
   - weaponState: 1
     WeaponName: Cannon
     Weapon: {fileID: 5127384509388819661, guid: ccf64cd1413417c41b2d3decf6cb532e, type: 3}
@@ -42,14 +47,17 @@ MonoBehaviour:
     chargeAmount: 2
     canCharge: 1
     coolTime: 1
-    effects:
-    - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
     BaseRecoilX: 5
     maxChargeBonus: 7
     YZRecoil: 0.5
     radius: 5
     force: 5
     upModifier: 3
+    WeaponImage: {fileID: 0}
+    effects:
+    - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
+    upgradeCosts: []
+    upgradeEffects: []
   - weaponState: 4
     WeaponName: SlimeGun
     Weapon: {fileID: 5127384509388819661, guid: a77f20bdeb076fd4b80db4c76e875050, type: 3}
@@ -61,14 +69,17 @@ MonoBehaviour:
     chargeAmount: 0
     canCharge: 0
     coolTime: 1.7
-    effects:
-    - {fileID: 11400000, guid: 470680d02b3fd294fb63be42c2dcf57e, type: 2}
     BaseRecoilX: 3
     maxChargeBonus: 0
     YZRecoil: 0.3
     radius: 0
     force: 0
     upModifier: 0
+    WeaponImage: {fileID: 0}
+    effects:
+    - {fileID: 11400000, guid: 470680d02b3fd294fb63be42c2dcf57e, type: 2}
+    upgradeCosts: []
+    upgradeEffects: []
   - weaponState: 2
     WeaponName: PulseGun
     Weapon: {fileID: 5127384509388819661, guid: b854af823e97f9f40978e717e99bca5c, type: 3}
@@ -80,15 +91,18 @@ MonoBehaviour:
     chargeAmount: 5
     canCharge: 1
     coolTime: 3
-    effects:
-    - {fileID: 11400000, guid: 837b7099aafc8eb4a91c466f3d71c615, type: 2}
-    - {fileID: 11400000, guid: 4f61d25e1f1b25a4591b7e47309dd9d7, type: 2}
     BaseRecoilX: 2
     maxChargeBonus: 40
     YZRecoil: 2.5
     radius: 0
     force: 0
     upModifier: 0
+    WeaponImage: {fileID: 0}
+    effects:
+    - {fileID: 11400000, guid: 837b7099aafc8eb4a91c466f3d71c615, type: 2}
+    - {fileID: 11400000, guid: 4f61d25e1f1b25a4591b7e47309dd9d7, type: 2}
+    upgradeCosts: []
+    upgradeEffects: []
   - weaponState: 3
     WeaponName: MissileLauncher
     Weapon: {fileID: 5127384509388819661, guid: d0b877da444deeb4db96a82fe854b0b2, type: 3}
@@ -100,12 +114,15 @@ MonoBehaviour:
     chargeAmount: 0
     canCharge: 0
     coolTime: 0
-    effects:
-    - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
-    - {fileID: 0}
     BaseRecoilX: 0.5
     maxChargeBonus: 100
     YZRecoil: 1
     radius: 10
     force: 10
     upModifier: 1
+    WeaponImage: {fileID: 0}
+    effects:
+    - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
+    - {fileID: 0}
+    upgradeCosts: []
+    upgradeEffects: []
