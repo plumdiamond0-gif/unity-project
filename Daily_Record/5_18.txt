@@ -1,0 +1,24 @@
+기존 : 오프닝 씬 스크립트에서 패널 이름, 페이드 인 아웃 이펙트 모두 관리.
+
+수정 : 오프닝 씬 -> ui매니저 -> 에셋매니저 거치면서 패널 베이스를 상속받은 오프닝패널에서 페이드 인 함수 실행.
+Show -> 페이드 인, Hide -> 페이드 아웃
+
+
+
+
+void Start()
+{
+    CanStart = false;
+    GM.GetUIManager().GetRootCanvas(Rootcanvas.transform);
+    panelNext(2f);
+    GlobalCallback.WaitForSeconds(1f);
+}
+: 코루틴도 아니고 yield return도 없음.
+
+
+if (nextPanelNum != 0)
+{
+    currentPanel = null;
+}
+: 참조만 끊는거지, 실제 게임오브젝트는 남아 있음.
+
