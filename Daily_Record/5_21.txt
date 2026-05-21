@@ -1,0 +1,316 @@
+using Newtonsoft.Json;
+
+using UnityEngine;
+
+using UnityEngine.InputSystem;
+
+public class SaveManager : MonoBehaviour
+
+{
+
+public void SaveData<T>(T data) where T : ISaveData
+// T는 ISaveData 인터페이스를 구현한 클래스만 사용 가능
+
+{
+
+string key = data.GetSaveKey();
+// 저장 데이터의 고유 키 이름을 가져옴
+
+Debug.Log($`"저장 시작 {key}");
+
+
+
+if (PlayerPrefs.HasKey(key))
+
+{
+
+Debug.LogWarning(`$"저장 데이어{key} 있음");
+
+}
+// 같은 key의 저장 데이터가 이미 존재하는지 확인
+
+
+
+string jsonData = JsonConvert.SerializeObject(data);
+// 객체(data)를 JSON 문자열로 변환
+//변환 전 :
+SD_User
+{
+exp=100,
+level=5,
+money=5000
+}
+
+//변환 후 :
+{
+"exp":100,
+"level":5,
+"money":5000
+}
+실제로는 문자열:
+"{"exp":100,"level":5,"money":5000}"
+
+
+
+PlayerPrefs.SetString(key, jsonData);
+// key 이름으로 JSON 문자열 저장
+//PlayerPrefs.SetString(
+"SD_User",
+"{"exp":100,"level":5,"money":5000}"
+);
+
+
+PlayerPrefs.Save();
+// 변경된 PlayerPrefs 데이터를 디스크에 저장
+//SetString()만 해도 대부분 저장 예약은 되는데,
+PlayerPrefs.Save();
+는 "지금 바로 저장해"에 가까움.
+
+
+Debug.Log($`"저장 완료 {key}, jsonData: {jsonData} ");
+
+}
+
+SaveData(user)
+↓
+GetSaveKey()
+↓
+"SD_User"
+↓
+SerializeObject()
+↓
+JSON 문자열 생성
+↓
+PlayerPrefs.SetString()
+↓
+PlayerPrefs.Save()
+↓
+저장 완료
+
+
+public T LoadData<T>() where T : ISaveData, new()
+//new()는 "T가 기본 생성자(new T())를 가지고 있어야 함" 이라는 제한이야.
+//T에 매개변수 지닌 생성자 없어야 함.
+
+
+{
+
+T data = new T();
+// T 타입 객체를 임시 생성
+//data는 빈 껍데기일 뿐, 데이터 없음.
+
+string key = data.GetSaveKey();
+// 저장된 데이터를 찾기 위한 key 이름 가져옴
+//아직 데이터를 읽은 게 아니라 new SD_User()를 잠깐 만들어서 GetSaveKey()만 쓰는 거임.
+
+Debug.Log(`$"불러오기 시작 {key}");
+
+
+
+if (!PlayerPrefs.HasKey(key))
+
+{
+
+Debug.LogError($`"저장 키{key} 없음");
+
+return default;
+// PlayerPrefs 안에 key가 없으면 기본값 반환
+//PlayerPrefs 안에 "SD_User"(T)라는 이름의 저장 데이터가 존재하지 않는다.
+//제네릭에서 default는 타입마다 다름.
+//int → 0
+bool → false
+string → null
+클래스 → null
+
+}
+
+
+
+string loadData = PlayerPrefs.GetString(key);
+// key에 저장된 JSON 문자열 가져옴
+
+if(string.IsNullOrEmpty(loadData))
+
+{
+
+Debug.LogError(`$"저장 데이터{key} 없음");
+
+return default;
+
+}
+// 불러온 데이터가 비어있거나 null이면 기본값 반환
+//원래라면 null인지랑 ""인지 둘 다 검사해야하지만
+IsNullOrEmpty()은 둘 다 검사해줌
+
+data = JsonConvert.DeserializeObject<T>(loadData);
+// JSON 문자열을 다시 T 객체로 변환
+//loadData:
+JSON
+{
+"exp":100,
+"level":5,
+"money":5000
+}
+
+실행 후:
+C#
+data =
+new SD_User
+{
+exp = 100,
+level = 5,
+money = 5000
+};
+
+
+Debug.Log($`"불러오기 완료 {key}");
+
+LoadData<SD_User>()
+↓
+new SD_User()
+↓
+GetSaveKey()
+↓
+"SD_User"
+↓
+PlayerPrefs.GetString("SD_User")
+↓
+"{"exp":100,"level":5}"
+↓
+DeserializeObject()
+↓
+SD_User 객체 생성
+↓
+반환
+
+
+
+
+return data;
+//로드한 데이터 반환
+
+}
+
+
+
+public void DeleteData(string key)
+
+{
+
+if (PlayerPrefs.HasKey(key))
+
+{
+
+PlayerPrefs.DeleteKey(key);
+
+Debug.Log(`$"삭제 완료 key: {key}");
+
+}
+
+}
+
+
+
+public void DeleteData<T>() where T : ISaveData, new()
+
+{
+
+T data = new T();
+
+string key = data.GetSaveKey();
+
+
+
+Debug.Log($`"삭제 시작 {key}");
+
+
+
+if (!PlayerPrefs.HasKey(key))
+
+{
+
+Debug.LogError(`$"저장 키{key} 없음");
+
+return;
+
+}
+
+
+
+DeleteData(key);
+
+
+
+Debug.Log($`"삭제 완료 {key}");
+
+
+
+}
+
+
+
+public void DeleteAll()
+
+{
+
+PlayerPrefs.DeleteAll();
+
+
+
+Debug.Log(`$"모든 데이터 삭제 완료");
+
+}
+
+}
+
+using UnityEngine;
+
+[System.Serializable] //직렬화
+
+public class SD_User : ISaveData
+
+{
+
+public ulong exp;
+
+public ulong level;
+
+public ulong money;
+
+
+
+public string GetSaveKey()
+
+{
+
+return nameof(SD_User);
+
+}
+
+
+
+public void CloneCopy(SD_User userData)
+
+{
+
+exp = userData.exp;
+
+level = userData.level;
+
+money = userData.money;
+
+}
+
+}
+
+using UnityEngine;
+
+public interface ISaveData
+
+{
+
+string GetSaveKey();
+
+}
+
+json이 대체 뭐야

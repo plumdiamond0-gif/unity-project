@@ -9,8 +9,7 @@ public class WeaponButton : MonoBehaviour
     public WeaponPrefabTable.WeaponPrefabTableData.WeaponState weaponState;
     public Image LockImage;
     Image image;
-    bool isActive;
-    public Image Upgraded;
+    public bool isActive;
     bool virgin;
     WeaponInventoryUI weaponInventoryUI;
 
@@ -18,27 +17,28 @@ public class WeaponButton : MonoBehaviour
     void Start()
     {
         weaponInventoryUI = transform.parent.GetComponent<WeaponInventoryUI>(); 
-        virgin = true;
-        LockImage = GetComponentInChildren<Image>();
+        //LockImage = GetComponentInChildren<Image>();
         image = GetComponent<Image>();
-        isActive = false;
-
-            image.enabled = false;
-            LockImage.enabled = true;
-        
         Button = GetComponent<Button>();
+
+        virgin = true;
+
+        image.enabled = true;
+        LockImage.enabled = false;
+        
         Button.onClick.AddListener(Show);
     }
 
     public void Show()
     {
-        weaponInventoryUI.Show(weaponState);
+        weaponInventoryUI.Show(weaponState, isActive);
     }
     //클릭 시 호출
 
-    public void Active(WeaponPrefabTable.WeaponPrefabTableData.WeaponState State)
+    public void Active()
     {
-        if(weaponState == State && virgin)
+        //인벤토리 칸 자식들 중에서 컴포넌트 꺼내워서 같은 무기 타입 갖고 있는 애의 함수 호출
+        if( virgin)
         {
             isActive = true;
             LockImage.enabled = false;

@@ -63,8 +63,13 @@ public class WeaponInventoryUI
     {
       
     }
-    public void Show(WeaponPrefabTableData.WeaponState weaponState)
+    public void Show(WeaponPrefabTableData.WeaponState weaponState, bool isActive)
     {
+        if(!isActive)
+        {
+            return;
+        }
+
         WeaponPrefabTableData data =
         GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas.Find(
         x => x.weaponState == weaponState);
@@ -82,15 +87,15 @@ public class WeaponInventoryUI
     }
     public void EffectUpdate()
     {
-        AP.text += "SaveData의 AP만큼";
-        AS.text += "SaveData의 AS만큼";
-        MB.text += "SaveData의 MB만큼";
+        AP.text = "SaveData의 AP만큼";
+        AS.text = "SaveData의 AS만큼";
+        MB.text = "SaveData의 MB만큼";
     }
 
     public void LevelUpdate()
     {
-        PreLv.text += "SaveData만큼";
-        AfterLv.text += "SaveData만큼";
+        PreLv.text = "0";
+        AfterLv.text = "1";
     }
 
 
