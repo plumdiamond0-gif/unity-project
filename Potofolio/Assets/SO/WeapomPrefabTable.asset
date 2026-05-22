@@ -32,9 +32,8 @@ MonoBehaviour:
     upModifier: 0
     WeaponImage: {fileID: 21300000, guid: a6522a1a49f746146b933c60795429b7, type: 3}
     effects: []
-    upgradeCosts:
-    - {fileID: 11400000, guid: 5ba0da31882db804f8e117635a340042, type: 2}
-    upgradeResults: []
+    upgradeCosts: {fileID: 11400000, guid: 13ce338445345fc44abadee2193d5711, type: 2}
+    upgradeResults: {fileID: 0}
   - weaponState: 1
     WeaponName: Cannon
     Weapon: {fileID: 5127384509388819661, guid: ccf64cd1413417c41b2d3decf6cb532e, type: 3}
@@ -55,8 +54,8 @@ MonoBehaviour:
     WeaponImage: {fileID: 21300000, guid: 4a7f280d140c1fc49b764f86e7942b10, type: 3}
     effects:
     - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
-    upgradeCosts: []
-    upgradeResults: []
+    upgradeCosts: {fileID: 0}
+    upgradeResults: {fileID: 0}
   - weaponState: 4
     WeaponName: SlimeGun
     Weapon: {fileID: 5127384509388819661, guid: a77f20bdeb076fd4b80db4c76e875050, type: 3}
@@ -77,8 +76,8 @@ MonoBehaviour:
     WeaponImage: {fileID: 21300000, guid: 1a486a7c6b7ecd54bb558022fef8d68f, type: 3}
     effects:
     - {fileID: 11400000, guid: 470680d02b3fd294fb63be42c2dcf57e, type: 2}
-    upgradeCosts: []
-    upgradeResults: []
+    upgradeCosts: {fileID: 0}
+    upgradeResults: {fileID: 0}
   - weaponState: 2
     WeaponName: PulseGun
     Weapon: {fileID: 5127384509388819661, guid: b854af823e97f9f40978e717e99bca5c, type: 3}
@@ -99,8 +98,8 @@ MonoBehaviour:
     WeaponImage: {fileID: 21300000, guid: d9449be6374d30c46bd4370f00dcf3ec, type: 3}
     effects:
     - {fileID: 11400000, guid: 837b7099aafc8eb4a91c466f3d71c615, type: 2}
-    upgradeCosts: []
-    upgradeResults: []
+    upgradeCosts: {fileID: 0}
+    upgradeResults: {fileID: 0}
   - weaponState: 3
     WeaponName: MissileLauncher
     Weapon: {fileID: 5127384509388819661, guid: d0b877da444deeb4db96a82fe854b0b2, type: 3}
@@ -122,5 +121,5 @@ MonoBehaviour:
     effects:
     - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
     - {fileID: 11400000, guid: 4f61d25e1f1b25a4591b7e47309dd9d7, type: 2}
-    upgradeCosts: []
-    upgradeResults: []
+    upgradeCosts: {fileID: 0}
+    upgradeResults: {fileID: 0}

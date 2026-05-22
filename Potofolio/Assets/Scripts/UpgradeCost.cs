@@ -2,16 +2,21 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(menuName = "Data/UpgradeCost")]
+public enum CostType
+{
+    RedSlime,
+    BlueSlime,
+}
 
+[System.Serializable]
+public class CostData
+{
+    public CostType itemType;
+    public int amount;
+}
+
+[CreateAssetMenu(menuName = "Data/UpgradeCost")]
 public class UpgradeCost : ScriptableObject
 {
-    [System.Serializable]
-    public class UpgradeCostData
-    {
-        public int  ResourceID;
-        public int ResourceNum; 
-    }
-    public List<UpgradeCostData> UpgradeCostDatas =
-        new List<UpgradeCostData>();
+    public List<CostData> costs;
 }

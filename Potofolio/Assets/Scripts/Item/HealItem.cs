@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class HealItem : Item
+public class HealItem : InventoryItem
 {
     public Health PlayerHealth;
 
@@ -9,7 +9,6 @@ public class HealItem : Item
         PlayerHealth.Heal(50);
         Debug.Log("UseHealth");
         Destroy(gameObject);
-
     }
 }
 

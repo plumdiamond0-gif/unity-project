@@ -41,8 +41,8 @@ public class WeaponPrefabTable : ScriptableObject
         public Sprite WeaponImage;
 
         public List<ScriptableObject> effects;
-        public List<ScriptableObject> upgradeCosts;
-        public List<ScriptableObject> upgradeResults;  
+        public UpgradeCost upgradeCosts;
+        public UpgradeResults upgradeResults;  
         /*Unity에서 인터페이스는 Inspector에 직접 안 보임
         -> 드래그 & 드롭 안 됨,에셋 연결 안 됨
         -> 그래서 우회로로:ScriptableObject로 타입 지정

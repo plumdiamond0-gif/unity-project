@@ -11,18 +11,20 @@ public class WeaponInventoryUI
 {
     Button[] buttons;
     public Image Upgraded;
-    public TMP_Text AP;
-    public TMP_Text AS;
-    public TMP_Text MB;
+    public TMP_Text[] CostTexts;
+    //public TMP_Text AP;
+    //public TMP_Text AS;
+    //public TMP_Text MB;
 
     public TMP_Text PreLv;
     public TMP_Text AfterLv;
 
     void Start()
     {
-        AP.enabled = false;
-        AS.enabled = false;
-        MB.enabled = false;
+        
+        //AP.enabled = false;
+        //AS.enabled = false;
+        //MB.enabled = false;
         buttons = new Button[transform.childCount];
         PreLv.enabled = false;
         AfterLv.enabled = false;
@@ -75,24 +77,46 @@ public class WeaponInventoryUI
         x => x.weaponState == weaponState);
 
 
-        EffectUpdate();
-        LevelUpdate();
-        AP.enabled = true;
-        AS.enabled = true;
-        MB.enabled = true;
+        //ResultUpdate(data);
+        LevelUpdate(data);
+        //AP.enabled = true;
+        //AS.enabled = true;
+        //MB.enabled = true;
+        CostUpdate(data);
         Upgraded.sprite = data.WeaponImage;
         PreLv.enabled=true;
         AfterLv.enabled = true; 
 
     }
-    public void EffectUpdate()
+    public void CostUpdate(WeaponPrefabTableData data)
     {
-        AP.text = "SaveData의 AP만큼";
-        AS.text = "SaveData의 AS만큼";
-        MB.text = "SaveData의 MB만큼";
+        UpgradeCost cost = data.upgradeCosts;
+        foreach (var item in cost.costs)
+        {
+            if (item.amount == 0)
+                return;
+            else if (item.amount > 0)
+            {
+                for (int i = 0; i < CostTexts.Length; i++)
+                {
+                    CostTexts[i].text = $"{item.itemType.ToString()} {item.amount}개 필요";
+                }
+            }
+        }
     }
 
-    public void LevelUpdate()
+
+
+    //public void ResultUpdate(WeaponPrefabTableData data)
+    //{
+        
+
+    //    //AP.text = cost;
+    //    AS.text = "SaveData의 AS만큼";
+    //    MB.text = "SaveData의 MB만큼";
+    //}
+
+    public void LevelUpdate(WeaponPrefabTableData data)
     {
         PreLv.text = "0";
         AfterLv.text = "1";

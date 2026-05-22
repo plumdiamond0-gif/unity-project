@@ -11,6 +11,7 @@ public class GameManager : SingletonObject<GameManager>
     public UIManager GetUIManager { get; private set; } = null;
     public AssetManager GetAssetManager { get; private set; } = null;
     public SceneLoadManager GetSceneLoadManager { get; private set; } = null;   
+    public SaveManager GetSaveManager { get; private set; }=null;
     public PrefabManager Get_PrefabManager()
     {
         return GetPrefabManager;
@@ -26,6 +27,11 @@ public class GameManager : SingletonObject<GameManager>
     public SceneLoadManager Get_SceneLoadManager()
     {
         return GetSceneLoadManager;
+    }
+
+    public SaveManager Get_SaveManager()
+    {
+        return GetSaveManager;
     }
 
 
@@ -94,6 +100,16 @@ public class GameManager : SingletonObject<GameManager>
 
                 Debug.Log("SceneLoadManager 초기화 완료");
             }
+
+            {
+                GameObject go = new GameObject("SaveManager");
+                go.transform.parent = transform;
+                go.transform.localPosition = Vector3.zero;
+                go.transform.localRotation = Quaternion.identity;
+                GetSaveManager = go.AddComponent<SaveManager>();
+
+                Debug.Log("GetSaveManager 초기화 완료");
+            }
             Debug.Log("매니저 초기화 완료");
 
         }
@@ -141,5 +157,11 @@ public static class GM
         Debug.Log("GetSceneLoadManager");
         return GameManager.instance.Get_SceneLoadManager();
     }
+    public static SaveManager GetSaveManager()
+    {
+        Debug.Log("GetSaveManager");
+        return GameManager.instance.Get_SaveManager();
+    }
+
 }
 

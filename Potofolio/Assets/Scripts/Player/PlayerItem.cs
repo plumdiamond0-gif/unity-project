@@ -18,18 +18,40 @@ public class PlayerItem : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.CompareTag("Coin"))
-        {
-            coinNum += 10;
-            UpdateCoin(coinNum);
-            Destroy(other.gameObject);
-        }
-    }
+    //private void OnTriggerEnter(Collider other)
+    //{
+    //    if(other.CompareTag("Coin"))
+    //    {
+    //        coinNum += 10;
+    //        UpdateCoin(coinNum);
+    //        Destroy(other.gameObject);
+    //    }
+    //}
 
     public void UpdateCoin(float coinNum)
     {
         CoinText.text = coinNum.ToString();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+
+        if (other.CompareTag("InventoryItem"))
+        {
+            InventoryItem item = other.GetComponent<InventoryItem>();
+            if (item != null)
+            {
+                item.Use();
+            }
+        }
+
+        else if (other.CompareTag("DataItem"))
+        {
+          DataItem item = other.GetComponent<DataItem>();
+            if (item != null)
+            {
+                item.GetItem();
+            }
+        }
     }
 }

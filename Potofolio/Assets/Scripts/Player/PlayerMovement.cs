@@ -98,17 +98,7 @@ public class PlayerMovement : MonoBehaviour
         PlayerSpeed = isSprint ? runSpeed : walkSpeed;
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Item"))
-        {
-            Item item = other.GetComponent<Item>();
-            if(item != null)
-            {
-                item.Use();
-            }
-        }
-    }
+  
 
 
     private void OnCollisionEnter(Collision collision)

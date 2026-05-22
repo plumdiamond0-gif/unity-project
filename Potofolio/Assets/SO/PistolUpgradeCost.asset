@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5034ff4d6e6a21b41929a06eac96e95d, type: 3}
   m_Name: PistolUpgradeCost
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCost
-  UpgradeCostDatas:
-  - ResourceID: RedSlime
-    ResourceNum: 5
-  - ResourceID: BlueSlime
-    ResourceNum: 2
+  costs:
+  - itemType: 0
+    amount: 5
+  - itemType: 1
+    amount: 2

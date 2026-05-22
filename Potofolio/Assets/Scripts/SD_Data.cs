@@ -7,6 +7,7 @@ public class SD_User : ISaveData
     public ulong level;
     public ulong RedSlime;
     public ulong BlueSlime;
+    public ulong Hp;
 
 
 

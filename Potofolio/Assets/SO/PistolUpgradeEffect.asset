@@ -12,7 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75a3273345948e34ba04bb3d52b1445d, type: 3}
   m_Name: PistolUpgradeEffect
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeEffect
-  UpgradeEffects:
-  - DamageUp: 10
-    SpeedUp: 5
-    BulletNumUp: 5
+  UpgradeResultDatas:
+  - DamageUp: 0
+    SpeedUp: 0
+    BulletNumUp: 0
+  - DamageUp: 0
+    SpeedUp: 0
+    BulletNumUp: 0

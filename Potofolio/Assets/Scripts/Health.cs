@@ -32,10 +32,7 @@ public void TakeDamage(float value)
 
     public void Heal(float value)
     {
-        if (isInvincible)
-        {
-            return;
-        }
+        
         CurrentHp += value;
         CurrentHp = Mathf.Clamp(CurrentHp, 0, MaxHp);
 

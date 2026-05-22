@@ -1,0 +1,66 @@
+구상 : 플레이 중 체력, 데미지 등을 증가시키는 아이템은 InventoryItem으로 분류
+플레이 중 얻는 무기 업그레이드 재료에 필요한 자원들은 DataItem으로 분류
+
+인게임 버프 아이템  : InventoryItem이라는 인터페이스 상속받아 각자 다른 함수 내용 구현.
+업그레이드 자원 아이템 : 
+using System;
+using System.Collections.Generic;
+using System.Data;
+using UnityEngine;
+
+public enum StatType
+{
+    RedSlime,
+    BlueSlime,
+    Level
+}
+
+public class DataItem : ScriptableObject
+{
+    public StatType type;
+    public ulong amount;
+
+    Dictionary<StatType, Action<ulong>> itemActions
+    = new()
+{
+    { StatType.RedSlime, (value) => GM.GetSaveManager().currentData.RedSlime += value },
+    { StatType.BlueSlime, (value) => GM.GetSaveManager().currentData.BlueSlime += value },
+    { StatType.Level, (value) => GM.GetSaveManager().currentData.level += value }
+};
+//이 스크립트를 단 아이템의 타입에 맞는 세이브 데이터의 값에 접근해 값 증가
+
+    public void GetItem()
+    {
+        itemActions[type](amount);
+    }
+//외부에서 DataItem이라는 태그를 가진 아이템을 감지해 호출할 함수
+}
+
+
+내가 인터페이스 구현, 추상 함수 상속 대신 딕셔너리를 택한 이유 : 
+각 아이템마다 다 다른 스크립트 붙이면 스크립트 수가 불필요하게 너무 많아짐.
+
+switch를 대신 딕셔너리 택한 이유 :
+siwtch :
+
+장점
+읽기 쉬움
+디버깅 쉬움
+작은 프로젝트에서 직관적
+성능 차이 거의 없음
+
+단점
+아이템 20~30개 되면 길어짐
+새 타입 추가할 때 switch 계속 수정해야 함
+
+Dictionary + Action :
+ 
+장점
+실행 코드가 한 줄
+itemActions[itemType](amount);
+새 타입 추가할 때 딕셔너리에만 추가
+여러 시스템에서 재사용하기 편함
+
+단점
+흐름 파악하기 어려움
+없는 키 호출하면 예외

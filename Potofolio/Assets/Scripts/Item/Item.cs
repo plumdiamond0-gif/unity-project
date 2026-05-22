@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class Item : MonoBehaviour
+public abstract class InventoryItem : MonoBehaviour
 {
     //float dir = 1;
 
