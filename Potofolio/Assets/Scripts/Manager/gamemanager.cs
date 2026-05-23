@@ -61,7 +61,15 @@ public class GameManager : SingletonObject<GameManager>
     {
         { 
             Debug.Log("매니저 초기화 시작");
+            {
+                GameObject go = new GameObject("AssetManager");
+                go.transform.parent = transform;
+                go.transform.localPosition = Vector3.zero;
+                go.transform.localRotation = Quaternion.identity;
+                GetAssetManager = go.AddComponent<AssetManager>();
 
+                Debug.Log("AssetManager 초기화 완료");
+            }
             {
                 GameObject go = new GameObject("PrefabManager");
                 go.transform.parent = transform;
@@ -69,7 +77,14 @@ public class GameManager : SingletonObject<GameManager>
                 go.transform.localRotation = Quaternion.identity;
                 GetPrefabManager = go.AddComponent<PrefabManager>();
 
-                Debug.Log("UIManager 초기화 완료");
+                bool done = false;
+
+                GetPrefabManager.Init(() =>
+                {
+                    done = true;
+                });
+              //  yield return new WaitUntil(() => done);
+                Debug.Log("PrefabManager 초기화 완료");
             }
             {
                 GameObject go = new GameObject("UIManager");
@@ -81,15 +96,7 @@ public class GameManager : SingletonObject<GameManager>
                 Debug.Log("PrefabManager 초기화 완료");
 
             }
-            {
-                GameObject go = new GameObject("AssetManager");
-                go.transform.parent = transform;
-                go.transform.localPosition = Vector3.zero;
-                go.transform.localRotation = Quaternion.identity;
-                GetAssetManager = go.AddComponent<AssetManager>();
-
-                Debug.Log("AssetManager 초기화 완료");
-            }
+           
             {
                 GameObject go = new GameObject("SceneLoadManager");
                 go.transform.parent = transform;
@@ -139,7 +146,7 @@ public static class GM
 {
     public static PrefabManager GetPrefabManager()
     {
-
+       
         return GameManager.instance.Get_PrefabManager();
     }
     public static UIManager GetUIManager()

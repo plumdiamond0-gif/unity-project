@@ -16,6 +16,7 @@ public class PlayerAttack : MonoBehaviour
     public int currntWeaponNum;
     public int WeaponNum;
     public float CanonBallspeed;
+    public float baseDamage;
 
     [Header("차지,반동")]
     public float currentCharge = 0f;

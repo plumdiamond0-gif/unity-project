@@ -3,30 +3,54 @@ using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
 
-public enum StatType
+
+
+public enum DataType
 {
+    InGameItem,
+    OutGameItem,
+}
+public enum InItemType
+{
+    None,
+    HealItem,
+    DamageBuffItem,
+
+}
+public enum OutItemType
+{
+    None,
     RedSlime,
     BlueSlime,
-    Level
+
 }
 
-public class DataItem : ScriptableObject
-{
-    public StatType type;
-    public ulong amount;
+[CreateAssetMenu(menuName = "Data/ItemData")]
 
-    Dictionary<StatType, Action<ulong>> itemActions
-    = new()
+public class ItemData : ScriptableObject
 {
-    { StatType.RedSlime, (value) => GM.GetSaveManager().currentData.RedSlime += value },
-    { StatType.BlueSlime, (value) => GM.GetSaveManager().currentData.BlueSlime += value },
-    { StatType.Level, (value) => GM.GetSaveManager().currentData.level += value }
-};
+    public float healAmount;
+    public float damageBuffAmount;
+    public InItemType inItemType;
+    public OutItemType outItemType;
+    public DataType dataType;
 
-    public void GetItem()
-    {
-        itemActions[type](amount);
-    }
+
+
+    //public ulong amount;
+
+    //    Dictionary<ItemType, Action<ulong>> itemActions
+    //    = new()
+    //{
+    //    { ItemType.RedSlime, (value) => GM.GetSaveManager().currentData.RedSlime += value },
+    //    { ItemType.BlueSlime, (value) => GM.GetSaveManager().currentData.BlueSlime += value },
+    //    { ItemType.Level, (value) => GM.GetSaveManager().currentData.level += value }
+    //};
+
+    //public void GetItem()
+    //{
+    //    itemActions[type](amount);
+    //}
 }
 
 

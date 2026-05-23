@@ -1,0 +1,72 @@
+//세이브 데이터에 계속 쌓이는 아이템(자원) :  	// Save
+
+1. 레드슬라임 : 무기 강화 재료, 무기 데이미 10 증가
+2. 블루슬라임 : 무기 강화 재료, 무기 데이미 20 증가
+
+//전투 중일 때만 플레이어 버프시켜주는 아이템 :   //Skill Buf
+
+3. 체력 회복 : 플레이어 체력 회복, 10 
+4. 공격력 증가 : 공격력 10 증가
+
+
+Item.xls
+아이디  종류 이름  기능 옵션
+1. 레드슬라임 : 무기 강화 재료, 무기 데이미 10 증가
+2. 블루슬라임 : 무기 강화 재료, 무기 데이미 20 증가
+3. 체력 회복 : 플레이어 체력 회복, 10 
+4. 공격력 증가 : 공격력 10 증가 
+class ItemData {
+	string name;
+	int Type;
+	int Ap;
+	int Dp;
+}
+
+class Item {
+	string name;
+	int Type;
+	int ApAdd;
+	int Hp;
+	int WeaponBuf;
+}
+
+class Player{
+	int Ap;
+
+
+	List<Item> itemList;  //
+	itemList.Add( new Item(uid1, 레드슬라임, 10 ))
+	itemList.Add( new Item(uid2, 체력 회복, 0 ))
+
+
+
+}
+
+class Inven{
+	List<Item> itemList;  //
+
+
+class Save {
+
+	void Save (){
+
+		//player lv
+		// itemList
+                       //
+	}
+	void Load (){
+		 = player lv
+		 = itemList
+	}
+
+}
+
+
+
+
+
+
+
+
+
+

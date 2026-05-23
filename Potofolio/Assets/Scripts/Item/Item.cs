@@ -1,32 +1,60 @@
 using UnityEngine;
 
-public abstract class InventoryItem : MonoBehaviour
+public class Item : MonoBehaviour
 {
-    //float dir = 1;
-
-    bool isused = false;
-    public Sprite sprite;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-   
-
-    public void Use()
+    public ItemData data;
+    public void Use(InItemType type, GameObject PlayerInfo)
     {
-        if(isused)
+        switch (type)
         {
-            return;
-        }
-        isused = true;
-        Onuse();
-        GM.GetUIManager().Inventory.GetSprite(sprite);
+            case InItemType.HealItem:
+                Health health = PlayerInfo.GetComponent<Health>();
+                Heal(health);
+                break;
 
+            case InItemType.DamageBuffItem:
+                PlayerAttack playerAttack = 
+                    PlayerInfo.GetComponent<PlayerAttack>();
+                DamageBuff(playerAttack.baseDamage);
+                break;
+
+        }
+    }
+
+    public void Restore(OutItemType type)
+    {
+        switch(type)
+        {
+            case OutItemType.RedSlime:
+            {
+                GM.GetSaveManager().CurrentData.RedSlime++;     
+                break;
+            }
+
+            case OutItemType.BlueSlime:
+                {
+                    GM.GetSaveManager().CurrentData.BlueSlime++;
+
+                    break;
+                }
+
+        }
 
     }
 
-    public virtual void Onuse()
+    public void Heal(Health health)
     {
+        health.Heal(data.healAmount);
+        Debug.Log($"체력 {data.healAmount}만큼 회복");
 
-    }    
+    }
 
-    // Update is called once per frame
-   
+    public void DamageBuff(float basePlayerDamage)
+    {
+        Debug.Log($"데미지 {data.damageBuffAmount}만큼 증가");
+        basePlayerDamage += data.damageBuffAmount;
+    }
+
+
+
 }

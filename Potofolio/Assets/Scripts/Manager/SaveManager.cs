@@ -3,7 +3,21 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
-    public SD_User currentData;
+    public SD_User CurrentData { get; private set; }
+
+    public void Init()
+    {
+        CurrentData = LoadData<SD_User>();
+        if(CurrentData == null )
+        {
+            CurrentData = new SD_User();
+        }
+    }
+
+    public void SaveCurrentData()
+    {
+        SaveData( CurrentData );
+    }
    public void SaveData<T>(T data) where T : ISaveData
     {
         string key = data.GetSaveKey();

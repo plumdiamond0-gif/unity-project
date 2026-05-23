@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using NUnit.Framework;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,7 +8,7 @@ public class PlayerItem : MonoBehaviour
 {
     [SerializeField] private TMP_Text CoinText;
     float coinNum;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Dictionary<OutItemType, int> resourcesData = new();
     void Start()
     {
      coinNum = 0;   
@@ -35,23 +37,52 @@ public class PlayerItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if (other.CompareTag("InventoryItem"))
+        if(other.CompareTag("Item"))
         {
-            InventoryItem item = other.GetComponent<InventoryItem>();
-            if (item != null)
+            Item item = other.GetComponent<Item>();
+            if(item.data.dataType == DataType.InGameItem)
             {
-                item.Use();
+                InItemType itemType = item.data.inItemType;
+                item.Use(itemType, gameObject);
+            }
+            else if(item.data.dataType == DataType.OutGameItem)
+            {
+                OutItemType itemType = item.data.outItemType;
+               if(!resourcesData.ContainsKey(itemType))
+                {
+                    Debug.Log("지금 먹은 아이템타입에 " +
+                        "해당하는 키값이 없어서 추가함");
+                    resourcesData.Add(itemType, 1);
+                }
+                else
+                {
+                    Debug.Log($"{itemType.ToString()}값 하나 증가");
+                    resourcesData[itemType] += 1;
+                }
+                //TODO : 이 딕셔너리에 특정 자원 키값이 없다면 그 자원은 아직 없다는 거겠지
+
+                //item.Restore(itemType);
             }
         }
 
-        else if (other.CompareTag("DataItem"))
-        {
-          DataItem item = other.GetComponent<DataItem>();
-            if (item != null)
-            {
-                item.GetItem();
-            }
-        }
+
+
+        //if (other.CompareTag("InventoryItem"))
+        //{
+        //    InventoryItem item = other.GetComponent<InventoryItem>();
+        //    if (item != null)
+        //    {
+        //        item.Use();
+        //    }
+        //}
+
+        //else if (other.CompareTag("DataItem"))
+        //{
+        //  DataItem item = other.GetComponent<DataItem>();
+        //    if (item != null)
+        //    {
+        //        item.GetItem();
+        //    }
+        //}
     }
 }

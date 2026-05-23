@@ -9,8 +9,6 @@ TagManager:
   - Enemy
   - Item
   - Coin
-  - InventoryItem
-  - DataItem
   layers:
   - Default
   - TransparentFX
