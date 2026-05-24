@@ -2,16 +2,13 @@ using NUnit.Framework;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum CostType
-{
-    RedSlime,
-    BlueSlime,
-}
+
 
 [System.Serializable]
 public class CostData
 {
-    public CostType itemType;
+    public OutItemType itemType;
+    public Sprite CostSprite;
     public int amount;
 }
 

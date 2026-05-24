@@ -29,6 +29,7 @@ public enum OutItemType
 
 public class ItemData : ScriptableObject
 {
+    public Sprite itemSprite;
     public float healAmount;
     public float damageBuffAmount;
     public InItemType inItemType;

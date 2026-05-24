@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class SaveManager : MonoBehaviour
 {
-    public SD_User CurrentData { get; private set; }
+    public static SD_User CurrentData { get; private set; }
 
     public void Init()
     {
@@ -13,6 +13,7 @@ public class SaveManager : MonoBehaviour
             CurrentData = new SD_User();
         }
     }
+
 
     public void SaveCurrentData()
     {

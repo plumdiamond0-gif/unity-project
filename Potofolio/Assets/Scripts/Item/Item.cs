@@ -27,13 +27,13 @@ public class Item : MonoBehaviour
         {
             case OutItemType.RedSlime:
             {
-                GM.GetSaveManager().CurrentData.RedSlime++;     
+                SaveManager.CurrentData.RedSlime++;     
                 break;
             }
 
             case OutItemType.BlueSlime:
                 {
-                    GM.GetSaveManager().CurrentData.BlueSlime++;
+                    SaveManager.CurrentData.BlueSlime++;
 
                     break;
                 }

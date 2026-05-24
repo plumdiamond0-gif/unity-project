@@ -3,49 +3,52 @@ using UnityEngine.UI;
 
 public class WeaponButton : MonoBehaviour
 {
-    
-    Button Button;
-    string name;
-    public WeaponPrefabTable.WeaponPrefabTableData.WeaponState weaponState;
-    public Image LockImage;
-    Image image;
-    public bool isActive;
-    bool virgin;
-    WeaponInventoryUI weaponInventoryUI;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    Image weaponImage;
+    Button Button;
+    public WeaponState weaponState;
+    public Image LockImage;
+    public bool isActive;
+    [SerializeField] private PanelWeaponUpgrade  panelWeaponUpgrade;   
+
     void Start()
     {
-        weaponInventoryUI = transform.parent.GetComponent<WeaponInventoryUI>(); 
+        panelWeaponUpgrade = transform.parent.GetComponent<PanelWeaponUpgrade>();
         //LockImage = GetComponentInChildren<Image>();
-        image = GetComponent<Image>();
+        weaponImage = GetComponent<Image>();
         Button = GetComponent<Button>();
 
-        virgin = true;
 
-        image.enabled = true;
-        LockImage.enabled = false;
-        
-        Button.onClick.AddListener(Show);
+
+
+        if (isActive)
+        {
+            LockImage.enabled = false;
+            weaponImage.enabled = true;
+        }
+        else
+        {
+            LockImage.enabled = true;
+            weaponImage.enabled = false;
+        }
+
+            Button.onClick.AddListener(OnClick);
     }
 
-    public void Show()
+    public void OnClick()
     {
-        weaponInventoryUI.Show(weaponState, isActive);
+        if(!isActive) 
+            return;
+        panelWeaponUpgrade.Show(weaponState);
     }
     //클릭 시 호출
 
     public void Active()
     {
         //인벤토리 칸 자식들 중에서 컴포넌트 꺼내워서 같은 무기 타입 갖고 있는 애의 함수 호출
-        if( virgin)
-        {
             isActive = true;
             LockImage.enabled = false;
-            image.enabled = true;
-            virgin = false;
-
-        }
+            weaponImage.enabled = true;
     }
     //무기 획득했을 때 호출
 }

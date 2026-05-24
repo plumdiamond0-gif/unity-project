@@ -114,6 +114,7 @@ public class GameManager : SingletonObject<GameManager>
                 go.transform.localPosition = Vector3.zero;
                 go.transform.localRotation = Quaternion.identity;
                 GetSaveManager = go.AddComponent<SaveManager>();
+                GetSaveManager.Init();
 
                 Debug.Log("GetSaveManager 초기화 완료");
             }

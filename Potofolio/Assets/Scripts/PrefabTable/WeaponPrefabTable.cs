@@ -1,7 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 
-
+public enum WeaponState
+{
+    Pistol,
+    Cannon,
+    PulseGun,
+    MissileLauncher,
+    SlimeGun,
+}
 [CreateAssetMenu(menuName = "Data/WeaponPrafabTable")]
 public class WeaponPrefabTable : ScriptableObject
 
@@ -9,14 +16,7 @@ public class WeaponPrefabTable : ScriptableObject
     [System.Serializable]
     public class WeaponPrefabTableData
     {
-        public enum WeaponState
-        {
-            Pistol,
-            Cannon,
-            PulseGun,
-            MissileLauncher,
-            SlimeGun,
-        }
+      
         
         public WeaponState weaponState;
         public string WeaponName;
