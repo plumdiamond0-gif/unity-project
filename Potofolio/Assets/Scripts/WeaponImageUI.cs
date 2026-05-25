@@ -1,16 +1,17 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponImageUI : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    private Image image;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        image = GetComponent<Image>();
+        image.sprite = null;
+    }
+    public void Show(Sprite sprite)
+    {
+        image.sprite = sprite;  
     }
 }

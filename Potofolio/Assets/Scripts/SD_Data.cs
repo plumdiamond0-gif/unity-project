@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEditor.Overlays;
 using UnityEngine;
 
@@ -8,8 +9,20 @@ public class SD_User : ISaveData
     public ulong RedSlime;
     public ulong BlueSlime;
     public ulong Hp;
+    public Dictionary<WeaponState, int> weaponStates = new()
+    {
+        {WeaponState.Pistol, 0 },
+        {WeaponState.Cannon, 0 },
+        {WeaponState.SlimeGun, 0 },
+        {WeaponState.PulseGun, 0 },
+        {WeaponState.MissileLauncher, 0 },
 
 
+
+    };
+    
+        
+    
 
     public string GetSaveKey()
     {

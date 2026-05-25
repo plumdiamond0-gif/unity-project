@@ -33,7 +33,7 @@ MonoBehaviour:
     WeaponImage: {fileID: 21300000, guid: a6522a1a49f746146b933c60795429b7, type: 3}
     effects: []
     upgradeCosts: {fileID: 11400000, guid: 13ce338445345fc44abadee2193d5711, type: 2}
-    upgradeResults: {fileID: 0}
+    upgradeResults: {fileID: 11400000, guid: 2ec06e565e6aa7f4dbf27ecdd0984b59, type: 2}
   - weaponState: 1
     WeaponName: Cannon
     Weapon: {fileID: 5127384509388819661, guid: ccf64cd1413417c41b2d3decf6cb532e, type: 3}

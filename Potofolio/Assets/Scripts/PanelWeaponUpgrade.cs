@@ -10,7 +10,10 @@ public class PanelWeaponUpgrade
  : MonoBehaviour
 {
     //[SerializeField] private WeaponListUI weaponListUI;
-    [SerializeField] private CostUI costUI;
+    [SerializeField] private UpgradeResultUI upgradeResultUI;
+    [SerializeField] private UpgradeUI upgradeUI;
+    [SerializeField] private WeaponImageUI WeaponImageUI;
+
 
     void Start()
     {
@@ -32,8 +35,9 @@ public class PanelWeaponUpgrade
         WeaponPrefabTableData data =
         GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas. Find(
         x => x.weaponState == weaponState);
-        costUI.ShowCosts(data.upgradeCosts);
-        
+
+        upgradeResultUI.ShowResults(data);
+        WeaponImageUI.Show(data.WeaponImage);
 
     }
     //public void GetSprite(Sprite sprite)

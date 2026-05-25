@@ -13,9 +13,10 @@ public class WeaponButton : MonoBehaviour
 
     void Start()
     {
-        panelWeaponUpgrade = transform.parent.GetComponent<PanelWeaponUpgrade>();
         //LockImage = GetComponentInChildren<Image>();
         weaponImage = GetComponent<Image>();
+        weaponImage.sprite = GM.GetPrefabManager().WeaponPrefabTable
+            .weaponPrafabTableDatas.Find(x=> x.weaponState == weaponState).WeaponImage;
         Button = GetComponent<Button>();
 
 

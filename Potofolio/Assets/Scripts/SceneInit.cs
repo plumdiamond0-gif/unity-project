@@ -21,9 +21,9 @@ public class SceneInit : MonoBehaviour
 
     private void OnNextSceneLoad()
     {
-        GM.GetSceneLoadManager().NextLoadScene("SceneOpening", () =>
+        GM.GetSceneLoadManager().NextLoadScene("SceneBase", () =>
             {
-                Debug.Log("SceneOpening 완료");
+                Debug.Log("SceneBase 완료");
             });
     }
 
