@@ -6,7 +6,10 @@ public enum ResultType
     None,
     Damage,
     Speed,
-    BulletNum
+    BulletNum,
+    SlowTimte,
+    Range,
+
 }
 [CreateAssetMenu(menuName = "Data/UpgradeResults")]
 

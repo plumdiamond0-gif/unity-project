@@ -13,6 +13,7 @@ public class PanelWeaponUpgrade
     [SerializeField] private UpgradeResultUI upgradeResultUI;
     [SerializeField] private UpgradeUI upgradeUI;
     [SerializeField] private WeaponImageUI WeaponImageUI;
+    [SerializeField] private CostUI costUI;
 
 
     void Start()
@@ -35,9 +36,13 @@ public class PanelWeaponUpgrade
         WeaponPrefabTableData data =
         GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas. Find(
         x => x.weaponState == weaponState);
+        UpgradeResults results = data.upgradeResults;
+        UpgradeCost cost = data.upgradeCosts;
+        int level = SaveManager.CurrentData.weaponStates[weaponState];
 
         upgradeResultUI.ShowResults(data);
         WeaponImageUI.Show(data.WeaponImage);
+        costUI.ShowCosts(cost, level);
 
     }
     //public void GetSprite(Sprite sprite)

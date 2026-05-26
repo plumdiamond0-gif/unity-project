@@ -9,6 +9,13 @@ public class SD_User : ISaveData
     public ulong RedSlime;
     public ulong BlueSlime;
     public ulong Hp;
+    public Dictionary<OutItemType, int> itemStates = new()
+    {
+        {OutItemType.BlueSlime, 0},
+        {OutItemType.RedSlime, 0},
+    };
+
+
     public Dictionary<WeaponState, int> weaponStates = new()
     {
         {WeaponState.Pistol, 0 },

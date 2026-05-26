@@ -46,31 +46,18 @@ public class UpgradeResultUI : MonoBehaviour
             if (i < results.results.Count)
             {
                 images[i].sprite = results.results[i].sprite;
-                switch (results.results[i].type)
-                {
-                    case ResultType.None:
-                        {
-                            break;
-                        }
-                    case ResultType.Damage:
-                        {
-                            texts[i].text = "공격력" + (results.results[i].amount) *
-                                Mathf.Pow(1.15f, level + 1) + "->" + (results.results[i].amount) *
-                                Mathf.Pow(1.15f, level + 1);
-                            break;
-                        }
-                    case ResultType.Speed:
-                        {
-                            texts[i].text = "공격속도" + (results.results[i].amount) *
-                                 Mathf.Pow(1.15f, level + 1) + "->" + (results.results[i].amount) *
-                                 Mathf.Pow(1.15f, level + 1);
-                            break;
-                        }
-                }
-
-
+                texts[i].text = results.results[i].type.ToString() + ":" + (results.results[i].amount) *
+                                   Mathf.Pow(1.15f, level) + "->" + (results.results[i].amount) *
+                                   Mathf.Pow(1.15f, level + 1);
 
             }
+
+            else
+            {
+                images[i].sprite = null;
+                texts[i].text = null;
+            }
+            
         }
     }
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5034ff4d6e6a21b41929a06eac96e95d, type: 3}
+  m_Name: SlimeCannonUpgradeCost
+  m_EditorClassIdentifier: Assembly-CSharp::UpgradeCost
+  costs:
+  - itemType: 1
+    CostSprite: {fileID: 21300000, guid: 0ebc9de1726e17247be3f1b516e7b9b6, type: 3}
+    amount: 8
+  - itemType: 2
+    CostSprite: {fileID: 21300000, guid: 5452d2453f07c414b9efb4fa4b965c90, type: 3}
+    amount: 5

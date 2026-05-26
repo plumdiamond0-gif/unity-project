@@ -54,8 +54,8 @@ MonoBehaviour:
     WeaponImage: {fileID: 21300000, guid: 4a7f280d140c1fc49b764f86e7942b10, type: 3}
     effects:
     - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
-    upgradeCosts: {fileID: 0}
-    upgradeResults: {fileID: 0}
+    upgradeCosts: {fileID: 11400000, guid: 07d22b366b0e6c649aa1e69787a14ea6, type: 2}
+    upgradeResults: {fileID: 11400000, guid: 38dc056ac8ffd764d895915f6cbd7387, type: 2}
   - weaponState: 4
     WeaponName: SlimeGun
     Weapon: {fileID: 5127384509388819661, guid: a77f20bdeb076fd4b80db4c76e875050, type: 3}
