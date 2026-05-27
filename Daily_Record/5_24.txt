@@ -1,0 +1,18 @@
+어드레서블에서 스크립터블 오브젝트 상속받는 클래스의 스오 가져올 때 : 매개변수로 실제 타입 넣기
+이유 : 매번 캐스팅 안 하기 위해
+
+프리팹매니저에 프리팹 테이블 언제 넣는가 : 
+게임 매니저에서 에셋 매니저 만들고 불러오면 순서 때문에 문제
+
+GetPrefabManager = go.AddComponent<PrefabManager>();
+
+GM.GetAssetManager().LoadAsset<WeaponPrefabTable>(
+"WeaponPrefabTable",
+(go) =>
+{
+GetPrefabManager.WeaponPrefabTable = go;
+});
+
+Debug.Log("UIManager 초기화 완료");
+LoadAsset이 비동기라 이니셜라이즈 끝났는데도 웨폰프리팹테이블이 null일 수 있음.
+

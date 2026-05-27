@@ -1,0 +1,80 @@
+무기 레벨에 따른 강화 비용, 강화 결과 :
+1. 고정 증가 (단순)
+레벨 1: 10
+레벨 2: 12
+레벨 3: 14
+레벨 4: 16
+레벨 5: 18
+
+공식:
+stat = baseStat + (level * increase)
+장점:
+밸런스 잡기 쉬움
+단점:
+후반 가면 성장 체감이 약함
+
+
+2. 퍼센트 증가
+공격력 10
+레벨당 +15%
+
+Lv1 = 10
+Lv2 = 11.5
+Lv3 = 13.2
+Lv4 = 15.2
+Lv5 = 17.5
+Lv10 ≈ 35
+
+공식:
+stat = baseStat * Mathf.Pow(1.15f, level - 1);
+코드:
+float damage = baseDamage *
+               Mathf.Pow(1.15f, weaponLevel - 1);
+장점:
+성장 체감 좋음
+RPG에서 많이 씀
+단점:
+수치가 후반에 커질 수 있음
+
+
+
+
+3. 초반 빠르고 후반 둔화 (개인적으로 가장 추천)
+Lv1 = 10
+Lv2 = 14
+Lv3 = 17
+Lv4 = 19
+Lv5 = 20
+Lv6 = 21
+
+공식:
+
+stat = baseStat + Mathf.Log(level + 1) * multiplier;
+
+장점:
+
+초반 레벨업 만족감 큼
+후반 밸런스 터지는 거 방지
+
+무기마다 차이 주는 것도 재밌어:
+권총
+공격력 +10%
+공속 +5%
+샷건
+공격력 +20%
+공속 -2%
+레이저
+공격력 +7%
+관통 +1
+예:
+[System.Serializable]
+public class WeaponLevelData
+{
+    public float damageGrowth;
+    public float attackSpeedGrowth;
+}
+계산:
+damage =
+    baseDamage *
+    Mathf.Pow(weaponData.damageGrowth,
+              weaponLevel - 1);
