@@ -1,11 +1,34 @@
+using System;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class UpgradeUI : MonoBehaviour
 {
-    private Button Button;
+    private Button upgradeButton;
+    [SerializeField] private CostUI costUI;
+    public bool CanClick;
 
+    UpgradeCost currentcosts;
+    int currentlevel;
+    public void Start()
+    {
+        upgradeButton = GetComponent<Button>();
+        upgradeButton.onClick.AddListener(ShowResults);   
+    }
+    public void GetData(UpgradeCost costs, int level)
+    {
+        currentcosts = costs;
+        currentlevel = level;
+        CanClick = true;
+    }
+
+    public void ShowResults()
+    {
+        if(!CanClick)
+            return;
+        costUI.ShowCosts(currentcosts, currentlevel);
+    }
 
     //private void Start()
     //{

@@ -11,6 +11,7 @@ public class SaveManager : MonoBehaviour
         if(CurrentData == null )
         {
             CurrentData = new SD_User();
+            SaveCurrentData();
         }
     }
 
@@ -42,16 +43,17 @@ public class SaveManager : MonoBehaviour
 
         Debug.Log($"불러오기 시작 {key}");
 
-        if(!PlayerPrefs.HasKey(key) )
+        if (!PlayerPrefs.HasKey(key))
         {
-            Debug.LogError($"저장 키{key} 없음");
+            Debug.Log($"저장 데이터 없음: {key} (처음 실행)");
             return default;
         }
 
         string loadData = PlayerPrefs.GetString(key);
-        if(string.IsNullOrEmpty(loadData))
+
+        if (string.IsNullOrEmpty(loadData))
         {
-            Debug.LogError($"저장 데이터{key} 없음");
+            Debug.LogWarning($"저장 데이터 비어있음: {key}");
             return default;
         }
 
@@ -60,7 +62,6 @@ public class SaveManager : MonoBehaviour
         Debug.Log($"불러오기 완료 {key}");
 
         return data;
-
     }
 
     public void DeleteData(string key)

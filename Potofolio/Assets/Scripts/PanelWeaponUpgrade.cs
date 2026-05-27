@@ -18,7 +18,6 @@ public class PanelWeaponUpgrade
 
     void Start()
     {
-        
         //AP.enabled = false;
         //AS.enabled = false;
         //MB.enabled = false;
@@ -42,8 +41,7 @@ public class PanelWeaponUpgrade
 
         upgradeResultUI.ShowResults(data);
         WeaponImageUI.Show(data.WeaponImage);
-        costUI.ShowCosts(cost, level);
-
+        upgradeUI.GetData(cost, level);
     }
     //public void GetSprite(Sprite sprite)
     //{
