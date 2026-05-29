@@ -1,0 +1,182 @@
+맵 구조
+Map
+├── Block_0
+├── Block_1
+├── Block_2
+...
+└── Block_8
+
+Block
+├── SpawnPoint
+├── SpawnPoint
+├── SpawnPoint
+
+//////////////////////////////////////////////////////
+
+1. Map 스크립트
+역할:
+자식 9개 가져오기
+블럭 프리팹 랜덤 배치
+중복 없이 섞기
+*Random.Range 반복해서 중복 제거하는 것보다
+리스트 Shuffle 하는 게 훨씬 편하고 안전해.
+
+
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Map : MonoBehaviour
+{
+public GameObject[] blockPrefabs;
+//블럭 프리팹
+Transform[] blockPositions;
+//블럭 소환 위치
+void Start()
+{
+blockPositions = new Transform[transform.childCount];
+//자식의 수(블럭들 수)만큼 블럭 생성 위치 배열의 공간 생성
+
+// 자식 9개 저장
+for (int i = 0; i < transform.childCount; i++)
+{
+blockPositions[i] = transform.GetChild(i);
+}
+
+CreateMap();
+}
+
+void CreateMap()
+{
+// 프리팹 리스트 복사
+List<GameObject> randomBlocks =
+new List<GameObject>(blockPrefabs);
+
+// 셔플
+Shuffle(randomBlocks);
+
+// 배치
+for (int i = 0; i < blockPositions.Length; i++)
+{
+Instantiate(
+randomBlocks[i],
+blockPositions[i].position,
+Quaternion.identity,
+blockPositions[i]
+);
+}
+}
+
+void Shuffle(List<GameObject> list)
+{
+for (int i = 0; i < list.Count; i++)
+{
+int randomIndex =
+Random.Range(i, list.Count);
+
+GameObject temp = list[i];
+list[i] = list[randomIndex];
+list[randomIndex] = temp;
+//랜덤값 뽑고 i값의 밸류 temp에 임시 저장.
+//i번째 값에 랜덤값 인덱스의 밸류 넣기.
+//랜덤값 인덱스의 밸류에는 임시 저장한 i값 밸류 넣기
+}
+}
+}
+
+
+왜 이 방식이 좋은가
+너가 말한:
+랜덤값 뽑고 중복 안 되게 하기
+이걸 직접 구현하면:
+C#
+while(중복이면 다시 뽑기)
+이런 식 되는데 코드가 지저분해짐.
+근데 셔플은:
+중복 절대 없음
+코드 짧음
+성능 좋음
+이라서 게임에서 엄청 많이 씀.
+
+//////////////////////////////////////////////////////
+
+
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Block : MonoBehaviour
+{
+public GameObject[] spawnObjects;
+//스폰할 오브젝트들
+
+public int spawnCount = 3;
+//스폰횟수
+
+Transform[] spawnPoints;
+//스폰장소들
+
+void Start()
+{
+spawnPoints = GetComponentsInChildren<Transform>();
+//자식에서 가져오기
+
+Spawn();
+}
+
+void Spawn()
+{
+List<Transform> points =
+new List<Transform>();
+//스폰포인트들 담을 리스트
+
+// 자기 자신 제외
+foreach (Transform t in spawnPoints)
+{
+if (t != transform)
+points.Add(t);
+}
+
+Shuffle(points);
+
+for (int i = 0; i < spawnCount; i++)
+{
+int randomObject =
+Random.Range(0, spawnObjects.Length);
+
+Instantiate(
+spawnObjects[randomObject],
+points[i].position,
+Quaternion.identity,
+transform
+);
+}
+}
+
+void Shuffle(List<Transform> list)
+{
+for (int i = 0; i < list.Count; i++)
+{
+int randomIndex =
+Random.Range(i, list.Count);
+
+Transform temp = list[i];
+list[i] = list[randomIndex];
+list[randomIndex] = temp;
+}
+}
+}
+
+
+Map
+블럭 종류 랜덤 배치
+Block
+내부 오브젝트 랜덤 생성
+SpawnManager (나중)
+전체 난이도 조절
+스테이지별 생성량 조절
+
+Seed 랜덤
+C#
+Random.InitState(seed);
+사용하면:
+같은 맵 재생성 가능
+로그라이크 구조 가능
