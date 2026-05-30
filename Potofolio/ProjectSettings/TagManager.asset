@@ -9,6 +9,9 @@ TagManager:
   - Enemy
   - Item
   - Coin
+  - DataItem
+  - InventoryItem
+  - RootCanvas
   layers:
   - Default
   - TransparentFX

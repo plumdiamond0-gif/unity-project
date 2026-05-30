@@ -1,177 +1,193 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\itemdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\plumd\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\item\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\item\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\plumd\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\isavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\isavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\upgradeui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradeui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\panelweaponupgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panelweaponupgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\costui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\costui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\upgraderesultui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgraderesultui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\weaponimageui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weaponimageui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\plumd\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\prefabtable\\weaponprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\prefabtable\\weaponprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\upgradecost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradecost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\sd_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sd_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\weaponbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weaponbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\upgraderesults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgraderesults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\cannonball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cannonball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\sloweffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\sloweffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\sceneinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sceneinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\panelweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\panelweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panelweapon.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\playeritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playeritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\scenebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\sceneopening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sceneopening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\panelopening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panelopening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\prefabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\prefabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\assetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\assetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\iweaponeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\iweaponeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\rotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\globalcallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\globalcallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\prefabtable\\enemyprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\prefabtable\\enemyprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\upgradetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\panelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\weaponbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weaponbutton.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\item\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\item\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\weaponimageui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\weaponimageui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\cameramovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cameramovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\upgraderesultui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgraderesultui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\stuneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\stuneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\panelweaponupgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panelweaponupgrade.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\scenebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scenebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\door.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\door.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\triggerobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\triggerobject.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\triggerbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\triggerbox.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemymovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\sceneloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\panelopening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panelopening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\sloweffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\sloweffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\item\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\item\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\rotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\rotation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\assetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\assetmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\sceneinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sceneinit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\panelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panelbase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\itemdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\itemdata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\item\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\item\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\map.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\isavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\isavedata.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\upgradeui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradeui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\costui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\costui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\savemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\prefabtable\\weaponprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\prefabtable\\weaponprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\upgradecost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgradecost.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\sd_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sd_data.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\upgraderesults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\upgraderesults.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\cannonball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cannonball.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\playeritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playeritem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\coin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\sceneopening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\sceneopening.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\prefabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\prefabmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\iweaponeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\iweaponeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\globalcallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\globalcallback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\prefabtable\\enemyprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\prefabtable\\enemyprefabtable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\cameramovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\cameramovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\stuneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\stuneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\sceneloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\sceneloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\knockbackeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\knockbackeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\knockbackeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -181,55 +197,115 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 587,
+          "DockedWidth": 363,
           "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Block.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Block.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Block.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Block.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Block.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBYAAAAoAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "UpgradeTable.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeTable.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradeTable.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeTable.cs",
+              "RelativeToolTip": "Assets\\Scripts\\UpgradeTable.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-29T14:27:55.756Z",
+              "WhenOpened": "2026-05-30T09:31:55.361Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ItemData.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\ItemData.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemData.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\ItemData.cs",
-              "RelativeToolTip": "Assets\\Scripts\\ItemData.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA8AAAANAAAAAAAAAA==",
+              "Title": "PanelWeapon.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelWeapon.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PanelWeapon.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelWeapon.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PanelWeapon.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAADwvxUAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-22T12:45:00.272Z",
+              "WhenOpened": "2026-05-21T12:18:50.457Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 8,
+              "Title": "door.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\door.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\door.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\door.cs",
+              "RelativeToolTip": "Assets\\Scripts\\door.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwBQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T09:00:15.358Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "TriggerObject.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\TriggerObject.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\TriggerObject.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\TriggerObject.cs",
+              "RelativeToolTip": "Assets\\Scripts\\TriggerObject.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T08:53:18.986Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "triggerBox.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\triggerBox.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\triggerBox.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\triggerBox.cs",
+              "RelativeToolTip": "Assets\\Scripts\\triggerBox.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAADwvwgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-30T08:47:48.975Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Block.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Block.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Block.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Block.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Block.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAQwBYAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-29T14:27:55.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "ItemData.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\ItemData.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ItemData.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\ItemData.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ItemData.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAuwA8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-22T12:45:00.272Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "Map.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Map.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Map.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Map.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Map.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Map.cs",
               "RelativeToolTip": "Assets\\Scripts\\Map.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-28T15:55:58.69Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-28T15:55:58.69Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 27,
               "Title": "CostUI.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\CostUI.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\CostUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\CostUI.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\CostUI.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\CostUI.cs",
               "RelativeToolTip": "Assets\\Scripts\\CostUI.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAQwBwAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -237,11 +313,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 26,
               "Title": "UpgradeUI.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeUI.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradeUI.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeUI.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeUI.cs",
               "RelativeToolTip": "Assets\\Scripts\\UpgradeUI.cs",
               "ViewState": "AgIAABgAAAAAAAAAAEBdwB0AAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -251,45 +327,48 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "PanelWeaponUpgrade.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelWeaponUpgrade.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelWeaponUpgrade.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PanelWeaponUpgrade.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelWeaponUpgrade.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelWeaponUpgrade.cs",
               "RelativeToolTip": "Assets\\Scripts\\PanelWeaponUpgrade.cs",
               "ViewState": "AgIAABkAAAAAAAAAAAAQwCsAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-24T07:06:19.66Z"
+              "WhenOpened": "2026-05-24T07:06:19.66Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 5,
               "Title": "UpgradeResultUI.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeResultUI.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeResultUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradeResultUI.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeResultUI.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeResultUI.cs",
               "RelativeToolTip": "Assets\\Scripts\\UpgradeResultUI.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAwwBMAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T11:48:26.986Z"
+              "WhenOpened": "2026-05-25T11:48:26.986Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "WeaponImageUI.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\WeaponImageUI.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\WeaponImageUI.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WeaponImageUI.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\WeaponImageUI.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\WeaponImageUI.cs",
               "RelativeToolTip": "Assets\\Scripts\\WeaponImageUI.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-25T11:36:51.391Z"
+              "WhenOpened": "2026-05-25T11:36:51.391Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 31,
               "Title": "UpgradeCost.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeCost.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeCost.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradeCost.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeCost.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeCost.cs",
               "RelativeToolTip": "Assets\\Scripts\\UpgradeCost.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -297,11 +376,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 32,
               "Title": "SD_Data.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SD_Data.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SD_Data.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SD_Data.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SD_Data.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SD_Data.cs",
               "RelativeToolTip": "Assets\\Scripts\\SD_Data.cs",
               "ViewState": "AgIAAAEAAAAAAAAAAAAAAA8AAAAGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -309,11 +388,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 28,
               "Title": "SaveManager.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\SaveManager.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\SaveManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\SaveManager.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\SaveManager.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\SaveManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Manager\\SaveManager.cs",
               "ViewState": "AgIAACYAAAAAAAAAAAA7wDkAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -321,11 +400,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 25,
               "Title": "ISaveData.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\ISaveData.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\ISaveData.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ISaveData.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\ISaveData.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\ISaveData.cs",
               "RelativeToolTip": "Assets\\Scripts\\ISaveData.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -333,48 +412,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 3,
               "Title": "WeaponButton.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\WeaponButton.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\WeaponButton.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\WeaponButton.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\WeaponButton.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\WeaponButton.cs",
               "RelativeToolTip": "Assets\\Scripts\\WeaponButton.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAArAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T16:14:45.455Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "PanelWeapon.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelWeapon.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PanelWeapon.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelWeapon.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PanelWeapon.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T12:18:50.457Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Item.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Item.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\Item.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Item.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Item\\Item.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:53.845Z",
+              "WhenOpened": "2026-05-20T16:14:45.455Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
+              "Title": "Item.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Item.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\Item.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Item.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Item\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:29:53.845Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "UpgradeResults.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeResults.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeResults.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\UpgradeResults.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeResults.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\UpgradeResults.cs",
               "RelativeToolTip": "Assets\\Scripts\\UpgradeResults.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -382,11 +449,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 36,
               "Title": "PlayerItem.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerItem.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerItem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerItem.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerItem.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerItem.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerItem.cs",
               "ViewState": "AgIAACcAAAAAAAAAAAAowC4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -394,11 +461,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 37,
               "Title": "Coin.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Coin.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Coin.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Coin.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Coin.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Coin.cs",
               "RelativeToolTip": "Assets\\Scripts\\Coin.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAADwvwMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -406,11 +473,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 43,
               "Title": "CameraMovement.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CameraMovement.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CameraMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CameraMovement.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CameraMovement.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CameraMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\CameraMovement.cs",
               "ViewState": "AgIAABgAAAAAAAAAAAAYwDwAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -418,11 +485,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 34,
               "Title": "CannonBall.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CannonBall.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CannonBall.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\CannonBall.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CannonBall.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\CannonBall.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\CannonBall.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -430,11 +497,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 46,
               "Title": "KnockBackEffect.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -442,23 +509,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "EnemyMovement.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\EnemyMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyMovement.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\EnemyMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EnemyMovement.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:30:07.73Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 17,
               "Title": "Rotation.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Rotation.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Rotation.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Rotation.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Rotation.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Rotation.cs",
               "RelativeToolTip": "Assets\\Scripts\\Rotation.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAADwvxMAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -466,11 +521,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 16,
               "Title": "Inventory.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Inventory.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Inventory.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Item\\Inventory.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Inventory.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Item\\Inventory.cs",
               "RelativeToolTip": "Assets\\Scripts\\Item\\Inventory.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAowAsAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -478,11 +533,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 44,
               "Title": "StunEffect.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\StunEffect.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\StunEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\StunEffect.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\StunEffect.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\StunEffect.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\StunEffect.cs",
               "ViewState": "AgIAAA0AAAAAAAAAAAAUwBwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -490,11 +545,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 35,
               "Title": "Health.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Health.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Health.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Health.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Health.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Health.cs",
               "RelativeToolTip": "Assets\\Scripts\\Health.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -502,11 +557,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 15,
               "Title": "SlowEffect.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\SlowEffect.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -514,23 +569,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 11,
               "Title": "PlayerMovement.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerMovement.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovement.cs",
-              "ViewState": "AgIAAGMAAAAAAAAAAAAwwIUAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAADgv08AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-02T06:29:48.497Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 40,
               "Title": "IWeaponEffect.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -538,29 +593,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 14,
               "Title": "PlayerAttack.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerAttack.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerAttack.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerAttack.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerAttack.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerAttack.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAowFoAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAAawDIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-02T06:29:46.827Z"
             }
           ]
         },
         {
-          "DockedWidth": 95,
-          "SelectedChildIndex": 10,
+          "DockedWidth": 319,
+          "SelectedChildIndex": 12,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 29,
+              "Title": "gamemanager.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\gamemanager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\gamemanager.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\gamemanager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\gamemanager.cs",
+              "ViewState": "AgIAAGEAAAAAAAAAAAAIwHQAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T06:29:58.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
               "Title": "SceneOpening.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneOpening.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneOpening.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SceneOpening.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneOpening.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneOpening.cs",
               "RelativeToolTip": "Assets\\Scripts\\SceneOpening.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -568,11 +635,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 39,
               "Title": "PrefabManager.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\PrefabManager.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\PrefabManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\PrefabManager.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\PrefabManager.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\PrefabManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Manager\\PrefabManager.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -580,11 +647,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 30,
               "Title": "WeaponPrefabTable.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
               "RelativeToolTip": "Assets\\Scripts\\PrefabTable\\WeaponPrefabTable.cs",
               "ViewState": "AgIAAA4AAAAAAAAAAAAAwA4AAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -592,11 +659,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 42,
               "Title": "EnemyPrefabTable.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\EnemyPrefabTable.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\EnemyPrefabTable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PrefabTable\\EnemyPrefabTable.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\EnemyPrefabTable.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PrefabTable\\EnemyPrefabTable.cs",
               "RelativeToolTip": "Assets\\Scripts\\PrefabTable\\EnemyPrefabTable.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -604,23 +671,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "SceneInit.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneInit.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneInit.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneInit.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SceneInit.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAFAAAAAAAAAA==",
+              "DocumentIndex": 12,
+              "Title": "EnemyMovement.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\EnemyMovement.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyMovement.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\EnemyMovement.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyMovement.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAiwFcAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-10T13:10:23.344Z"
+              "WhenOpened": "2026-05-02T06:30:07.73Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "PanelOpening.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelOpening.cs",
+              "DocumentIndex": 13,
+              "Title": "panelOpening.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelOpening.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PanelOpening.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelOpening.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelOpening.cs",
               "RelativeToolTip": "Assets\\Scripts\\PanelOpening.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -628,11 +695,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 45,
               "Title": "SceneLoadManager.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\SceneLoadManager.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\SceneLoadManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\SceneLoadManager.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\SceneLoadManager.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\SceneLoadManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Manager\\SceneLoadManager.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAowDgAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -640,23 +707,36 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "SceneBase.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneBase.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneBase.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneBase.cs",
-              "RelativeToolTip": "Assets\\Scripts\\SceneBase.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAEAAAAAAAAAA==",
+              "DocumentIndex": 19,
+              "Title": "SceneInit.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneInit.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneInit.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneInit.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneInit.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAwAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T18:08:12.034Z"
+              "WhenOpened": "2026-05-10T13:10:23.344Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 7,
+              "Title": "SceneBase.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneBase.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\SceneBase.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SceneBase.cs",
+              "RelativeToolTip": "Assets\\Scripts\\SceneBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T18:08:12.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
               "Title": "GlobalCallback.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\GlobalCallback.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\GlobalCallback.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\GlobalCallback.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\GlobalCallback.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\GlobalCallback.cs",
               "RelativeToolTip": "Assets\\Scripts\\Manager\\GlobalCallback.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAwwA0AAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -664,50 +744,38 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 21,
               "Title": "PanelBase.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelBase.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelBase.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\PanelBase.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelBase.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\PanelBase.cs",
               "RelativeToolTip": "Assets\\Scripts\\PanelBase.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBoAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAMAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-12T15:28:12.292Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "gamemanager.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\gamemanager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\gamemanager.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\gamemanager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Manager\\gamemanager.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAtwHQAAAAmAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "UIManager.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\UIManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\UIManager.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\UIManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Manager\\UIManager.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAASwBcAAAA5AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:58.833Z",
+              "WhenOpened": "2026-05-02T06:29:59.85Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "UIManager.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\UIManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\UIManager.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\UIManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Manager\\UIManager.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAIA0wBIAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T06:29:59.85Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 18,
               "Title": "AssetManager.cs",
-              "DocumentMoniker": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\AssetManager.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\AssetManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\AssetManager.cs",
-              "ToolTip": "C:\\Users\\plumd\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\AssetManager.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\AssetManager.cs",
               "RelativeToolTip": "Assets\\Scripts\\Manager\\AssetManager.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAtwA8AAAAXAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAcwA8AAAAXAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-12T16:21:19.053Z"
             }

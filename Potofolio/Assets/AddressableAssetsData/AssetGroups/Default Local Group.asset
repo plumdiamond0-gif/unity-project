@@ -50,6 +50,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c34aaba539a51ba429d0a3a41d4b01dd
+    m_Address: UI_Player_Panel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c487b4c3fe67dbd408fe4874e2c508b2
     m_Address: UI_cutScene_4.prefab
     m_ReadOnly: 0

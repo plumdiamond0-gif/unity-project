@@ -3,14 +3,13 @@ using UnityEngine.UI;
 
 public class PanelWeapon : PanelBase
 {
-    [SerializeField] private Transform RootCanvas;
     [SerializeField] private Button Upgrade;
     [SerializeField] private Button Unlock;
+    [SerializeField] private Button Exit;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GM.GetUIManager().GetRootCanvas(RootCanvas);
         Upgrade.onClick.AddListener(UpgradeAppear);
         Unlock.onClick.AddListener(UnlockAppear);
     }

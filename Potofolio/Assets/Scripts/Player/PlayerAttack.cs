@@ -48,11 +48,12 @@ public class PlayerAttack : MonoBehaviour
     public Image AttackGuageBarFill;
 
 
-    //public Dictionary<int, WeaponState> weaponDic = new();
+
     void Start()
     {
         
-        foreach (var weapon in GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas)
+        foreach (var weapon in GM.GetPrefabManager().
+            WeaponPrefabTable.weaponPrafabTableDatas)
         {
             weaponList.Add(weapon);
         }
@@ -68,10 +69,14 @@ public class PlayerAttack : MonoBehaviour
         SelectWeapon(0);
         canAttack = true;
         addDamage = 0;
+    
+
     }
 
     private void Update()
     {
+        
+
         float Scrool = Mouse.current.scroll.ReadValue().y;
         if (Scrool > 0)
         {

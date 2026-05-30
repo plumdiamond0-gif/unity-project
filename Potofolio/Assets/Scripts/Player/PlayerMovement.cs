@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
+using static PlayerAttack;
 using static WeaponPrefabTable;
 
 public class PlayerMovement : MonoBehaviour
@@ -33,6 +34,16 @@ public class PlayerMovement : MonoBehaviour
     public PlayerAttack PlayerAttack;
 
 
+    public enum PlayerState
+    {
+        Idle,
+        InBase,
+        InBattle
+    }
+
+    public PlayerState state;
+
+
 
     void Start()
     {
@@ -47,21 +58,34 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = true;
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
+
     }
 
     void Update()
     {
         Rotate();
-
         float inputMagnitude = new Vector2(MovementX, MovementY).magnitude;
-
         float targetSpeed = 0f;
+
+        if (state == PlayerState.InBase)
+        {
+            anim.SetBool("InBase", true);
+            if (inputMagnitude > 0)
+            {
+                targetSpeed = 1;
+            }
+            currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, 26f * Time.deltaTime);
+            anim.SetFloat("Speed", currentSpeed);
+        }
+
+
 
         if (inputMagnitude > 0)
         {
             targetSpeed = isSprint ? 1f : 0.5f;
+
         }
-       
+
         currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, 26f * Time.deltaTime);
 
         anim.SetFloat("Speed", currentSpeed);
@@ -69,6 +93,11 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("MoveX", MovementX);
         anim.SetFloat("MoveY", MovementY);
         anim.SetBool("IsGrounded", isGrounded);
+
+
+
+
+
     }
 
 
@@ -93,6 +122,9 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnSprint()
         {
+        if(state == PlayerState.InBase) 
+            return;
+
         Debug.Log("Sprint");
         isSprint = !isSprint;
         PlayerSpeed = isSprint ? runSpeed : walkSpeed;
@@ -143,10 +175,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Rotate()
     {
-        if(PlayerAttack.spawnedWeapon == null)
-        {
-            Debug.Log("¿ý");
-            return; }
+     
         Vector2 mouseVec = Mouse.current.delta.ReadValue();
         mouseX = mouseVec.x * MouseSpeed * Time.deltaTime;
         mouseY = mouseVec.y * MouseSpeed * Time.deltaTime;
@@ -155,7 +184,11 @@ public class PlayerMovement : MonoBehaviour
         yRotation += mouseX;
         xRotation = Mathf.Clamp(xRotation, -45f, 45f);
         transform.rotation = Quaternion.Euler(0, yRotation, 0);
-        PlayerAttack.spawnedWeapon.transform.rotation = Quaternion.Euler(xRotation,yRotation, 0);
+        if (PlayerAttack.spawnedWeapon != null)
+        {
+            Debug.Log("¿ý");
+            PlayerAttack.spawnedWeapon.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        }
      
     }
 

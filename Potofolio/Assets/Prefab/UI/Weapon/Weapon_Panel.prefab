@@ -301,6 +301,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -437,6 +438,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -559,9 +561,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 31f7e7561acd52948a54c7946d3493fe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelWeapon
-  RootCanvas: {fileID: 0}
-  Upgrade: {fileID: 0}
-  Unlock: {fileID: 0}
+  Upgrade: {fileID: 246451829423124787}
+  Unlock: {fileID: 3475438941663861376}
+  Exit: {fileID: 0}
 --- !u!1 &4842033649044399752
 GameObject:
   m_ObjectHideFlags: 0
