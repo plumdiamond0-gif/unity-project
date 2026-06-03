@@ -13,6 +13,8 @@ public class UpgradeTable : TriggerObject
     }
     protected override void Trigger(GameObject entered)
     {
+         PlayerMovement playerMovement = entered.GetComponent<PlayerMovement>();
+        playerMovement.CanMove = false;
         GM.GetUIManager().CreateUIPanel("Weapon_Panel",
             (go) =>
             {

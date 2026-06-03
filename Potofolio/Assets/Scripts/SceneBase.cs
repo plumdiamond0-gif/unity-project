@@ -12,7 +12,8 @@ public class SceneBase : MonoBehaviour
                     Quaternion.identity);
                 PlayerAttack playerAttack = player.GetComponent<PlayerAttack>();
                 playerAttack.enabled = false;   
-                PlayerMovement playerMovement = player.GetComponent<PlayerMovement>(); 
+                PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+                playerMovement.CanMove = true;
                 playerMovement.state = PlayerMovement.PlayerState.InBase;
                 
                 

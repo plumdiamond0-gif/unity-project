@@ -551,6 +551,7 @@ MonoBehaviour:
   currntWeaponNum: 0
   WeaponNum: 5
   CanonBallspeed: 50
+  baseDamage: 0
   currentCharge: 0
   maxCharge: 1
   baseRecoilX: -5
@@ -568,15 +569,20 @@ MonoBehaviour:
     chargeAmount: 0
     canCharge: 0
     coolTime: 0
-    effects: []
     BaseRecoilX: 0
     maxChargeBonus: 0
     YZRecoil: 0
     radius: 0
     force: 0
     upModifier: 0
+    WeaponImage: {fileID: 0}
+    effects: []
+    upgradeCosts: {fileID: 0}
+    upgradeResults: {fileID: 0}
   Firepos: {fileID: 1986766959}
   knock: {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
+  AttackGuageBar: {fileID: 0}
+  AttackGuageBarFill: {fileID: 0}
 --- !u!114 &384408929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -598,6 +604,7 @@ MonoBehaviour:
   walkSpeed: 5
   runSpeed: 10
   PlayerAttack: {fileID: 384408928}
+  state: 0
 --- !u!114 &384408930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -642,10 +649,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1a1e96b3e90d354496fba997363c18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::gamemanager
-  prefabManager: {fileID: -5209665726153631106, guid: f19f5613bc92ff948bf5b4bb08cb897e, type: 3}
-  PlayerMovement: {fileID: 0}
-  playerAttack: {fileID: 384408928}
-  UIManager: {fileID: 753114364}
 --- !u!4 &385705544
 Transform:
   m_ObjectHideFlags: 0
@@ -1556,8 +1559,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a3b5111c8eb7974c92414a250f53ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  AttackGuageBar: {fileID: 632610581}
-  AttackGuageBarFill: {fileID: 1256729237}
   PlayerHealth: {fileID: 384408930}
   Inventory: {fileID: 279954758}
 --- !u!4 &753114365

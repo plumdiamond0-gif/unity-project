@@ -16,20 +16,7 @@ public class PanelWeaponUpgrade
     [SerializeField] private CostUI costUI;
 
 
-    void Start()
-    {
-        //AP.enabled = false;
-        //AS.enabled = false;
-        //MB.enabled = false;
-        //buttons = new Button[transform.childCount];
-     
-        //Upgraded.sprite = null;
-        //for (int i = 0; i < transform.childCount; i++)
-        //{
-        //    buttons[i] = transform.GetChild(i).GetComponent<Button>();
-        //}
-    
-    }
+
     public void Show(WeaponState weaponState)
     {
         WeaponPrefabTableData data =
@@ -43,6 +30,12 @@ public class PanelWeaponUpgrade
         WeaponImageUI.Show(data.WeaponImage);
         upgradeUI.GetData(cost, level);
     }
+
+    public void Blur()
+    {
+
+    }
+
     //public void GetSprite(Sprite sprite)
     //{
     //    Debug.Log("GetSprite");

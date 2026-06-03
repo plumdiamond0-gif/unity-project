@@ -33,7 +33,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody Rb;
     public PlayerAttack PlayerAttack;
 
-
+    public bool CanMove;
     public enum PlayerState
     {
         Idle,
@@ -47,6 +47,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
+
         //TODO:Aim = StartWeapon.transform.Find("Aim");
 
         anim = GetComponentInChildren<Animator>();
@@ -63,6 +64,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        if (!CanMove)
+            return;
         Rotate();
         float inputMagnitude = new Vector2(MovementX, MovementY).magnitude;
         float targetSpeed = 0f;
@@ -103,6 +106,9 @@ public class PlayerMovement : MonoBehaviour
 
     void OnMove(InputValue inputValue)
         {
+        if(!CanMove)
+            return;
+        
             Vector2 Movevalue = inputValue.Get<Vector2>();
             MovementX = Movevalue.x;
             MovementY = Movevalue.y;
