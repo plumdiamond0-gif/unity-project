@@ -8,6 +8,8 @@ public class CostUI : MonoBehaviour
 {
     [SerializeField] private Image[] images = new Image[5];
     [SerializeField] private TMP_Text[] texts = new TMP_Text[5];
+    [SerializeField] private Exit exitButton;
+
 
     public void Start()
     {

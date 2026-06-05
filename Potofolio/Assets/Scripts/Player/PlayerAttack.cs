@@ -16,7 +16,8 @@ public class PlayerAttack : MonoBehaviour
     public int currntWeaponNum;
     public int WeaponNum;
     public float CanonBallspeed;
-    public float baseDamage;
+    public float baseDamage = 0;
+
 
     [Header("차지,반동")]
     public float currentCharge = 0f;
@@ -29,13 +30,12 @@ public class PlayerAttack : MonoBehaviour
     private bool isCharging;
     private float AttackRatio;
     CameraMovement cameraMovement;
-    Transform Aim;
+    //[SerializeField] private Transform Aim;
     Camera cam;
     Rigidbody Rb;
-    public GameObject spawnedWeapon;
+    //public GameObject spawnedWeapon;
     public WeaponPrefabTableData currentweapondata;
     [SerializeField] private Transform Firepos;
-    private float addDamage;
     Animator anim;
      List<WeaponPrefabTableData> weaponList = new();
 
@@ -68,7 +68,6 @@ public class PlayerAttack : MonoBehaviour
 
         SelectWeapon(0);
         canAttack = true;
-        addDamage = 0;
     
 
     }
@@ -113,23 +112,21 @@ public class PlayerAttack : MonoBehaviour
     public void SelectWeapon(int index)
     {
         
-        if (spawnedWeapon != null)
-        {
-            Destroy(spawnedWeapon);
-        }
+        //if (spawnedWeapon != null)
+        //{
+        //    Destroy(spawnedWeapon);
+        //}
         currentweapondata = weaponList[index];
-        if (currentweapondata.Weapon == null)
+        if (currentweapondata.WeaponBullet == null)
         {
             Debug.LogError($"{currentweapondata.WeaponName}의 프리팹 원본이 이미 파괴되었거나 할당되지 않았습니다!");
             return;
         }
         Debug.Log("CurrntWeapon : " + currentweapondata.WeaponName);
-       spawnedWeapon = Instantiate(currentweapondata.Weapon, Firepos.position, Firepos.rotation, Firepos);
-        Transform aimTrans = spawnedWeapon.transform.Find("Aim");
+       //spawnedWeapon = Instantiate(currentweapondata.WeaponBullet, Firepos.position, Firepos.rotation, Firepos);
         maxCharge = currentweapondata.chargeAmount;
         baseRecoilX = currentweapondata.BaseRecoilX;
         maxChargeBonus = currentweapondata.maxChargeBonus;
-        Aim = aimTrans;
         if (currentweapondata.canCharge)
             {
                 AttackGuageBar.SetActive(true);
@@ -200,12 +197,13 @@ public class PlayerAttack : MonoBehaviour
         anim.SetTrigger("Attack");
 
         GameObject CBcopy = GameManager.instance.GetPrefab
-            (currentweapondata.WeaponName, Aim.transform.position, Quaternion.identity);
+            (currentweapondata.WeaponName, Firepos.transform.position, Quaternion.identity);
 
         float finalDamage;
         CannonBall currentBall = CBcopy.GetComponent<CannonBall>();
 
-        finalDamage = currentweapondata.damage + (addDamage + AttackRatio * 10);
+        finalDamage = currentweapondata.damage + (baseDamage
+        +AttackRatio * 10);
         currentBall.SetWeaponData(currentweapondata);
         currentBall.SetDamage(finalDamage);
         Debug.Log(finalDamage);
@@ -218,7 +216,7 @@ public class PlayerAttack : MonoBehaviour
         Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
         if (CanonBallRB != null)
         {
-            CanonBallRB.AddForce(Aim.transform.forward * CanonBallspeed, ForceMode.Impulse);
+            CanonBallRB.AddForce(Firepos.transform.forward * CanonBallspeed, ForceMode.Impulse);
         }
     }
 
@@ -231,7 +229,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void DamageUpdate(float val)
     {
-        addDamage += val;
+        baseDamage += val;
     }
 }
 

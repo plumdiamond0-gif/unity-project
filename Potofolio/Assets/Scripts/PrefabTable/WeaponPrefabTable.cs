@@ -20,7 +20,6 @@ public class WeaponPrefabTable : ScriptableObject
         
         public WeaponState weaponState;
         public string WeaponName;
-        public GameObject Weapon;
         public GameObject WeaponBullet;
         public float damage;
         public float Attackspeed;

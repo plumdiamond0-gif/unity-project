@@ -20,6 +20,7 @@ public class PanelWeapon : PanelBase
         GM.GetUIManager().CreateUIPanel("Upgrade_Panel", (go) =>
         {
             Debug.Log("Upgrade_Panel ∫∏ø©¡‹");
+            
         });
     }
     void UnlockAppear()

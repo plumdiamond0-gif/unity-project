@@ -190,11 +190,11 @@ public class PlayerMovement : MonoBehaviour
         yRotation += mouseX;
         xRotation = Mathf.Clamp(xRotation, -45f, 45f);
         transform.rotation = Quaternion.Euler(0, yRotation, 0);
-        if (PlayerAttack.spawnedWeapon != null)
-        {
-            Debug.Log("¿ý");
-            PlayerAttack.spawnedWeapon.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        }
+        //if (PlayerAttack.spawnedWeapon != null)
+        //{
+        //    Debug.Log("¿ý");
+        //    PlayerAttack.spawnedWeapon.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
+        //}
      
     }
 

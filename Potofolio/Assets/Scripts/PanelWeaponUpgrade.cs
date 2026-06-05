@@ -7,14 +7,13 @@ using static WeaponPrefabTable;
 using Button = UnityEngine.UI.Button;
 using Image = UnityEngine.UI.Image;
 public class PanelWeaponUpgrade
- : MonoBehaviour
+ : PanelBase
 {
     //[SerializeField] private WeaponListUI weaponListUI;
     [SerializeField] private UpgradeResultUI upgradeResultUI;
     [SerializeField] private UpgradeUI upgradeUI;
     [SerializeField] private WeaponImageUI WeaponImageUI;
     [SerializeField] private CostUI costUI;
-
 
 
     public void Show(WeaponState weaponState)

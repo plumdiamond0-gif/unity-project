@@ -5,6 +5,9 @@ public class PanelBase : MonoBehaviour
 {
     public Action OnBeforeShow { get; set; } = null;
     public Action OnHideCompleted { get; set; } = null;
+    [SerializeField] protected Exit exitButton;
+
+
 
     public virtual void Init() { }
 
