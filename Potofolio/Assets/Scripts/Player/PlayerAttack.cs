@@ -119,10 +119,10 @@ public class PlayerAttack : MonoBehaviour
         currentweapondata = weaponList[index];
         if (currentweapondata.WeaponBullet == null)
         {
-            Debug.LogError($"{currentweapondata.WeaponName}의 프리팹 원본이 이미 파괴되었거나 할당되지 않았습니다!");
+          //  Debug.LogError($"{currentweapondata.WeaponName}의 프리팹 원본이 이미 파괴되었거나 할당되지 않았습니다!");
             return;
         }
-        Debug.Log("CurrntWeapon : " + currentweapondata.WeaponName);
+        //Debug.Log("CurrntWeapon : " + currentweapondata.WeaponName);
        //spawnedWeapon = Instantiate(currentweapondata.WeaponBullet, Firepos.position, Firepos.rotation, Firepos);
         maxCharge = currentweapondata.chargeAmount;
         baseRecoilX = currentweapondata.BaseRecoilX;
@@ -197,7 +197,7 @@ public class PlayerAttack : MonoBehaviour
         anim.SetTrigger("Attack");
 
         GameObject CBcopy = GameManager.instance.GetPrefab
-            (currentweapondata.WeaponName, Firepos.transform.position, Quaternion.identity);
+            (currentweapondata.weaponState.ToString(), Firepos.transform.position, Quaternion.identity);
 
         float finalDamage;
         CannonBall currentBall = CBcopy.GetComponent<CannonBall>();

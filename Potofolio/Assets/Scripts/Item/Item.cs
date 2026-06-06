@@ -23,27 +23,17 @@ public class Item : MonoBehaviour
 
     public void Restore(OutItemType type)
     {
-        switch(type)
+        if(!SaveManager.CurrentData.itemStates.ContainsKey(type))
         {
-            case OutItemType.RedSlime:
-            {
-                SaveManager.CurrentData.RedSlime++;     
-                break;
-            }
-
-            case OutItemType.BlueSlime:
-                {
-                    SaveManager.CurrentData.BlueSlime++;
-
-                    break;
-                }
-
+            SaveManager.CurrentData.itemStates[type] = 0;
         }
-
+        SaveManager.CurrentData.itemStates[type]++;
     }
 
     public void Heal(Health health)
     {
+
+
         health.Heal(data.healAmount);
         Debug.Log($"체력 {data.healAmount}만큼 회복");
 

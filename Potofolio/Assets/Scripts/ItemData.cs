@@ -20,9 +20,17 @@ public enum InItemType
 public enum OutItemType
 {
     None,
-    RedSlime,
-    BlueSlime,
-
+    RedJelly,
+    SlimeShell,
+    HardenedFang,
+    WatchersEye,
+    FlameCrystal,
+    GaleCrystal,
+    ToxicThornFragment,
+    SporeSac,
+    EmeraldShard,
+    KnightsEmblem,
+    ManaCrystal,
 }
 
 [CreateAssetMenu(menuName = "Data/ItemData")]

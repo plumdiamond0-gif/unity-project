@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3528865133465964671}
   - component: {fileID: 4597480055368090239}
   m_Layer: 0
-  m_Name: PistolBullet
+  m_Name: Energy
   m_TagString: PlayerCannonBall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: cf7d393b0e929cf4b9595fda410d660e, type: 2}
+  - {fileID: 2100000, guid: 2e3cc95102d9b5a4a9a8e8762015c5d8, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

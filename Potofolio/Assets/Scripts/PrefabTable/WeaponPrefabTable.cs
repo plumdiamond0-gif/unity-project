@@ -3,11 +3,14 @@ using System.Collections.Generic;
 
 public enum WeaponState
 {
-    Pistol,
-    Cannon,
-    PulseGun,
-    MissileLauncher,
-    SlimeGun,
+    Base,
+    Improved,
+    Slime,
+    Toxic,
+    Fire,
+    Hypnosis,
+    Energy,
+    Bomb,
 }
 [CreateAssetMenu(menuName = "Data/WeaponPrafabTable")]
 public class WeaponPrefabTable : ScriptableObject
@@ -19,7 +22,7 @@ public class WeaponPrefabTable : ScriptableObject
       
         
         public WeaponState weaponState;
-        public string WeaponName;
+        //public string WeaponName;
         public GameObject WeaponBullet;
         public float damage;
         public float Attackspeed;

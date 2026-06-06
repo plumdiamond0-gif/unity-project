@@ -128,7 +128,7 @@ public class GameManager : SingletonObject<GameManager>
 
     public GameObject GetPrefab(string prefabname, Vector3 spawnpos, Quaternion spawnrot)
     {
-        var data = GetPrefabManager.WeaponPrefabTable.weaponPrafabTableDatas.Find(x => x.WeaponName == prefabname);
+        var data = GetPrefabManager.WeaponPrefabTable.weaponPrafabTableDatas.Find(x => x.weaponState.ToString() == prefabname);
         if (data != null)
         {
             GameObject CBcoy = Instantiate(data.WeaponBullet, spawnpos, spawnrot);

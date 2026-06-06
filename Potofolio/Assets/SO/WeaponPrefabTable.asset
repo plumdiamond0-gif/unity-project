@@ -14,8 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PrefabTable
   weaponPrafabTableDatas:
   - weaponState: 0
-    WeaponName: Pistol
-    Weapon: {fileID: 5127384509388819661, guid: 14b409b589254a842b2696eb66cda203, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: 1881ef916111c3d4d9f10ef03c2564c4, type: 3}
     damage: 5
     Attackspeed: 2
@@ -35,8 +33,6 @@ MonoBehaviour:
     upgradeCosts: {fileID: 11400000, guid: 13ce338445345fc44abadee2193d5711, type: 2}
     upgradeResults: {fileID: 11400000, guid: 2ec06e565e6aa7f4dbf27ecdd0984b59, type: 2}
   - weaponState: 1
-    WeaponName: Cannon
-    Weapon: {fileID: 5127384509388819661, guid: ccf64cd1413417c41b2d3decf6cb532e, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: 2a5548c3d0139ee4db798ae4915ef60b, type: 3}
     damage: 7
     Attackspeed: 5
@@ -57,8 +53,6 @@ MonoBehaviour:
     upgradeCosts: {fileID: 11400000, guid: 07d22b366b0e6c649aa1e69787a14ea6, type: 2}
     upgradeResults: {fileID: 11400000, guid: 38dc056ac8ffd764d895915f6cbd7387, type: 2}
   - weaponState: 4
-    WeaponName: SlimeGun
-    Weapon: {fileID: 5127384509388819661, guid: a77f20bdeb076fd4b80db4c76e875050, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: 9f2fb37adc018c94bb9d582a10b5bcba, type: 3}
     damage: 10
     Attackspeed: 7
@@ -79,8 +73,6 @@ MonoBehaviour:
     upgradeCosts: {fileID: 0}
     upgradeResults: {fileID: 0}
   - weaponState: 2
-    WeaponName: PulseGun
-    Weapon: {fileID: 5127384509388819661, guid: b854af823e97f9f40978e717e99bca5c, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: 86e81e14019f1c24b94f906625201ac6, type: 3}
     damage: 20
     Attackspeed: 20
@@ -101,8 +93,6 @@ MonoBehaviour:
     upgradeCosts: {fileID: 0}
     upgradeResults: {fileID: 0}
   - weaponState: 3
-    WeaponName: MissileLauncher
-    Weapon: {fileID: 5127384509388819661, guid: d0b877da444deeb4db96a82fe854b0b2, type: 3}
     WeaponBullet: {fileID: 8363767819308192229, guid: d6cf077bc527d724c9378e118b0fb2f9, type: 3}
     damage: 0
     Attackspeed: 0
