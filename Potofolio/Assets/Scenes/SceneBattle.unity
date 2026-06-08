@@ -1572,6 +1572,7 @@ GameObject:
   - component: {fileID: 1068819474}
   - component: {fileID: 1068819473}
   - component: {fileID: 1068819472}
+  - component: {fileID: 1068819475}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -1682,6 +1683,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1068819470}
   m_CullTransparentMesh: 1
+--- !u!114 &1068819475
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1068819470}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0c326a333753446bff5f457c6f4c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RewardButton
 --- !u!1 &1116210710
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,6 +2217,7 @@ GameObject:
   - component: {fileID: 1398954154}
   - component: {fileID: 1398954153}
   - component: {fileID: 1398954152}
+  - component: {fileID: 1398954155}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -2314,6 +2328,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1398954150}
   m_CullTransparentMesh: 1
+--- !u!114 &1398954155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1398954150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0c326a333753446bff5f457c6f4c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RewardButton
 --- !u!1 &1575797056
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,6 +2946,7 @@ GameObject:
   - component: {fileID: 1816123156}
   - component: {fileID: 1816123155}
   - component: {fileID: 1816123154}
+  - component: {fileID: 1816123157}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -3030,6 +3057,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816123152}
   m_CullTransparentMesh: 1
+--- !u!114 &1816123157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1816123152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d0c326a333753446bff5f457c6f4c4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RewardButton
 --- !u!1 &1823013893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3072,6 +3111,7 @@ GameObject:
   - component: {fileID: 1845875768}
   - component: {fileID: 1845875770}
   - component: {fileID: 1845875769}
+  - component: {fileID: 1845875771}
   m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
@@ -3139,6 +3179,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1845875767}
   m_CullTransparentMesh: 1
+--- !u!114 &1845875771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1845875767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 957c658cac6a8984c8e591b8c7aaa4a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PanelReward
+  exitButton: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
