@@ -6,14 +6,14 @@ public class RewardButton : MonoBehaviour
 {
     RewardDataTable.RewardData data;
     Button button;
-    Sprite sprite;
+    Image image;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         button = GetComponent<Button>();
-        sprite = GetComponent<Sprite>();
+        image = GetComponent<Image>();
         button.onClick.AddListener(ApplyBuff);
     }
 
@@ -26,6 +26,7 @@ public class RewardButton : MonoBehaviour
         switch (data.RewardType)
         {
             case RewardType.Heal:
+
                 break;
             case RewardType.DamageUp:
                 break;

@@ -15,19 +15,20 @@ public class PlayerMovement : MonoBehaviour
     public float xRotation;
     private float mouseX;
     private float mouseY;
-
-    public float PlayerSpeed;
-    public float JumpPower;
     public float MouseSpeed;
-    public float SprintSpeed;
+
+
+    //private float PlayerSpeed = 1;
+    //public float JumpPower;
 
     private bool isGrounded;
     bool isSprint;
     Animator anim;
 
     float currentSpeed;
-    public float walkSpeed = 5f;
-    public float runSpeed = 10f;
+
+    public float walkSpeed;
+    public float runSpeed;
 
     Camera cam;
     Rigidbody Rb;
@@ -43,16 +44,16 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerState state;
 
-
+    PlayerStat stat;
 
     void Start()
     {
 
         //TODO:Aim = StartWeapon.transform.Find("Aim");
-
+        stat = GetComponent<PlayerStat>();
         anim = GetComponentInChildren<Animator>();
 
-        PlayerSpeed = walkSpeed;
+        stat.PlayerSpeed *= walkSpeed;
         isSprint = false;
         cam = Camera.main;
         Cursor.lockState = CursorLockMode.Confined;
@@ -121,7 +122,7 @@ public class PlayerMovement : MonoBehaviour
                 return;
             }
             Rb.linearVelocity = new Vector3(Rb.linearVelocity.x, 0, Rb.linearVelocity.z);
-            Rb.AddForce(transform.up * JumpPower, ForceMode.Impulse);
+            Rb.AddForce(transform.up * stat.JumpPower, ForceMode.Impulse);
             isGrounded = false;
 
             anim.SetTrigger("Jump");
@@ -133,7 +134,7 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.Log("Sprint");
         isSprint = !isSprint;
-        PlayerSpeed = isSprint ? runSpeed : walkSpeed;
+        stat.PlayerSpeed *= isSprint ? runSpeed : walkSpeed;
     }
 
   
@@ -154,7 +155,7 @@ public class PlayerMovement : MonoBehaviour
     {
 
         Vector3 MoveDir = ((transform.right * MovementX) + (transform.forward * MovementY)).normalized;
-        Vector3 targetVel = MoveDir * PlayerSpeed;
+        Vector3 targetVel = MoveDir * stat.PlayerSpeed;
 
         Vector3 currentVel = Rb.linearVelocity;
 

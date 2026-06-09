@@ -12,6 +12,8 @@ public class GameManager : SingletonObject<GameManager>
     public AssetManager GetAssetManager { get; private set; } = null;
     public SceneLoadManager GetSceneLoadManager { get; private set; } = null;   
     public SaveManager GetSaveManager { get; private set; }=null;
+    public GameObject player{ get; private set; } = null;
+
     public PrefabManager Get_PrefabManager()
     {
         return GetPrefabManager;
@@ -140,6 +142,10 @@ public class GameManager : SingletonObject<GameManager>
         }
     }
 
+    public void GetPlayer(GameObject go)
+    {
+        player = go;
+    }
 
 
 }
@@ -170,6 +176,7 @@ public static class GM
         Debug.Log("GetSaveManager");
         return GameManager.instance.Get_SaveManager();
     }
+ 
 
 }
 
