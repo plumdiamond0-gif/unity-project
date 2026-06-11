@@ -13,9 +13,9 @@ public class Item : MonoBehaviour
                 break;
 
             case InItemType.DamageBuffItem:
-                PlayerAttack playerAttack = 
-                    PlayerInfo.GetComponent<PlayerAttack>();
-                DamageBuff(playerAttack.baseDamage);
+                PlayerStat playerStat= 
+                    PlayerInfo.GetComponent<PlayerStat>();
+                DamageBuff(playerStat.BaseDamage);
                 break;
 
         }

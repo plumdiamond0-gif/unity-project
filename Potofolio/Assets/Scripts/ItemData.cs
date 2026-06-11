@@ -20,6 +20,7 @@ public enum InItemType
 public enum OutItemType
 {
     None,
+    MonsterCore,
     RedJelly,
     SlimeShell,
     HardenedFang,

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75a3273345948e34ba04bb3d52b1445d, type: 3}
-  m_Name: SlimeCannonResults
+  m_Name: SlimeCannonUpgradeResults
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeEffect
   results:
   - type: 1

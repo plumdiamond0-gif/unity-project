@@ -38,7 +38,7 @@ public class UpgradeResultUI : MonoBehaviour
         if (data == null) return;
         UpgradeResults results = data.upgradeResults;
         WeaponState state = data.weaponState;
-        int level = SaveManager.CurrentData.weaponStates[state];
+        int level = SaveManager.CurrentData.weaponlevel[state];
         preLv.text = level.ToString();
         AftLv.text = (level+1).ToString();
         for (int i = 0; i < 5; i++)

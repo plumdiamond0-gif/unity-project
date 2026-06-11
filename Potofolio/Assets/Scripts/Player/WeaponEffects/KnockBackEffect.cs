@@ -18,7 +18,7 @@ public class KnockBackEffect : ScriptableObject, IWeaponEffect
     }
 
 
-    public void Apply(GameObject target)
+    public void Apply(GameObject target, WeaponState weaponType)
     {
 
         if (target == null)

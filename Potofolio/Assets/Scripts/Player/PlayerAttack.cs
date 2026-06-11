@@ -15,8 +15,7 @@ public class PlayerAttack : MonoBehaviour
     [Header("무기,공격")]
     public int currntWeaponNum;
     public int WeaponNum;
-    public float CanonBallspeed;
-    public float baseDamage = 0;
+    //public float CanonBallspeed;
 
 
     [Header("차지,반동")]
@@ -26,18 +25,15 @@ public class PlayerAttack : MonoBehaviour
     public float maxChargeBonus;
 
     bool canAttack;
-   // [SerializeField] private Transform WeaponSpawnPos;
     private bool isCharging;
     private float AttackRatio;
     CameraMovement cameraMovement;
-    //[SerializeField] private Transform Aim;
     Camera cam;
     Rigidbody Rb;
-    //public GameObject spawnedWeapon;
     public WeaponPrefabTableData currentweapondata;
     [SerializeField] private Transform Firepos;
     Animator anim;
-     List<WeaponPrefabTableData> weaponList = new();
+    List<WeaponPrefabTableData> weaponList = new();
 
 
 
@@ -47,11 +43,11 @@ public class PlayerAttack : MonoBehaviour
 
     public Image AttackGuageBarFill;
 
-
+    PlayerStat stat;
 
     void Start()
     {
-        
+        stat  = GetComponent<PlayerStat>();
         foreach (var weapon in GM.GetPrefabManager().
             WeaponPrefabTable.weaponPrafabTableDatas)
         {
@@ -151,7 +147,17 @@ public class PlayerAttack : MonoBehaviour
             else
             {
                 isCharging = false;
-                knock.GetKnockVal(currentCharge, currentweapondata);
+                foreach (var effect in currentweapondata.effects)
+                {
+                    if(effect is DotdamEffect dotdamEffect)
+                    {
+                        dotdamEffect.GetCharge(currentCharge);
+                    }
+                    if (effect is KnockBackEffect knockBackEffect)
+                    {
+                        knockBackEffect.GetKnockVal(currentCharge, currentweapondata);
+                    }
+                }
 
                 Fire();
            
@@ -202,8 +208,8 @@ public class PlayerAttack : MonoBehaviour
         float finalDamage;
         CannonBall currentBall = CBcopy.GetComponent<CannonBall>();
 
-        finalDamage = currentweapondata.damage + (baseDamage
-        +AttackRatio * 10);
+        finalDamage = currentweapondata.damage + (stat.BaseDamage
+        + AttackRatio * maxChargeBonus);
         currentBall.SetWeaponData(currentweapondata);
         currentBall.SetDamage(finalDamage);
         Debug.Log(finalDamage);
@@ -216,7 +222,7 @@ public class PlayerAttack : MonoBehaviour
         Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
         if (CanonBallRB != null)
         {
-            CanonBallRB.AddForce(Firepos.transform.forward * CanonBallspeed, ForceMode.Impulse);
+            CanonBallRB.AddForce(Firepos.transform.forward * currentweapondata.Attackspeed, ForceMode.Impulse);
         }
     }
 
@@ -227,10 +233,10 @@ public class PlayerAttack : MonoBehaviour
         canAttack = true;
     }
 
-    public void DamageUpdate(float val)
-    {
-        baseDamage += val;
-    }
+    //public void DamageUpdate(float val)
+    //{
+    //    stat.baseDamage += val;
+    //}
 }
 
 

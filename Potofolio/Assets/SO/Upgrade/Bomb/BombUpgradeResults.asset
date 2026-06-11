@@ -10,15 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75a3273345948e34ba04bb3d52b1445d, type: 3}
-  m_Name: PistolUpgradeResult
+  m_Name: BombUpgradeResults
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeEffect
   results:
   - type: 1
-    amount: 2
+    amount: 3
     sprite: {fileID: 21300000, guid: ef7d50a6b5d141e4ebbde795171bad2c, type: 3}
   - type: 2
-    amount: 2
-    sprite: {fileID: 21300000, guid: 69d3e9148f777d34fab0645b93527740, type: 3}
-  - type: 3
-    amount: 30
+    amount: 5
     sprite: {fileID: 21300000, guid: 69d3e9148f777d34fab0645b93527740, type: 3}

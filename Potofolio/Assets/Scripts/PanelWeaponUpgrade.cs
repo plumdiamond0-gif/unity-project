@@ -23,7 +23,7 @@ public class PanelWeaponUpgrade
         x => x.weaponState == weaponState);
         UpgradeResults results = data.upgradeResults;
         UpgradeCost cost = data.upgradeCosts;
-        int level = SaveManager.CurrentData.weaponStates[weaponState];
+        int level = SaveManager.CurrentData.weaponlevel[weaponState];
 
         upgradeResultUI.ShowResults(data);
         WeaponImageUI.Show(data.WeaponImage);

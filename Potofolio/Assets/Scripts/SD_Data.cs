@@ -9,8 +9,13 @@ public class SD_User : ISaveData
     public ulong RedSlime;
     public ulong BlueSlime;
     public ulong Hp;
+
+
+
+
     public Dictionary<OutItemType, int> itemStates = new()
     {
+        {OutItemType.MonsterCore, 0},
         {OutItemType.RedJelly, 0},
         {OutItemType.SlimeShell, 0},
         {OutItemType.SporeSac, 0},
@@ -27,7 +32,7 @@ public class SD_User : ISaveData
     };
 
 
-    public Dictionary<WeaponState, int> weaponStates = new()
+    public Dictionary<WeaponState, int> weaponlevel = new()
     {
         {WeaponState.Base, 0 },
         {WeaponState.Improved, 0 },
@@ -37,9 +42,6 @@ public class SD_User : ISaveData
         {WeaponState.Hypnosis, 0 },
         {WeaponState.Energy, 0 },
         {WeaponState.Bomb, 0 },
-
-
-
 
     };
     

@@ -10,9 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5034ff4d6e6a21b41929a06eac96e95d, type: 3}
-  m_Name: PistolUpgradeCost
+  m_Name: PulseGunUpgradeCost
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCost
   costs:
   - itemType: 1
     CostSprite: {fileID: 21300000, guid: 0ebc9de1726e17247be3f1b516e7b9b6, type: 3}
-    amount: 5
+    amount: 30
+  - itemType: 12
+    CostSprite: {fileID: 21300000, guid: 5452d2453f07c414b9efb4fa4b965c90, type: 3}
+    amount: 10
