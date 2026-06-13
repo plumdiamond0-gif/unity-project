@@ -48,7 +48,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Start()
     {
-
+        stat = GetComponent<PlayerStat>();
         //TODO:Aim = StartWeapon.transform.Find("Aim");
         stat = GetComponent<PlayerStat>();
         anim = GetComponentInChildren<Animator>();
@@ -153,7 +153,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-
+        if (!CanMove)
+            return;
         Vector3 MoveDir = ((transform.right * MovementX) + (transform.forward * MovementY)).normalized;
         Vector3 targetVel = MoveDir * stat.PlayerSpeed;
 

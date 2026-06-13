@@ -14,6 +14,7 @@ public class Exit : MonoBehaviour
     private void Start()
     {
         buttonExit = GetComponent<Button>();
+        currentPanel = transform.parent.gameObject;
         buttonExit.onClick.AddListener(RemovePanel);
 
     }

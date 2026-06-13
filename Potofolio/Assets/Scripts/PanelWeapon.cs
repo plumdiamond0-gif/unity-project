@@ -5,15 +5,32 @@ public class PanelWeapon : PanelBase
 {
     [SerializeField] private Button Upgrade;
     [SerializeField] private Button Unlock;
+    PlayerMovement Player;
     [SerializeField] private Button Exit;
+
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Upgrade.onClick.AddListener(UpgradeAppear);
         Unlock.onClick.AddListener(UnlockAppear);
+        Exit.onClick.AddListener(MoveAgain);
     }
 
+    public void GetPlayer(PlayerMovement player)
+    {
+        Debug.Log("wefwe");
+        Player = player;    
+        if(Player != null)
+        {
+            Debug.Log("널 아미");
+        }
+    }
+
+    public void MoveAgain()
+    {
+        Player.CanMove=true;
+    }
     void UpgradeAppear()
     {
         
@@ -30,4 +47,5 @@ public class PanelWeapon : PanelBase
             Debug.Log("Unlock_Panel 보여줌");
         });
     }
+
 }

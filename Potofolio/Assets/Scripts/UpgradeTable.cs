@@ -13,12 +13,24 @@ public class UpgradeTable : TriggerObject
     }
     protected override void Trigger(GameObject entered)
     {
-         PlayerMovement playerMovement = entered.GetComponent<PlayerMovement>();
-        playerMovement.CanMove = false;
-        GM.GetUIManager().CreateUIPanel("Weapon_Panel",
-            (go) =>
-            {
-                Debug.Log("Weapon_Panel 积己窃");
-            });
+        if ((entered.CompareTag("Player")))
+        {
+            GM.GetUIManager().CreateUIPanel("Weapon_Panel",
+                (go) =>
+                {
+                    Debug.Log("Weapon_Panel 积己窃");
+                    PanelWeapon panelWeapon = go.GetComponent<PanelWeapon>();
+                    PlayerMovement player = entered.GetComponent<PlayerMovement>();
+                    player.CanMove = false;
+                    if (player != null)
+                    {
+                        Debug.Log("null 酒丛");
+                    }
+                    panelWeapon.GetPlayer(player);
+                });
+           
+            //player.CanMove = false;
+        }
+
     }
 }

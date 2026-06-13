@@ -1,36 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class PanelOpening : PanelBase
 {
-    CanvasGroup canvasGroup;
+    [SerializeField] CanvasGroup canvasGroup;
     [SerializeField] private float fadeTime;
-
+    [SerializeField]Image image;
+    public Sprite[] sprites;
+    public int currentNum = 0;
+    TMP_Text[] texts;
+    public bool IsPlaying { get; private set; }
+    public bool IsFinished =>
+    currentNum >= sprites.Length;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public override void Init()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+        image = GetComponent<Image>();
     }
 
     public override void Show()
     {
+        if (currentNum >= sprites.Length)
+            return;
+        Debug.Log(currentNum);
+        image.sprite = sprites[currentNum];
         StartCoroutine(FadeIn());
+        currentNum++;
     }
     IEnumerator FadeIn()
     {
+        IsPlaying = true;
         canvasGroup.alpha = 0;
 
         float time = 0;
@@ -43,9 +52,23 @@ public class PanelOpening : PanelBase
 
             yield return null;
         }
-
         canvasGroup.alpha = 1;
+        yield return new WaitForSeconds(2f);
+
+        IsPlaying = false;
     }
+
+    //void Update()
+    //{
+    //    if (CanStart)
+    //    {
+    //        if (texts[nextNum] != null)
+    //        {
+    //            float alpha = (Mathf.Sin(Time.time * 3f) + 1) * 0.5f;
+    //            texts[nextNum].alpha = alpha;
+    //        }
+    //    }
+    //}
 
     public override void Hide()
     {
@@ -67,7 +90,6 @@ public class PanelOpening : PanelBase
         }
 
         canvasGroup.alpha = 0;
-        Destroy(gameObject);
 
 
 
