@@ -103,7 +103,6 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -240,7 +239,6 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -378,16 +376,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99229a359d5cf154dbb529bc12e224d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  canvasGroup: {fileID: 0}
   fadeTime: 2
-  image: {fileID: 0}
-  sprites:
-  - {fileID: 21300000, guid: 766cbe6c825c61749b197848c7623135, type: 3}
-  - {fileID: 21300000, guid: 472f24b9270f083448e45d8e56553287, type: 3}
-  - {fileID: 21300000, guid: 0bd5653c2f5ecdc459cdabd487cf328a, type: 3}
-  - {fileID: 21300000, guid: aafffc286a59b9741b963801f2e23322, type: 3}
-  - {fileID: 21300000, guid: 766cbe6c825c61749b197848c7623135, type: 3}
   currentNum: 0
+  cutScenes:
+  - sprite: {fileID: 0}
+    texts: 
+  - sprite: {fileID: 0}
+    texts: 
+  - sprite: {fileID: 0}
+    texts: 
+  - sprite: {fileID: 0}
+    texts: 
+  - sprite: {fileID: 0}
+    texts: 
 --- !u!1 &6249503686854871877
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,7 +492,6 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
-  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

@@ -3,43 +3,54 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PanelOpening : PanelBase
 {
-    [SerializeField] CanvasGroup canvasGroup;
+    CanvasGroup canvasGroup;
     [SerializeField] private float fadeTime;
-    [SerializeField]Image image;
-    public Sprite[] sprites;
+    Image image;
+    TMP_Text text;
     public int currentNum = 0;
-    TMP_Text[] texts;
+    [System.Serializable]
+    public struct CutScenes
+    {
+        public Sprite sprite;
+        public string texts;
+    }
+    public CutScenes[] cutScenes;
     public bool IsPlaying { get; private set; }
     public bool IsFinished =>
-    currentNum >= sprites.Length;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-    }
+    currentNum >= cutScenes.Length;
+
+
+
 
     public override void Init()
     {
         canvasGroup = GetComponent<CanvasGroup>();
+
         image = GetComponent<Image>();
+        text = GetComponent<TMP_Text>();
     }
 
     public override void Show()
     {
-        if (currentNum >= sprites.Length)
+        if (currentNum >= cutScenes.Length)
             return;
-        Debug.Log(currentNum);
-        image.sprite = sprites[currentNum];
+        if (currentNum == 0)
+        {
+            text.transform.position = new Vector3(0, 180);
+        }
+        else
+        {
+            text.transform.position = new Vector3(0, -260);
+        }
+        image.sprite = cutScenes[currentNum].sprite;
         StartCoroutine(FadeIn());
-        currentNum++;
     }
     IEnumerator FadeIn()
     {
-        IsPlaying = true;
         canvasGroup.alpha = 0;
 
         float time = 0;
@@ -52,23 +63,22 @@ public class PanelOpening : PanelBase
 
             yield return null;
         }
-        canvasGroup.alpha = 1;
-        yield return new WaitForSeconds(2f);
 
-        IsPlaying = false;
+        canvasGroup.alpha = 1;
     }
 
-    //void Update()
-    //{
-    //    if (CanStart)
-    //    {
-    //        if (texts[nextNum] != null)
-    //        {
-    //            float alpha = (Mathf.Sin(Time.time * 3f) + 1) * 0.5f;
-    //            texts[nextNum].alpha = alpha;
-    //        }
-    //    }
-    //}
+    void Update()
+    {
+        if (!IsPlaying)
+        {
+            if (cutScenes[currentNum].texts != null)
+            {
+                text.text = cutScenes[currentNum].texts;
+                float alpha = (Mathf.Sin(Time.time * 3f) + 1) * 0.5f;
+                text.alpha = alpha;
+            }
+        }
+    }
 
     public override void Hide()
     {
@@ -90,9 +100,12 @@ public class PanelOpening : PanelBase
         }
 
         canvasGroup.alpha = 0;
+        Destroy(gameObject);
 
 
 
     }
 
 }
+
+
