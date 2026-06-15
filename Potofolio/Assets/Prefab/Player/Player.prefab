@@ -130,7 +130,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &1475209664219004511
 Rigidbody:
@@ -227,8 +226,8 @@ MonoBehaviour:
   yRotation: 0
   xRotation: 0
   MouseSpeed: 200
-  walkSpeed: 5
-  runSpeed: 10
+  walkSpeed: 2
+  runSpeed: 5
   PlayerAttack: {fileID: 1532360809487390033}
   CanMove: 0
   state: 0

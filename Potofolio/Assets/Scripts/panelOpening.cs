@@ -31,26 +31,34 @@ public class PanelOpening : PanelBase
         canvasGroup = GetComponent<CanvasGroup>();
 
         image = GetComponent<Image>();
-        text = GetComponent<TMP_Text>();
+        text = GetComponentInChildren<TMP_Text>();
     }
 
     public override void Show()
     {
+
         if (currentNum >= cutScenes.Length)
             return;
         if (currentNum == 0)
         {
-            text.transform.position = new Vector3(0, 180);
+            text.transform.localPosition = new Vector3(0, 180);
         }
         else
         {
-            text.transform.position = new Vector3(0, -260);
+            text.transform.localPosition = new Vector3(0, -260);
         }
         image.sprite = cutScenes[currentNum].sprite;
+        text.text = cutScenes[currentNum].texts;
+        text.alpha = 1;
+
         StartCoroutine(FadeIn());
+        currentNum++;
+
     }
     IEnumerator FadeIn()
     {
+        IsPlaying = true;
+
         canvasGroup.alpha = 0;
 
         float time = 0;
@@ -65,15 +73,22 @@ public class PanelOpening : PanelBase
         }
 
         canvasGroup.alpha = 1;
+        if(currentNum == 0)
+        yield return new WaitForSeconds(1.5f);
+
+        else
+            yield return new WaitForSeconds(3f);
+
+        IsPlaying = false;
     }
 
     void Update()
     {
-        if (!IsPlaying)
+        if (!IsPlaying && currentNum < cutScenes.Length)
         {
             if (cutScenes[currentNum].texts != null)
             {
-                text.text = cutScenes[currentNum].texts;
+              
                 float alpha = (Mathf.Sin(Time.time * 3f) + 1) * 0.5f;
                 text.alpha = alpha;
             }
