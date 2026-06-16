@@ -1,0 +1,121 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+
+public class PanelWeaponUnlock: MonoBehaviour
+{
+    [Header("UI")]
+    [SerializeField] Image CenterImage;
+    [SerializeField] Image LeftImage;
+    [SerializeField] Image RightImage;
+    [SerializeField] TMP_Text weaponNameText;
+    [SerializeField] GameObject unlockButton;
+    [SerializeField] GameObject LeftButton;
+    [SerializeField] GameObject RightButton;
+
+    private int currentIndex = 0;
+
+    WeaponPrefabTable weaponPrefabTable;
+    WeaponPrefabData currentData => weaponPrefabDatas[currentIndex];
+
+    List<WeaponPrefabData> weaponPrefabDatas;
+    //[Header("Data")]
+    //public List<WeaponState> weapons = new()
+    //{
+    //    WeaponState.Base,
+    //    WeaponState.Improved,
+    //    WeaponState.Slime,
+    //    WeaponState.Toxic,
+    //    WeaponState.Hypnosis,
+    //    WeaponState.Fire,
+    //    WeaponState.Energy,
+    //    WeaponState.Bomb,
+    //};
+
+
+    void Start()
+    {
+        weaponPrefabTable = GM.GetPrefabManager().WeaponPrefabTable;
+        weaponPrefabDatas = weaponPrefabTable.weaponPrafabTableDatas;
+        unlockButton.GetComponent<Button>().onClick.AddListener(UnlockCurrentWeapon);
+        LeftButton.GetComponent<Button>().onClick.AddListener(PrevWeapon);
+        RightButton.GetComponent<Button>().onClick.AddListener(NextWeapon);
+
+        RefreshUI();
+    }
+
+    public void NextWeapon()
+    {
+        Debug.Log("next");
+        currentIndex++;
+        if (currentIndex >= weaponPrefabDatas.Count)
+            currentIndex = 0;
+
+        RefreshUI();
+    }
+
+    public void PrevWeapon()
+    {
+        Debug.Log("prev");
+
+        currentIndex--;
+        if (currentIndex < 0)
+            currentIndex = weaponPrefabDatas.Count - 1;
+
+        RefreshUI();
+    }
+
+    public void UnlockCurrentWeapon()
+    {
+        if (SaveManager.CurrentData.WeaponActive[currentData.weaponState])
+            return;
+
+
+        //if (playerCore >= bullet.unlockPrice)
+        //{
+        //    playerCore -= bullet.unlockPrice;
+        //    bullet.unlocked = true;
+        //    RefreshUI();
+        //}
+
+        //else
+        //{
+        //    Debug.Log("몬스터 코어 부족");
+        //}
+    }
+
+    void RefreshUI()
+    {
+        var data = currentData;
+
+        CenterImage.sprite = data.WeaponImage;
+        weaponNameText.text = data.weaponState.ToString();
+
+        bool hasLeft = currentIndex > 0;
+        bool hasRight = currentIndex < weaponPrefabDatas.Count - 1;
+
+        LeftImage.enabled = hasLeft;
+        RightImage.enabled = hasRight;
+        LeftButton.SetActive(hasLeft);
+        RightButton.SetActive(hasRight);
+
+        if (hasLeft)
+            LeftImage.sprite = weaponPrefabDatas[currentIndex - 1].WeaponImage;
+
+        if (hasRight)
+            RightImage.sprite = weaponPrefabDatas[currentIndex + 1].WeaponImage;
+
+        if (SaveManager.CurrentData.WeaponActive[data.weaponState])
+        {
+            unlockButton.GetComponent<Button>().interactable = false;
+            unlockButton.GetComponentInChildren<TMP_Text>().text = "Unlocked";
+        }
+        else
+        {
+            unlockButton.GetComponent<Button>().interactable = true;
+            unlockButton.GetComponentInChildren<TMP_Text>().text = "Unlock";
+        }
+
+    }
+}
