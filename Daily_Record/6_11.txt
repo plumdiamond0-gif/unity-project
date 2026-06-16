@@ -1,1 +1,200 @@
-리워드 구조
+using System.Collections.Generic;
+using UnityEditor.Overlays;
+using UnityEngine;
+[System.Serializable] //직렬화
+public class SD_User : ISaveData
+{
+public ulong level;
+
+public ulong RedSlime;
+
+public ulong BlueSlime;
+
+public ulong Hp;
+
+
+
+public class SD_Wepaon
+
+{
+
+    public WeaponState weaponType;
+
+
+
+
+
+}
+
+
+
+
+
+public Dictionary<OutItemType, int> itemStates = new()
+
+{
+
+    {OutItemType.MonsterCore, 0},
+
+    {OutItemType.RedJelly, 0},
+
+    {OutItemType.SlimeShell, 0},
+
+    {OutItemType.SporeSac, 0},
+
+    {OutItemType.WatchersEye, 0},
+
+    {OutItemType.GaleCrystal, 0},
+
+    {OutItemType.EmeraldShard, 0},
+
+    {OutItemType.FlameCrystal, 0},
+
+    {OutItemType.HardenedFang, 0},
+
+    {OutItemType.KnightsEmblem, 0},
+
+    {OutItemType.ManaCrystal, 0},
+
+    {OutItemType.None, 0},
+
+
+
+
+
+};
+
+
+
+
+
+public Dictionary<WeaponState, int> weaponlevel = new()
+
+{
+
+    {WeaponState.Base, 0 },
+
+    {WeaponState.Improved, 0 },
+
+    {WeaponState.Slime, 0 },
+
+    {WeaponState.Toxic, 0 },
+
+    {WeaponState.Fire, 0 },
+
+    {WeaponState.Hypnosis, 0 },
+
+    {WeaponState.Energy, 0 },
+
+    {WeaponState.Bomb, 0 },
+
+
+
+};
+
+
+
+    
+
+
+
+
+
+public string GetSaveKey()
+
+{
+
+    return nameof(SD_User);
+
+}
+
+
+
+public void CloneCopy(SD_User userData)
+
+{
+
+    RedSlime = userData.RedSlime;
+
+    level = userData.level;
+
+    BlueSlime = userData.BlueSlime;
+
+}
+
+}
+이것처럼 그냥 각 무기마다 레벨만 저장해 놓고 레벨에 따라 증가하는 데미지량은 다른 곳에서 처리할까 아니면 그냥 SD_User에 증가한 값도 다 넣어놓을까
+
+
+-무기 레벨에 따른 성장량이 고정이라면 :
+
+
+public Dictionary<WeaponState, int> weaponLevel = new()
+{
+{WeaponState.Base, 0},
+{WeaponState.Improved, 0},
+...
+};
+이것만 저장.
+
+
+실제 데미지는 
+
+int level = SaveManager.CurrentData.weaponLevel[WeaponState.Fire];
+
+int finalDamage =
+weaponSO.baseDamage +
+level * weaponSO.damagePerLevel;
+
+이런 식으로 계산.
+
+
+왜?? : 
+1.레벨과 증가량을 둘 다 저장하면 중복 데이터가 됨.
+
+예)
+레벨 = 5
+증가 데미지 = 40
+를 저장했는데
+
+나중에 밸패로
+레벨당 +8 → +10
+으로 바꾸면 증가 데미지 40과 계산 결과 50이 충돌
+
+
+2.저장 데이터 작아짐
+예)
+레벨만 저장 : Fire = 7
+
+FireLevel = 7
+FireDamageBonus = 35
+FireAttackSpeedBonus = 0.14f
+...
+아니면 이렇게 늘어남.
+
+
+3.계산식 수정이 쉬움
+1레벨 : +5
+2레벨 : +12
+3레벨 : +20
+성작 공식 바꿔도 저장된 레벨만 있으면 자동 적용
+
+
+-플레이어가 임의로 선택한 영구 강화일 경우
+
+그건 레벨만으로 복원할 수 없으니까
+C#
+public class SD_Weapon
+{
+public int level;
+
+public float damageBonus;
+public float attackSpeedBonus;
+public float critBonus;
+}
+처럼 저장해야 해.
+
+
+////////////////////////////////////////
+
+모든 무기들의 업그레이드 시 버프량은 동일하게 설정해놨으니 이펙트 적용할 때 Apply에서 타겟(에너미)와 레벨까지만 받아와서 이펙트 스크립트에서 데미지나 시간 적용.
