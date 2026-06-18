@@ -10,17 +10,8 @@ public class SD_User : ISaveData
     public ulong BlueSlime;
     public ulong Hp;
 
-    public Dictionary<WeaponState, bool> WeaponActive = new()
-    {
-        {WeaponState.Base, true},
-        {WeaponState.Improved, true},
-        {WeaponState.Slime, true},
-        {WeaponState.Toxic, true},
-        {WeaponState.Hypnosis, true},
-        {WeaponState.Fire, true},
-        {WeaponState.Energy, true},
-        {WeaponState.Bomb, true},
-    };
+
+
 
     public Dictionary<OutItemType, int> itemStates = new()
     {
@@ -39,6 +30,7 @@ public class SD_User : ISaveData
 
 
     };
+
 
     public Dictionary<WeaponState, int> weaponlevel = new()
     {

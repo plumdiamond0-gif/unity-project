@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCost
   costs:
   - itemType: 1
-    CostSprite: {fileID: 21300000, guid: 562b26c2e9bd299489c02f49bac1aa93, type: 3}
+    CostSprite: {fileID: 21300000, guid: 0ebc9de1726e17247be3f1b516e7b9b6, type: 3}
     amount: 12
   - itemType: 2
-    CostSprite: {fileID: 21300000, guid: 167b46f25748c6c44b7f40678562d6f5, type: 3}
+    CostSprite: {fileID: 21300000, guid: 5452d2453f07c414b9efb4fa4b965c90, type: 3}
     amount: 5

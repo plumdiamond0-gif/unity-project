@@ -33,7 +33,7 @@ public class UpgradeResultUI : MonoBehaviour
         }
     }
 
-    public void ShowResults(WeaponPrefabData data)
+    public void ShowResults(WeaponPrefabTableData data)
     {
         if (data == null) return;
         UpgradeResults results = data.upgradeResults;

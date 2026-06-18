@@ -815,7 +815,6 @@ MonoBehaviour:
   upgradeUI: {fileID: 6136954047946380402}
   WeaponImageUI: {fileID: 4809987053063261344}
   costUI: {fileID: 4497133309776490984}
-  ItemList: {fileID: 131995644687810967}
 --- !u!1 &1654332889330301947
 GameObject:
   m_ObjectHideFlags: 0
