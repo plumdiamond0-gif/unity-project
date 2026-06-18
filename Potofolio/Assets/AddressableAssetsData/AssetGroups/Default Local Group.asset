@@ -15,6 +15,11 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_GUID: 002ed3db3bf68f4419aae9fba78e6e91
   m_SerializeEntries:
+  - m_GUID: 034416df39f0dbe47a2c75a97cba87f7
+    m_Address: UI_BaseExit_Panel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 1d40263852fcdc64ba9dfe71613975b5
     m_Address: Player
     m_ReadOnly: 0
