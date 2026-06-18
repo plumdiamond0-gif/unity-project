@@ -14,24 +14,16 @@ public class PanelWeaponUpgrade
     [SerializeField] private UpgradeUI upgradeUI;
     [SerializeField] private WeaponImageUI WeaponImageUI;
     [SerializeField] private CostUI costUI;
-    [SerializeField] private GameObject ItemList;
-
-    WeaponButton[] weaponButtons;
 
 
     public void Show(WeaponState weaponState)
     {
-        WeaponPrefabData data =
+        WeaponPrefabTableData data =
         GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas. Find(
         x => x.weaponState == weaponState);
         UpgradeResults results = data.upgradeResults;
         UpgradeCost cost = data.upgradeCosts;
         int level = SaveManager.CurrentData.weaponlevel[weaponState];
-        weaponButtons = ItemList.GetComponentsInChildren<WeaponButton>();
-        foreach(var item in weaponButtons)
-        {
-            item.BeActive();
-        }
 
         upgradeResultUI.ShowResults(data);
         WeaponImageUI.Show(data.WeaponImage);

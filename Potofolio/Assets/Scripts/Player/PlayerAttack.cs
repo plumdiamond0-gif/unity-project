@@ -30,10 +30,10 @@ public class PlayerAttack : MonoBehaviour
     CameraMovement cameraMovement;
     Camera cam;
     Rigidbody Rb;
-    public WeaponPrefabData currentweapondata;
+    public WeaponPrefabTableData currentweapondata;
     [SerializeField] private Transform Firepos;
     Animator anim;
-    List<WeaponPrefabData> weaponList = new();
+    List<WeaponPrefabTableData> weaponList = new();
 
 
 

@@ -3,13 +3,13 @@ using static WeaponPrefabTable;
 
 public class CannonBall : MonoBehaviour
 {
-    WeaponPrefabData data;
+    WeaponPrefabTableData data;
     float damage;
 
     public void SetDamage(float finalDamage) {
         damage = finalDamage;
     }
-    public void SetWeaponData(WeaponPrefabData weaponData)
+    public void SetWeaponData(WeaponPrefabTableData weaponData)
     {   
         data = weaponData;
     }
