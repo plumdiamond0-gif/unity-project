@@ -3,8 +3,8 @@ using UnityEngine;
 public class PlayerStat : MonoBehaviour
 {
     public float PlayerSpeed = 1;
-    public float JumpPower;
-    public float BaseDamage = 0;
+    public float JumpPower = 1;
+    public float BaseDamage = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

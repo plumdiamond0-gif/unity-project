@@ -58,7 +58,7 @@ public class PlayerAttack : MonoBehaviour
        
         cam = Camera.main;
 
-        cameraMovement = cam.GetComponent<CameraMovement>();
+        cameraMovement = GetComponentInChildren<CameraMovement>();
         //WeaponSpawnPos = transform.Find("WeaponSpawnPos");
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;

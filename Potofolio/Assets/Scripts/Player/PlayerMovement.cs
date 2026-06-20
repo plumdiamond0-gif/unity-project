@@ -30,8 +30,6 @@ public class PlayerMovement : MonoBehaviour
 
     float currentSpeed;
 
-    public float walkSpeed;
-    public float runSpeed;
 
     Camera cam;
     Rigidbody Rb;
@@ -56,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
         stat = GetComponent<PlayerStat>();
         anim = GetComponentInChildren<Animator>();
 
-        stat.PlayerSpeed *= walkSpeed;
         isSprint = false;
         cam = Camera.main;
         Cursor.lockState = CursorLockMode.Confined;
@@ -100,11 +97,6 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("MoveX", MovementX);
         anim.SetFloat("MoveY", MovementY);
         anim.SetBool("IsGrounded", isGrounded);
-
-
-
-
-
     }
 
 
@@ -137,7 +129,7 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.Log("Sprint");
         isSprint = !isSprint;
-        stat.PlayerSpeed *= isSprint ? runSpeed : walkSpeed;
+        stat.PlayerSpeed *= isSprint ? stat.PlayerSpeed*2 : stat.PlayerSpeed;
     }
 
   

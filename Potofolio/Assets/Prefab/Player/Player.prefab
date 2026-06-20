@@ -194,9 +194,7 @@ MonoBehaviour:
   yRotation: 0
   xRotation: 0
   MouseSpeed: 200
-  walk: {fileID: 0}
-  walkSpeed: 2
-  runSpeed: 5
+  walk: {fileID: 8300000, guid: f94179aeba461bf4eb30e985238407d3, type: 3}
   PlayerAttack: {fileID: 1532360809487390033}
   CanMove: 0
   state: 0
@@ -284,7 +282,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStat
   PlayerSpeed: 2
   JumpPower: 5
-  BaseDamage: 0
+  BaseDamage: 1
 --- !u!1 &2355005014716273453
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,11 +435,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraMovement
   player: {fileID: 5382651487110199555}
   playerAttack: {fileID: 1532360809487390033}
-  wallLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  wallOffset: 0.2
-  sphereRadius: 0.3
 --- !u!1 &6449111808282152226
 GameObject:
   m_ObjectHideFlags: 0

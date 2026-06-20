@@ -36,7 +36,6 @@ public class Map : MonoBehaviour
         for (int i = 0;i < randomBlocks.Count;i++)
         {
             int rand = yRotations[Random.Range(0, yRotations.Length)];
-            Debug.Log(rand);
             Vector3 rot = new Vector3(0, rand, 0);
 
             Instantiate(randomBlocks[i], blockPositions[i].position, 
