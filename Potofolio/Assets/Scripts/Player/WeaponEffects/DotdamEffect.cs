@@ -10,11 +10,12 @@ using UnityEngine.Rendering.Universal;
 public class DotdamEffect : ScriptableObject, IWeaponEffect
 {
     [SerializeField] float dotDamage;
-    float dotTime;
-    float chargeAmount;
+    [SerializeField] float dotTime;
+
+    float charge;
     public void GetCharge(float charge)
     {
-        chargeAmount = charge;
+        this.charge = charge;
     }
     public void Apply(GameObject target, float level)
     {
@@ -24,7 +25,7 @@ public class DotdamEffect : ScriptableObject, IWeaponEffect
         if (enemy != null)
         {
             float finalDotDam = dotDamage * Mathf.Pow(1.15f, level);
-            float finalDotTime = Mathf.Lerp(2, 8, chargeAmount);
+            float finalDotTime = dotTime * Mathf.Pow(1.15f, level);
             enemy.dotdam(finalDotDam, finalDotTime);
             Debug.Log("dotdam");
         }

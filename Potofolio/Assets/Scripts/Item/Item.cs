@@ -5,18 +5,26 @@ public class Item : MonoBehaviour
     public ItemData data;
     public void Use(InItemType type, GameObject PlayerInfo)
     {
+        PlayerStat playerStat =
+            PlayerInfo.GetComponent<PlayerStat>();
+        Health health = PlayerInfo.GetComponent<Health>();
         switch (type)
         {
+         
             case InItemType.HealItem:
-                Health health = PlayerInfo.GetComponent<Health>();
+                
                 Heal(health);
                 break;
 
             case InItemType.DamageBuffItem:
-                PlayerStat playerStat= 
-                    PlayerInfo.GetComponent<PlayerStat>();
                 DamageBuff(playerStat.BaseDamage);
                 break;
+
+            case InItemType.MoveSpeedPlus:
+                DamageBuff(playerStat.PlayerSpeed);
+                break;
+
+
 
         }
     }
@@ -32,19 +40,27 @@ public class Item : MonoBehaviour
 
     public void Heal(Health health)
     {
-
-
-        health.Heal(data.healAmount);
-        Debug.Log($"체력 {data.healAmount}만큼 회복");
-
+        float healAmount = Random.Range(data.MinHealAmount, data.MaxHealAmount);
+        health.Heal(healAmount);
+        Debug.Log($"체력 {healAmount}만큼 회복");
     }
 
     public void DamageBuff(float basePlayerDamage)
     {
-        Debug.Log($"데미지 {data.damageBuffAmount}만큼 증가");
-        basePlayerDamage += data.damageBuffAmount;
+        float damageBuffAmount = Random.Range(data.MinDamageBuffAmount, data.MaxDamageBuffAmount);
+        Debug.Log($"데미지 {damageBuffAmount}만큼 증가");
+        basePlayerDamage *= damageBuffAmount;
+    }
+    public void MaxHpPlus(Health health)
+    {
+       // Debug.Log($"체력 {data.healAmount}만큼 회복");
+        health.MaxHp += data.MaxHpBuffAmount;
     }
 
-
+    public void MoveSpeedPus(float BasePlayerSpeed)
+    {
+       // Debug.Log($"속도 {data.healAmount}만큼 증가");
+     //   BasePlayerSpeed *= data.SpeedBuffAmount;
+    }
 
 }

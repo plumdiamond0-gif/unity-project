@@ -9,27 +9,25 @@ public class KnockBackEffect : ScriptableObject, IWeaponEffect
     float radius;       // 폭발 반경
     float force ;       // 폭발 위력
     float upModifier;   // 위로 띄우는 정도 (이게 있어야 시원하게 날아감)
-    WeaponPrefabData data;
 
-    public void GetKnockVal(float charge, WeaponPrefabData data)
+    public void GetCharge(float charge)
     {
-        this.data = data;
         this.charge = charge;
     }
 
 
-    public void Apply(GameObject target, WeaponState weaponType)
+    public void Apply(GameObject target, float level)
     {
 
         if (target == null)
             return;
-        radius = data.radius * (1+charge);
-        force = data.force * (1+charge);
-        upModifier = data.upModifier * (1+charge);
+        float fianlRadius = radius * (1+charge) * Mathf.Pow(level, 1.15f);
+        float finalForce = force * (1+charge) * Mathf.Pow(level, 1.15f);
+        float fianlUpModifier = upModifier * (1+charge) * Mathf.Pow(level, 1.15f);
 
         Vector3 explosionPoint = target.transform.position; 
         // 1. 반경 내 모든 물체 감지
-        Collider[] colliders = Physics.OverlapSphere(explosionPoint, radius);
+        Collider[] colliders = Physics.OverlapSphere(explosionPoint, fianlRadius);
        
         foreach (Collider hit in colliders)
         {
@@ -49,7 +47,7 @@ public class KnockBackEffect : ScriptableObject, IWeaponEffect
             {
                 explosionPoint = target.transform.position;//- Vector3.up * 1f;
                 // 3. 폭발 물리 적용 (중심점에서 밖으로 날려버림)
-                rb.AddExplosionForce(force, explosionPoint, radius, upModifier, ForceMode.Impulse);
+                rb.AddExplosionForce(finalForce, explosionPoint, fianlRadius, fianlUpModifier, ForceMode.Impulse);
 
                 Debug.Log("넉백");
             }

@@ -43,10 +43,14 @@ public class EnemyMovement : MonoBehaviour
     static readonly int AttackHash = Animator.StringToHash("Attack");
     static readonly int CanAttackHash = Animator.StringToHash("CanAttack");
 
-    bool isSlow;
-    bool isStun;
-    bool isdotdam;
-    bool isdot;
+    //bool isSlow;
+    //bool isStun;
+    //bool isdotdam;
+    //bool isdot;
+
+    Coroutine slowRoutine;
+    Coroutine stunRoutine;
+    Coroutine dotdamRoutine;
 
 
 
@@ -231,62 +235,55 @@ public class EnemyMovement : MonoBehaviour
 
     }
 
-    public void beSlow(float slowTime)
+    public void beSlow(float slowTime, float slowAmount)
     {
-        if(isSlow)
-        {
+        if(stunRoutine != null)
             return;
+        if(slowRoutine != null)
+        {
+            slowRoutine = null;
         }
-        StartCoroutine(Slow(slowTime));
+        slowRoutine = StartCoroutine(Slow(slowTime, slowAmount));
 
     }
 
-    IEnumerator Slow(float slowTime)
+    IEnumerator Slow(float slowTime, float slowAmount)
     {
-        isSlow = true;
         Debug.Log("Slowed");
         float orispeed = agent.speed;
-        agent.speed = 1;
+        agent.speed *= slowAmount;
         yield return new WaitForSeconds(slowTime);
         agent.speed = orispeed;
-        isSlow = false;
         yield return null;
     }
 
     public void beStun(float stunTime)
     {
-        if (isStun)
-        {
-            return;
-        }
-        StartCoroutine(Slow(stunTime));
+        if (stunRoutine != null)
+             stunRoutine = null; 
+        StartCoroutine(Stun(stunTime));
 
     }
 
     IEnumerator Stun(float stunTime)
     {
-        isStun = true;
         Debug.Log("Slowed");
         agent.isStopped = true;
         yield return new WaitForSeconds(stunTime);
-        isStun = false;
         agent.isStopped = false;
         yield return null;
     }
 
     public void dotdam(float dotDamage, float dotTime)
     {
-        if (isdotdam)
-        {
-            return;
-        }
+        if(dotdamRoutine != null)   
+            dotdamRoutine = null;
         StartCoroutine(_dotdma(dotDamage, dotTime));
 
     }
 
     IEnumerator _dotdma(float dotDamage, float dotTime)
     {
-        isdotdam = true;
         Debug.Log("Slowed");
         for (int i = 0; i < dotTime; i++)
         {
@@ -296,7 +293,6 @@ public class EnemyMovement : MonoBehaviour
             yield return new WaitForSeconds(0.8f);
             
         }
-        isdotdam = false;
         yield return null;
     }
 

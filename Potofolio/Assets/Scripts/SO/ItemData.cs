@@ -15,7 +15,9 @@ public enum InItemType
     None,
     HealItem,
     DamageBuffItem,
-
+    AttackSpeedPlus,
+    MoveSpeedPlus,
+    BeInvincible
 }
 public enum OutItemType
 {
@@ -39,8 +41,21 @@ public enum OutItemType
 public class ItemData : ScriptableObject
 {
     public Sprite itemSprite;
-    public float healAmount;
-    public float damageBuffAmount;
+    public float MinHealAmount;
+    public float MaxHealAmount;
+
+    public float MinDamageBuffAmount;
+    public float MaxDamageBuffAmount;
+
+    public float MinAttackSpeed;
+    public float MaxAttackSpeed;
+
+    public float MinMoveSpeed;
+    public float MaxMoveSpeed;
+
+    public float MaxHpBuffAmount;
+    public float MinHpBuffAmount;
+
     public InItemType inItemType;
     public OutItemType outItemType;
     public DataType dataType;

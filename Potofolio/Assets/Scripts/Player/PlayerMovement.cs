@@ -64,7 +64,6 @@ public class PlayerMovement : MonoBehaviour
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
       
-        CinemachineCamera camera = Find
     }
 
     void Update()

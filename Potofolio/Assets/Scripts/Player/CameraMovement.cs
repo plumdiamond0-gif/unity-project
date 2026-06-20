@@ -8,9 +8,6 @@ public class CameraMovement : MonoBehaviour
     private Vector3 currentRotation;
     private Vector3 targetRotation;
 
-    [SerializeField] LayerMask wallLayer;
-    [SerializeField] float wallOffset = 0.2f;
-    [SerializeField] float sphereRadius = 0.3f;
 
     private void Start()
     {

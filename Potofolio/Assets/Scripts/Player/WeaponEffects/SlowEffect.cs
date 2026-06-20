@@ -10,14 +10,17 @@ using UnityEngine.Rendering.Universal;
 public class SlowEffect : ScriptableObject, IWeaponEffect
 {
     [SerializeField] float slowTime;
+    [SerializeField] float slowAmount;
+
     public void Apply(GameObject target, float level)
     {
         float fianlSlowTime = slowTime * Mathf.Pow(1.15f, level);
-            
-       EnemyMovement enemy = target.GetComponent<EnemyMovement>();
+        float finalSlowAmount = slowAmount * Mathf.Pow(1.15f, level);
+
+        EnemyMovement enemy = target.GetComponent<EnemyMovement>();
         if (enemy != null)
         {
-            enemy.beSlow(fianlSlowTime);
+            enemy.beSlow(fianlSlowTime, finalSlowAmount);
             Debug.Log("slow");
         }
 

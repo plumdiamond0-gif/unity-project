@@ -18,7 +18,7 @@ public class StunEffect : ScriptableObject, IWeaponEffect
         if (enemy != null)
         {
             float finalStunTime  = stunTime * Mathf.Pow(1.15f, level);
-            enemy.beStun(stunTime);
+            enemy.beStun(finalStunTime);
             Debug.Log("stun");
         }
 

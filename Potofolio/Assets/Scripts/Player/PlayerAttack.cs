@@ -57,7 +57,8 @@ public class PlayerAttack : MonoBehaviour
         //weaponList = GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas;
        
         cam = Camera.main;
-        cameraMovement = cam.GetComponentInChildren<CameraMovement>();
+
+        cameraMovement = cam.GetComponent<CameraMovement>();
         //WeaponSpawnPos = transform.Find("WeaponSpawnPos");
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
@@ -155,7 +156,7 @@ public class PlayerAttack : MonoBehaviour
                     }
                     if (effect is KnockBackEffect knockBackEffect)
                     {
-                        knockBackEffect.GetKnockVal(currentCharge, currentweapondata);
+                        knockBackEffect.GetCharge(currentCharge);
                     }
                 }
 

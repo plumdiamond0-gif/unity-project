@@ -9,11 +9,13 @@ public class ExitDoor : TriggerObject
 
     protected override void Trigger(GameObject entered)
     {
-        GM.GetUIManager().CreateUIPanel("BaseExit_Panel",
+        if ((entered.CompareTag("Player")))
+        {
+            GM.GetUIManager().CreateUIPanel("BaseExit_Panel",
             (go) =>
             {
                 Debug.Log($"panelBaseExit load");
-                PanelBaseExit panelBaseExit= go.GetComponent<PanelBaseExit>();
+                PanelBaseExit panelBaseExit = go.GetComponent<PanelBaseExit>();
                 PlayerMovement player = entered.GetComponent<PlayerMovement>();
                 player.CanMove = false;
                 if (player != null)
@@ -22,6 +24,7 @@ public class ExitDoor : TriggerObject
                 }
                 panelBaseExit.GetPlayer(player);
             });
+        }
     }
 
 }

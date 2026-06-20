@@ -13,13 +13,13 @@ MonoBehaviour:
   m_Name: Enemy Prefab Table
   m_EditorClassIdentifier: Assembly-CSharp::EnemyPrefabTable
   weaponPrafabTableDatas:
-  - EnemyName: Enemy1
-    Enemy: {fileID: 9079421119559271856, guid: 75f627f43d6e9944eade19b0ca15f5f4, type: 3}
+  - EnemyName: Blink
+    Enemy: {fileID: 964480405027562052, guid: 75f627f43d6e9944eade19b0ca15f5f4, type: 3}
     EnemyBullet: {fileID: 0}
     Attackspeed: 0
     CoinNum: 5
-  - EnemyName: Enemy2
-    Enemy: {fileID: 9079421119559271856, guid: 75f627f43d6e9944eade19b0ca15f5f4, type: 3}
+  - EnemyName: Shell_Blink
+    Enemy: {fileID: 282274447850904860, guid: bda289ce78096ac4b8cc69950bd76c5b, type: 3}
     EnemyBullet: {fileID: 4869859231653104531, guid: bda289ce78096ac4b8cc69950bd76c5b, type: 3}
     Attackspeed: 0
     CoinNum: 7

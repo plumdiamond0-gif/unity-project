@@ -32,7 +32,6 @@ public class GameManager : SingletonObject<GameManager>
     {
         return GetSceneLoadManager;
     }
-
     public SaveManager Get_SaveManager()
     {
         return GetSaveManager;

@@ -10,14 +10,9 @@ public class GoBattleGate : TriggerObject
             NextLoadScene("SceneBattle",
             () =>
             {
-                GM.GetAssetManager().LoadAsset<GameObject>("Player",
-            (go) =>
-            {
-                GameObject player = Instantiate(go, playerSpawnPos.position,
-                    Quaternion.identity);
-                GameManager.instance.GetPlayer(go);
                 Debug.Log("Player ½ºÆùµÊ");
-            });
+
+             
             });
     }
 }
