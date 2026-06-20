@@ -35,6 +35,7 @@ public class SceneLoadManager : MonoBehaviour
 
         yield return SceneManager.LoadSceneAsync("SceneEmpty");
 
+      
 
         StartCoroutine(ProcessNextScene(OnSceneCompleted));
             
@@ -49,13 +50,37 @@ public class SceneLoadManager : MonoBehaviour
             yield break;
         }
 
-        if (_assetManager == null)
-        {
-            yield break;
-        }
+        //if (_assetManager == null)
+        //{
+        //    yield break;
+        //}
         //_assetManager.LoadScene(NextSceneName, OnSceneCompleted);
-        AsyncOperation handle =  SceneManager.LoadSceneAsync(NextSceneName);
-        yield return handle;
+        //yield return handle;
+        Debug.Log("BEFOREBEFOREBEFOREBEFOREBEFOREBEFOREBEFOREBEFOREBEFOREBEFOREBEFORE");
+
+        float elapsed = 0f;
+        const float minLoadingTime = 2f;
+
+        AsyncOperation handle = SceneManager.LoadSceneAsync(NextSceneName);
+
+        handle.allowSceneActivation = false;
+
+        Debug.Log(handle.progress);
+        Debug.Log(handle.isDone);
+
+        while (handle.progress < 0.9f || elapsed < minLoadingTime)
+        {
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        handle.allowSceneActivation = true;
+
+        while (!handle.isDone)
+            yield return null;
+
+        Debug.Log("AFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTER");
+
         OnSceneCompleted?.Invoke();
         yield return unloadUnusedAssets();
     }

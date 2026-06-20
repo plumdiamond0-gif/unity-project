@@ -3,8 +3,12 @@ using UnityEngine;
 public class SceneBase : MonoBehaviour
 {
     [SerializeField] private Transform playerSpawnPos;
+    [SerializeField] AudioClip Bgm;
+
+
     private void Awake()
     {
+        GM.GetSoundManager().PlayBGM(Bgm);
         GM.GetAssetManager().LoadAsset<GameObject>("Player",
             (go)=>
             {

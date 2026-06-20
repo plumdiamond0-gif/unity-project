@@ -8,6 +8,10 @@ public class CameraMovement : MonoBehaviour
     private Vector3 currentRotation;
     private Vector3 targetRotation;
 
+    [SerializeField] LayerMask wallLayer;
+    [SerializeField] float wallOffset = 0.2f;
+    [SerializeField] float sphereRadius = 0.3f;
+
     private void Start()
     {
         offset = transform.position - player.transform.position;
@@ -40,14 +44,13 @@ public class CameraMovement : MonoBehaviour
         //Quaternion playerRotation = player.transform.rotation * mouseVec;
         //float clampedX = Mathf.Clamp(player.xRotation, -45f, 45f);
 
-        Quaternion playerRotation = Quaternion.Euler(player.xRotation, player.yRotation, 0);
+        Quaternion horizontal = player.transform.rotation;
+        Quaternion vertical = Quaternion.Euler(player.xRotation, 0, 0);
 
-
-
-        Vector3 rotatedOffset = playerRotation * offset;
+        Vector3 rotatedOffset = horizontal * vertical * offset;
         //원래라면 화살표가 플레이어 뒤만 가리키는데 일케 하면 플레이어 회전에 따라 화살표도 돌아감
 
-           transform.position = player.transform.position + rotatedOffset;
+        transform.position = player.transform.position + rotatedOffset;
         
         //위에서 정해진 화살표 방향에 따라 플레이어 중심으로 카메라 회전
         transform.LookAt(player.transform.position + Vector3.up * 1f);

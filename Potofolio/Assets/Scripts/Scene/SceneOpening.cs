@@ -71,27 +71,27 @@ public class SceneOpening : MonoBehaviour
     //}
     void Update()
     {
-        if (panelOpening != null)
-        {
-            if (!panelOpening.IsPlaying)
-            {
-                if (Keyboard.current.spaceKey.wasPressedThisFrame)
-                {
-                    if (panelOpening.IsFinished)
-                    {
-                        Debug.Log("ÄÆ¾À Á¾·á");
-                        GM.GetSceneLoadManager().NextLoadScene("SceneBase",
-                            () =>
-                            {
-                                Debug.Log("SceneBase ·Îµå ¿Ï·á");
-                            });
-                        return;
-                    }
-                    panelOpening.Show();
-                }
-            }
+        //if (panelOpening != null)
+        //{
+        //    if (!panelOpening.IsPlaying)
+        //    {
+        //        if (Keyboard.current.spaceKey.wasPressedThisFrame)
+        //        {
+        //            if (panelOpening.IsFinished)
+        //            {
+        //                Debug.Log("ÄÆ¾À Á¾·á");
+        //                GM.GetSceneLoadManager().NextLoadScene("SceneBase",
+        //                    () =>
+        //                    {
+        //                        Debug.Log("SceneBase ·Îµå ¿Ï·á");
+        //                    });
+        //                return;
+        //            }
+        //            panelOpening.Show();
+        //        }
+        //    }
 
-        }
+        //}
     }
 }
 

@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   Exit: {fileID: 7514242881660674445}
+  GoBattle: {fileID: 3322223736231233795}
 --- !u!1 &3206043251726831209
 GameObject:
   m_ObjectHideFlags: 0

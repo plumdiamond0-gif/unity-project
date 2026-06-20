@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.Cinemachine;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -16,6 +17,8 @@ public class PlayerMovement : MonoBehaviour
     private float mouseX;
     private float mouseY;
     public float MouseSpeed;
+
+    [SerializeField] AudioClip walk;
 
 
     //private float PlayerSpeed = 1;
@@ -60,7 +63,8 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = true;
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
-
+      
+        CinemachineCamera camera = Find
     }
 
     void Update()
@@ -109,7 +113,7 @@ public class PlayerMovement : MonoBehaviour
         {
         if(!CanMove)
             return;
-        
+        GM.GetSoundManager().PlaySFX(walk);
             Vector2 Movevalue = inputValue.Get<Vector2>();
             MovementX = Movevalue.x;
             MovementY = Movevalue.y;

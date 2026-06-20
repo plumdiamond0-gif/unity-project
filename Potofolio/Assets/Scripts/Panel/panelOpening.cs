@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 public class PanelOpening : PanelBase
@@ -11,7 +12,11 @@ public class PanelOpening : PanelBase
     [SerializeField] private float fadeTime;
     Image image;
     TMP_Text text;
-    public int currentNum = 0;
+    private int currentNum = 0;
+    [SerializeField] AudioClip button;
+    [SerializeField] AudioClip bgm;
+
+
     [System.Serializable]
     public struct CutScenes
     {
@@ -32,6 +37,8 @@ public class PanelOpening : PanelBase
 
         image = GetComponent<Image>();
         text = GetComponentInChildren<TMP_Text>();
+        GM.GetSoundManager().PlayBGM(bgm);
+
     }
 
     public override void Show()
@@ -51,13 +58,14 @@ public class PanelOpening : PanelBase
         text.text = cutScenes[currentNum].texts;
         text.alpha = 1;
 
-        StartCoroutine(FadeIn());
         currentNum++;
+        IsPlaying = true;
+
+        StartCoroutine(FadeIn());
 
     }
     IEnumerator FadeIn()
     {
-        IsPlaying = true;
 
         canvasGroup.alpha = 0;
 
@@ -73,22 +81,51 @@ public class PanelOpening : PanelBase
         }
 
         canvasGroup.alpha = 1;
-        if(currentNum == 0)
-        yield return new WaitForSeconds(1.5f);
-
-        else
-            yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(currentNum == 1 ? 1.5f : 3f);
 
         IsPlaying = false;
     }
 
     void Update()
     {
-        if (!IsPlaying && currentNum < cutScenes.Length)
+        if (Keyboard.current.enterKey.wasPressedThisFrame)
         {
-            if (cutScenes[currentNum].texts != null)
+            currentNum = cutScenes.Length;
+            GM.GetSoundManager().StopBGM();
+            Debug.Log("ÄÆ¾À Á¾·á");
+            GM.GetSceneLoadManager().NextLoadScene("SceneBase",
+                () =>
+                {
+                    Debug.Log("SceneBase ·Îµå ¿Ï·á");
+                });
+            return;
+        }
+            if (!IsPlaying)
+        {
+            if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-              
+                GM.GetSoundManager().PlaySFX(button);
+                if (IsFinished)
+                {
+                    GM.GetSoundManager().StopBGM();
+                    Debug.Log("ÄÆ¾À Á¾·á");
+                    GM.GetSceneLoadManager().NextLoadScene("SceneBase",
+                        () =>
+                        {
+                            Debug.Log("SceneBase ·Îµå ¿Ï·á");
+                        });
+                    return;
+                }
+                Show();
+            }
+        }
+
+        int shownIndex = currentNum - 1;
+
+        if (!IsPlaying && shownIndex >= 0)
+        {
+            if (!string.IsNullOrEmpty(cutScenes[shownIndex].texts))
+            {
                 float alpha = (Mathf.Sin(Time.time * 3f) + 1) * 0.5f;
                 text.alpha = alpha;
             }

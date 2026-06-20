@@ -24,6 +24,7 @@ public class PrefabManager : MonoBehaviour
           ("WeaponPrefabTable", (go) =>
           {
               WeaponPrefabTable = go;
+              OnComplete?.Invoke();
           });
     }
 }

@@ -1,0 +1,100 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using System.Collections.Generic;
+
+public class PanelWeaponUnlock: MonoBehaviour
+{
+    [Header("UI")]
+    [SerializeField] Image CenterImage;
+    [SerializeField] Image LeftImage;
+    [SerializeField] Image RightImage;
+    [SerializeField] TMP_Text weaponNameText;
+    [SerializeField] GameObject unlockButton;
+    [SerializeField] GameObject LeftButton;
+    [SerializeField] GameObject RightButton;
+
+    private int currentIndex = 0;
+
+    WeaponPrefabTable weaponPrefabTable;
+    WeaponPrefabData currentData => weaponPrefabDatas[currentIndex];
+//currentData 의존성 줄이기
+
+    List<WeaponPrefabData> weaponPrefabDatas;
+      void Start()
+    {
+        weaponPrefabTable = GM.GetPrefabManager().WeaponPrefabTable;
+웨폰프리팹테이블에 있는 데이터 복사
+        weaponPrefabDatas = weaponPrefabTable.weaponPrafabTableDatas;
+        unlockButton.GetComponent<Button>().onClick.AddListener(UnlockCurrentWeapon);
+        LeftButton.GetComponent<Button>().onClick.AddListener(PrevWeapon);
+        RightButton.GetComponent<Button>().onClick.AddListener(NextWeapon);
+
+        RefreshUI();
+    }
+
+    public void NextWeapon()
+    {
+        Debug.Log("next");
+        currentIndex++;
+        if (currentIndex >= weaponPrefabDatas.Count)
+            currentIndex = 0;
+
+        RefreshUI();
+    }
+
+    public void PrevWeapon()
+    {
+        Debug.Log("prev");
+
+        currentIndex--;
+        if (currentIndex < 0)
+            currentIndex = weaponPrefabDatas.Count - 1;
+
+        RefreshUI();
+    }
+
+    public void UnlockCurrentWeapon()
+    {
+        if (SaveManager.CurrentData.WeaponActive[currentData.weaponState])
+            return;
+
+
+       }
+
+    void RefreshUI()
+    {
+        var data = currentData;
+
+        CenterImage.sprite = data.WeaponImage;
+        weaponNameText.text = data.weaponState.ToString();
+
+        bool hasLeft = currentIndex > 0;
+//첫번째 무기
+        bool hasRight = currentIndex < weaponPrefabDatas.Count - 1;
+//마지막 무기
+        LeftImage.enabled = hasLeft;
+        RightImage.enabled = hasRight;
+        LeftButton.SetActive(hasLeft);
+        RightButton.SetActive(hasRight);
+
+        if (hasLeft)
+            LeftImage.sprite = weaponPrefabDatas[currentIndex - 1].WeaponImage;
+
+        if (hasRight)
+            RightImage.sprite = weaponPrefabDatas[currentIndex + 1].WeaponImage;
+
+        if (SaveManager.CurrentData.WeaponActive[data.weaponState])
+        {
+            unlockButton.GetComponent<Button>().interactable = false;
+            unlockButton.GetComponentInChildren<TMP_Text>().text = "Unlocked";
+        }
+//이미 가지고 있는 무기면 버튼과 상호작용 막기
+        else
+        {
+            unlockButton.GetComponent<Button>().interactable = true;
+            unlockButton.GetComponentInChildren<TMP_Text>().text = "Unlock";
+        }
+
+    }
+}

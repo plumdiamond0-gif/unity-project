@@ -12,6 +12,8 @@ public class GameManager : SingletonObject<GameManager>
     public AssetManager GetAssetManager { get; private set; } = null;
     public SceneLoadManager GetSceneLoadManager { get; private set; } = null;   
     public SaveManager GetSaveManager { get; private set; }=null;
+    public SoundManager GetSoundManager { get; private set; } = null;
+
     public GameObject player{ get; private set; } = null;
 
     public PrefabManager Get_PrefabManager()
@@ -35,7 +37,10 @@ public class GameManager : SingletonObject<GameManager>
     {
         return GetSaveManager;
     }
-
+    public SoundManager Get_SoundManager()
+    {
+        return GetSoundManager;
+    }
 
     void Awake()
     {
@@ -85,7 +90,7 @@ public class GameManager : SingletonObject<GameManager>
                 {
                     done = true;
                 });
-              //  yield return new WaitUntil(() => done);
+              yield return new WaitUntil(() => done);
                 Debug.Log("PrefabManager 초기화 완료");
             }
             {
@@ -95,7 +100,7 @@ public class GameManager : SingletonObject<GameManager>
                 go.transform.localRotation = Quaternion.identity;
                 GetUIManager = go.AddComponent<UIManager>();
 
-                Debug.Log("PrefabManager 초기화 완료");
+                Debug.Log("UIManager 초기화 완료");
 
             }
            
@@ -118,7 +123,16 @@ public class GameManager : SingletonObject<GameManager>
                 GetSaveManager = go.AddComponent<SaveManager>();
                 GetSaveManager.Init();
 
-                Debug.Log("GetSaveManager 초기화 완료");
+                Debug.Log("SaveManager 초기화 완료");
+            }
+            {
+                GameObject go = new GameObject("SoundManager");
+                go.transform.parent = transform;
+                go.transform.localPosition = Vector3.zero;
+                go.transform.localRotation = Quaternion.identity;
+                GetSoundManager = go.AddComponent<SoundManager>();
+
+                Debug.Log("SoundManager 초기화 완료");
             }
             Debug.Log("매니저 초기화 완료");
 
@@ -176,7 +190,12 @@ public static class GM
         Debug.Log("GetSaveManager");
         return GameManager.instance.Get_SaveManager();
     }
- 
+    public static SoundManager GetSoundManager()
+    {
+        Debug.Log("GetSoundManager");
+        return GameManager.instance.Get_SoundManager();
+    }
+
 
 }
 

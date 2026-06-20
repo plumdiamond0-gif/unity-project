@@ -1,0 +1,295 @@
+지금 무기 프리팹이나 적 프리팹은 프리팹 테이블로 관리하고 있고 
+씬이나 몇몇 에셋들은 어드레서블로 관리하는데 그냥 다 어드레서블로 관리해버릴지 :
+
+“전부 Addressables로 통일”은 과함.
+지금 구조처럼 용도별로 나눠 관리하는 게 오히려 괜찮.
+
+
+프리팹 테이블(직참조)로 두면 좋은 것
+항상 게임 시작 시 필요한 것
+자주 스폰되는 것
+로딩 지연이 있으면 체감되는 것
+데이터량이 크지 않은 것
+예:
+플레이어 무기 프리팹
+기본 적 프리팹
+UI 프리팹
+자주 쓰는 이펙트
+왜냐면:
+Instantiate(prefab);
+이렇게 바로 쓰면 돼서 단순하고 빠름.
+
+
+Addressables로 두면 좋은 것
+필요할 때만 로드하고 싶은 것
+메모리에서 내렸다 올렸다 해야 하는 것
+용량 큰 것
+DLC / 업데이트 가능성 있는 것
+씬 간 공유 에셋
+예:
+맵 씬
+보스 모델
+대형 VFX
+컷신 리소스
+희귀 무기 스킨
+장점:
+Addressables.LoadAssetAsync<GameObject>(key);
+필요할 때만 불러옴.
+
+
+굳이 전부 Addressables로 바꾸면 생길 수 있는 문제:
+
+1. 코드 복잡도 증가
+원래:
+Instantiate(enemyPrefab);
+
+Addressables:
+var handle = Addressables.LoadAssetAsync<GameObject>("Enemy_A");
+await handle.Task;
+Instantiate(handle.Result);
+비동기 처리, handle 관리까지 들어감.
+
+2. Release 관리 필요
+안 하면 메모리 누수 느낌으로 남음.
+
+Addressables.Release(handle);
+이거 까먹기 쉬움.
+
+3. 작은 프로젝트면 오버엔지니어링
+특히 내가 만드는 게
+웨이브형 액션 + 몬스터 드랍 + 여러 맵 느낌인데,
+무기 10개 내외정도면 굳이 전부 Addressables 필요 없을 가능성 큼.
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+오프닝 컷씬용 패널 :
+
+1) 게임 시작할 때 딱 한 번 (또는 아주 가끔)
+→ Addressables 추천
+예:
+오프닝 스토리 패널
+챕터 시작 연출 UI
+엔딩 패널
+이런 건 평소 플레이 중엔 필요 없잖아.
+그래서 시작할 때만 로드:
+게임 시작
+→ 오프닝 UI 로드
+→ 컷씬 재생
+→ 끝나면 Release
+메모리 깔끔.
+
+2) 자주 켰다 껐다 함
+→ 씬 안 Canvas 하위에 두고 SetActive
+예:
+일시정지
+인벤토리
+리워드 패널
+설정창
+이건 Addressables로 매번 로드하면 오히려 귀찮아.
+
+3) 오프닝 패널이 이미지 몇 장 + 텍스트 정도면?
+솔직히 말해서…
+굳이 Addressables 안 써도 됨.
+패널 하나가
+Panel
+Image 3~4개
+Text
+Animation
+정도면 무겁지 않거든.
+
+단순 UI 패널 → 그냥 프리팹 / 씬
+영상 수준 무거운 컷씬 UI → Addressables
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+오프닝 패널 어드레서블로 로드한 후 거기서 이미지,텍스트만 계속 바꾸는 방식
+최종 구조:
+OpeningPanel
+├── BackgroundImage
+├── CharacterImage
+├── DialogueText
+└── NameText
+그리고 컷씬 데이터만 배열/리스트로 관리:
+[System.Serializable]
+public class CutsceneData
+{
+    public Sprite background;
+    public Sprite character;
+    public string dialogue;
+    public string speaker;
+}
+넘길 때마다:
+void ShowPage(int index)
+{
+    backgroundImage.sprite = pages[index].background;
+    characterImage.sprite = pages[index].character;
+    dialogueText.text = pages[index].dialogue;
+    nameText.text = pages[index].speaker;
+}
+이렇게 내용만 갈아끼우기.
+
+
+언제 새 패널 생성 방식이 낫냐면:
+컷씬마다 UI 구조가 아예 다름
+(예: 어떤 건 선택지 있음, 어떤 건 없음)
+패널별 레이아웃이 완전 다름
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
+씬오프닝과 패널오프닝 기능 분베 :
+
+이전:
+SceneOpening
+
+얘는 현재 컷씬 진행 관리자(Controller) 역할.
+담당 기능:
+1. UI 패널 생성
+오프닝 패널 로드
+PanelOpening 참조 받아오기
+2. 입력 감지
+스페이스 눌렸는지 확인
+다음 컷으로 넘길지 결정
+
+3. 컷씬 종료 판단
+모든 이미지 소비했는지 체크
+4. 씬 전환
+컷씬 끝나면 메인 씬 이동
+5. PanelOpening에게 명령
+“다음 컷 보여줘”
+
+즉 한마디로:
+SceneOpening = 감독
+흐름 제어 담당.
+
+
+
+PanelOpening
+
+얘는 실제 화면 연출 담당(View).
+
+담당 기능:
+1. 컴포넌트 참조 초기화
+canvasGroup = GetComponent<CanvasGroup>();
+image = GetComponent<Image>();
+UI 참조 세팅.
+2. 현재 컷 이미지 표시
+image.sprite = sprites[currentNum];
+스프라이트 교체.
+3. 컷 진행 인덱스 관리
+currentNum++;
+몇 번째 컷인지 저장.
+(이건 사실 SceneOpening이 해도 되고 PanelOpening이 해도 되는데 지금은 Panel 쪽)
+4. 페이드 연출
+StartCoroutine(FadeIn());
+alpha 조절
+서서히 등장
+5. 애니메이션 상태 저장
+public bool IsPlaying
+연출 중인지
+입력 받아도 되는지 판단용
+
+즉:
+PanelOpening = 배우 + 화면
+
+
+최종 :
+
+3. 컷씬 종료 판단
+모든 이미지 소비했는지 체크
+4. 씬 전환
+컷씬 끝나면 메인 씬 이동
+5. PanelOpening에게 명령
+“다음 컷 보여줘”
+
+이거까지 패널오프닝이 담당.
+사실상 씬오프닝이 저 3개를 할 이유가 없음.
+
+이점 : 
+
+1. 캡슐화 (가장 큼)
+
+panelOpening.currentNum
+panelOpening.IsPlaying
+panelOpening.IsFinished
+
+즉 외부가 Panel 내부 구현을 알아야 해.
+하지만 PanelOpening이 직접 담당하면 외부는:
+panel.Show();
+혹은 아예 아무것도 안 해도 됨.
+즉:
+이전
+SceneOpening:
+"지금 몇 번째 컷이지?"
+"끝났나?"
+"페이드 중인가?"
+이후
+PanelOpening:
+"내 상태는 내가 관리함"
+클래스끼리 덜 엮임.
+
+2. 수정 범위 감소
+
+3. 재사용성 증가
+
+나중에:
+
+챕터1 오프닝
+챕터2 오프닝
+엔딩
+NPC 대화 컷씬
+
+만든다고 치자.
+
+SceneOpening 방식:
+SceneOpening_1
+SceneOpening_2
+SceneEnding
+비슷한 컨트롤러 계속 생김.
+반면 PanelOpening이 자체적으로:
+입력, 진행, 종료
+다 처리하면:
+CutscenePanel 하나 재사용
+가능.
+
+4. 코드량 감소
+
+5. 사고 흐름이 자연스러움
+
+유저가 스페이스 누름 → 누가 반응해야 자연스러울까?
+옵션 A:
+SceneOpening이 입력 받음
+→ PanelOpening에게 물어봄
+→ PanelOpening 상태 확인
+→ 다시 SceneOpening이 결정
+
+옵션 B:
+PanelOpening이 입력 받음
+→ 자기 상태 확인
+→ 다음 컷 표시
+
+B가 훨씬 직관적
+
+
+
+언제 SceneOpening 유지?
+
+이럴 땐 필요해:
+
+카메라 이동 
+NPC 등장
+3D 애니메이션
+BGM 큐 조절
+분기 선택지
+
+즉 컷씬이 UI를 넘어 씬 전체 이벤트가 될 때.
+
+
+
+
+
+
+
+

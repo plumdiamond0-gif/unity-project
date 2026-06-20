@@ -239,7 +239,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   fadeTime: 2
-  currentNum: 0
+  button: {fileID: 8300000, guid: 4bcda8eaa373c3e4aabf6d9ecf574c1f, type: 3}
+  bgm: {fileID: 8300000, guid: 6961d5fc01528d74a833bd712dfc2a64, type: 3}
   cutScenes:
   - sprite: {fileID: 21300000, guid: c450d4be2227b5c4aa0a2aad8ebd91c6, type: 3}
     texts: PRESS SPACE BUTTON TO START
