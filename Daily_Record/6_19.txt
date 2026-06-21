@@ -1,0 +1,234 @@
+씬 이동 중 로딩 창 구현
+
+씬 로딩 시간이 1초 미만으로 매우 빨라서 무조건 2초는 띄우기로 함
+
+
+ private IEnumerator ProcessNextScene(Action OnSceneCompleted)
+ {
+     if (string.IsNullOrEmpty(NextSceneName))
+     {
+         Debug.LogError("nextSceneName IsNullOrEmpty");
+         yield break;
+     }
+
+     float elapsed = 0f;
+     const float minLoadingTime = 2f;
+
+     AsyncOperation handle = SceneManager.LoadSceneAsync(NextSceneName);
+
+     handle.allowSceneActivation = false;
+
+------------------------------------------------------------------------------------------------
+LoadSceneAsync의 progress
+유니티의 AsyncOperation.progress는 보통 이렇게 움직여:
+0.0 ---------------- 0.9 -------- 1.0
+    로딩 중             대기         활성화 완료
+즉 0.9가 분기점.
+
+
+0.9 이전 (progress < 0.9)
+이 구간에서는 유니티가 실제로 씬 데이터를 읽고 있어.
+
+Scene file 읽기
+Texture 로드
+Mesh 로드
+GameObject 생성 준비
+메모리 할당
+
+
+
+
+0.9 도달 (progress == 0.9)
+
+새 씬의 대부분이 메모리에 올라왔다
+거의 로딩 끝.
+
+하지만 아직:
+Awake 안 돌았을 수도 있음
+Start 안 돌았음
+화면 전환 안 됨
+
+즉:
+짐은 다 옮겼는데
+문은 아직 안 열림
+allowSceneActivation = false일 때
+
+
+
+
+0.9에 도달하면 유니티가 멈춰.
+
+계속:
+handle.progress == 0.9f
+handle.isDone == false
+상태 유지.
+
+즉:
+로딩 완료 직전 상태로 정지
+이후 (allowSceneActivation = true)
+
+handle.allowSceneActivation = true;
+하면 마지막 단계 시작.
+
+
+
+
+
+유니티가:
+
+현재 씬 unload
+새 씬 activate
+Awake 실행
+OnEnable 실행
+Start 실행
+첫 프레임 렌더
+
+그리고:
+handle.progress == 1.0f
+handle.isDone == true
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+     while (handle.progress < 0.9f || elapsed < minLoadingTime)
+     {
+         elapsed += Time.deltaTime;
+         yield return null;
+     }
+------------------------------------------------------------------------------------------------
+handle.progress < 0.9f -> 씬 로드만 하고 안 보여주는 상태
+elapsed < minLoadingTime -> 아직 최소시간만큼 안 흘렀음
+
+둘 중 하나라고 만족한다면
+(
+1.씬이 다 로딩됐는데 최소시간만큼 안 지났음
+2.최소시간은 지났는데 씬이 로딩 안 됨
+)
+계속 로딩 창 보여줌
+------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+     handle.allowSceneActivation = true;
+
+     while (!handle.isDone)
+         yield return null;
+
+     Debug.Log("AFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTER");
+
+     OnSceneCompleted?.Invoke();
+     yield return unloadUnusedAssets();
+ }
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+using UnityEngine;
+
+public class SoundManager : MonoBehaviour
+{
+
+    [Header("Audio Sources")]
+    public AudioSource bgmSource;
+받아올 배경음
+    public AudioSource sfxSource;
+받아올 효과음
+    [Header("Default Clips")]
+    public AudioClip buttonClickSound;
+받아올 버튼 클릭 효과음
+
+
+    private void Awake()
+    {
+        bgmSource = gameObject.AddComponent<AudioSource>();
+        sfxSource = gameObject.AddComponent<AudioSource>();
+    }
+    // ======================
+    // BGM
+    // ======================
+
+    public void PlayBGM(AudioClip clip, bool loop = true)
+    {
+        if (bgmSource.clip == clip && bgmSource.isPlaying)
+            return;
+
+        bgmSource.Stop();
+        bgmSource.clip = clip;
+        bgmSource.loop = loop;
+        bgmSource.Play();
+    }
+//배경음 플레이
+
+    public void StopBGM()
+    {
+        bgmSource.Stop();
+    }
+//배경음 정지
+
+    public void PauseBGM()
+    {
+        bgmSource.Pause();
+    }
+
+    public void ResumeBGM()
+    {
+        bgmSource.UnPause();
+    }
+//배경음 재시작
+
+    public void SetBGMVolume(float volume)
+    {
+        bgmSource.volume = volume;
+    }
+//배경음 음량 조절
+
+    // ======================
+    // SFX
+    // ======================
+
+    public void PlaySFX(AudioClip clip)
+    {
+        if (clip == null) return;
+        sfxSource.PlayOneShot(clip);
+    }
+//효과음 재생
+
+    public void SetSFXVolume(float volume)
+    {
+        sfxSource.volume = volume;
+    }
+//효과음 음량 조절
+
+    // ======================
+    // UI
+    // ======================
+
+    public void PlayButtonClick()
+    {
+        if (buttonClickSound != null)
+            sfxSource.PlayOneShot(buttonClickSound);
+    }
+//버튼 클릭 효과음 재생 
+}
