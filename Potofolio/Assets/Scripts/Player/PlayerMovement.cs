@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
     private float mouseY;
     public float MouseSpeed;
 
-    [SerializeField] AudioClip walk;
+    //[SerializeField] AudioClip walk;
 
 
     //private float PlayerSpeed = 1;
@@ -36,6 +36,10 @@ public class PlayerMovement : MonoBehaviour
     public PlayerAttack PlayerAttack;
 
     public bool CanMove;
+    bool isWalkingSoundPlaying = false;
+
+    AudioSource walkAudio;
+
     public enum PlayerState
     {
         Idle,
@@ -60,7 +64,9 @@ public class PlayerMovement : MonoBehaviour
         Cursor.visible = true;
         Rb = GetComponent<Rigidbody>();
         Rb.freezeRotation = true;
-      
+        walkAudio = GetComponent<AudioSource>();
+        walkAudio.Stop();
+
     }
 
     void Update()
@@ -68,6 +74,7 @@ public class PlayerMovement : MonoBehaviour
         if (!CanMove)
             return;
         Rotate();
+
         float inputMagnitude = new Vector2(MovementX, MovementY).magnitude;
         float targetSpeed = 0f;
 
@@ -97,6 +104,21 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("MoveX", MovementX);
         anim.SetFloat("MoveY", MovementY);
         anim.SetBool("IsGrounded", isGrounded);
+
+
+        bool isMoving = MovementX != 0 || MovementY != 0;
+
+        if (isMoving && !isWalkingSoundPlaying && isGrounded)
+        {
+            walkAudio.Play();
+            isWalkingSoundPlaying = true;
+        }
+        else if (!isMoving && isWalkingSoundPlaying || !isGrounded)
+        {
+            walkAudio.Stop();
+            isWalkingSoundPlaying = false;
+        }
+
     }
 
 
@@ -104,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
         {
         if(!CanMove)
             return;
-        GM.GetSoundManager().PlaySFX(walk);
+        //GM.GetSoundManager().PlaySFX(walk);
             Vector2 Movevalue = inputValue.Get<Vector2>();
             MovementX = Movevalue.x;
             MovementY = Movevalue.y;
@@ -116,11 +138,12 @@ public class PlayerMovement : MonoBehaviour
             {
                 return;
             }
-            Rb.linearVelocity = new Vector3(Rb.linearVelocity.x, 0, Rb.linearVelocity.z);
+        anim.SetTrigger("Jump");
+
+        Rb.linearVelocity = new Vector3(Rb.linearVelocity.x, 0, Rb.linearVelocity.z);
             Rb.AddForce(transform.up * stat.JumpPower, ForceMode.Impulse);
             isGrounded = false;
 
-            anim.SetTrigger("Jump");
     }
     void OnSprint()
         {

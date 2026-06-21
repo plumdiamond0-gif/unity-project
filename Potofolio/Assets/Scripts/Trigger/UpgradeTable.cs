@@ -3,12 +3,10 @@ using UnityEngine.Rendering;
 
 public class UpgradeTable : TriggerObject
 {
-    [SerializeField] private Transform RootCanvas;
 
     private void Start()
     {
-        RootCanvas = GameObject.FindGameObjectWithTag("RootCanvas").transform;
-        GM.GetUIManager().GetRootCanvas(RootCanvas);
+
 
     }
     protected override void Trigger(GameObject entered)

@@ -16,6 +16,7 @@ public class GameManager : SingletonObject<GameManager>
 
     public GameObject player{ get; private set; } = null;
 
+
     public PrefabManager Get_PrefabManager()
     {
         return GetPrefabManager;
@@ -155,9 +156,10 @@ public class GameManager : SingletonObject<GameManager>
         }
     }
 
-    public void GetPlayer(GameObject go)
+    public void SavePlayer(GameObject go)
     {
         player = go;
+        GM.GetUIManager().Bind();
     }
 
 
@@ -193,6 +195,11 @@ public static class GM
     {
         Debug.Log("GetSoundManager");
         return GameManager.instance.Get_SoundManager();
+    }
+
+    public static void SavePlayer(GameObject gameObject)
+    {
+        GameManager.instance.SavePlayer(gameObject);
     }
 
 

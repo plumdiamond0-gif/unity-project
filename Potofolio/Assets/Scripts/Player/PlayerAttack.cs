@@ -36,9 +36,6 @@ public class PlayerAttack : MonoBehaviour
     List<WeaponPrefabData> weaponList = new();
 
 
-
-    public KnockBackEffect knock;
-
     public GameObject AttackGuageBar;
 
     public Image AttackGuageBarFill;
@@ -66,7 +63,7 @@ public class PlayerAttack : MonoBehaviour
         SelectWeapon(0);
         canAttack = true;
     
-
+        AttackGuageBarFill.fillAmount = 0;
     }
 
     private void Update()
@@ -213,7 +210,7 @@ public class PlayerAttack : MonoBehaviour
         + AttackRatio * maxChargeBonus);
         currentBall.SetWeaponData(currentweapondata);
         currentBall.SetDamage(finalDamage);
-        Debug.Log(finalDamage);
+        //Debug.Log(finalDamage); 
 
         float currnetRecoilX = baseRecoilX * (1f + (AttackRatio * maxChargeBonus));
         float YZRecoil = currentweapondata.YZRecoil;

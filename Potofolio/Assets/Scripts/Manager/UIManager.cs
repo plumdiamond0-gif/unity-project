@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class UIManager : MonoBehaviour
 {
+    PanelPlayer HUD;
+
     private readonly Dictionary<string, PanelBase> _dicContentPanels = new();
 
     private Transform RootCanvas;
@@ -76,7 +79,43 @@ public class UIManager : MonoBehaviour
         return gameObject.GetComponent<UIManager>();
     }
 
+    //public void GetPlayer(GameObject gameObject)
+    //{
+    //    playerInfo = gameObject;
+    //}
+    public void GetHUD(PanelPlayer panel)
+    {
+        HUD = panel;
+        Bind();
+    }
 
 
+
+    public void Bind()
+    {
+        if (HUD != null && GameManager.instance.player != null)
+        {
+            GameObject playerInfo = GameManager.instance.player;
+            PlayerAttack playerAttack = playerInfo.GetComponent<PlayerAttack>();
+            if (playerAttack != null)
+            {
+                playerAttack.AttackGuageBar = HUD.ChargeUI;
+                playerAttack.AttackGuageBarFill = HUD.ChargeImageUI;
+
+            }
+
+            Health playerHealth = playerInfo.GetComponent<Health>();
+            if (playerHealth != null)
+            {
+                playerHealth.HealthBarFill = HUD.HpUI;
+            }
+
+            PlayerMovement playerMovement = playerInfo.GetComponent<PlayerMovement>();
+            if (playerMovement != null)
+            {
+
+            }
+        }
+    }
   
 }

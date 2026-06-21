@@ -7,7 +7,7 @@ public class Health : MonoBehaviour
     public float CurrentHp;
     public float MaxHp;
     bool isInvincible = false;
-    [SerializeField] private  Image HealthBarFill;
+    public Image HealthBarFill;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

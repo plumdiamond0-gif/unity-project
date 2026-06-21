@@ -65,8 +65,6 @@ public class SceneLoadManager : MonoBehaviour
 
         handle.allowSceneActivation = false;
 
-        Debug.Log(handle.progress);
-        Debug.Log(handle.isDone);
 
         while (handle.progress < 0.9f || elapsed < minLoadingTime)
         {
