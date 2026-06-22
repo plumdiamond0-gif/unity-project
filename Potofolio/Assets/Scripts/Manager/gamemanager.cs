@@ -14,7 +14,8 @@ public class GameManager : SingletonObject<GameManager>
     public SaveManager GetSaveManager { get; private set; }=null;
     public SoundManager GetSoundManager { get; private set; } = null;
 
-    public GameObject player{ get; private set; } = null;
+    public static Action<GameObject> OnPlayerSpawned;
+    GameObject player;
 
 
     public PrefabManager Get_PrefabManager()
@@ -45,12 +46,16 @@ public class GameManager : SingletonObject<GameManager>
     void Awake()
     {
         base.Awake();
-
-
         //prefabManager = PrefabManager.CreatePrefabManager(prefabManager.gameObject, transform);
         //UIManager = UIManager.CreateUIManager(UIManager.gameObject, transform);
-
-
+    }
+    void SavePlayer(GameObject go)
+    {
+        player = go;
+    }
+    public GameObject GetPlayer()
+    {
+        return player;
     }
 
     public void Init(Action OnInit)
@@ -156,13 +161,6 @@ public class GameManager : SingletonObject<GameManager>
         }
     }
 
-    public void SavePlayer(GameObject go)
-    {
-        player = go;
-        GM.GetUIManager().Bind();
-    }
-
-
 }
 public static class GM
 {
@@ -197,10 +195,6 @@ public static class GM
         return GameManager.instance.Get_SoundManager();
     }
 
-    public static void SavePlayer(GameObject gameObject)
-    {
-        GameManager.instance.SavePlayer(gameObject);
-    }
 
 
 }

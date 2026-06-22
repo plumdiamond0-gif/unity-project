@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 5285714681394247386}
   - component: {fileID: 503670559248050822}
   m_Layer: 0
-  m_Name: Enemy-2
+  m_Name: ShellBlink
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -109,7 +109,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currentState: 0
-  player: {fileID: 0}
   detectRange: 10
   attackRange: 2
   Coin: {fileID: 5321920919559439511, guid: e4eb03a2a2ee1594cb7d5ef482531cc0, type: 3}
@@ -199,8 +198,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f825e20244a9b88418f9a31123e7de52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
-  CurrentHp: 30
-  MaxHp: 30
+  CurrentHp: 0
+  MaxHp: 40
   HealthBarFill: {fileID: 5715363030775092235}
 --- !u!1 &326030162874121879
 GameObject:

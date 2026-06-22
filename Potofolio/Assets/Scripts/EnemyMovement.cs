@@ -24,13 +24,12 @@ public class EnemyMovement : MonoBehaviour
     public EnemyState currentState;
 
     //[SerializeField] private GameObject player;
-    Transform playerTrans;
     [SerializeField] private float detectRange = 20f;
     [SerializeField] private float attackRange = 5f;
     Health health;
     [SerializeField] private GameObject Coin;
     [SerializeField] private float CoinNum;
-
+    GameObject player;
 
     private NavMeshAgent agent;
     private Rigidbody rb;
@@ -63,15 +62,15 @@ public class EnemyMovement : MonoBehaviour
         health = GetComponent<Health>();    
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
-        playerTrans = GameManager.instance.player.transform;
         rb.isKinematic = true; 
         anim = GetComponentInChildren<Animator>();
 
         anim.SetFloat(MoveHash, 0);
 
-        agent.isStopped = true;
-    }
+        player = transform.parent.GetComponent<Generator>().player;
+        agent.SetDestination(player.transform.position);
 
+    }
 
     // Update is called once per frame
     void Update()
@@ -85,8 +84,9 @@ public class EnemyMovement : MonoBehaviour
             Die();
             return;
         }
-
-        float dist = Vector3.Distance(transform.position, playerTrans.position);
+        if (player == null)
+            return;
+        float dist = Vector3.Distance(transform.position, player.transform.position);
 
         if (dist > detectRange)
             ChangeState(EnemyState.Idle);
@@ -118,11 +118,11 @@ public class EnemyMovement : MonoBehaviour
                 anim.SetFloat(MoveHash, 0);
                 break;
             case EnemyState.Chase:
-                agent.SetDestination(playerTrans.position);
+                agent.SetDestination(player.transform.position);
                 anim.SetFloat(MoveHash, 1);
                 break;
             case EnemyState.Attack:
-                Health playerhealth = GameManager.instance.player.GetComponent<Health>();
+                Health playerhealth = player.GetComponent<Health>();
                 if (playerhealth != null)
                 {
                     anim.SetTrigger(AttackHash);

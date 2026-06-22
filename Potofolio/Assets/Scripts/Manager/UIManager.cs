@@ -86,16 +86,17 @@ public class UIManager : MonoBehaviour
     public void GetHUD(PanelPlayer panel)
     {
         HUD = panel;
-        Bind();
     }
 
-
-
-    public void Bind()
+    private void Awake()
     {
-        if (HUD != null && GameManager.instance.player != null)
+        GameManager.OnPlayerSpawned += Bind;
+    }
+
+    public void Bind(GameObject playerInfo)
+    {
+        if (HUD != null)
         {
-            GameObject playerInfo = GameManager.instance.player;
             PlayerAttack playerAttack = playerInfo.GetComponent<PlayerAttack>();
             if (playerAttack != null)
             {

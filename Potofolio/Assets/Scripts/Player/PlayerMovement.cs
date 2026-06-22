@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
@@ -21,7 +22,9 @@ public class PlayerMovement : MonoBehaviour
     //[SerializeField] AudioClip walk;
 
 
-    //private float PlayerSpeed = 1;
+    [SerializeField]private float PlayerSpeed = 1;
+    [SerializeField]float walkSpeed;
+    [SerializeField]float RunSpeed;
     //public float JumpPower;
 
     private bool isGrounded;
@@ -29,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     Animator anim;
 
     float currentSpeed;
-
+    Coroutine walkRoutine;
 
     Camera cam;
     Rigidbody Rb;
@@ -38,7 +41,8 @@ public class PlayerMovement : MonoBehaviour
     public bool CanMove;
     bool isWalkingSoundPlaying = false;
 
-    AudioSource walkAudio;
+    [SerializeField]AudioSource walkAudio;
+    [SerializeField] AudioSource _walkAudio;
 
     public enum PlayerState
     {
@@ -66,6 +70,9 @@ public class PlayerMovement : MonoBehaviour
         Rb.freezeRotation = true;
         walkAudio = GetComponent<AudioSource>();
         walkAudio.Stop();
+
+        PlayerSpeed = walkSpeed * stat.PlayerSpeed;
+        Debug.Log(PlayerSpeed);
 
     }
 
@@ -110,17 +117,35 @@ public class PlayerMovement : MonoBehaviour
 
         if (isMoving && !isWalkingSoundPlaying && isGrounded)
         {
-            walkAudio.Play();
+            if (isSprint)
+                walkAudio.Play();
+            else
+                if (walkRoutine == null)
+            {
+                walkRoutine = StartCoroutine(walk());
+            }
+
             isWalkingSoundPlaying = true;
         }
         else if (!isMoving && isWalkingSoundPlaying || !isGrounded)
         {
             walkAudio.Stop();
+            if(walkRoutine != null)
+            StopCoroutine(walkRoutine);
+            walkRoutine = null;
             isWalkingSoundPlaying = false;
         }
 
     }
-
+    IEnumerator walk()
+    {
+        while(!isSprint)
+        {
+            _walkAudio.Play();
+            yield return new WaitForSeconds(0.8f); 
+        }
+        walkRoutine = null;
+    }
 
     void OnMove(InputValue inputValue)
         {
@@ -152,7 +177,9 @@ public class PlayerMovement : MonoBehaviour
 
         Debug.Log("Sprint");
         isSprint = !isSprint;
-        stat.PlayerSpeed *= isSprint ? stat.PlayerSpeed*2 : stat.PlayerSpeed;
+
+        PlayerSpeed = isSprint ? RunSpeed*stat.PlayerSpeed : walkSpeed*stat.PlayerSpeed;
+        
     }
 
   
@@ -174,7 +201,7 @@ public class PlayerMovement : MonoBehaviour
         if (!CanMove)
             return;
         Vector3 MoveDir = ((transform.right * MovementX) + (transform.forward * MovementY)).normalized;
-        Vector3 targetVel = MoveDir * stat.PlayerSpeed;
+        Vector3 targetVel = MoveDir * PlayerSpeed;
 
         Vector3 currentVel = Rb.linearVelocity;
 

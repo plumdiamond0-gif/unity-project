@@ -28,7 +28,6 @@ public class EnemyPrefabTableData
     public GameObject Enemy;
     public GameObject EnemyBullet;
     public float Attackspeed;
-    public float CoinNum;
 
 
 

@@ -17,5 +17,19 @@ MonoBehaviour:
     EnemyName: Blink
     Enemy: {fileID: 964480405027562052, guid: 75f627f43d6e9944eade19b0ca15f5f4, type: 3}
     EnemyBullet: {fileID: 0}
-    Attackspeed: 5
-    CoinNum: 8
+    Attackspeed: 0
+  - enemyType: 1
+    EnemyName: ShellBlink
+    Enemy: {fileID: 282274447850904860, guid: bda289ce78096ac4b8cc69950bd76c5b, type: 3}
+    EnemyBullet: {fileID: 0}
+    Attackspeed: 0
+  - enemyType: 2
+    EnemyName: Chesty
+    Enemy: {fileID: 964480405027562052, guid: da5a403aed7e97b419fd9769b7a851da, type: 3}
+    EnemyBullet: {fileID: 0}
+    Attackspeed: 0
+  - enemyType: 3
+    EnemyName: Obsi
+    Enemy: {fileID: 964480405027562052, guid: 0c3097e1d4491ff4a812e635df364a9f, type: 3}
+    EnemyBullet: {fileID: 0}
+    Attackspeed: 0
