@@ -15,6 +15,9 @@ public class Generator : MonoBehaviour
         enemy = GM.GetPrefabManager().
             EnemyPrefabTable.EnemyPrefabTableDatas.Find
             (x => x.enemyType == enemyType).Enemy;
+
+        canSpawn = true;
+        GenerateReady();
     }
     public void GenerateReady()
     {

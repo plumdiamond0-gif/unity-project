@@ -26,5 +26,12 @@ public class PrefabManager : MonoBehaviour
               WeaponPrefabTable = go;
               OnComplete?.Invoke();
           });
+
+        GM.GetAssetManager().LoadAsset<EnemyPrefabTable>
+          ("EnemyPrefabTable", (go) =>
+          {
+              EnemyPrefabTable = go;
+              OnComplete?.Invoke();
+          });
     }
 }

@@ -3,7 +3,7 @@
   "WorkspaceRootPath": "C:\\Users\\plumd\\Desktop\\popol\\unity-project\\Potofolio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Desktop\\popol\\unity-project\\Potofolio\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\plumd\\desktop\\popol\\unity-project\\potofolio\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -19,7 +19,7 @@
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playerattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\plumd\\desktop\\popol\\unity-project\\potofolio\\assets\\scripts\\panel\\panelplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Desktop\\popol\\unity-project\\Potofolio\\assets\\scripts\\panel\\panelplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\panel\\panelplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -27,11 +27,11 @@
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\sceneloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\plumd\\desktop\\popol\\unity-project\\potofolio\\assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Desktop\\popol\\unity-project\\Potofolio\\assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\manager\\uimanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\plumd\\desktop\\popol\\unity-project\\potofolio\\assets\\scripts\\scene\\scenebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Desktop\\popol\\unity-project\\Potofolio\\assets\\scripts\\scene\\scenebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\scene\\scenebase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -39,7 +39,7 @@
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\trigger\\upgradetable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\plumd\\desktop\\popol\\unity-project\\potofolio\\assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Desktop\\popol\\unity-project\\Potofolio\\assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\health.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -67,7 +67,7 @@
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\knockbackeffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\plumd\\desktop\\popol\\unity-project\\potofolio\\assets\\scripts\\player\\weaponeffects\\stuneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\plumd\\Desktop\\popol\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\stuneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\stuneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -174,8 +174,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Health.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-21T21:27:36.452Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T21:27:36.452Z"
             },
             {
               "$type": "Document",
@@ -187,8 +186,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Panel\\PanelPlayer.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-21T21:26:45.263Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T21:26:45.263Z"
             },
             {
               "$type": "Document",
@@ -200,8 +198,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Scene\\SceneBase.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAwBUAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-21T21:23:03.916Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T21:23:03.916Z"
             },
             {
               "$type": "Document",
@@ -213,8 +210,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Scene\\SceneBattle.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAxwAsAAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T07:05:12.71Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T07:05:12.71Z"
             },
             {
               "$type": "Document",
@@ -226,8 +222,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Manager\\UIManager.cs",
               "ViewState": "AgIAAFwAAAAAAAAAAAAswGEAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-21T21:15:59.424Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T21:15:59.424Z"
             },
             {
               "$type": "Document",
@@ -239,8 +234,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerAttack.cs",
               "ViewState": "AgIAALgAAAAAAAAAAAAgwL8AAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T21:00:51.459Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T21:00:51.459Z"
             },
             {
               "$type": "Document",
@@ -250,7 +244,7 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
               "ToolTip": "C:\\Users\\plumd\\Desktop\\popol\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerMovement.cs",
-              "ViewState": "AgIAAGQAAAAAAAAAAAAuwHEAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAuwG8AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-06-20T20:15:44.68Z",
               "EditorCaption": ""
@@ -265,8 +259,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\StunEffect.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAQwB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-21T20:10:45.53Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T20:10:45.53Z"
             },
             {
               "$type": "Document",
@@ -278,8 +271,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-21T20:10:23.651Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T20:10:23.651Z"
             },
             {
               "$type": "Document",
@@ -303,8 +295,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\DotdamEffect.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-21T20:10:35.14Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T20:10:35.14Z"
             },
             {
               "$type": "Document",
@@ -316,8 +307,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-21T20:10:34.368Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T20:10:34.368Z"
             },
             {
               "$type": "Document",
@@ -329,8 +319,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Manager\\SceneLoadManager.cs",
               "ViewState": "AgIAADEAAAAAAAAAAAAIwEcAAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-21T19:48:18.059Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-21T19:48:18.059Z"
             },
             {
               "$type": "Document",
@@ -354,8 +343,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerStat.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T09:48:32.526Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T09:48:32.526Z"
             },
             {
               "$type": "Document",
@@ -367,8 +355,7 @@
               "RelativeToolTip": "Assets\\Scripts\\cameraMove.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T20:14:59.59Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T20:14:59.59Z"
             },
             {
               "$type": "Document",
@@ -404,8 +391,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Player\\PlayerItem.cs",
               "ViewState": "AgIAACEAAAAAAAAAAAAYwC0AAAAvAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T09:43:38.942Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T09:43:38.942Z"
             },
             {
               "$type": "Document",
@@ -513,8 +499,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Trigger\\UpgradeTable.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAQwBMAAABNAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T09:14:14.657Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T09:14:14.657Z"
             },
             {
               "$type": "Document",
@@ -550,8 +535,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Scene\\SceneInit.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T09:12:47.097Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-20T09:12:47.097Z"
             },
             {
               "$type": "Document",
@@ -635,8 +619,7 @@
               "RelativeToolTip": "Assets\\Scripts\\Manager\\gamemanager.cs",
               "ViewState": "AgIAALgAAAAAAAAAAAAQwLsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-18T18:39:48.483Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-06-18T18:39:48.483Z"
             }
           ]
         }

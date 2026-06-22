@@ -23,7 +23,7 @@ public class EnemyMovement : MonoBehaviour
 {
     public EnemyState currentState;
 
-    [SerializeField] private GameObject player;
+    //[SerializeField] private GameObject player;
     Transform playerTrans;
     [SerializeField] private float detectRange = 20f;
     [SerializeField] private float attackRange = 5f;
@@ -63,7 +63,7 @@ public class EnemyMovement : MonoBehaviour
         health = GetComponent<Health>();    
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
-        playerTrans = player.transform;
+        playerTrans = GameManager.instance.player.transform;
         rb.isKinematic = true; 
         anim = GetComponentInChildren<Animator>();
 
@@ -122,7 +122,7 @@ public class EnemyMovement : MonoBehaviour
                 anim.SetFloat(MoveHash, 1);
                 break;
             case EnemyState.Attack:
-                Health playerhealth = player.GetComponent<Health>();
+                Health playerhealth = GameManager.instance.player.GetComponent<Health>();
                 if (playerhealth != null)
                 {
                     anim.SetTrigger(AttackHash);

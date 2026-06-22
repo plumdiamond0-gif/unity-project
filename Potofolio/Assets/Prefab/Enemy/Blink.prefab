@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 8267310351810931845}
   - component: {fileID: 5121327421904516322}
   m_Layer: 0
-  m_Name: Enemy-1
+  m_Name: Blink
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

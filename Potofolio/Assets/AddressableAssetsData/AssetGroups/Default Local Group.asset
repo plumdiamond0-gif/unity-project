@@ -40,6 +40,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71e223e8c6d6f4540ac8e7c8cadc29ff
+    m_Address: EnemyPrefabTable
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 76f437e013b28404eaae784b37208b4a
     m_Address: WeaponPrefabTable
     m_ReadOnly: 0
