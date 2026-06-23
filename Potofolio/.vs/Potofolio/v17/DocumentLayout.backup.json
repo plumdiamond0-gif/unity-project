@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\generator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\generator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\cameramove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameramove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|c:\\users\\admin\\documents\\github\\unity-project\\potofolio\\assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\playermovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\manager\\sceneloadmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -95,10 +99,6 @@
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\stuneffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\cameramove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cameramove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\assets\\scripts\\player\\weaponeffects\\sloweffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0F652A91-B640-16B3-AAC5-0CF48C7A5597}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\player\\weaponeffects\\sloweffect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -166,11 +166,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 379,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "PlayerMovement.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerMovement.cs",
@@ -187,7 +187,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "PrefabManager.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\PrefabManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\PrefabManager.cs",
@@ -199,7 +199,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "UIManager.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\UIManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\UIManager.cs",
@@ -211,7 +211,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "PlayerAttack.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerAttack.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerAttack.cs",
@@ -223,7 +223,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "StunEffect.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\StunEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\StunEffect.cs",
@@ -235,7 +235,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "KnockBackEffect.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\KnockBackEffect.cs",
@@ -259,7 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "DotdamEffect.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\DotdamEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\DotdamEffect.cs",
@@ -271,7 +271,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "IWeaponEffect.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\WeaponEffects\\IWeaponEffect.cs",
@@ -283,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SceneLoadManager.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\SceneLoadManager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\SceneLoadManager.cs",
@@ -295,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "gamemanager.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Manager\\gamemanager.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Manager\\gamemanager.cs",
@@ -307,7 +307,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "Map.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Map.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Map.cs",
@@ -319,19 +319,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Generator.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Generator.cs",
               "RelativeDocumentMoniker": "Assets\\Generator.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Generator.cs",
               "RelativeToolTip": "Assets\\Generator.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAADwvz0AAABDAAAAAAAAAA==",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAowDgAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T09:15:48.153Z"
+              "WhenOpened": "2026-06-20T09:15:48.153Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SceneBattle.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Scene\\SceneBattle.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scene\\SceneBattle.cs",
@@ -343,7 +344,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SceneBase.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Scene\\SceneBase.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scene\\SceneBase.cs",
@@ -355,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "PanelPlayer.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Panel\\PanelPlayer.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Panel\\PanelPlayer.cs",
@@ -367,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "Health.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Health.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Health.cs",
@@ -391,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "PlayerStat.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerStat.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerStat.cs",
@@ -403,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 1,
               "Title": "cameraMove.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\cameraMove.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\cameraMove.cs",
@@ -411,7 +412,8 @@
               "RelativeToolTip": "Assets\\Scripts\\cameraMove.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-06-20T20:14:59.59Z"
+              "WhenOpened": "2026-06-20T20:14:59.59Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -439,7 +441,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "PlayerItem.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Player\\PlayerItem.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Player\\PlayerItem.cs",
@@ -475,7 +477,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "EnemyMovement.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\EnemyMovement.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyMovement.cs",
@@ -487,7 +489,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "EnemyPrefabTable.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SO\\EnemyPrefabTable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SO\\EnemyPrefabTable.cs",
@@ -523,7 +525,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "WeaponPrefabTable.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\SO\\WeaponPrefabTable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\SO\\WeaponPrefabTable.cs",
@@ -535,7 +537,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "UpgradeTable.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Trigger\\UpgradeTable.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Trigger\\UpgradeTable.cs",
@@ -571,7 +573,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "SceneInit.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\GitHub\\unity-project\\Potofolio\\Assets\\Scripts\\Scene\\SceneInit.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Scene\\SceneInit.cs",
