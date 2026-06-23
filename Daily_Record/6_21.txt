@@ -1,0 +1,110 @@
+HUD :
+GameManager
+ ├─ PrefabManager
+ │   ├─ WeaponPrefabTable
+ │   ├─ EnemyPrefabTable
+ │   └─ PlayerPrefab (or Player Table)
+ │
+ ├─ UIManager
+ │   ├─ HUD Panel (Addressables)
+ │   ├─ Inventory Panel (Addressables)
+ │   ├─ Upgrade Panel (Addressables)
+ │   └─ Popup Panel (Addressables)
+ │
+ └─ Player (runtime spawn)
+플레이어 = 게임 로직
+HUD = UI 시스템
+
+이미 패널들을 다 어드레서블로 관리하고 있기에 HUD도
+어드레서블로 관리
+
+Canvas
+ ├─ HUDPanel
+ │   ├─ HPBar
+ │   ├─ StaminaBar
+ │   ├─ WeaponSlot
+ │   └─ AmmoText
+ │
+ ├─ InventoryPanel
+ ├─ UpgradePanel
+ └─ PopupPanel
+
+HUD는 플레이어 자식 아님.
+
+플레이어 자식이면:
+
+플레이어 죽을 때 같이 삭제될 수 있음
+Respawn 시 재생성 필요
+카메라/UI 관계 꼬일 수 있음
+
+Canvas 쪽이 훨씬 안정적.
+
+최종 흐름 
+Game Start
+   ↓
+Load UI (HUD Addressables)
+   ↓
+Spawn Player
+   ↓
+UIManager.BindPlayer(player)
+   ↓
+HUD subscribes to player events
+   ↓
+게임 진행
+
+SceneBattle -> Awake()
+        GM.GetAssetManager().LoadAsset<GameObject>("Player",
+            (go) =>
+            {
+                GameObject player = Instantiate(go, playerSpawnPos.position,
+                    Quaternion.identity);
+                GameManager.instance.GetPlayer(player);
+                PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
+                playerMovement.CanMove = true;
+                playerMovement.state = PlayerMovement.PlayerState.InBattle;
+                Debug.Log("Player 스폰됨");
+            });
+
+        GM.GetUIManager().CreateUIPanel("Player_Panel",
+            (go) =>
+            {
+                GM.GetUIManager().GetHUD(go.GetComponent<PanelPlayer>());
+            });
+플레이어 생성 이전에 UI패널이 생성된다면?
+
+해결->
+
+등록 함수:
+GameManager
+public void RegisterPlayer(GameObject player)
+{
+    _player = player;
+    TryBind();
+}
+
+UIManager
+public void RegisterHUD(PanelPlayer hud)
+{
+    _hud = hud;
+    TryBind();
+}
+
+RegisterPlayer, RegisterHUD 씬배틀에서 두개 로드할 때 호출
+
+private void TryBind()
+{
+    if (_player == null || _hud == null)
+        return;
+
+    _hud.Bind(_player);
+}
+
+Player loaded or HUD loaded
+→ RegisterPlayer orRegisterHUD
+→ 둘 중 하나 없음 → Bind 안함
+→ 둘 다 있음 → Bind
+
+
+
+
+

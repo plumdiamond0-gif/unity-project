@@ -1,0 +1,55 @@
+제너레이터에 플레이어값 알리기 :
+
+1.Start()에서 바로 찾기 : 
+
+맵 생성 (Generator들도 같이 생성됨)
+플레이어 생성
+
+이라서 Generator.Start() 시점에는 플레이어가
+아직 없을 수 있음. 타이밍 문제 나기 쉬움.
+
+
+
+
+
+2.게이매니저에 플레이어 저장
+Generator:
+Transform playerTrans;
+if(playerTrans == null && GM.GetPlayerTransform() != null)
+{
+    playerTrans = GM.GetPlayerTransform();
+}
+
+장점:
+Generator 전체를 순회 안 해도 됨
+각 Generator가 필요할 때 가져감
+결합도 낮음
+
+
+
+
+3.플레이어 생성 시 Generator들에게 알려주기
+Generator[] generators = FindObjectsByType<Generator>(FindObjectsSortMode.None);
+foreach(var generator in generators)
+{
+    generator.SetPlayer(player.transform);
+}
+
+단점:
+플레이어 respawn 때 다시 돌려야 함
+Generator가 많아지면 귀찮음
+
+
+
+
+4.이벤트***
+
+
+
+
+
+
+
+
+
+
