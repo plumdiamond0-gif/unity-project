@@ -39,10 +39,10 @@ public class CameraMovement : MonoBehaviour
     {
         //Vector3 mouseVec = new Vector3(player.xRotation, player.yRotation, 0);
         //Quaternion playerRotation = player.transform.rotation * mouseVec;
-        //float clampedX = Mathf.Clamp(player.xRotation, -45f, 45f);
+        float clampedX = Mathf.Clamp(player.xRotation, -270f, 5f);
 
         Quaternion horizontal = player.transform.rotation;
-        Quaternion vertical = Quaternion.Euler(player.xRotation, 0, 0);
+        Quaternion vertical = Quaternion.Euler(clampedX, 0, 0);
 
         Vector3 rotatedOffset = horizontal * vertical * offset;
         //원래라면 화살표가 플레이어 뒤만 가리키는데 일케 하면 플레이어 회전에 따라 화살표도 돌아감

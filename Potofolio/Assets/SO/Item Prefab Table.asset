@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaacd8ab44181434abca3ddf75c0d995, type: 3}
+  m_Name: Item Prefab Table
+  m_EditorClassIdentifier: Assembly-CSharp::ItemPrefabTable
+  ItemDatas:
+  - itemSprite: {fileID: 0}
+    MinHealAmount: 0
+    MaxHealAmount: 0
+    MinDamageBuffAmount: 0
+    MaxDamageBuffAmount: 0
+    MinAttackSpeed: 0
+    MaxAttackSpeed: 0
+    MinMoveSpeed: 0
+    MaxMoveSpeed: 0
+    MaxHpBuffAmount: 0
+    MinHpBuffAmount: 0
+    inItemType: 6
+    outItemType: 0
+    dataType: 0
+    ItemName: Coin
+    ItemPrefab: {fileID: 5321920919559439511, guid: e4eb03a2a2ee1594cb7d5ef482531cc0, type: 3}
+  - itemSprite: {fileID: 0}
+    MinHealAmount: 0
+    MaxHealAmount: 0
+    MinDamageBuffAmount: 0
+    MaxDamageBuffAmount: 0
+    MinAttackSpeed: 0
+    MaxAttackSpeed: 0
+    MinMoveSpeed: 0
+    MaxMoveSpeed: 0
+    MaxHpBuffAmount: 0
+    MinHpBuffAmount: 0
+    inItemType: 0
+    outItemType: 0
+    dataType: 0
+    ItemName: 
+    ItemPrefab: {fileID: 0}

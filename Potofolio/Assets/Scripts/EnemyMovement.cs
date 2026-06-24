@@ -19,16 +19,28 @@ public enum EnemyState
     Stun,
     Die
 }
+
+public enum EnemyAttackType
+{
+    close,
+    distant
+}
 public class EnemyMovement : MonoBehaviour
 {
     public EnemyState currentState;
+    public EnemyType enemyType;
 
     //[SerializeField] private GameObject player;
-    [SerializeField] private float detectRange = 20f;
-    [SerializeField] private float attackRange = 5f;
-    Health health;
-    [SerializeField] private GameObject Coin;
+    [SerializeField] private float detectRange;
+    [SerializeField] private float attackRange;
+    [SerializeField] float damage;
     [SerializeField] private float CoinNum;
+    [SerializeField] private float attackSpeed;
+    [SerializeField] private float attackCoolTime;
+
+
+    Health health;
+    GameObject Coin;
     GameObject player;
 
     private NavMeshAgent agent;
@@ -36,7 +48,7 @@ public class EnemyMovement : MonoBehaviour
 
     private bool isKnockbacking = false;
 
-    public float damage;
+    public EnemyAttackType attackType;
 
     static readonly int MoveHash = Animator.StringToHash("Move");
     static readonly int AttackHash = Animator.StringToHash("Attack");
@@ -51,14 +63,19 @@ public class EnemyMovement : MonoBehaviour
     Coroutine stunRoutine;
     Coroutine dotdamRoutine;
 
+    public Transform FirePos;
 
 
     bool isGrounded;
+    bool canAttack;
 
     Animator anim;
 
+    EnemyPrefabData data;
+    
     void Awake()
     {
+        canAttack = true;
         health = GetComponent<Health>();    
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
@@ -69,6 +86,9 @@ public class EnemyMovement : MonoBehaviour
 
         player = transform.parent.GetComponent<Generator>().player;
         agent.SetDestination(player.transform.position);
+
+        data = GM.GetPrefabManager().EnemyPrefabTable.EnemyPrefabDatas.Find(x => x.enemyType == enemyType);
+        Coin = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.ItemName == "Coin").ItemPrefab;
 
     }
 
@@ -122,19 +142,52 @@ public class EnemyMovement : MonoBehaviour
                 anim.SetFloat(MoveHash, 1);
                 break;
             case EnemyState.Attack:
-                Health playerhealth = player.GetComponent<Health>();
-                if (playerhealth != null)
+                if (!canAttack)
+                    return;
+                canAttack = false;
+                StartCoroutine(AttackCoolTime());
+                if (attackType == EnemyAttackType.close)
+                {
+                    Health playerhealth = player.GetComponent<Health>();
+                    if (playerhealth != null)
+                    {
+                        anim.SetTrigger(AttackHash);
+                        playerhealth.TakeDamage(damage);
+                    }
+                    agent.ResetPath();
+                }
+                else
                 {
                     anim.SetTrigger(AttackHash);
-                    playerhealth.TakeDamage(damage);
+
+                    GameObject CBcopy = Instantiate(data.EnemyBullet, FirePos.position, Quaternion.identity);
+                    EnemyBall ball = CBcopy.GetComponent<EnemyBall>();
+                    ball.GetDamage(damage);
+                    Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
+                    if (CanonBallRB != null)
+                    {
+                        Vector3 shootDir = (player.transform.position - FirePos.position).normalized;
+                        CanonBallRB.AddForce(
+                            shootDir * attackSpeed,
+                            ForceMode.Impulse
+                        );
+
+                    }
+                    agent.ResetPath();
+
                 }
-                agent.ResetPath();
                 break;
 
             default:
                 break;
         }
 
+    }
+
+    IEnumerator AttackCoolTime()
+    {
+        yield return new WaitForSeconds(attackCoolTime);
+        canAttack = true;
     }
 
     private void ChangeState(EnemyState newState)

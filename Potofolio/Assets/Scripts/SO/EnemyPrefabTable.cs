@@ -21,21 +21,17 @@ public enum EnemyType
 }
 [System.Serializable]
 
-public class EnemyPrefabTableData
+public class EnemyPrefabData
 {
     public EnemyType enemyType;
     public string EnemyName;
     public GameObject Enemy;
     public GameObject EnemyBullet;
-    public float Attackspeed;
-
-
 
 }
 [CreateAssetMenu(menuName = "Data/EnemyPrafabTable")]
-
 public class EnemyPrefabTable : ScriptableObject
 {
-    public List<EnemyPrefabTableData> EnemyPrefabTableDatas=
-        new List<EnemyPrefabTableData>();
+    public List<EnemyPrefabData> EnemyPrefabDatas=
+        new List<EnemyPrefabData>();
 }

@@ -16,7 +16,7 @@ MonoBehaviour:
   - weaponState: 0
     WeaponBullet: {fileID: 8363767819308192229, guid: 1881ef916111c3d4d9f10ef03c2564c4, type: 3}
     damage: 5
-    Attackspeed: 2
+    Attackspeed: 20
     snappiness: 5
     returnSpeed: 5
     chargeAmount: 1
@@ -35,7 +35,7 @@ MonoBehaviour:
   - weaponState: 1
     WeaponBullet: {fileID: 8363767819308192229, guid: 2a5548c3d0139ee4db798ae4915ef60b, type: 3}
     damage: 7
-    Attackspeed: 5
+    Attackspeed: 50
     snappiness: 5
     returnSpeed: 2
     chargeAmount: 2
@@ -55,7 +55,7 @@ MonoBehaviour:
   - weaponState: 2
     WeaponBullet: {fileID: 8363767819308192229, guid: 9f2fb37adc018c94bb9d582a10b5bcba, type: 3}
     damage: 10
-    Attackspeed: 7
+    Attackspeed: 70
     snappiness: 5
     returnSpeed: 3
     chargeAmount: 0

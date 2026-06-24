@@ -50,6 +50,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ba68e8963de18c343babc772e61fa740
+    m_Address: ItemPrefabTable
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: c34aaba539a51ba429d0a3a41d4b01dd
     m_Address: UI_Player_Panel.prefab
     m_ReadOnly: 0

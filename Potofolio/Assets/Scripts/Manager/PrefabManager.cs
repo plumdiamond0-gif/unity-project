@@ -5,6 +5,7 @@ public class PrefabManager : MonoBehaviour
 {
     public WeaponPrefabTable WeaponPrefabTable;//{ get; private set; } = null;
     public EnemyPrefabTable EnemyPrefabTable;
+    public ItemPrefabTable ItemPrefabTable;
     public static PrefabManager CreatePrefabManager(GameObject res, Transform parent)
     {
         if(res == null)
@@ -33,5 +34,12 @@ public class PrefabManager : MonoBehaviour
               EnemyPrefabTable = go;
               OnComplete?.Invoke();
           });
+
+        GM.GetAssetManager().LoadAsset<ItemPrefabTable>
+       ("ItemPrefabTable", (go) =>
+       {
+           ItemPrefabTable = go;
+           OnComplete?.Invoke();
+       });
     }
 }

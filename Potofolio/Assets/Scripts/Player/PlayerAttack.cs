@@ -220,7 +220,35 @@ public class PlayerAttack : MonoBehaviour
         Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
         if (CanonBallRB != null)
         {
-            CanonBallRB.AddForce(Firepos.transform.forward * currentweapondata.Attackspeed, ForceMode.Impulse);
+            if(cam == null)
+                Debug.Log("nocma!!!!");
+            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+
+            Vector3 targetPoint;
+
+            if (Physics.Raycast(ray, out RaycastHit hit, 1000f))
+            {
+                targetPoint = hit.point;
+            }
+            else
+            {
+                targetPoint = ray.origin + ray.direction * 1000f;
+            }
+            Vector3 shootDir =
+     (targetPoint - Firepos.position).normalized;
+
+            Vector3 rightAxis =
+                Vector3.Cross(Vector3.up, shootDir).normalized;
+
+            shootDir =
+                Quaternion.AngleAxis(0f,rightAxis) * shootDir;
+
+            CanonBallRB.AddForce(
+                -shootDir * currentweapondata.Attackspeed,
+                ForceMode.Impulse
+            );
+
+           // CanonBallRB.AddForce(Firepos.transform.forward * currentweapondata.Attackspeed, ForceMode.Impulse);
         }
     }
 
