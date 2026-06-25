@@ -29,6 +29,11 @@ public class DotdamEffect : ScriptableObject, IWeaponEffect
             enemy.dotdam(finalDotDam, finalDotTime);
             Debug.Log("dotdam");
         }
+        else
+        {
+            Health health = target.GetComponent<Health>();
+            
+        }
 
     }
 

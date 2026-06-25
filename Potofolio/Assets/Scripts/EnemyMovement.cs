@@ -6,6 +6,7 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem.Utilities;
 using UnityEngine.Rendering.Universal;
+using static Unity.Cinemachine.CinemachineTargetGroup;
 using static UnityEngine.EventSystems.EventTrigger;
 using static UnityEngine.GraphicsBuffer;
 using Random = UnityEngine.Random;
@@ -153,6 +154,15 @@ public class EnemyMovement : MonoBehaviour
                     {
                         anim.SetTrigger(AttackHash);
                         playerhealth.TakeDamage(damage);
+                        foreach (var effectobjs in data.effects)
+                        {
+                            if (effectobjs is IWeaponEffect effect)
+                            {
+                                effect.Apply(target, level);
+                            }
+                        }
+
+
                     }
                     agent.ResetPath();
                 }
