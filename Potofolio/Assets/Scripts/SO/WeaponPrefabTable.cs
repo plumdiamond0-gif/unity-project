@@ -32,9 +32,6 @@ public class WeaponPrefabData
     public float BaseRecoilX;
     public float maxChargeBonus;
     public float YZRecoil;
-    public float radius;
-    public float force;
-    public float upModifier;
 
     public Sprite WeaponImage;
 

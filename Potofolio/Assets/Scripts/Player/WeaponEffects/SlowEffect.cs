@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering.Universal;
@@ -12,18 +13,16 @@ public class SlowEffect : ScriptableObject, IWeaponEffect
     [SerializeField] float slowTime;
     [SerializeField] float slowAmount;
 
-    public void Apply(GameObject target, float level)
+    public void Apply(GameObject target, float multiplier)
     {
-        float fianlSlowTime = slowTime * Mathf.Pow(1.15f, level);
-        float finalSlowAmount = slowAmount * Mathf.Pow(1.15f, level);
-
-        EnemyMovement enemy = target.GetComponent<EnemyMovement>();
-        if (enemy != null)
+        IWeaponEffectReceiver receiver = target.GetComponent<IWeaponEffectReceiver>();
+        if (receiver != null)
         {
-            enemy.beSlow(fianlSlowTime, finalSlowAmount);
+            float fianlSlowTime = slowTime * multiplier;
+            float finalSlowAmount = slowAmount * multiplier;
+            receiver.ApplySlow(fianlSlowTime, finalSlowAmount);
             Debug.Log("slow");
         }
-
     }
 
 

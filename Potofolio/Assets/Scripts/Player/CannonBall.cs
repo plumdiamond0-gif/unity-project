@@ -27,14 +27,17 @@ public class CannonBall : MonoBehaviour
                 Debug.Log("캐논볼 에너미 데미지" + damage);
 
                 //TODO : 왕잠시
-                Debug.Log("적용");
                 foreach (var effectobjs in data.effects)
                 {
                     float level = SaveManager.CurrentData.weaponlevel[data.weaponState];
-                    float multiplier = level * Mathf.Pow(level, 1.15f);
+                    float multiplier = Mathf.Pow(level, 1.15f);
                     if (effectobjs is IWeaponEffect effect)
                     {
+                        if (multiplier == 0)
+                            multiplier = 1;
                         effect.Apply(target, multiplier);
+                        Debug.Log("적용");
+
                     }
                 }
             }

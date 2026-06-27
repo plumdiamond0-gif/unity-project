@@ -25,9 +25,6 @@ MonoBehaviour:
     BaseRecoilX: 2
     maxChargeBonus: 0
     YZRecoil: 0.3
-    radius: 0
-    force: 0
-    upModifier: 0
     WeaponImage: {fileID: 21300000, guid: 3b1bb8a54bff5c848a5961f13d0b4f7b, type: 3}
     effects: []
     upgradeCosts: {fileID: 11400000, guid: 13ce338445345fc44abadee2193d5711, type: 2}
@@ -44,12 +41,9 @@ MonoBehaviour:
     BaseRecoilX: 5
     maxChargeBonus: 7
     YZRecoil: 0.5
-    radius: 5
-    force: 5
-    upModifier: 3
     WeaponImage: {fileID: 21300000, guid: ecd2584d7f96008498c95d940cce7155, type: 3}
     effects:
-    - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
+    - {fileID: 11400000, guid: 842f76e3e7d8dbe41957e6f16d561231, type: 2}
     upgradeCosts: {fileID: 11400000, guid: 07d22b366b0e6c649aa1e69787a14ea6, type: 2}
     upgradeResults: {fileID: 11400000, guid: 38dc056ac8ffd764d895915f6cbd7387, type: 2}
   - weaponState: 2
@@ -64,12 +58,9 @@ MonoBehaviour:
     BaseRecoilX: 3
     maxChargeBonus: 0
     YZRecoil: 0.3
-    radius: 0
-    force: 0
-    upModifier: 0
     WeaponImage: {fileID: 21300000, guid: ff2144f5158884c4d9381c5da6ba716a, type: 3}
     effects:
-    - {fileID: 11400000, guid: 470680d02b3fd294fb63be42c2dcf57e, type: 2}
+    - {fileID: 11400000, guid: db937833fc47f2d48acec545416b5300, type: 2}
     upgradeCosts: {fileID: 0}
     upgradeResults: {fileID: 0}
   - weaponState: 3
@@ -84,9 +75,6 @@ MonoBehaviour:
     BaseRecoilX: 2
     maxChargeBonus: 40
     YZRecoil: 2.5
-    radius: 0
-    force: 0
-    upModifier: 0
     WeaponImage: {fileID: 21300000, guid: 80460d4a1aeb2de48a77811a504024fb, type: 3}
     effects:
     - {fileID: 11400000, guid: 837b7099aafc8eb4a91c466f3d71c615, type: 2}
@@ -104,9 +92,6 @@ MonoBehaviour:
     BaseRecoilX: 0.5
     maxChargeBonus: 100
     YZRecoil: 1
-    radius: 10
-    force: 10
-    upModifier: 1
     WeaponImage: {fileID: 21300000, guid: 5fc39b38c43f752439a2516b87592637, type: 3}
     effects:
     - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
@@ -125,9 +110,6 @@ MonoBehaviour:
     BaseRecoilX: 0.5
     maxChargeBonus: 100
     YZRecoil: 1
-    radius: 10
-    force: 10
-    upModifier: 1
     WeaponImage: {fileID: 21300000, guid: 614e6328a5f51d6478b9494f0e319792, type: 3}
     effects:
     - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
@@ -146,9 +128,6 @@ MonoBehaviour:
     BaseRecoilX: 0.5
     maxChargeBonus: 100
     YZRecoil: 1
-    radius: 10
-    force: 10
-    upModifier: 1
     WeaponImage: {fileID: 21300000, guid: deb8c4adf151eb646b7822680ea57787, type: 3}
     effects:
     - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
@@ -167,9 +146,6 @@ MonoBehaviour:
     BaseRecoilX: 0.5
     maxChargeBonus: 100
     YZRecoil: 1
-    radius: 10
-    force: 10
-    upModifier: 1
     WeaponImage: {fileID: 21300000, guid: 10964cc78f69de1419462e2378fed368, type: 3}
     effects:
     - {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}

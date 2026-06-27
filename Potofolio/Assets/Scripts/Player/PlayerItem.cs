@@ -11,13 +11,13 @@ public class PlayerItem : MonoBehaviour
     Dictionary<OutItemType, int> resourcesData = new();
     void Start()
     {
-     coinNum = 0;   
+        coinNum = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     //private void OnTriggerEnter(Collider other)
@@ -37,18 +37,18 @@ public class PlayerItem : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Item"))
+        if (other.CompareTag("Item"))
         {
             Item item = other.GetComponent<Item>();
-            if(item.data.dataType == DataType.InGameItem)
+            if (item.data.itemType == ItemType.InGameItem)
             {
                 InItemType itemType = item.data.inItemType;
                 item.Use(itemType, gameObject);
             }
-            else if(item.data.dataType == DataType.OutGameItem)
+            else if (item.data.itemType == ItemType.OutGameItem)
             {
                 OutItemType itemType = item.data.outItemType;
-               if(!resourcesData.ContainsKey(itemType))
+                if (!resourcesData.ContainsKey(itemType))
                 {
                     Debug.Log("지금 먹은 아이템타입에 " +
                         "해당하는 키값이 없어서 추가함");
@@ -63,6 +63,8 @@ public class PlayerItem : MonoBehaviour
 
                 //item.Restore(itemType);
             }
+            Destroy(other.gameObject);
+
         }
 
 

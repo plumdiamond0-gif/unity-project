@@ -27,7 +27,7 @@ public class EnemyPrefabData
     public string EnemyName;
     public GameObject Enemy;
     public GameObject EnemyBullet;
-
+    public List<ScriptableObject> effects;
 }
 [CreateAssetMenu(menuName = "Data/EnemyPrafabTable")]
 public class EnemyPrefabTable : ScriptableObject

@@ -18,8 +18,6 @@ public abstract class InventoryItem : MonoBehaviour
         isused = true;
         Onuse();
         GM.GetUIManager().Inventory.GetSprite(sprite);
-
-
     }
 
     public virtual void Onuse()

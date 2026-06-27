@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d431a4c53ee2cf4aa6be49965e695cf, type: 3}
-  m_Name: SlowEffect
+  m_Name: ToxicCannonSlowEffect
   m_EditorClassIdentifier: Assembly-CSharp::SlowEffect
   slowTime: 3

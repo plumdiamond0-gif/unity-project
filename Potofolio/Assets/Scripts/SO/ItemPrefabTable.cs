@@ -5,7 +5,7 @@ using UnityEngine;
 
 
 
-public enum DataType
+public enum ItemType
 {
     InGameItem,
     OutGameItem,
@@ -58,7 +58,7 @@ public class ItemData
 
     public InItemType inItemType;
     public OutItemType outItemType;
-    public DataType dataType;
+    public ItemType itemType;
 
     public string ItemName;
     public GameObject ItemPrefab;

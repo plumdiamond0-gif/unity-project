@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 9001863938071665267}
   - component: {fileID: 4249301999929927763}
   - component: {fileID: 2823121015338912261}
+  - component: {fileID: 3054545999246058157}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -100,6 +101,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &1475209664219004511
 Rigidbody:
@@ -482,6 +484,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &3054545999246058157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235465533626532907}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5325fbe2c4842a8458627267c2f74bdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerEffectReceiver
 --- !u!1 &2355005014716273453
 GameObject:
   m_ObjectHideFlags: 0

@@ -3,6 +3,19 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
     public ItemData data;
+
+    ItemType type;
+    InItemType inItemType;
+    OutItemType outItemType;
+
+    private void Start()
+    {
+        if (type == ItemType.InGameItem)
+            data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.inItemType == inItemType);
+        else
+            data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.outItemType == outItemType);
+
+    }
     public void Use(InItemType type, GameObject PlayerInfo)
     {
         PlayerStat playerStat =

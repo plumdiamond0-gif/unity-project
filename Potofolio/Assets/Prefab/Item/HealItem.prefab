@@ -167,7 +167,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99a0f00dcd2a9a74d99379ea968a88d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  data: {fileID: 0}
+  data:
+    itemSprite: {fileID: 0}
+    MinHealAmount: 0
+    MaxHealAmount: 0
+    MinDamageBuffAmount: 0
+    MaxDamageBuffAmount: 0
+    MinAttackSpeed: 0
+    MaxAttackSpeed: 0
+    MinMoveSpeed: 0
+    MaxMoveSpeed: 0
+    MaxHpBuffAmount: 0
+    MinHpBuffAmount: 0
+    inItemType: 1
+    outItemType: 0
+    dataType: 0
+    ItemName: HealItem
+    ItemPrefab: {fileID: 0}
 --- !u!1001 &2211074570714982136
 PrefabInstance:
   m_ObjectHideFlags: 0

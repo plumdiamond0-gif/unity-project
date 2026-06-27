@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d0b2e68aeefa641bb3371275d1dac3, type: 3}
-  m_Name: DotdamEffect
-  m_EditorClassIdentifier: Assembly-CSharp::DotdamEffect
-  dotDamage: 2
-  dotTime: 10
+  m_Script: {fileID: 11500000, guid: 74d7226ee604ad1488f6cd856d85008a, type: 3}
+  m_Name: ImprovedCannonKnockBackEffect
+  m_EditorClassIdentifier: Assembly-CSharp::KnockBackEffect
+  radius: 2
+  force: 4
+  upModifier: 4

@@ -12,8 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaacd8ab44181434abca3ddf75c0d995, type: 3}
   m_Name: HealItem
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  healAmount: 2
-  damageBuffAmount: 0
-  inItemType: 1
-  outItemType: 0
-  dataType: 0
+  ItemDatas:
+  - itemSprite: {fileID: 0}
+    MinHealAmount: 0
+    MaxHealAmount: 0
+    MinDamageBuffAmount: 0
+    MaxDamageBuffAmount: 0
+    MinAttackSpeed: 0
+    MaxAttackSpeed: 0
+    MinMoveSpeed: 0
+    MaxMoveSpeed: 0
+    MaxHpBuffAmount: 0
+    MinHpBuffAmount: 0
+    inItemType: 0
+    outItemType: 0
+    dataType: 0
+    ItemName: 
+    ItemPrefab: {fileID: 0}

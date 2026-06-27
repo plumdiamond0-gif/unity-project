@@ -17,22 +17,13 @@ public class DotdamEffect : ScriptableObject, IWeaponEffect
     {
         this.charge = charge;
     }
-    public void Apply(GameObject target, float level)
+    public void Apply(GameObject target, float multiplier)
     {
-
-
-        EnemyMovement enemy = target.GetComponent<EnemyMovement>();
-        if (enemy != null)
-        {
-            float finalDotDam = dotDamage * Mathf.Pow(1.15f, level);
-            float finalDotTime = dotTime * Mathf.Pow(1.15f, level);
-            enemy.dotdam(finalDotDam, finalDotTime);
-            Debug.Log("dotdam");
-        }
-        else
-        {
-            Health health = target.GetComponent<Health>();
-            
+        IWeaponEffectReceiver receiver = target.GetComponent<IWeaponEffectReceiver>();
+        if (receiver != null) { 
+            float finalDotDam = dotDamage * (charge+1) * multiplier;
+            float finalDotNum= dotTime * (charge + 1) * multiplier;
+            receiver.ApplyDotDam(finalDotDam, finalDotNum);
         }
 
     }

@@ -10,16 +10,14 @@ using UnityEngine.Rendering.Universal;
 public class StunEffect : ScriptableObject, IWeaponEffect
 {
     [SerializeField] float stunTime;
-    public void Apply(GameObject target, float level)
+    public void Apply(GameObject target, float multiplier)
     {
-
-
-        EnemyMovement enemy = target.GetComponent<EnemyMovement>();
-        if (enemy != null)
+        IWeaponEffectReceiver receiver = target.GetComponent<IWeaponEffectReceiver>();
+        if (receiver != null)
         {
-            float finalStunTime  = stunTime * Mathf.Pow(1.15f, level);
-            enemy.beStun(finalStunTime);
-            Debug.Log("stun");
+            float finalStunTime = multiplier;
+            receiver.ApplyStun(finalStunTime);
+            Debug.Log("slow");
         }
 
     }

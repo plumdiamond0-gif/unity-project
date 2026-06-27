@@ -26,7 +26,7 @@ public enum EnemyAttackType
     close,
     distant
 }
-public class EnemyMovement : MonoBehaviour
+public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
 {
     public EnemyState currentState;
     public EnemyType enemyType;
@@ -47,7 +47,7 @@ public class EnemyMovement : MonoBehaviour
     private NavMeshAgent agent;
     private Rigidbody rb;
 
-    private bool isKnockbacking = false;
+    public bool isKnockbacking = false;
 
     public EnemyAttackType attackType;
 
@@ -67,7 +67,7 @@ public class EnemyMovement : MonoBehaviour
     public Transform FirePos;
 
 
-    bool isGrounded;
+    public bool isGrounded;
     bool canAttack;
 
     Animator anim;
@@ -92,7 +92,6 @@ public class EnemyMovement : MonoBehaviour
         Coin = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.ItemName == "Coin").ItemPrefab;
 
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -127,7 +126,6 @@ public class EnemyMovement : MonoBehaviour
         매 프레임마다 계속 플레이어 위치 목적지로 삼아 코드가 매우 무거워짐*/
 
     }
-
     private void HandleState()
     {
         switch (currentState)
@@ -158,7 +156,7 @@ public class EnemyMovement : MonoBehaviour
                         {
                             if (effectobjs is IWeaponEffect effect)
                             {
-                                effect.Apply(target, level);
+                                effect.Apply(player, 1);
                             }
                         }
 
@@ -172,7 +170,7 @@ public class EnemyMovement : MonoBehaviour
 
                     GameObject CBcopy = Instantiate(data.EnemyBullet, FirePos.position, Quaternion.identity);
                     EnemyBall ball = CBcopy.GetComponent<EnemyBall>();
-                    ball.GetDamage(damage);
+                    ball.SetDamage(damage);
                     Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
                     if (CanonBallRB != null)
                     {
@@ -193,13 +191,11 @@ public class EnemyMovement : MonoBehaviour
         }
 
     }
-
     IEnumerator AttackCoolTime()
     {
         yield return new WaitForSeconds(attackCoolTime);
         canAttack = true;
     }
-
     private void ChangeState(EnemyState newState)
     {
         if (currentState == newState)
@@ -207,62 +203,6 @@ public class EnemyMovement : MonoBehaviour
         currentState = newState;
 
     }
-
-    public void TakeDamage(float Getdamage)
-    {
-        health.CurrentHp -= Getdamage;
-    }
-
-    public void ApplyKnockBack()
-    {
-        if (isKnockbacking)
-            return;
-        isKnockbacking = true;
-        currentState = EnemyState.Knockback;
-        agent.enabled = false;
-        rb.isKinematic = false;
-    }
-
-
-    /* IEnumerator KnockbackRoutine(float time)
-     {
-         isGrounded = false;
-         isKnockbacking = true;
-         currentState = EnemyState.Knockback;
-         agent.enabled = false;
-         rb.isKinematic = false;
-
-         yield return new WaitForSeconds(time);
-         rb.linearVelocity = Vector3.zero;
-         rb.angularVelocity = Vector3.zero;
-         rb.isKinematic = true;
-
-
-
-
-         NavMeshHit hit;
-         if (NavMesh.SamplePosition(transform.position, out hit, 2000f, NavMesh.AllAreas))
-         {
-             agent.Warp(hit.position);
-         }
-
-
-
-     }*/
-    /*private void OnTriggerStay(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            Health playerhealth = other.GetComponent<Health>();
-            if (playerhealth != null)
-            {
-                anim.SetTrigger(AttackHash);
-                Debug.Log("wfe");
-                playerhealth.TakeHealth(-damage);
-            }
-        }
-    }
-    */
     private void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Ground"))
@@ -281,7 +221,6 @@ public class EnemyMovement : MonoBehaviour
 
         }
     }
-
     public void Die()
     {
         currentState = EnemyState.Die;
@@ -297,8 +236,20 @@ public class EnemyMovement : MonoBehaviour
         Destroy(gameObject); 
 
     }
-
-    public void beSlow(float slowTime, float slowAmount)
+    public void TakeDamage(float Getdamage)
+    {
+        health.CurrentHp -= Getdamage;
+    }
+    public void ApplyKnockBack()
+    {
+        if (isKnockbacking)
+            return;
+        isKnockbacking = true;
+        currentState = EnemyState.Knockback;
+        agent.enabled = false;
+        rb.isKinematic = false;
+    }
+    public void ApplySlow(float slowTime, float slowAmount)
     {
         if(stunRoutine != null)
             return;
@@ -309,7 +260,6 @@ public class EnemyMovement : MonoBehaviour
         slowRoutine = StartCoroutine(Slow(slowTime, slowAmount));
 
     }
-
     IEnumerator Slow(float slowTime, float slowAmount)
     {
         Debug.Log("Slowed");
@@ -319,15 +269,13 @@ public class EnemyMovement : MonoBehaviour
         agent.speed = orispeed;
         yield return null;
     }
-
-    public void beStun(float stunTime)
+    public void ApplyStun(float stunTime)
     {
         if (stunRoutine != null)
              stunRoutine = null; 
         StartCoroutine(Stun(stunTime));
 
     }
-
     IEnumerator Stun(float stunTime)
     {
         Debug.Log("Slowed");
@@ -336,16 +284,14 @@ public class EnemyMovement : MonoBehaviour
         agent.isStopped = false;
         yield return null;
     }
-
-    public void dotdam(float dotDamage, float dotTime)
+    public void ApplyDotDam(float dotDamage, float dotNum)
     {
         if(dotdamRoutine != null)   
             dotdamRoutine = null;
-        StartCoroutine(_dotdma(dotDamage, dotTime));
+        StartCoroutine(Dotdam(dotDamage, dotNum));
 
     }
-
-    IEnumerator _dotdma(float dotDamage, float dotTime)
+    IEnumerator Dotdam(float dotDamage, float dotTime)
     {
         Debug.Log("Slowed");
         for (int i = 0; i < dotTime; i++)

@@ -92,16 +92,14 @@ public class PlayerMovement : MonoBehaviour
             {
                 targetSpeed = 1;
             }
-            currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, 26f * Time.deltaTime);
-            anim.SetFloat("Speed", currentSpeed);
         }
-
-
-
-        if (inputMagnitude > 0)
+        else
         {
-            targetSpeed = isSprint ? 1f : 0.5f;
+            if (inputMagnitude > 0)
+            {
+                targetSpeed = isSprint ? 1f : 0.5f;
 
+            }
         }
 
         currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, 26f * Time.deltaTime);
