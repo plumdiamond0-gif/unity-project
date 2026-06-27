@@ -31,9 +31,10 @@ public class CannonBall : MonoBehaviour
                 foreach (var effectobjs in data.effects)
                 {
                     float level = SaveManager.CurrentData.weaponlevel[data.weaponState];
+                    float multiplier = level * Mathf.Pow(level, 1.15f);
                     if (effectobjs is IWeaponEffect effect)
                     {
-                        effect.Apply(target, level);
+                        effect.Apply(target, multiplier);
                     }
                 }
             }
