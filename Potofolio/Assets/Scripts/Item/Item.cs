@@ -5,15 +5,13 @@ public class Item : MonoBehaviour
     public ItemData data;
 
     ItemType type;
-    InItemType inItemType;
-    OutItemType outItemType;
 
     private void Start()
     {
         if (type == ItemType.InGameItem)
-            data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.inItemType == inItemType);
+            data = GM.GetPrefabManager().ItemPrefabTable.InItemDatas.Find(x => x.ItemName == gameObject.name);
         else
-            data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.outItemType == outItemType);
+            data = GM.GetPrefabManager().ItemPrefabTable.OutItemDatas.Find(x => x.ItemName == gameObject.name);
 
     }
     public void Use(InItemType type, GameObject PlayerInfo)
@@ -30,12 +28,25 @@ public class Item : MonoBehaviour
                 break;
 
             case InItemType.DamageBuffItem:
-                DamageBuff(playerStat.BaseDamage);
+                DamageBuff(playerStat);
                 break;
 
             case InItemType.MoveSpeedPlus:
-                DamageBuff(playerStat.PlayerSpeed);
+                MoveSpeedBuff(playerStat);
                 break;
+
+            case InItemType.AttackSpeedPlus:
+                AttackSpeedBuff(playerStat);
+                break;
+
+            case InItemType.JumpPowerBuff:
+                JumpPowerBuff(playerStat);
+                break;
+
+            case InItemType.MaxHpPlus:
+                MaxHpPlus(health);
+                break;
+                
 
 
 
@@ -53,27 +64,40 @@ public class Item : MonoBehaviour
 
     public void Heal(Health health)
     {
-        float healAmount = Random.Range(data.MinHealAmount, data.MaxHealAmount);
-        health.Heal(healAmount);
-        Debug.Log($"체력 {healAmount}만큼 회복");
+        //float healAmount = Random.Range(data.MinHealAmount, data.MaxHealAmount);
+        //Debug.Log($"체력 {healAmount}만큼 회복");
+        health.Heal(data.HealAmount);
     }
-
-    public void DamageBuff(float basePlayerDamage)
+    public void DamageBuff(PlayerStat stat)
     {
-        float damageBuffAmount = Random.Range(data.MinDamageBuffAmount, data.MaxDamageBuffAmount);
-        Debug.Log($"데미지 {damageBuffAmount}만큼 증가");
-        basePlayerDamage *= damageBuffAmount;
+        //float damageBuffAmount = Random.Range(data.MinDamageBuffAmount, data.MaxDamageBuffAmount);
+        //Debug.Log($"데미지 {damageBuffAmount}만큼 증가");
+        stat.BaseDamage *= data.DamageBuffAmount;
     }
     public void MaxHpPlus(Health health)
     {
-       // Debug.Log($"체력 {data.healAmount}만큼 회복");
+        //float healAmount = Random.Range(data.MinHealAmount, data.MaxHealAmount);
+        //Debug.Log($"최대 체력 {healAmount}만큼 회복");
         health.MaxHp += data.MaxHpBuffAmount;
     }
-
-    public void MoveSpeedPus(float BasePlayerSpeed)
+    public void MoveSpeedBuff(PlayerStat stat)
     {
-       // Debug.Log($"속도 {data.healAmount}만큼 증가");
-     //   BasePlayerSpeed *= data.SpeedBuffAmount;
+        //float moveSpeedBuffAmount = Random.Range(data.MinMoveSpeed, data.MaxMoveSpeed);    
+        //Debug.Log($"이동속도 {moveSpeedBuffAmount}만큼 증가");
+        stat.MoveSpeed *= data.MoveSpeedBuffAmount;
+    }
+    public void AttackSpeedBuff(PlayerStat stat)
+    {
+        //float attackSpeedBuffAmount = Random.Range(data.MinAttackSpeed, data.MaxAttackSpeed);
+        //Debug.Log($"공격속도 {attackSpeedBuffAmount}만큼 증가");
+        stat.AttackDamage *= data.AttackSpeedBuffAmount;
+    }
+
+    public void JumpPowerBuff(PlayerStat stat)
+    {
+        //float jumpAmounBuff = Random.Range(data.MinMoveSpeed, data.MaxMoveSpeed);
+        //Debug.Log($"점프량 {jumpAmounBuff}만큼 증가");
+        stat.JumpPower *= data.JumpPowerBuffAmount;
     }
 
 }

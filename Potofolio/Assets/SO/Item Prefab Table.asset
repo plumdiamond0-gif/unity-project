@@ -12,36 +12,89 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaacd8ab44181434abca3ddf75c0d995, type: 3}
   m_Name: Item Prefab Table
   m_EditorClassIdentifier: Assembly-CSharp::ItemPrefabTable
-  ItemDatas:
+  InItemDatas:
   - itemSprite: {fileID: 0}
-    MinHealAmount: 0
-    MaxHealAmount: 0
-    MinDamageBuffAmount: 0
-    MaxDamageBuffAmount: 0
-    MinAttackSpeed: 0
-    MaxAttackSpeed: 0
-    MinMoveSpeed: 0
-    MaxMoveSpeed: 0
+    HealAmount: 50
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
     MaxHpBuffAmount: 0
-    MinHpBuffAmount: 0
-    inItemType: 6
+    JumpPowerBuffAmount: 0
+    inItemType: 1
     outItemType: 0
-    dataType: 0
-    ItemName: Coin
-    ItemPrefab: {fileID: 5321920919559439511, guid: e4eb03a2a2ee1594cb7d5ef482531cc0, type: 3}
-  - itemSprite: {fileID: 0}
-    MinHealAmount: 0
-    MaxHealAmount: 0
-    MinDamageBuffAmount: 0
-    MaxDamageBuffAmount: 0
-    MinAttackSpeed: 0
-    MaxAttackSpeed: 0
-    MinMoveSpeed: 0
-    MaxMoveSpeed: 0
-    MaxHpBuffAmount: 0
-    MinHpBuffAmount: 0
-    inItemType: 0
-    outItemType: 0
-    dataType: 0
-    ItemName: 
+    itemType: 0
+    ItemName: HealItem
     ItemPrefab: {fileID: 0}
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    inItemType: 2
+    outItemType: 0
+    itemType: 0
+    ItemName: HealItem
+    ItemPrefab: {fileID: 0}
+  - itemSprite: {fileID: 0}
+    HealAmount: 50
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    inItemType: 1
+    outItemType: 0
+    itemType: 0
+    ItemName: HealItem
+    ItemPrefab: {fileID: 0}
+  - itemSprite: {fileID: 0}
+    HealAmount: 50
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    inItemType: 1
+    outItemType: 0
+    itemType: 0
+    ItemName: HealItem
+    ItemPrefab: {fileID: 0}
+  - itemSprite: {fileID: 0}
+    HealAmount: 50
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    inItemType: 1
+    outItemType: 0
+    itemType: 0
+    ItemName: HealItem
+    ItemPrefab: {fileID: 0}
+  - itemSprite: {fileID: 0}
+    HealAmount: 50
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    inItemType: 1
+    outItemType: 0
+    itemType: 0
+    ItemName: HealItem
+    ItemPrefab: {fileID: 0}
+  OutItemDatas:
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    inItemType: 0
+    outItemType: 1
+    itemType: 1
+    ItemName: MonsterCore
+    ItemPrefab: {fileID: 5321920919559439511, guid: e4eb03a2a2ee1594cb7d5ef482531cc0, type: 3}

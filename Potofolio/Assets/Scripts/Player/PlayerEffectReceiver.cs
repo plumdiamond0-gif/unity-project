@@ -30,9 +30,9 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     }
     IEnumerator Slow(float slowTime, float slowAmount)
     {
-        playerStat.PlayerSpeed *= slowAmount;
+        playerStat.MoveSpeed *= slowAmount;
         yield return new WaitForSeconds(slowTime);
-        playerStat.PlayerSpeed /= slowAmount;
+        playerStat.MoveSpeed /= slowAmount;
 
         yield return null;
     }

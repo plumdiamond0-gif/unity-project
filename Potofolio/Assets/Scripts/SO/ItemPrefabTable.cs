@@ -17,7 +17,9 @@ public enum InItemType
     DamageBuffItem,
     AttackSpeedPlus,
     MoveSpeedPlus,
-    BeInvincible,
+    JumpPowerBuff,
+    MaxHpPlus,
+
     Coin
 }
 public enum OutItemType
@@ -38,28 +40,37 @@ public enum OutItemType
 }
 [System.Serializable]
 
-public class ItemData 
+public class ItemData
 {
     public Sprite itemSprite;
-    public float MinHealAmount;
-    public float MaxHealAmount;
 
-    public float MinDamageBuffAmount;
-    public float MaxDamageBuffAmount;
 
-    public float MinAttackSpeed;
-    public float MaxAttackSpeed;
+    //public float MinHealAmount;
+    //public float MaxHealAmount;
 
-    public float MinMoveSpeed;
-    public float MaxMoveSpeed;
+    //public float MinDamageBuffAmount;
+    //public float MaxDamageBuffAmount;
 
+    //public float MinAttackSpeed;
+    //public float MaxAttackSpeed;
+
+    //public float MinMoveSpeed;
+    //public float MaxMoveSpeed;
+
+    //public float MaxHpBuffAmount;
+    //public float MinHpBuffAmount;
+
+    public float HealAmount;
+    public float DamageBuffAmount;
+    public float AttackSpeedBuffAmount;
+    public float MoveSpeedBuffAmount;
     public float MaxHpBuffAmount;
-    public float MinHpBuffAmount;
+    public float JumpPowerBuffAmount;
+
 
     public InItemType inItemType;
     public OutItemType outItemType;
     public ItemType itemType;
-
     public string ItemName;
     public GameObject ItemPrefab;
 
@@ -84,7 +95,10 @@ public class ItemData
 [CreateAssetMenu(menuName = "Data/ItemPrefabTable")]
 public class ItemPrefabTable : ScriptableObject
 {
-    public List<ItemData> ItemDatas =
+    public List<ItemData> InItemDatas =
         new List<ItemData>();
+    public List<ItemData> OutItemDatas =
+        new List<ItemData>();
+
 }
 

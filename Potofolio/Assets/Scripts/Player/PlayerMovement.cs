@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         walkAudio = GetComponent<AudioSource>();
         walkAudio.Stop();
 
-        PlayerSpeed = walkSpeed * stat.PlayerSpeed;
+        PlayerSpeed = walkSpeed * stat.MoveSpeed;
         Debug.Log(PlayerSpeed);
 
     }
@@ -176,7 +176,7 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("Sprint");
         isSprint = !isSprint;
 
-        PlayerSpeed = isSprint ? RunSpeed*stat.PlayerSpeed : walkSpeed*stat.PlayerSpeed;
+        PlayerSpeed = isSprint ? RunSpeed*stat.MoveSpeed : walkSpeed*stat.MoveSpeed;
         
     }
 

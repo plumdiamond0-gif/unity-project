@@ -15,8 +15,6 @@ public class SD_User : ISaveData
         {WeaponState.Base, true},
         {WeaponState.Improved, true},
         {WeaponState.Slime, true},
-        {WeaponState.Toxic, true},
-        {WeaponState.Hypnosis, true},
         {WeaponState.Fire, true},
         {WeaponState.Energy, true},
         {WeaponState.Bomb, true},

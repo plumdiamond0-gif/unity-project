@@ -101,7 +101,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &1475209664219004511
 Rigidbody:
@@ -237,9 +236,6 @@ MonoBehaviour:
     BaseRecoilX: 0
     maxChargeBonus: 0
     YZRecoil: 0
-    radius: 0
-    force: 0
-    upModifier: 0
     WeaponImage: {fileID: 0}
     effects: []
     upgradeCosts: {fileID: 0}
@@ -287,9 +283,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f718e439d99f474ca51f9f17c1d6b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStat
-  PlayerSpeed: 1
+  MoveSpeed: 1
   JumpPower: 5
   BaseDamage: 1
+  AttackDamage: 1
 --- !u!82 &4249301999929927763
 AudioSource:
   m_ObjectHideFlags: 0

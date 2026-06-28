@@ -89,7 +89,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
         agent.SetDestination(player.transform.position);
 
         data = GM.GetPrefabManager().EnemyPrefabTable.EnemyPrefabDatas.Find(x => x.enemyType == enemyType);
-        Coin = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.ItemName == "Coin").ItemPrefab;
+        Coin = GM.GetPrefabManager().ItemPrefabTable.OutItemDatas.Find(x => x.ItemName == "MonsterCore").ItemPrefab;
 
     }
     // Update is called once per frame
