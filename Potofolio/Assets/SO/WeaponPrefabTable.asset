@@ -81,7 +81,7 @@ MonoBehaviour:
     upgradeCosts: {fileID: 0}
     upgradeResults: {fileID: 0}
   - weaponState: 6
-    WeaponBullet: {fileID: 8363767819308192229, guid: d6cf077bc527d724c9378e118b0fb2f9, type: 3}
+    WeaponBullet: {fileID: 8363767819308192229, guid: 86e81e14019f1c24b94f906625201ac6, type: 3}
     damage: 85
     Attackspeed: 70
     snappiness: 4
@@ -99,7 +99,7 @@ MonoBehaviour:
     upgradeCosts: {fileID: 0}
     upgradeResults: {fileID: 0}
   - weaponState: 7
-    WeaponBullet: {fileID: 8363767819308192229, guid: d6cf077bc527d724c9378e118b0fb2f9, type: 3}
+    WeaponBullet: {fileID: 8363767819308192229, guid: fee6bf91f9775cf4486e13efaea39fba, type: 3}
     damage: 300
     Attackspeed: 50
     snappiness: 20

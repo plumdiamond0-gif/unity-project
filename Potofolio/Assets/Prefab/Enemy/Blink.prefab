@@ -218,12 +218,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currentState: 0
-  player: {fileID: 0}
-  detectRange: 10
+  enemyType: 0
+  detectRange: 20
   attackRange: 2
-  Coin: {fileID: 5321920919559439511, guid: e4eb03a2a2ee1594cb7d5ef482531cc0, type: 3}
-  CoinNum: 5
   damage: 5
+  CoinNum: 5
+  attackSpeed: 0
+  attackCoolTime: 0
+  isKnockbacking: 0
+  attackType: 0
+  FirePos: {fileID: 0}
+  isGrounded: 0
 --- !u!195 &5995855816997316443
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currntWeaponNum: 0
-  WeaponNum: 4
+  WeaponNum: 6
   currentCharge: 0
   maxCharge: 1
   baseRecoilX: -5

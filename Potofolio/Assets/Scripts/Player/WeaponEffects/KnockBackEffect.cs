@@ -9,6 +9,7 @@ public class KnockBackEffect : ScriptableObject, IWeaponEffect
     [SerializeField]float radius;       // 폭발 반경
     [SerializeField]float force ;       // 폭발 위력
     [SerializeField] float upModifier;   // 위로 띄우는 정도 (이게 있어야 시원하게 날아감)
+    [SerializeField] float rangeDam;
 
     public void GetCharge(float charge)
     {
@@ -23,6 +24,7 @@ public class KnockBackEffect : ScriptableObject, IWeaponEffect
         float fianlRadius = radius * (1+charge) * multiplier;
         float finalForce = force * (1+charge) * multiplier;
         float fianlUpModifier = upModifier * (1+charge) * multiplier;
+        float finalrangeDam = rangeDam * (1 + charge) * multiplier;
 
         Vector3 explosionPoint = target.transform.position; 
         // 1. 반경 내 모든 물체 감지
@@ -32,9 +34,11 @@ public class KnockBackEffect : ScriptableObject, IWeaponEffect
             {
                 Rigidbody rb = hit.GetComponent<Rigidbody>();
                 EnemyMovement enemy = hit.GetComponent<EnemyMovement>();
-                if (enemy != null)
+                Health health = hit.GetComponent<Health>();
+                if (enemy != null && health != null)
                 {
                     enemy.ApplyKnockBack();
+                    health.TakeDamage(finalrangeDam);
                     Debug.Log("넉백적용");
 
                 }
