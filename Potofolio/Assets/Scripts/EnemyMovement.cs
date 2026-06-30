@@ -152,6 +152,8 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                     {
                         anim.SetTrigger(AttackHash);
                         playerhealth.TakeDamage(damage);
+                        if(data.effects == null)
+                            return;
                         foreach (var effectobjs in data.effects)
                         {
                             if (effectobjs is IWeaponEffect effect)
@@ -164,11 +166,11 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                     }
                     agent.ResetPath();
                 }
-                else
+                else if(attackType == EnemyAttackType.distant)
                 {
                     anim.SetTrigger(AttackHash);
 
-                    GameObject CBcopy = Instantiate(data.EnemyBullet, FirePos.position, Quaternion.identity);
+                    GameObject CBcopy = Instantiate(data.enemyBullet, FirePos.position, Quaternion.identity);
                     EnemyBall ball = CBcopy.GetComponent<EnemyBall>();
                     ball.SetDamage(damage);
                     Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();

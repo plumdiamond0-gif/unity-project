@@ -266,7 +266,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &7136638966311296631
 MonoBehaviour:
@@ -281,7 +280,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currentState: 0
-  enemyType: 0
+  enemyType: 6
   detectRange: 10
   attackRange: 2
   damage: 5
@@ -882,7 +881,6 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0

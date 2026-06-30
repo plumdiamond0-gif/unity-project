@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currentState: 0
-  enemyType: 0
+  enemyType: 1
   detectRange: 20
   attackRange: 2
   damage: 5

@@ -89,7 +89,7 @@ MonoBehaviour:
     chargeAmount: 4
     canCharge: 1
     coolTime: 2.5
-    BaseRecoilX: 1
+    BaseRecoilX: 0.5
     maxChargeBonus: 100
     YZRecoil: 2
     WeaponImage: {fileID: 21300000, guid: 614e6328a5f51d6478b9494f0e319792, type: 3}
@@ -107,7 +107,7 @@ MonoBehaviour:
     chargeAmount: 0
     canCharge: 0
     coolTime: 5
-    BaseRecoilX: 10
+    BaseRecoilX: 30
     maxChargeBonus: 100
     YZRecoil: 4
     WeaponImage: {fileID: 21300000, guid: 614e6328a5f51d6478b9494f0e319792, type: 3}

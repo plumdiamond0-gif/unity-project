@@ -5,6 +5,7 @@ using UnityEngine;
 
 public enum EnemyType
 {
+    None,
     Blink,
     ShellBlink,
     Chesty,
@@ -24,9 +25,9 @@ public enum EnemyType
 public class EnemyPrefabData
 {
     public EnemyType enemyType;
-    public string EnemyName;
-    public GameObject Enemy;
-    public GameObject EnemyBullet;
+    public string enemyName;
+    public GameObject enemyPrefab;
+    public GameObject enemyBullet;
     public List<ScriptableObject> effects;
 }
 [CreateAssetMenu(menuName = "Data/EnemyPrafabTable")]
