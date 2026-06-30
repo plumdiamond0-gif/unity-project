@@ -173,6 +173,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                     GameObject CBcopy = Instantiate(data.enemyBullet, FirePos.position, Quaternion.identity);
                     EnemyBall ball = CBcopy.GetComponent<EnemyBall>();
                     ball.SetDamage(damage);
+                    ball.SetEnemyData(data);
                     Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
                     if (CanonBallRB != null)
                     {

@@ -2,12 +2,12 @@ using UnityEngine;
 
 public class EnemyBall : MonoBehaviour
 {
-    EnemyPrefabTable data;
+    EnemyPrefabData data;
     float Damage;
 
-    public void SetWeaponData(EnemyPrefabTable weaponData)
+    public void SetEnemyData(EnemyPrefabData enemyData)
     {
-        data = weaponData;
+        data = enemyData;
     }
 
     public void SetDamage(float damage)
@@ -21,10 +21,18 @@ public class EnemyBall : MonoBehaviour
             Health playerhealth = other.GetComponent<Health>();
                 if (playerhealth != null)
                 {
-
-
                     playerhealth.TakeDamage(Damage);
+                if (data == null)
+                    return;
+                foreach (var effectobjs in data.effects)
+                {
+                    if (effectobjs is IWeaponEffect effect)
+                    {
+                        Debug.Log("적 이펙트 적ㅇ용");
+                        effect.Apply(other.gameObject, 1);
+                    }
                 }
+            }
                 Destroy(gameObject);
         }
         else if(other.CompareTag("Ground"))

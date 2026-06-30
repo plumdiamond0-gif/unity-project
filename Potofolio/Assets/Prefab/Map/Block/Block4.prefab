@@ -1715,7 +1715,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 5, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 2851209355264795990}
   m_Father: {fileID: 7947221897930923101}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &816994137111231492
@@ -1778,7 +1779,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: e59fe063c7f1e724fb62a9fc1d7b30f6, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 3153ed97b7b7e2242b44a941b9595d87, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &3618336717944412620
 GameObject:
@@ -1809,7 +1810,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2851209355264795990}
   - {fileID: 8204712038570659182}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2386,7 +2386,6 @@ GameObject:
   - component: {fileID: 7692523260034661101}
   - component: {fileID: 8705997077318950366}
   - component: {fileID: 5307296049966258856}
-  - component: {fileID: 4075032375055557664}
   m_Layer: 0
   m_Name: HardRock_16
   m_TagString: Ground
@@ -2487,38 +2486,6 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: -2218285450774669110, guid: be6cfaf08273697408f6fd884776443d, type: 3}
---- !u!114 &4075032375055557664
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4311127231325230710}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a5ac11cc976e418e8d13136b07e1f52, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.AI.Navigation::Unity.AI.Navigation.NavMeshSurface
-  m_SerializedVersion: 0
-  m_AgentTypeID: 0
-  m_CollectObjects: 0
-  m_Size: {x: 10, y: 10, z: 10}
-  m_Center: {x: 0, y: 2, z: 0}
-  m_LayerMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_UseGeometry: 0
-  m_DefaultArea: 0
-  m_GenerateLinks: 0
-  m_IgnoreNavMeshAgent: 1
-  m_IgnoreNavMeshObstacle: 1
-  m_OverrideTileSize: 0
-  m_TileSize: 256
-  m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
-  m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 9e17ecb0c8509ff4e9b5a6dc449934ee, type: 2}
-  m_BuildHeightMesh: 0
 --- !u!1 &4780869855206189670
 GameObject:
   m_ObjectHideFlags: 0
@@ -2996,8 +2963,8 @@ Transform:
   m_GameObject: {fileID: 4900998423949730668}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 500, y: 499.99988, z: 499.99988}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 200, y: 199.99997, z: 199.99997}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4041558570944440180}
@@ -3040,7 +3007,7 @@ Transform:
   - {fileID: 1354198563191947027}
   - {fileID: 6670592770163794852}
   - {fileID: 4863263389978519108}
-  m_Father: {fileID: 7947221897930923101}
+  m_Father: {fileID: 8204712038570659182}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4237317998905667827
 MeshFilter:

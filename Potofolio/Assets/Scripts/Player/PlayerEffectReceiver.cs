@@ -15,6 +15,7 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     void Start()
     {
         playerStat = GetComponent<PlayerStat>();
+        playerHealth = GetComponent<Health>();
     }
 
     public void ApplySlow(float slowTime, float slowAmount)
