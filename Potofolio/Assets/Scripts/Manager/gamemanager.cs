@@ -46,6 +46,7 @@ public class GameManager : SingletonObject<GameManager>
     void Awake()
     {
         base.Awake();
+        OnPlayerSpawned += SavePlayer;
         //prefabManager = PrefabManager.CreatePrefabManager(prefabManager.gameObject, transform);
         //UIManager = UIManager.CreateUIManager(UIManager.gameObject, transform);
     }

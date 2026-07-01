@@ -8,7 +8,7 @@ public class SD_User : ISaveData
     public ulong level;
     public ulong RedSlime;
     public ulong BlueSlime;
-    public ulong Hp;
+    //public ulong Hp;
 
     public Dictionary<WeaponState, bool> WeaponActive = new()
     {
@@ -22,7 +22,7 @@ public class SD_User : ISaveData
 
     public Dictionary<OutItemType, int> itemStates = new()
     {
-        {OutItemType.MonsterCore, 0},
+        {OutItemType.MonsterCoin, 0},
         {OutItemType.RedJelly, 0},
         {OutItemType.SlimeShell, 0},
         {OutItemType.SporeSac, 0},

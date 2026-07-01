@@ -372,7 +372,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: 0205704035ce30549a982a3e6647eb2a, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: 286a5c4826952a14fba729410d3feb47, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &6009496029054499501
 GameObject:
@@ -1006,11 +1006,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: enemyType
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: spawnTerm
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: detectdist
@@ -3128,7 +3128,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: enemyType
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: spawnTerm
@@ -3140,7 +3140,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: spawnAmount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6243739231857298689, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: m_LocalScale.x
@@ -3222,11 +3222,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: enemyType
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: spawnTerm
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: detectdist
@@ -3234,7 +3234,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: spawnAmount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6243739231857298689, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: m_LocalScale.x
@@ -3316,11 +3316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: enemyType
-      value: 5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: spawnTerm
-      value: 30
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: detectdist
@@ -3328,7 +3328,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: spawnAmount
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6243739231857298689, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: m_LocalScale.x
@@ -3410,7 +3410,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: enemyType
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: spawnTerm
@@ -3422,7 +3422,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2444908808266874929, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: spawnAmount
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6243739231857298689, guid: a7711dca04b26934cad1d05f20d4e6df, type: 3}
       propertyPath: m_LocalScale.x

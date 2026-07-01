@@ -40,6 +40,9 @@ public class PlayerItem : MonoBehaviour
         if (other.CompareTag("Item"))
         {
             Item item = other.GetComponent<Item>();
+            ItemData data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.ItemName == other.name);
+
+            Debug.Log(item.data.inItemType.ToString());
             if (item.data.itemType == ItemType.InGameItem)
             {
                 InItemType itemType = item.data.inItemType;
@@ -59,7 +62,6 @@ public class PlayerItem : MonoBehaviour
                     Debug.Log($"{itemType.ToString()}값 하나 증가");
                     resourcesData[itemType] += 1;
                 }
-                //TODO : 이 딕셔너리에 특정 자원 키값이 없다면 그 자원은 아직 없다는 거겠지
 
                 //item.Restore(itemType);
             }

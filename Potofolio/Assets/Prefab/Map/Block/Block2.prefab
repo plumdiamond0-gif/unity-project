@@ -200,7 +200,7 @@ Transform:
   m_GameObject: {fileID: 3929588007055901240}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -23.94645, y: 0, z: -13.43421}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.5000005, y: 1.3367246, z: 2.4999993}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -267,7 +267,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.16666667
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: e59fe063c7f1e724fb62a9fc1d7b30f6, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: fdb586759210dea4aba4dd7774168e1c, type: 2}
   m_BuildHeightMesh: 0
 --- !u!1 &4078864926925621393
 GameObject:
@@ -315,7 +315,7 @@ GameObject:
   - component: {fileID: 4455904912709413417}
   m_Layer: 0
   m_Name: TileHex_11
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

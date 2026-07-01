@@ -18,29 +18,35 @@ MonoBehaviour:
     enemyPrefab: {fileID: 964480405027562052, guid: 75f627f43d6e9944eade19b0ca15f5f4, type: 3}
     enemyBullet: {fileID: 0}
     effects: []
+    dropItems: {fileID: 11400000, guid: 2a46c33adf5ede940914bd3689486e2c, type: 2}
   - enemyType: 2
     enemyName: ShellBlink
     enemyPrefab: {fileID: 282274447850904860, guid: bda289ce78096ac4b8cc69950bd76c5b, type: 3}
     enemyBullet: {fileID: 0}
     effects: []
+    dropItems: {fileID: 11400000, guid: 45798d5c43b6d6342a41f00c72783cb8, type: 2}
   - enemyType: 3
     enemyName: Chesty
     enemyPrefab: {fileID: 964480405027562052, guid: da5a403aed7e97b419fd9769b7a851da, type: 3}
     enemyBullet: {fileID: 0}
     effects: []
+    dropItems: {fileID: 11400000, guid: 3e57576ebd8d7424c825f6716e558be9, type: 2}
   - enemyType: 4
     enemyName: Obsi
     enemyPrefab: {fileID: 964480405027562052, guid: 0c3097e1d4491ff4a812e635df364a9f, type: 3}
     enemyBullet: {fileID: 0}
     effects: []
+    dropItems: {fileID: 11400000, guid: d1f7669c334e1564d9bb4021d9a8a5e1, type: 2}
   - enemyType: 5
     enemyName: FlmaeNewt
     enemyPrefab: {fileID: 964480405027562052, guid: 16f6c8c96a949ea4f9380b9d8ef45ae2, type: 3}
     enemyBullet: {fileID: 8363767819308192229, guid: 7a485cbc6bdffbd468e5207a80a69053, type: 3}
     effects:
     - {fileID: 11400000, guid: 4c17b5e6ded982b478dedccd8a06a918, type: 2}
+    dropItems: {fileID: 11400000, guid: 78883a2e77ca3f948aaf0f416aee17e5, type: 2}
   - enemyType: 6
     enemyName: StingWing
     enemyPrefab: {fileID: 964480405027562052, guid: 81f8cd0556961004bb82f4ead2a270a2, type: 3}
     enemyBullet: {fileID: 0}
     effects: []
+    dropItems: {fileID: 11400000, guid: 6650be264fe069e439f7fb11d2bd1b67, type: 2}

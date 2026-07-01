@@ -12,19 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aaacd8ab44181434abca3ddf75c0d995, type: 3}
   m_Name: Item Prefab Table
   m_EditorClassIdentifier: Assembly-CSharp::ItemPrefabTable
-  InItemDatas:
-  - itemSprite: {fileID: 0}
-    HealAmount: 50
-    DamageBuffAmount: 0
-    AttackSpeedBuffAmount: 0
-    MoveSpeedBuffAmount: 0
-    MaxHpBuffAmount: 0
-    JumpPowerBuffAmount: 0
-    inItemType: 1
-    outItemType: 0
-    itemType: 0
-    ItemName: HealItem
-    ItemPrefab: {fileID: 0}
+  ItemDatas:
   - itemSprite: {fileID: 0}
     HealAmount: 0
     DamageBuffAmount: 0
@@ -32,69 +20,80 @@ MonoBehaviour:
     MoveSpeedBuffAmount: 0
     MaxHpBuffAmount: 0
     JumpPowerBuffAmount: 0
-    inItemType: 2
-    outItemType: 0
-    itemType: 0
-    ItemName: HealItem
-    ItemPrefab: {fileID: 0}
-  - itemSprite: {fileID: 0}
-    HealAmount: 50
-    DamageBuffAmount: 0
-    AttackSpeedBuffAmount: 0
-    MoveSpeedBuffAmount: 0
-    MaxHpBuffAmount: 0
-    JumpPowerBuffAmount: 0
-    inItemType: 1
-    outItemType: 0
-    itemType: 0
-    ItemName: HealItem
-    ItemPrefab: {fileID: 0}
-  - itemSprite: {fileID: 0}
-    HealAmount: 50
-    DamageBuffAmount: 0
-    AttackSpeedBuffAmount: 0
-    MoveSpeedBuffAmount: 0
-    MaxHpBuffAmount: 0
-    JumpPowerBuffAmount: 0
-    inItemType: 1
-    outItemType: 0
-    itemType: 0
-    ItemName: HealItem
-    ItemPrefab: {fileID: 0}
-  - itemSprite: {fileID: 0}
-    HealAmount: 50
-    DamageBuffAmount: 0
-    AttackSpeedBuffAmount: 0
-    MoveSpeedBuffAmount: 0
-    MaxHpBuffAmount: 0
-    JumpPowerBuffAmount: 0
-    inItemType: 1
-    outItemType: 0
-    itemType: 0
-    ItemName: HealItem
-    ItemPrefab: {fileID: 0}
-  - itemSprite: {fileID: 0}
-    HealAmount: 50
-    DamageBuffAmount: 0
-    AttackSpeedBuffAmount: 0
-    MoveSpeedBuffAmount: 0
-    MaxHpBuffAmount: 0
-    JumpPowerBuffAmount: 0
-    inItemType: 1
-    outItemType: 0
-    itemType: 0
-    ItemName: HealItem
-    ItemPrefab: {fileID: 0}
-  OutItemDatas:
-  - itemSprite: {fileID: 0}
-    HealAmount: 0
-    DamageBuffAmount: 0
-    AttackSpeedBuffAmount: 0
-    MoveSpeedBuffAmount: 0
-    MaxHpBuffAmount: 0
-    JumpPowerBuffAmount: 0
+    itemType: 1
     inItemType: 0
     outItemType: 1
+    ItemName: MonsterCoin
+    ItemPrefab: {fileID: 5321920919559439511, guid: 60f519976af0cb74ea3e64aa922822b2, type: 3}
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
     itemType: 1
-    ItemName: MonsterCore
-    ItemPrefab: {fileID: 5321920919559439511, guid: e4eb03a2a2ee1594cb7d5ef482531cc0, type: 3}
+    inItemType: 0
+    outItemType: 2
+    ItemName: RedJelly
+    ItemPrefab: {fileID: 5321920919559439511, guid: acdb2161ffb6e164d9059e70a79a4f59, type: 3}
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 1
+    inItemType: 0
+    outItemType: 3
+    ItemName: SlimeShell
+    ItemPrefab: {fileID: 5321920919559439511, guid: e6b4f37c0cb3acc478e230bffd707494, type: 3}
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 1
+    inItemType: 0
+    outItemType: 4
+    ItemName: HardenedFang
+    ItemPrefab: {fileID: 5321920919559439511, guid: 1dc626bc21e8bac48b62947a9137ec09, type: 3}
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 1
+    inItemType: 0
+    outItemType: 5
+    ItemName: WatchersEye
+    ItemPrefab: {fileID: 5321920919559439511, guid: 263617eaf12c9cd4aad19880066bc3c8, type: 3}
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 1
+    inItemType: 0
+    outItemType: 6
+    ItemName: FlmaeCrystal
+    ItemPrefab: {fileID: 5321920919559439511, guid: c363382772ee7ad4b8629674cd7da379, type: 3}
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 1
+    inItemType: 0
+    outItemType: 8
+    ItemName: ToxicThornFragment
+    ItemPrefab: {fileID: 5321920919559439511, guid: c4271fc011da8634086830c07ef9cd74, type: 3}

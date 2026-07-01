@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -25,7 +26,7 @@ public enum InItemType
 public enum OutItemType
 {
     None,
-    MonsterCore,
+    MonsterCoin,
     RedJelly,
     SlimeShell,
     HardenedFang,
@@ -39,7 +40,6 @@ public enum OutItemType
     ManaCrystal,
 }
 [System.Serializable]
-
 public class ItemData
 {
     public Sprite itemSprite;
@@ -67,10 +67,9 @@ public class ItemData
     public float MaxHpBuffAmount;
     public float JumpPowerBuffAmount;
 
-
+    public ItemType itemType;
     public InItemType inItemType;
     public OutItemType outItemType;
-    public ItemType itemType;
     public string ItemName;
     public GameObject ItemPrefab;
 
@@ -91,14 +90,21 @@ public class ItemData
     //}
 }
 
+//[System.Serializable]
+//public class EnemyDropItemData
+//{
+//    public GameObject ItemPrefab;
+//    public ItemType itemType;
+
+//}
+
 
 [CreateAssetMenu(menuName = "Data/ItemPrefabTable")]
 public class ItemPrefabTable : ScriptableObject
 {
-    public List<ItemData> InItemDatas =
+    public List<ItemData> ItemDatas =
         new List<ItemData>();
-    public List<ItemData> OutItemDatas =
-        new List<ItemData>();
-
 }
+
+
 

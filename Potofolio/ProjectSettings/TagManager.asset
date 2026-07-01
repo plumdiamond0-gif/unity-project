@@ -12,6 +12,7 @@ TagManager:
   - DataItem
   - InventoryItem
   - RootCanvas
+  - Death
   layers:
   - Default
   - TransparentFX

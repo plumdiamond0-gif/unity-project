@@ -41,7 +41,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
 
 
     Health health;
-    GameObject Coin;
+    //GameObject Coin;
     GameObject player;
 
     private NavMeshAgent agent;
@@ -89,7 +89,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
         agent.SetDestination(player.transform.position);
 
         data = GM.GetPrefabManager().EnemyPrefabTable.EnemyPrefabDatas.Find(x => x.enemyType == enemyType);
-        Coin = GM.GetPrefabManager().ItemPrefabTable.OutItemDatas.Find(x => x.ItemName == "MonsterCore").ItemPrefab;
+        //Coin = GM.GetPrefabManager().ItemPrefabTable.EnemyDropItems.Find(x => x.ItemName == "MonsterCore").ItemPrefab;
 
     }
     // Update is called once per frame
@@ -227,15 +227,24 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     public void Die()
     {
         currentState = EnemyState.Die;
-        float distance = 1.2f;
-      
-        for (int i = 0; i < CoinNum; i++)
+        float distance = 2f;
+
+        foreach (var item in data.dropItems.dropItems)
         {
-            Vector2 rand = Random.insideUnitCircle.normalized; // ·£´ý ¹æÇâ
-            Vector3 offset = new Vector3(rand.x, 0, rand.y) * distance;
-            Vector3 spawnPos = transform.position + offset;
-            Instantiate(Coin, spawnPos, Quaternion.identity);
+            for (int i = 0; i < item.spawnNum; i++)
+            {
+                Vector2 rand = Random.insideUnitCircle;
+                Vector3 spawnPos = transform.position + new Vector3(rand.x, 0, rand.y);
+                GameObject dropObject = GM.GetPrefabManager().
+                    ItemPrefabTable.ItemDatas.
+                    Find(x => x.outItemType == item.itemType).ItemPrefab;
+                GameObject spawnedObject = Instantiate(dropObject, spawnPos, Quaternion.identity);
+                spawnedObject.transform.localScale *= 0.3f;
+
+            }
+
         }
+       
         Destroy(gameObject); 
 
     }

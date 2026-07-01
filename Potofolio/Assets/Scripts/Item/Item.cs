@@ -2,16 +2,22 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
+    [HideInInspector]
     public ItemData data;
+    public ItemType itemType;
+    public OutItemType outType;
+    public InItemType  inType;
 
-    ItemType type;
-
-    private void Start()
+    private void Awake()
     {
-        if (type == ItemType.InGameItem)
-            data = GM.GetPrefabManager().ItemPrefabTable.InItemDatas.Find(x => x.ItemName == gameObject.name);
+        if(itemType == ItemType.InGameItem)
+        {
+            data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.outItemType == outType);
+        }
         else
-            data = GM.GetPrefabManager().ItemPrefabTable.OutItemDatas.Find(x => x.ItemName == gameObject.name);
+        {
+            data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.inItemType == inType);
+        }
 
     }
     public void Use(InItemType type, GameObject PlayerInfo)
@@ -60,6 +66,7 @@ public class Item : MonoBehaviour
             SaveManager.CurrentData.itemStates[type] = 0;
         }
         SaveManager.CurrentData.itemStates[type]++;
+        Destroy(gameObject);
     }
 
     public void Heal(Health health)

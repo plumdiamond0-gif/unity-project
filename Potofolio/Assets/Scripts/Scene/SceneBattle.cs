@@ -5,7 +5,6 @@ public class SceneBattle : MonoBehaviour
     [SerializeField] private Transform playerSpawnPos;
     [SerializeField] AudioClip Bgm;
     [SerializeField] private Transform RootCanvas;
-    [SerializeField] Generator generator;
 
 
     private void Awake()

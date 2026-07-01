@@ -1,12 +1,9 @@
-using NUnit.Framework;
 using System.Collections.Generic;
-using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Map : MonoBehaviour
 {
-    public GameObject[] BlockPrefabs;
+    [SerializeField] GameObject[] BlockPrefabs;
 
     Transform[] blockPositions;
 
@@ -37,10 +34,10 @@ public class Map : MonoBehaviour
         {
             int rand = yRotations[Random.Range(0, yRotations.Length)];
             Vector3 rot = new Vector3(0, rand, 0);
-
-            Instantiate(randomBlocks[i], blockPositions[i].position, 
+            GameObject block = Instantiate(randomBlocks[i], blockPositions[i].position, 
                 Quaternion.Euler(rot)
                 , blockPositions[i]);
+            block.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
         }
     }
 

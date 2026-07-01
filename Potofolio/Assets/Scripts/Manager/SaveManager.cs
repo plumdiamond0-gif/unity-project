@@ -1,5 +1,6 @@
 using Newtonsoft.Json;
 using UnityEngine;
+using UnityEngine.Android;
 
 public class SaveManager : MonoBehaviour
 {
@@ -7,7 +8,8 @@ public class SaveManager : MonoBehaviour
 
     public void Init()
     {
-        CurrentData = LoadData<SD_User>();
+        //TODO : 세이브매니저 나중에 수정 
+        //CurrentData = LoadData<SD_User>();
         if(CurrentData == null )
         {
             CurrentData = new SD_User();

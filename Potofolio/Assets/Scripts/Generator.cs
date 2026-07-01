@@ -36,7 +36,7 @@ public class Generator : MonoBehaviour
         if(enemyType == EnemyType.None)
         {
             spawnObject = GM.GetPrefabManager().
-                ItemPrefabTable.InItemDatas.Find
+                ItemPrefabTable.ItemDatas.Find
                 (x => x.inItemType == inItemType).ItemPrefab;
         }
     }
