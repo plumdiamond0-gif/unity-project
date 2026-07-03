@@ -5,7 +5,7 @@ public class WeaponButton : MonoBehaviour
 {
 
     Image weaponImage;
-    Button Button;
+   public Button Button;
     public WeaponState weaponState;
     public Image LockImage;
     public bool isActive;

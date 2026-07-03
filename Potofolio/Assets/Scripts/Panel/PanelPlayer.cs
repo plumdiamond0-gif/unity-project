@@ -6,7 +6,6 @@ public class PanelPlayer : MonoBehaviour
     public Image HpUI;
     public GameObject ChargeUI;
     public Image ChargeImageUI;
-    public GameObject ExpFillUI;
     public Image ExpFillImageUI;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created

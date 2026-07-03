@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a56ec40192d317a4c98a76e73f40d185, type: 3}
   m_Name: EnergyCannonStunEffect
   m_EditorClassIdentifier: Assembly-CSharp::StunEffect
-  stunTime: 1
+  stunTime: 4

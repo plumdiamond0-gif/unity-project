@@ -31,6 +31,7 @@ public class PanelWeaponUpgrade
         foreach(var item in weaponButtons)
         {
             item.BeActive();
+            item.Button.onClick.AddListener(() => { costUI.gameObject.SetActive(false); });
         }
 
         upgradeResultUI.ShowResults(data);

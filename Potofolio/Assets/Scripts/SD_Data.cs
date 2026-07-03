@@ -14,6 +14,7 @@ public class SD_User : ISaveData
         {WeaponState.Improved, true},
         {WeaponState.Slime, true},
         {WeaponState.Fire, true},
+        {WeaponState.Toxic, true},
         {WeaponState.Energy, true},
         {WeaponState.Bomb, true},
     };
@@ -27,6 +28,7 @@ public class SD_User : ISaveData
         {OutItemType.WatchersEye, 0},
         {OutItemType.GaleCrystal, 0},
         {OutItemType.EmeraldShard, 0},
+        {OutItemType.ToxicThornFragment, 0},
         {OutItemType.FlameCrystal, 0},
         {OutItemType.HardenedFang, 0},
         {OutItemType.KnightsEmblem, 0},
@@ -43,7 +45,6 @@ public class SD_User : ISaveData
         {WeaponState.Slime, 0 },
         {WeaponState.Toxic, 0 },
         {WeaponState.Fire, 0 },
-        {WeaponState.Hypnosis, 0 },
         {WeaponState.Energy, 0 },
         {WeaponState.Bomb, 0 },
 

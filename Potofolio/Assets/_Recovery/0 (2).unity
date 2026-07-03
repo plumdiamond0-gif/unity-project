@@ -481,20 +481,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   currntWeaponNum: 0
   WeaponNum: 5
-  CanonBallspeed: 50
-  baseDamage: 0
   currentCharge: 0
   maxCharge: 1
   baseRecoilX: -5
   maxChargeBonus: 5
-  spawnedWeapon: {fileID: 0}
   currentweapondata:
     weaponState: 0
-    WeaponName: 
-    Weapon: {fileID: 0}
     WeaponBullet: {fileID: 0}
     damage: 0
     Attackspeed: 0
+    BulletNum: 0
     snappiness: 0
     returnSpeed: 0
     chargeAmount: 0
@@ -503,15 +499,11 @@ MonoBehaviour:
     BaseRecoilX: 0
     maxChargeBonus: 0
     YZRecoil: 0
-    radius: 0
-    force: 0
-    upModifier: 0
     WeaponImage: {fileID: 0}
     effects: []
     upgradeCosts: {fileID: 0}
     upgradeResults: {fileID: 0}
   Firepos: {fileID: 1986766959}
-  knock: {fileID: 11400000, guid: 5fe56d282cab54f489a612941594eb8a, type: 2}
   AttackGuageBar: {fileID: 0}
   AttackGuageBarFill: {fileID: 0}
 --- !u!114 &384408929
@@ -528,13 +520,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   yRotation: 0
   xRotation: 0
-  PlayerSpeed: 10
-  JumpPower: 10
   MouseSpeed: 200
-  SprintSpeed: 40
+  PlayerSpeed: 10
   walkSpeed: 5
-  runSpeed: 10
+  RunSpeed: 0
   PlayerAttack: {fileID: 384408928}
+  CanMove: 0
+  walkAudio: {fileID: 0}
+  _walkAudio: {fileID: 0}
   state: 0
 --- !u!114 &384408930
 MonoBehaviour:

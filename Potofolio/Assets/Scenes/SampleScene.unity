@@ -384,14 +384,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 410087039}
   m_Enabled: 1
-  serializedVersion: 12
+  serializedVersion: 11
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 2
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize2D: {x: 10, y: 10}
+  m_CookieSize: 10
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -693,7 +693,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &656451795
 MeshFilter:
@@ -864,7 +863,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &709753628
 MeshFilter:
@@ -1315,7 +1313,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1112710070
 MeshFilter:
@@ -1477,7 +1474,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1558526257
 MeshFilter:
@@ -1617,7 +1613,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1651507724
 MeshFilter:
@@ -1788,7 +1783,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1752030620
 MeshFilter:
@@ -2161,6 +2155,7 @@ MonoBehaviour:
     WeaponBullet: {fileID: 0}
     damage: 0
     Attackspeed: 0
+    BulletNum: 0
     snappiness: 0
     returnSpeed: 0
     chargeAmount: 0
@@ -2169,15 +2164,11 @@ MonoBehaviour:
     BaseRecoilX: 0
     maxChargeBonus: 0
     YZRecoil: 0
-    radius: 0
-    force: 0
-    upModifier: 0
     WeaponImage: {fileID: 0}
     effects: []
     upgradeCosts: {fileID: 0}
     upgradeResults: {fileID: 0}
   Firepos: {fileID: 0}
-  knock: {fileID: 0}
   AttackGuageBar: {fileID: 0}
   AttackGuageBarFill: {fileID: 0}
 --- !u!114 &1896660261
@@ -2195,11 +2186,13 @@ MonoBehaviour:
   yRotation: 0
   xRotation: 0
   MouseSpeed: 200
-  walk: {fileID: 0}
+  PlayerSpeed: 1
   walkSpeed: 5
-  runSpeed: 10
+  RunSpeed: 0
   PlayerAttack: {fileID: 1896660260}
   CanMove: 0
+  walkAudio: {fileID: 0}
+  _walkAudio: {fileID: 0}
   state: 0
 --- !u!136 &1896660262
 CapsuleCollider:
@@ -2328,7 +2321,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &1896660266
 MeshFilter:
@@ -2498,11 +2490,13 @@ MonoBehaviour:
   yRotation: 0
   xRotation: 0
   MouseSpeed: 0
-  walk: {fileID: 0}
+  PlayerSpeed: 1
   walkSpeed: 5
-  runSpeed: 10
+  RunSpeed: 0
   PlayerAttack: {fileID: 0}
   CanMove: 0
+  walkAudio: {fileID: 0}
+  _walkAudio: {fileID: 0}
   state: 0
 --- !u!135 &2108180458
 SphereCollider:
@@ -2572,7 +2566,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!33 &2108180460
 MeshFilter:
@@ -2720,7 +2713,6 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -3033,7 +3025,6 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -3582,7 +3573,6 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -4304,7 +4294,6 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -4895,7 +4884,6 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0
@@ -5060,7 +5048,6 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0

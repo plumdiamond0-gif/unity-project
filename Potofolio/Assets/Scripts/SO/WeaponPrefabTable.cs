@@ -8,7 +8,6 @@ public enum WeaponState
     Slime,
     Toxic,
     Fire,
-    Hypnosis,
     Energy,
     Bomb,
 }
@@ -22,12 +21,15 @@ public class WeaponPrefabData
     public GameObject WeaponBullet;
     public float damage;
     public float Attackspeed;
+    public float BulletNum;
+
 
     public float snappiness;
     public float returnSpeed;
     public float chargeAmount;
     public bool canCharge;
     public float coolTime;
+    
 
     public float BaseRecoilX;
     public float maxChargeBonus;

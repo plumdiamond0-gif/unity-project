@@ -12,7 +12,9 @@ public class SaveManager : MonoBehaviour
         //CurrentData = LoadData<SD_User>();
         if(CurrentData == null )
         {
-            CurrentData = new SD_User();
+            CurrentData = LoadData<SD_User>();
+
+            //CurrentData = new SD_User();
             SaveCurrentData();
         }
     }

@@ -18,7 +18,9 @@ public class SceneBase : MonoBehaviour
             {
                 GameObject player = Instantiate(go, playerSpawnPos.position, 
                     Quaternion.identity);
-                GameManager.OnPlayerSpawned?.Invoke(player);
+
+                //GameManager.OnPlayerSpawned?.Invoke(player);
+
                 PlayerAttack playerAttack = player.GetComponent<PlayerAttack>();
                 playerAttack.enabled = false;   
                 PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();

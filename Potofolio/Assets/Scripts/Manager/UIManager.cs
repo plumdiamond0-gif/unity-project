@@ -95,12 +95,14 @@ public class UIManager : MonoBehaviour
 
     public void Bind(GameObject playerInfo)
     {
+        Debug.Log("바인드실행ㄹ!!!!!");
         if (HUD != null)
         {
             PlayerAttack playerAttack = playerInfo.GetComponent<PlayerAttack>();
             if (playerAttack != null)
             {
-                playerAttack.AttackGuageBar = HUD.ChargeUI;
+                if (HUD.ChargeUI != null)
+                    playerAttack.AttackGuageBar = HUD.ChargeUI;
                 playerAttack.AttackGuageBarFill = HUD.ChargeImageUI;
 
             }
@@ -111,6 +113,11 @@ public class UIManager : MonoBehaviour
                 playerHealth.HealthBarFill = HUD.HpUI;
             }
 
+            PlayerStat playerStat = playerInfo.GetComponent<PlayerStat>();
+            if (playerStat != null)
+            {
+                playerStat.ExpFillImageUI = HUD.ExpFillImageUI;
+            }    
             PlayerItem playerItem   = playerInfo.GetComponent<PlayerItem>();
             if (playerItem != null)
             {

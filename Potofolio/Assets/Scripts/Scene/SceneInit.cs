@@ -21,13 +21,13 @@ public class SceneInit : MonoBehaviour
 
     private void OnNextSceneLoad()
     {
-        GM.GetSceneLoadManager().NextLoadScene("SceneOpening", () =>
+        GM.GetSceneLoadManager().NextLoadScene("SceneBattle", () =>
             {
                 Debug.Log("SceneOpening ¿Ï·á");
             });
     }
 
-
+    //SceneBattle
 
 
 

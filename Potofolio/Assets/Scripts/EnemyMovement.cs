@@ -244,6 +244,8 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
             }
 
         }
+        GameManager.instance.GetPlayer().GetComponent<PlayerStat>().GetExp(data.exp);
+
        
         Destroy(gameObject); 
 

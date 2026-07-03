@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   currntWeaponNum: 0
-  WeaponNum: 6
+  WeaponNum: 7
   currentCharge: 0
   maxCharge: 1
   baseRecoilX: -5
@@ -271,6 +271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   CoinText: {fileID: 0}
+  ExpFillUI: {fileID: 0}
+  ExpFillImageUI: {fileID: 0}
 --- !u!114 &9001863938071665267
 MonoBehaviour:
   m_ObjectHideFlags: 0

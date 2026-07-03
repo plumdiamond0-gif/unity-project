@@ -142,6 +142,7 @@ MonoBehaviour:
   HpUI: {fileID: 2175201125222084649}
   ChargeUI: {fileID: 5865679903120155726}
   ChargeImageUI: {fileID: 5753940166729722696}
+  ExpFillImageUI: {fileID: 7182465337800434709}
 --- !u!1 &196750216986220291
 GameObject:
   m_ObjectHideFlags: 0
@@ -710,7 +711,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -752, y: 369}
+  m_AnchoredPosition: {x: -651, y: 328}
   m_SizeDelta: {x: 500, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5966599169009611594

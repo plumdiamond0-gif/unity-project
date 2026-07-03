@@ -14,10 +14,10 @@ public class CostUI : MonoBehaviour
     public void Start()
     {
         gameObject.SetActive(false);    
-        images = GetComponentsInChildren<Image>().
-        Where(x => x.gameObject != gameObject).ToArray();
-        texts = GetComponentsInChildren<TMP_Text>().
-            Where(x => x.gameObject != gameObject).ToArray();
+        //images = GetComponentsInChildren<Image>().
+        //Where(x => x.gameObject != gameObject).ToArray();
+        //texts = GetComponentsInChildren<TMP_Text>().
+        //    Where(x => x.gameObject != gameObject).ToArray();
         for (int i = 0; i < 5; i++)
         {
             images[i].sprite = null;
@@ -35,7 +35,11 @@ public class CostUI : MonoBehaviour
             if (i < costs.costs.Count)
             {
                 UpgradeCost.CostData costData = costs.costs[i];
-              
+                if (images[i] == null)
+                    Debug.Log("이미지컴포넌트널");
+                if (costData.CostSprite == null)
+                    Debug.Log("코스트데이터스파리으널");
+
                 images[i].sprite = costData.CostSprite;
                 texts[i].text = costData.itemType.ToString() + ":" +
                     ((costData.amount) * (Mathf.Pow(1.2f, level)) + "/" +
