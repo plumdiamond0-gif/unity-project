@@ -9,6 +9,6 @@ public class ItemDrag : MonoBehaviour
     }
     private void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, player.position, 4f * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(transform.position, player.position, 26f * Time.deltaTime);
     }
 }

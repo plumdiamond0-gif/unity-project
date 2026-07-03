@@ -6,11 +6,9 @@ using UnityEngine;
 public class SD_User : ISaveData
 {
     public ulong level;
-    public ulong RedSlime;
-    public ulong BlueSlime;
-    //public ulong Hp;
+   
 
-    public Dictionary<WeaponState, bool> WeaponActive = new()
+    public Dictionary<WeaponState, bool> weaponActive = new()
     {
         {WeaponState.Base, true},
         {WeaponState.Improved, true},
@@ -61,8 +59,9 @@ public class SD_User : ISaveData
 
     public void CloneCopy(SD_User userData)
     {
-        RedSlime = userData.RedSlime;
-        level = userData.level;
-        BlueSlime = userData.BlueSlime;
+        weaponActive = userData.weaponActive;   
+        weaponlevel = userData.weaponlevel;
+        itemStates = userData.itemStates;   
+
     }
 }

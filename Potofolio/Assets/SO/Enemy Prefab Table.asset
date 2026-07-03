@@ -50,3 +50,17 @@ MonoBehaviour:
     enemyBullet: {fileID: 0}
     effects: []
     dropItems: {fileID: 11400000, guid: 6650be264fe069e439f7fb11d2bd1b67, type: 2}
+  - enemyType: 6
+    enemyName: StingWing
+    enemyPrefab: {fileID: 964480405027562052, guid: 81f8cd0556961004bb82f4ead2a270a2, type: 3}
+    enemyBullet: {fileID: 0}
+    effects:
+    - {fileID: 11400000, guid: 6650be264fe069e439f7fb11d2bd1b67, type: 2}
+    - {fileID: 11400000, guid: 50e40e84c2f82a44094ec4b7135c59c6, type: 2}
+    dropItems: {fileID: 11400000, guid: 6650be264fe069e439f7fb11d2bd1b67, type: 2}
+  - enemyType: 6
+    enemyName: StingWing
+    enemyPrefab: {fileID: 964480405027562052, guid: 81f8cd0556961004bb82f4ead2a270a2, type: 3}
+    enemyBullet: {fileID: 0}
+    effects: []
+    dropItems: {fileID: 11400000, guid: 6650be264fe069e439f7fb11d2bd1b67, type: 2}

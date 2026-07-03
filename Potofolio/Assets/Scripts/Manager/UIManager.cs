@@ -111,8 +111,8 @@ public class UIManager : MonoBehaviour
                 playerHealth.HealthBarFill = HUD.HpUI;
             }
 
-            PlayerMovement playerMovement = playerInfo.GetComponent<PlayerMovement>();
-            if (playerMovement != null)
+            PlayerItem playerItem   = playerInfo.GetComponent<PlayerItem>();
+            if (playerItem != null)
             {
 
             }

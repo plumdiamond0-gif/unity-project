@@ -19,7 +19,7 @@ public class WeaponButton : MonoBehaviour
             .weaponPrafabTableDatas.Find(x => x.weaponState == weaponState).WeaponImage;
         Button = GetComponent<Button>();
 
-        if (SaveManager.CurrentData.WeaponActive[weaponState] == true)
+        if (SaveManager.CurrentData.weaponActive[weaponState] == true)
         {
             isActive = true;
             LockImage.enabled = false;
@@ -44,7 +44,7 @@ public class WeaponButton : MonoBehaviour
 
     public void BeActive()
     {
-        if (SaveManager.CurrentData.WeaponActive[weaponState] != true)
+        if (SaveManager.CurrentData.weaponActive[weaponState] != true)
             return;
         //인벤토리 칸 자식들 중에서 컴포넌트 꺼내워서 같은 무기 타입 갖고 있는 애의 함수 호출
         isActive = true;

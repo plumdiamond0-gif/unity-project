@@ -68,7 +68,7 @@ public class PanelWeaponUnlock: MonoBehaviour
 
     public void UnlockCurrentWeapon()
     {
-        if (SaveManager.CurrentData.WeaponActive[currentData.weaponState])
+        if (SaveManager.CurrentData.weaponActive[currentData.weaponState])
             return;
 
 
@@ -106,7 +106,7 @@ public class PanelWeaponUnlock: MonoBehaviour
         if (hasRight)
             RightImage.sprite = weaponPrefabDatas[currentIndex + 1].WeaponImage;
 
-        if (SaveManager.CurrentData.WeaponActive[data.weaponState])
+        if (SaveManager.CurrentData.weaponActive[data.weaponState])
         {
             unlockButton.GetComponent<Button>().interactable = false;
             unlockButton.GetComponentInChildren<TMP_Text>().text = "Unlocked";

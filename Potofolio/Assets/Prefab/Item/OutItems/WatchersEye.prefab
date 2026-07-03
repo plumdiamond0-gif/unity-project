@@ -125,7 +125,7 @@ GameObject:
   - component: {fileID: 7064769748602627549}
   - component: {fileID: 4336781663541761404}
   m_Layer: 0
-  m_Name: WatcherEye
+  m_Name: WatchersEye
   m_TagString: Item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
