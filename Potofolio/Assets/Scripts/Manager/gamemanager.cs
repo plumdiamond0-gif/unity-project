@@ -15,6 +15,7 @@ public class GameManager : SingletonObject<GameManager>
     public SoundManager GetSoundManager { get; private set; } = null;
 
     public static Action<GameObject> OnPlayerSpawned;
+
     GameObject player;
 
 
@@ -52,6 +53,7 @@ public class GameManager : SingletonObject<GameManager>
     }
     void SavePlayer(GameObject go)
     {
+        Debug.Log("플레이어 저장");
         player = go;
     }
     public GameObject GetPlayer()

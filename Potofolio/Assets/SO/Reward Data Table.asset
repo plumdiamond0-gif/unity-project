@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bba2aa60c5c0d0f409b53b579cbdfb08, type: 3}
+  m_Name: Reward Data Table
+  m_EditorClassIdentifier: Assembly-CSharp::RewardDataTable
+  rewardDatas:
+  - RewardName: Heal
+    RewardSprite: {fileID: 21300000, guid: 4c870b7f6fc9981429daee0725128851, type: 3}
+    MinValue: 50
+    MaxValue: 200
+    RewardType: 1
+  - RewardName: DamageBuff
+    RewardSprite: {fileID: 21300000, guid: d4563cf9c92275140a599b9c757e4f8e, type: 3}
+    MinValue: 1.2
+    MaxValue: 2
+    RewardType: 2
+  - RewardName: AttackSpeedPlus
+    RewardSprite: {fileID: 21300000, guid: 2ec4af2415569ff45bdb01eef15ac323, type: 3}
+    MinValue: 1.2
+    MaxValue: 2
+    RewardType: 3
+  - RewardName: MoveSpeedPlus
+    RewardSprite: {fileID: 21300000, guid: edbc8afc2d98ff443b03c46625d405d0, type: 3}
+    MinValue: 1.1
+    MaxValue: 1.5
+    RewardType: 4
+  - RewardName: JumpPowerBuff
+    RewardSprite: {fileID: 21300000, guid: e553b30edfd160a4285020cb7d61f292, type: 3}
+    MinValue: 1.1
+    MaxValue: 1.5
+    RewardType: 5
+  - RewardName: MaxHpPlus
+    RewardSprite: {fileID: 21300000, guid: be82ea1657e9b704d879e1f2718e6210, type: 3}
+    MinValue: 50
+    MaxValue: 200
+    RewardType: 6

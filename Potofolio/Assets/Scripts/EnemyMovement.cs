@@ -227,7 +227,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     public void Die()
     {
         currentState = EnemyState.Die;
-        float distance = 2f;
+        //float distance = 2f;
 
         foreach (var item in data.dropItems.dropItems)
         {
@@ -244,7 +244,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
             }
 
         }
-        GameManager.instance.GetPlayer().GetComponent<PlayerStat>().GetExp(data.exp);
+        GameManager.instance.GetPlayer().GetComponent<PlayerItem>().GetExp(data.exp);
 
        
         Destroy(gameObject); 

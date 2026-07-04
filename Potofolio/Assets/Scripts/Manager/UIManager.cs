@@ -8,6 +8,7 @@ public class UIManager : MonoBehaviour
 {
     PanelPlayer HUD;
 
+
     private readonly Dictionary<string, PanelBase> _dicContentPanels = new();
 
     private Transform RootCanvas;
@@ -83,10 +84,16 @@ public class UIManager : MonoBehaviour
     //{
     //    playerInfo = gameObject;
     //}
-    public void GetHUD(PanelPlayer panel)
+    public void SaveHUD(PanelPlayer panel)
     {
         HUD = panel;
     }
+    public PanelPlayer GetHUD()
+    {
+        return HUD; 
+    }
+
+
 
     private void Awake()
     {
@@ -95,16 +102,29 @@ public class UIManager : MonoBehaviour
 
     public void Bind(GameObject playerInfo)
     {
-        Debug.Log("바인드실행ㄹ!!!!!");
+        Debug.Log("BIND");
         if (HUD != null)
         {
+            Debug.Log("HUD bull 아님");
+
             PlayerAttack playerAttack = playerInfo.GetComponent<PlayerAttack>();
             if (playerAttack != null)
             {
+                Debug.Log($"HUD : {HUD}");
+                Debug.Log($"ChargeUI : {HUD.ChargeUI}");
+                Debug.Log($"ChargeFill : {HUD.ChargeImageUI}");
+                Debug.Log($"HpUI : {HUD.HpUI}");
+                Debug.Log($"ExpUI : {HUD.ExpFillImageUI}");
+
+                Debug.Log($"Before : {playerAttack.AttackGuageBar}");
                 if (HUD.ChargeUI != null)
                     playerAttack.AttackGuageBar = HUD.ChargeUI;
                 playerAttack.AttackGuageBarFill = HUD.ChargeImageUI;
 
+         
+
+
+                Debug.Log($"After : {playerAttack.AttackGuageBar}");
             }
 
             Health playerHealth = playerInfo.GetComponent<Health>();
@@ -113,16 +133,11 @@ public class UIManager : MonoBehaviour
                 playerHealth.HealthBarFill = HUD.HpUI;
             }
 
-            PlayerStat playerStat = playerInfo.GetComponent<PlayerStat>();
-            if (playerStat != null)
-            {
-                playerStat.ExpFillImageUI = HUD.ExpFillImageUI;
-            }    
-            PlayerItem playerItem   = playerInfo.GetComponent<PlayerItem>();
+            PlayerItem playerItem  = playerInfo.GetComponent<PlayerItem>();
             if (playerItem != null)
             {
-
-            }
+                playerItem.ExpFillImageUI = HUD.ExpFillImageUI;
+            }    
         }
     }
   

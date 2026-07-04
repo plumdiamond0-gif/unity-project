@@ -32,13 +32,10 @@ public void TakeDamage(float value)
 
     public void Heal(float value)
     {
-        
         CurrentHp += value;
         CurrentHp = Mathf.Clamp(CurrentHp, 0, MaxHp);
 
         HealthBarFill.fillAmount = CurrentHp / MaxHp;
-
-
     }
         IEnumerator InvincibleTimer()
     {

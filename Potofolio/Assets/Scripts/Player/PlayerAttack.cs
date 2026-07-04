@@ -206,8 +206,7 @@ public class PlayerAttack : MonoBehaviour
         float finalDamage;
         CannonBall currentBall = CBcopy.GetComponent<CannonBall>();
 
-        finalDamage = currentweapondata.damage + (stat.BaseDamage
-        + AttackRatio * maxChargeBonus);
+        finalDamage = currentweapondata.damage *stat.BaseDamage +(AttackRatio * maxChargeBonus);
         currentBall.SetWeaponData(currentweapondata);
         currentBall.SetDamage(finalDamage);
         //Debug.Log(finalDamage); 
@@ -244,7 +243,7 @@ public class PlayerAttack : MonoBehaviour
                 Quaternion.AngleAxis(0f,rightAxis) * shootDir;
 
             CanonBallRB.AddForce(
-                -shootDir * currentweapondata.Attackspeed,
+                -shootDir * (currentweapondata.Attackspeed * stat.AttackSpeed),
                 ForceMode.Impulse
             );
 

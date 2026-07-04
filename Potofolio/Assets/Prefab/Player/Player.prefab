@@ -101,6 +101,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &1475209664219004511
 Rigidbody:
@@ -272,8 +273,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   CoinText: {fileID: 0}
-  ExpFillUI: {fileID: 0}
   ExpFillImageUI: {fileID: 0}
+  currentExp: 0
+  maxExp: 100
+  canShowPanel: 1
 --- !u!114 &9001863938071665267
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -289,10 +292,7 @@ MonoBehaviour:
   MoveSpeed: 1
   JumpPower: 5
   BaseDamage: 1
-  AttackDamage: 1
-  currentExp: 0
-  maxExp: 100
-  ExpFillImageUI: {fileID: 0}
+  AttackSpeed: 1
 --- !u!82 &4249301999929927763
 AudioSource:
   m_ObjectHideFlags: 0

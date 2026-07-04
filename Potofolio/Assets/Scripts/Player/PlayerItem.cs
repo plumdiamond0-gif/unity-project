@@ -8,13 +8,40 @@ public class PlayerItem : MonoBehaviour
 {
     [SerializeField] private TMP_Text CoinText;
 
-    float coinNum;
-    public GameObject ExpFillUI;
-    public Image ExpFillImageUI;
     Dictionary<OutItemType, int> resourcesData = new();
-    void Start()
+    public Image ExpFillImageUI;
+    public float currentExp = 0;
+    public float maxExp;
+
+    public bool canShowPanel = true;
+    public void GetExp(float exp)
     {
-        coinNum = 0;
+        currentExp += exp;
+        UpdateExpUI();
+    }
+
+    void UpdateExpUI()
+    {
+        while (currentExp >= maxExp)
+        {
+            if(!canShowPanel)
+                return;
+            canShowPanel = false;
+            currentExp = currentExp - maxExp;
+            maxExp *= 1.5f;
+            GM.GetUIManager().CreateUIPanel("Reward_Panel",
+            (go) =>
+            {
+                go.SetActive(true);
+                PanelReward panelReward = go.GetComponent<PanelReward>();   
+                panelReward.ShowReward();
+                
+            });
+        }
+
+        currentExp = Mathf.Clamp(currentExp, 0, maxExp);
+        float ratio = currentExp / maxExp;
+        ExpFillImageUI.fillAmount = ratio;
     }
 
     public void UpdateCoin(float coinNum)

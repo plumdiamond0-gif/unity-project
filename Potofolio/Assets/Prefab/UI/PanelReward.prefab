@@ -240,6 +240,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -588,6 +589,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -726,6 +728,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -907,7 +910,7 @@ GameObject:
   - component: {fileID: 280281940395767512}
   - component: {fileID: 4375226908626631003}
   m_Layer: 5
-  m_Name: Panel
+  m_Name: PanelReward
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -985,7 +988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 957c658cac6a8984c8e591b8c7aaa4a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PanelReward
-  rewardDataTable: {fileID: 0}
+  rewardDataTable: {fileID: 11400000, guid: 9aa8c4037a307964ab444cdcf2e781c2, type: 2}
 --- !u!1 &9000965964577270022
 GameObject:
   m_ObjectHideFlags: 0

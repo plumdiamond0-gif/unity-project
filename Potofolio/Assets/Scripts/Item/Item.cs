@@ -97,7 +97,7 @@ public class Item : MonoBehaviour
     {
         //float attackSpeedBuffAmount = Random.Range(data.MinAttackSpeed, data.MaxAttackSpeed);
         //Debug.Log($"공격속도 {attackSpeedBuffAmount}만큼 증가");
-        stat.AttackDamage *= data.AttackSpeedBuffAmount;
+        stat.AttackSpeed *= data.AttackSpeedBuffAmount;
     }
 
     public void JumpPowerBuff(PlayerStat stat)

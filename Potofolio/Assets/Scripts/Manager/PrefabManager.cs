@@ -6,6 +6,7 @@ public class PrefabManager : MonoBehaviour
     public WeaponPrefabTable WeaponPrefabTable;//{ get; private set; } = null;
     public EnemyPrefabTable EnemyPrefabTable;
     public ItemPrefabTable ItemPrefabTable;
+    
     public static PrefabManager CreatePrefabManager(GameObject res, Transform parent)
     {
         if(res == null)
