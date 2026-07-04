@@ -21,7 +21,7 @@ public class PlayerStat : MonoBehaviour
 
     void UpdateExpUI()
     {
-        while(currentExp >= maxExp)
+        while (currentExp >= maxExp)
         {
             currentExp = currentExp - maxExp;
             maxExp *= 1.5f;
@@ -31,15 +31,9 @@ public class PlayerStat : MonoBehaviour
         float ratio = currentExp / maxExp;
         ExpFillImageUI.fillAmount = ratio;
     }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         UpdateExpUI();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

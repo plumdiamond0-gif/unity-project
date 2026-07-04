@@ -228,6 +228,7 @@ MonoBehaviour:
     WeaponBullet: {fileID: 0}
     damage: 0
     Attackspeed: 0
+    BulletNum: 0
     snappiness: 0
     returnSpeed: 0
     chargeAmount: 0
@@ -289,6 +290,9 @@ MonoBehaviour:
   JumpPower: 5
   BaseDamage: 1
   AttackDamage: 1
+  currentExp: 0
+  maxExp: 100
+  ExpFillImageUI: {fileID: 0}
 --- !u!82 &4249301999929927763
 AudioSource:
   m_ObjectHideFlags: 0
