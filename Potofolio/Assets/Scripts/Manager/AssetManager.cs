@@ -41,6 +41,7 @@ public class AssetManager : MonoBehaviour
             yield break;
         }
         AsyncOperationHandle handle = Addressables.LoadAssetAsync<T>(key);
+        _dicHandles[key] = handle;
         yield return handle;
         if (handle.Status == AsyncOperationStatus.Succeeded)
         {

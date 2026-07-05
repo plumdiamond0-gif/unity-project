@@ -37,7 +37,14 @@ public void TakeDamage(float value)
 
         HealthBarFill.fillAmount = CurrentHp / MaxHp;
     }
-        IEnumerator InvincibleTimer()
+    public void MaxHpPlus(float value)
+    {
+        MaxHp += value;
+        CurrentHp = Mathf.Clamp(CurrentHp, 0, MaxHp);
+
+        HealthBarFill.fillAmount = CurrentHp / MaxHp;
+    }
+    IEnumerator InvincibleTimer()
     {
         isInvincible = true;
         yield return new WaitForSeconds(0.5f);

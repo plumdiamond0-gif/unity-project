@@ -60,7 +60,7 @@ MonoBehaviour:
     inItemType: 0
     outItemType: 4
     ItemName: HardenedFang
-    ItemPrefab: {fileID: 5321920919559439511, guid: 1dc626bc21e8bac48b62947a9137ec09, type: 3}
+    ItemPrefab: {fileID: 5321920919559439511, guid: 9fef26972f3380b4d928d957e1a346d0, type: 3}
   - itemSprite: {fileID: 0}
     HealAmount: 0
     DamageBuffAmount: 0

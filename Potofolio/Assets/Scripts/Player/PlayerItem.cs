@@ -1,6 +1,8 @@
+using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -13,6 +15,7 @@ public class PlayerItem : MonoBehaviour
     public float currentExp = 0;
     public float maxExp;
 
+
     public bool canShowPanel = true;
     public void GetExp(float exp)
     {
@@ -22,26 +25,41 @@ public class PlayerItem : MonoBehaviour
 
     void UpdateExpUI()
     {
-        while (currentExp >= maxExp)
+        while (currentExp >= maxExp )
         {
             if(!canShowPanel)
                 return;
             canShowPanel = false;
+
             currentExp = currentExp - maxExp;
+
             maxExp *= 1.5f;
             GM.GetUIManager().CreateUIPanel("Reward_Panel",
             (go) =>
             {
                 go.SetActive(true);
-                PanelReward panelReward = go.GetComponent<PanelReward>();   
-                panelReward.ShowReward();
+                PanelReward panel = go.GetComponent<PanelReward>();
+                StartCoroutine(CheckEnd(panel));
                 
             });
         }
 
         currentExp = Mathf.Clamp(currentExp, 0, maxExp);
+        Debug.Log("Clamp");
         float ratio = currentExp / maxExp;
         ExpFillImageUI.fillAmount = ratio;
+
+    }
+
+    IEnumerator CheckEnd(PanelReward panel)
+    {
+        while(!panel.isEnded)
+        {
+            yield return null;
+            canShowPanel = true;
+            UpdateExpUI();
+        }
+        
     }
 
     public void UpdateCoin(float coinNum)

@@ -7,7 +7,7 @@ public class RewardButton : MonoBehaviour
 {
     [SerializeField]RewardData data;
     Button button;
-    Image image;
+    [SerializeField]Image image;
     TMP_Text text;
 
     float value;
@@ -16,7 +16,6 @@ public class RewardButton : MonoBehaviour
     void Start()
     {
         button = GetComponent<Button>();
-        image = GetComponentInChildren<Image>();
         text = GetComponentInChildren<TMP_Text>();
         button.onClick.AddListener(ApplyBuff);
     }
@@ -25,12 +24,24 @@ public class RewardButton : MonoBehaviour
     {
         data = randData;
         image.sprite = data.RewardSprite;
+
         value = Random.Range(data.MinValue, data.MaxValue);
-        text.text = $"{data.RewardName} : {value}";
+
+        if (value > 10)
+        {
+            value = Mathf.Round(value);
+            text.text = $"{data.RewardName} : + {value}";
+        }
+        else
+        {
+            value = Mathf.Round(value * 100) / 100;
+            text.text = $"{data.RewardName} : x {value}";
+        }
 
     }
     void ApplyBuff()
     {
+
         GameObject player =  GameManager.instance.GetPlayer();
         Health health = player.GetComponent<Health>();
         PlayerStat stat = player.GetComponent<PlayerStat>();    
@@ -49,7 +60,7 @@ public class RewardButton : MonoBehaviour
 
                 break;
             case RewardType.MaxHpPlus:
-                health.MaxHp += value;
+                health.MaxHpPlus(value);
                 Debug.Log("MaxHpUp");
 
                 break;
@@ -70,6 +81,8 @@ public class RewardButton : MonoBehaviour
 
                 break;
         }
+        Time.timeScale = 1f;
+        Destroy(gameObject.transform.parent.gameObject);
     }
 
 
