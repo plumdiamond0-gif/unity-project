@@ -12,11 +12,13 @@ public class Item : MonoBehaviour
     {
         if(itemType == ItemType.InGameItem)
         {
-            data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.outItemType == outType);
+            data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.inItemType == inType);
+
         }
         else
         {
-            data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.inItemType == inType);
+            data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.outItemType == outType);
+
         }
 
     }
@@ -52,6 +54,8 @@ public class Item : MonoBehaviour
             case InItemType.MaxHpPlus:
                 MaxHpPlus(health);
                 break;
+
+
                 
 
 

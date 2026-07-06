@@ -21,7 +21,16 @@ public enum InItemType
     JumpPowerBuff,
     MaxHpPlus,
 
-    Coin
+
+    BeInvincible,
+    RecallBeacon,
+    HalfRemove,
+
+
+
+    JetPack,
+    
+
 }
 public enum OutItemType
 {
@@ -35,6 +44,7 @@ public enum OutItemType
     GaleCrystal,
     ToxicThornFragment,
     SporeSac,
+    CactusSpike,
     EmeraldShard,
     KnightsEmblem,
     ManaCrystal,

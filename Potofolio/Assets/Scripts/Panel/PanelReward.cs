@@ -26,17 +26,18 @@ public class PanelReward : PanelBase
     }
     IEnumerator MovePanel()
     {
+
         while (transform.localPosition != Vector3.zero)
         {
             transform.localPosition = Vector3.MoveTowards(
                 transform.localPosition,
                 Vector3.zero,
-                500f * Time.deltaTime);
+                800f * Time.deltaTime);
 
             yield return null;
         }
-
         ShowReward();
+
     }
 
     public void ShowReward()

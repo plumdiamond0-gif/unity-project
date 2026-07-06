@@ -170,7 +170,7 @@ Transform:
   m_GameObject: {fileID: 964480405027562052}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.5389304, y: 0.5, z: 1.6934648}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -251,8 +251,8 @@ MonoBehaviour:
   currentState: 0
   enemyType: 5
   detectRange: 20
-  attackRange: 10
-  damage: 8
+  attackRange: 5
+  damage: 10
   CoinNum: 20
   attackSpeed: 20
   attackCoolTime: 3
@@ -270,7 +270,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 5
+  m_Speed: 10
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   CurrentHp: 0
-  MaxHp: 20
+  MaxHp: 40
   HealthBarFill: {fileID: 4458945183867330684}
 --- !u!1 &967133876448853566
 GameObject:
@@ -1156,7 +1156,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -0.45}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &4664591035259154052

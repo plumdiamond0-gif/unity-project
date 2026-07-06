@@ -70,6 +70,7 @@ public class Generator : MonoBehaviour
         for (int i = 0; i < spawnAmount; i++)
         {
             GameObject spawned = Instantiate(spawnObject, transform.position, Quaternion.identity, transform);
+            //spawned.transform.position = new Vector3(spawned.transform.position.x, 2, spawned.transform.position.z);
             //spawned.transform.localScale = new Vector3(5, 5f, 5);
         }
     }

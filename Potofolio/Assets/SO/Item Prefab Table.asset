@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Item Prefab Table
   m_EditorClassIdentifier: Assembly-CSharp::ItemPrefabTable
   ItemDatas:
-  - itemSprite: {fileID: 0}
+  - itemSprite: {fileID: 21300000, guid: 21628319500d3be44980d1d423e04bd3, type: 3}
     HealAmount: 0
     DamageBuffAmount: 0
     AttackSpeedBuffAmount: 0
@@ -25,7 +25,7 @@ MonoBehaviour:
     outItemType: 1
     ItemName: MonsterCoin
     ItemPrefab: {fileID: 5321920919559439511, guid: 60f519976af0cb74ea3e64aa922822b2, type: 3}
-  - itemSprite: {fileID: 0}
+  - itemSprite: {fileID: 21300000, guid: 167b46f25748c6c44b7f40678562d6f5, type: 3}
     HealAmount: 0
     DamageBuffAmount: 0
     AttackSpeedBuffAmount: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     outItemType: 2
     ItemName: RedJelly
     ItemPrefab: {fileID: 5321920919559439511, guid: acdb2161ffb6e164d9059e70a79a4f59, type: 3}
-  - itemSprite: {fileID: 0}
+  - itemSprite: {fileID: 21300000, guid: ca6f6167b7319f94f969e2722df29083, type: 3}
     HealAmount: 0
     DamageBuffAmount: 0
     AttackSpeedBuffAmount: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
     outItemType: 3
     ItemName: SlimeShell
     ItemPrefab: {fileID: 5321920919559439511, guid: e6b4f37c0cb3acc478e230bffd707494, type: 3}
-  - itemSprite: {fileID: 0}
+  - itemSprite: {fileID: 21300000, guid: bc25581a19159474cb1012031d81de5f, type: 3}
     HealAmount: 0
     DamageBuffAmount: 0
     AttackSpeedBuffAmount: 0
@@ -61,7 +61,7 @@ MonoBehaviour:
     outItemType: 4
     ItemName: HardenedFang
     ItemPrefab: {fileID: 5321920919559439511, guid: 9fef26972f3380b4d928d957e1a346d0, type: 3}
-  - itemSprite: {fileID: 0}
+  - itemSprite: {fileID: 21300000, guid: 44991d149141bc54fa4cd5c1dcb72cd6, type: 3}
     HealAmount: 0
     DamageBuffAmount: 0
     AttackSpeedBuffAmount: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
     outItemType: 5
     ItemName: WatchersEye
     ItemPrefab: {fileID: 5321920919559439511, guid: 263617eaf12c9cd4aad19880066bc3c8, type: 3}
-  - itemSprite: {fileID: 0}
+  - itemSprite: {fileID: 21300000, guid: 03e316e038465a242ac943c72b75cae8, type: 3}
     HealAmount: 0
     DamageBuffAmount: 0
     AttackSpeedBuffAmount: 0
@@ -85,7 +85,7 @@ MonoBehaviour:
     outItemType: 6
     ItemName: FlmaeCrystal
     ItemPrefab: {fileID: 5321920919559439511, guid: c363382772ee7ad4b8629674cd7da379, type: 3}
-  - itemSprite: {fileID: 0}
+  - itemSprite: {fileID: 21300000, guid: 25b41063371146942b35f95d2f005d44, type: 3}
     HealAmount: 0
     DamageBuffAmount: 0
     AttackSpeedBuffAmount: 0
@@ -97,3 +97,111 @@ MonoBehaviour:
     outItemType: 8
     ItemName: ToxicThornFragment
     ItemPrefab: {fileID: 5321920919559439511, guid: c4271fc011da8634086830c07ef9cd74, type: 3}
+  - itemSprite: {fileID: 0}
+    HealAmount: 50
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 0
+    inItemType: 1
+    outItemType: 0
+    ItemName: HealItem
+    ItemPrefab: {fileID: 5368353758710278530, guid: 5942c34d285507848af45e0088f395c7, type: 3}
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 1.2
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 0
+    inItemType: 2
+    outItemType: 0
+    ItemName: DamageBuffItem
+    ItemPrefab: {fileID: 7649353927011021123, guid: 0a3857a0e69351e40a4d13c1cdf478a8, type: 3}
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 1.2
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 0
+    inItemType: 3
+    outItemType: 0
+    ItemName: AttackSpeedPlus
+    ItemPrefab: {fileID: 5368353758710278530, guid: 8629fdf39cedd4540a65dcaeb84b086b, type: 3}
+  - itemSprite: {fileID: 21300000, guid: 25b41063371146942b35f95d2f005d44, type: 3}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 1.2
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 0
+    inItemType: 4
+    outItemType: 0
+    ItemName: MoveSpeedPlus
+    ItemPrefab: {fileID: 5368353758710278530, guid: 72c392262f86ed04b87519ccb12e2518, type: 3}
+  - itemSprite: {fileID: 21300000, guid: 25b41063371146942b35f95d2f005d44, type: 3}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 1.2
+    itemType: 0
+    inItemType: 5
+    outItemType: 0
+    ItemName: JumpPowerBuff
+    ItemPrefab: {fileID: 5368353758710278530, guid: c508879a642c669408b9304319185cd8, type: 3}
+  - itemSprite: {fileID: 0}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 100
+    JumpPowerBuffAmount: 0
+    itemType: 0
+    inItemType: 6
+    outItemType: 0
+    ItemName: MaxHpPlus
+    ItemPrefab: {fileID: 5368353758710278530, guid: 248daeb2211a929489932761d9853bc8, type: 3}
+  - itemSprite: {fileID: 21300000, guid: a7645b023fe924c4ebe898daee786cec, type: 3}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 1
+    inItemType: 0
+    outItemType: 10
+    ItemName: CactusSpike
+    ItemPrefab: {fileID: 5321920919559439511, guid: 8df40ad1427508242a22928e70be62fe, type: 3}
+  - itemSprite: {fileID: 21300000, guid: 8739432d5c5489d4c8cdff92abe375ea, type: 3}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 1
+    inItemType: 0
+    outItemType: 11
+    ItemName: EmeraldShard
+    ItemPrefab: {fileID: 5321920919559439511, guid: b36c137ebafceb24f8568c195b99fbb8, type: 3}
+  - itemSprite: {fileID: 21300000, guid: d3ad611117f51b04db001de418c7487a, type: 3}
+    HealAmount: 0
+    DamageBuffAmount: 0
+    AttackSpeedBuffAmount: 0
+    MoveSpeedBuffAmount: 0
+    MaxHpBuffAmount: 0
+    JumpPowerBuffAmount: 0
+    itemType: 1
+    inItemType: 0
+    outItemType: 9
+    ItemName: SporeSac
+    ItemPrefab: {fileID: 5321920919559439511, guid: bc8b79d34083e0a4ca0c9e35879122c9, type: 3}

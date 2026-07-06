@@ -16,6 +16,7 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     {
         playerStat = GetComponent<PlayerStat>();
         playerHealth = GetComponent<Health>();
+        playerMovement = GetComponent<PlayerMovement>();    
     }
 
     public void ApplySlow(float slowTime, float slowAmount)
@@ -24,7 +25,9 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
             return;
         if (slowRoutine != null)
         {
-            slowRoutine = null;
+            return;
+
+            //slowRoutine = null;
         }
         slowRoutine = StartCoroutine(Slow(slowTime, slowAmount));
 
@@ -34,13 +37,18 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
         playerStat.MoveSpeed *= slowAmount;
         yield return new WaitForSeconds(slowTime);
         playerStat.MoveSpeed /= slowAmount;
-
+        slowRoutine = null; 
         yield return null;
     }
     public void ApplyStun(float stunTime)
     {
         if (stunRoutine != null)
-            stunRoutine = null;
+        {
+            //stunRoutine = null;
+
+            return;
+        }
+            
         StartCoroutine(Stun(stunTime));
 
     }
@@ -50,12 +58,14 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
         playerMovement.CanMove = false;
         yield return new WaitForSeconds(stunTime);
         playerMovement.CanMove = true;
+        stunRoutine = null;
         yield return null;
     }
     public void ApplyDotDam(float dotDamage, float dotNum)
     {
         if (dotdamRoutine != null)
-            dotdamRoutine = null;
+            return;
+            //dotdamRoutine = null;
         StartCoroutine(Dotdam(dotDamage, dotNum));
 
     }
@@ -69,7 +79,9 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
             yield return new WaitForSeconds(0.8f);
 
         }
+        dotdamRoutine = null;
         yield return null;
+
     }
 
 }

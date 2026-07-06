@@ -23,6 +23,8 @@ public class WeaponPrefabData
     public float Attackspeed;
     public float BulletNum;
 
+    public Sprite weaponImage;
+
 
     public float snappiness;
     public float returnSpeed;

@@ -19,12 +19,13 @@ MonoBehaviour:
     enemyBullet: {fileID: 0}
     effects: []
     dropItems: {fileID: 11400000, guid: 2a46c33adf5ede940914bd3689486e2c, type: 2}
-    exp: 100
+    exp: 5
   - enemyType: 2
     enemyName: ShellBlink
     enemyPrefab: {fileID: 282274447850904860, guid: bda289ce78096ac4b8cc69950bd76c5b, type: 3}
-    enemyBullet: {fileID: 0}
-    effects: []
+    enemyBullet: {fileID: 8363767819308192229, guid: c136c61848c292b4f9bec0a667668125, type: 3}
+    effects:
+    - {fileID: 11400000, guid: ebfcde966f28f94478a3203e272a67fa, type: 2}
     dropItems: {fileID: 11400000, guid: 45798d5c43b6d6342a41f00c72783cb8, type: 2}
     exp: 7
   - enemyType: 3
@@ -33,14 +34,14 @@ MonoBehaviour:
     enemyBullet: {fileID: 0}
     effects: []
     dropItems: {fileID: 11400000, guid: 3e57576ebd8d7424c825f6716e558be9, type: 2}
-    exp: 10
+    exp: 20
   - enemyType: 4
     enemyName: Obsi
     enemyPrefab: {fileID: 964480405027562052, guid: 0c3097e1d4491ff4a812e635df364a9f, type: 3}
     enemyBullet: {fileID: 0}
     effects: []
     dropItems: {fileID: 11400000, guid: d1f7669c334e1564d9bb4021d9a8a5e1, type: 2}
-    exp: 12
+    exp: 15
   - enemyType: 5
     enemyName: FlmaeNewt
     enemyPrefab: {fileID: 964480405027562052, guid: 16f6c8c96a949ea4f9380b9d8ef45ae2, type: 3}
@@ -52,7 +53,31 @@ MonoBehaviour:
   - enemyType: 6
     enemyName: StingWing
     enemyPrefab: {fileID: 964480405027562052, guid: 81f8cd0556961004bb82f4ead2a270a2, type: 3}
+    enemyBullet: {fileID: 8363767819308192229, guid: c136c61848c292b4f9bec0a667668125, type: 3}
+    effects:
+    - {fileID: 11400000, guid: 50e40e84c2f82a44094ec4b7135c59c6, type: 2}
+    - {fileID: 11400000, guid: 44638b327659d334bbe9f74b0815e678, type: 2}
+    dropItems: {fileID: 11400000, guid: 6650be264fe069e439f7fb11d2bd1b67, type: 2}
+    exp: 30
+  - enemyType: 7
+    enemyName: Spike
+    enemyPrefab: {fileID: 964480405027562052, guid: 42b4bdefd4f385f4b85442eda65a7ab0, type: 3}
+    enemyBullet: {fileID: 8363767819308192229, guid: 7a2807ae4f4924546b01d912c3778825, type: 3}
+    effects:
+    - {fileID: 11400000, guid: e8f69f76e844cd84db9399001be768ed, type: 2}
+    dropItems: {fileID: 11400000, guid: c744eede859460d4caecd7e5e6d94f78, type: 2}
+    exp: 20
+  - enemyType: 8
+    enemyName: Mush
+    enemyPrefab: {fileID: 964480405027562052, guid: 3bb66ae1b61efe04788a197f354d1ebc, type: 3}
     enemyBullet: {fileID: 0}
     effects: []
-    dropItems: {fileID: 11400000, guid: 6650be264fe069e439f7fb11d2bd1b67, type: 2}
-    exp: 20
+    dropItems: {fileID: 11400000, guid: 58d8c84e3dd8a94418cfe1083c4257a4, type: 2}
+    exp: 10
+  - enemyType: 9
+    enemyName: Rocky
+    enemyPrefab: {fileID: 964480405027562052, guid: f6a39af6ef1d55440b3ea496eeaec13f, type: 3}
+    enemyBullet: {fileID: 0}
+    effects: []
+    dropItems: {fileID: 11400000, guid: f4153893950ef0c42bb29c91f295d9ad, type: 2}
+    exp: 100

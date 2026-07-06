@@ -120,7 +120,8 @@ public class UIManager : MonoBehaviour
                 if (HUD.ChargeUI != null)
                     playerAttack.AttackGuageBar = HUD.ChargeUI;
                 playerAttack.AttackGuageBarFill = HUD.ChargeImageUI;
-
+                playerAttack.WeapomImage = HUD.WeapomImage;
+                playerAttack.WeapomText = HUD.WeapomText;   
          
 
 

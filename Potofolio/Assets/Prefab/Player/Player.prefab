@@ -229,6 +229,7 @@ MonoBehaviour:
     damage: 0
     Attackspeed: 0
     BulletNum: 0
+    weaponImage: {fileID: 0}
     snappiness: 0
     returnSpeed: 0
     chargeAmount: 0
@@ -244,6 +245,8 @@ MonoBehaviour:
   Firepos: {fileID: 2762385274009636054}
   AttackGuageBar: {fileID: 0}
   AttackGuageBarFill: {fileID: 0}
+  WeapomImage: {fileID: 0}
+  WeapomText: {fileID: 0}
 --- !u!114 &5147695606854780525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,7 +260,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
   CurrentHp: 260
-  MaxHp: 260
+  MaxHp: 2600
   HealthBarFill: {fileID: 0}
 --- !u!114 &5713483990783137934
 MonoBehaviour:

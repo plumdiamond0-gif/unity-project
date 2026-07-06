@@ -17,7 +17,7 @@ public class Rotation : MonoBehaviour
         //    dir *= -1;
         //}
 
-        float y = (Mathf.Sin(Time.time * 2f) + 1) * 0.2f;
+        float y = (Mathf.Sin(Time.time * 2f) + 1) * 0.5f;
         transform.position = pos + new Vector3(0, y, 0);
 
     }

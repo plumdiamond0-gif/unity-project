@@ -27,6 +27,5 @@ public class GlobalCallback : MonoBehaviour
     {
         yield return new WaitUntil(predicate);
         callback.Invoke();
-        Debug.Log("www");
     }
 }

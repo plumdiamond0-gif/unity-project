@@ -62,17 +62,12 @@ public class PlayerItem : MonoBehaviour
         
     }
 
-    public void UpdateCoin(float coinNum)
-    {
-        CoinText.text = coinNum.ToString();
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Item"))
         {
             Item item = other.GetComponent<Item>();
-            ItemData data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.ItemName == other.name);
+            ItemData data = GM.GetPrefabManager().ItemPrefabTable.ItemDatas.Find(x => x.inItemType == item.inType);
 
             Debug.Log(item.data.inItemType.ToString());
             if (item.data.itemType == ItemType.InGameItem)

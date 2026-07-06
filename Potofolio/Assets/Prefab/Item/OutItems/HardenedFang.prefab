@@ -110,7 +110,7 @@ MonoBehaviour:
     ItemName: 
     ItemPrefab: {fileID: 0}
   itemType: 1
-  outType: 0
+  outType: 4
   inType: 0
 --- !u!114 &8143143117058630363
 MonoBehaviour:

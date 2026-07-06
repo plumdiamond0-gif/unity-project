@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -39,6 +40,9 @@ public class PlayerAttack : MonoBehaviour
     public GameObject AttackGuageBar;
 
     public Image AttackGuageBarFill;
+
+    public Image WeapomImage;
+    public TMP_Text WeapomText;
 
     PlayerStat stat;
 
@@ -105,12 +109,14 @@ public class PlayerAttack : MonoBehaviour
 
     public void SelectWeapon(int index)
     {
-        
+  
         //if (spawnedWeapon != null)
         //{
         //    Destroy(spawnedWeapon);
         //}
         currentweapondata = weaponList[index];
+        WeapomImage.sprite = currentweapondata.weaponImage;
+        WeapomText.text = currentweapondata.weaponState.ToString();
         if (currentweapondata.WeaponBullet == null)
         {
           //  Debug.LogError($"{currentweapondata.WeaponName}의 프리팹 원본이 이미 파괴되었거나 할당되지 않았습니다!");

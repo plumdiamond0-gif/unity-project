@@ -2156,6 +2156,7 @@ MonoBehaviour:
     damage: 0
     Attackspeed: 0
     BulletNum: 0
+    weaponImage: {fileID: 0}
     snappiness: 0
     returnSpeed: 0
     chargeAmount: 0
@@ -2171,6 +2172,8 @@ MonoBehaviour:
   Firepos: {fileID: 0}
   AttackGuageBar: {fileID: 0}
   AttackGuageBarFill: {fileID: 0}
+  WeapomImage: {fileID: 0}
+  WeapomText: {fileID: 0}
 --- !u!114 &1896660261
 MonoBehaviour:
   m_ObjectHideFlags: 0
