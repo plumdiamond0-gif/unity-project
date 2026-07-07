@@ -1,0 +1,233 @@
+탄환 발사 방식 수정
+
+기존 : 
+CanonBallRB.AddForce(
+    Firepos.transform.forward * currentweapondata.Attackspeed,
+    ForceMode.Impulse
+);
+총구 방향으로만 직선으로 날아가는 중
+
+원하는 것 : 
+카메라 각도에 따라서 탄환을 쏘는 각도가 바뀌는 것. 
+그래서 플레이어 모델의 허리 각도를 인게임 중에 조절하자느니 
+걷기 애니메이션 실행 중에는 플레이어 모델을 조작할 수가 없음
+
+
+
+걷기 애니메이션 때문에 허리 회전이 안 되는 경우 :
+
+대부분 게임 ->
+-애니메이션은 애니메이터가 처리
+-총알 방향은 카메라가 처리
+를 분리.
+
+즉,
+탄환이 카메라 방향으로 날아가는 것과
+캐릭터 허리가 그 방향을 보는 것은 별개의 문제
+
+그래서 우선은 캐릭터를 건드리지 말고 탄환 방향만 카메라 기준으로 계산
+
+----------------------------------------------------------------------------------------------
+
+1. 카메라 중앙에서 Ray 생성
+Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+
+-Viewport 좌표란?
+화면을 0~1 사이 값으로 표현한 좌표계.
+(0,1) -------- (1,1)
+  |              |
+  |     중앙    |
+  |   (0.5,0.5)  |
+  |              |
+(0,0) -------- (1,0)
+그래서
+new Vector3(0.5f, 0.5f)
+는 화면 정중앙을 의미
+
+
+-ViewportPointToRay
+
+cam.ViewportPointToRay(...)
+는 카메라에서 특정 화면 위치를 향해 광선을 생성하는 함수.
+Ray ray 안에는 ray.origin(= 광선 시작 위치)
+ray.direction(= 광선 방향)
+이 저장
+
+----------------------------------------------------------------------------------------------
+
+2. 레이캐스트
+Vector3 targetPoint;
+if (Physics.Raycast(ray, out RaycastHit hit, 1000f))
+-> ray 방향으로 1000미터 동안 쏴보고 뭔가 맞으면 true
+
+카메라
+   ↓
+
+   ------------------>
+                     벽
+벽을 맞았다면 hit.point에 벽 좌표가 저장
+
+----------------------------------------------------------------------------------------------
+
+3. 맞은 위치 저장
+{targetPoint = hit.point;}
+
+----------------------------------------------------------------------------------------------
+
+4. 아무것도 안 맞았을 경우
+else
+{targetPoint = ray.origin + ray.direction * 1000f;}
+
+ray.origin=(0,2,-5)
+ray.direction=(0,0,1)
+이라면
+targetPoint
+=
+(0,2,-5) + (0,0,1)*1000
+=
+(0,2,995)
+
+즉 카메라가 보는 방향으로 멀리 있는 가상의 점 을 만드는 것.
+
+----------------------------------------------------------------------------------------------
+
+5. 탄환 방향 계산
+Vector3 shootDir =
+    (targetPoint - Firepos.position).normalized;
+총구 위치
+Firepos.position=(0,1,0)
+카메라가 조준한 위치
+targetPoint=(10,1,25)
+
+targetPoint - Firepos.position=(10,0,25)
+
+이 벡터는 총구 → 목표지점 방향을 나타냄.
+.normalized는 길이를 1로 만듦.
+(10,0,25)를 (0.37,0,0.93)같은 단위벡터로 변환.
+
+----------------------------------------------------------------------------------------------
+
+6. 탄환 발사
+CanonBallRB.AddForce(
+    shootDir * currentweapondata.Attackspeed,
+    ForceMode.Impulse
+);
+shootDir=(0.37,0,0.93)
+Attackspeed=100
+이면
+(37,0,93)만큼 힘을 줌.
+결과적으로 카메라가 가리킨 위치를 향해 날아감.
+
+----------------------------------------------------------------------------------------------
+
+그래서 대부분 게임은
+
+카메라 중앙에서 Raycast
+맞은 위치 계산
+총구 → 맞은 위치 방향 계산
+그 방향으로 탄환 발사
+
+순서로 구현.
+이걸 흔히 "크로스헤어 기반 사격(Crosshair Shooting)" 또는 
+"Camera Aim Shooting" 방식이라고 해. 
+FPS, TPS, 3인칭 액션 게임에서 가장 많이 쓰이는 방식이야.
+
+
+
+1.예를 들어 카메라의 forward를 섞을 수 있어.
+Vector3 shootDir =
+    (targetPoint - Firepos.position).normalized;
+
+// 카메라 방향을 추가로 섞음
+shootDir = (shootDir + cam.transform.forward * 0.5f).normalized;
+
+0.5f를 키울수록 카메라 방향의 영향이 커져.
+
+2.아니면 Y축만 강제로 증폭할 수도 있어.
+
+Vector3 shootDir =
+    (targetPoint - Firepos.position).normalized;
+
+shootDir.y *= 1.5f;
+shootDir.Normalize();
+
+그러면 위를 볼 때는 더 가파르게 올라가고,
+아래를 볼 때는 더 가파르게 내려감.
+
+
+
+만약 "카메라를 위로 조금만 올려도 탄환이 더 크게 위로 날아가게" 하고 싶다면 방향을 추가로 보정해야 해.
+ Vector3 rightAxis =
+                Vector3.Cross(Vector3.up, shootDir).normalized;
+
+            shootDir =
+                Quaternion.AngleAxis(0f,rightAxis) * shootDir;
+
+            CanonBallRB.AddForce(
+                -shootDir * currentweapondata.Attackspeed,
+                ForceMode.Impulse
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
