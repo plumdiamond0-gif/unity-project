@@ -1,13 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 using Unity.VisualScripting;
+using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using static UnityEngine.GraphicsBuffer;
+using static UnityEngine.Rendering.HighDefinition.ScalableSettingLevelParameter;
 using static WeaponPrefabTable;
 
 public class PlayerAttack : MonoBehaviour
@@ -43,6 +47,9 @@ public class PlayerAttack : MonoBehaviour
 
     public Image WeapomImage;
     public TMP_Text WeapomText;
+    public TMP_Text BulletNum;
+
+    float currentBulletNum;
 
     PlayerStat stat;
 
@@ -117,6 +124,13 @@ public class PlayerAttack : MonoBehaviour
         currentweapondata = weaponList[index];
         WeapomImage.sprite = currentweapondata.weaponImage;
         WeapomText.text = currentweapondata.weaponState.ToString();
+
+        float level = SaveManager.CurrentData.weaponlevel[currentweapondata.weaponState];
+
+        currentBulletNum = (int)Math.Pow(currentweapondata.BulletNum, level);
+
+        BulletNum.text = currentBulletNum.ToString();
+
         if (currentweapondata.WeaponBullet == null)
         {
           //  Debug.LogError($"{currentweapondata.WeaponName}의 프리팹 원본이 이미 파괴되었거나 할당되지 않았습니다!");
@@ -140,6 +154,9 @@ public class PlayerAttack : MonoBehaviour
 
     void OnAttack(InputValue value)
     {
+        if(currentBulletNum <= 0)
+            return;
+
         if (currentweapondata.canCharge)
         {
             bool isPressed = value.isPressed;
@@ -164,14 +181,21 @@ public class PlayerAttack : MonoBehaviour
                 }
 
                 Fire();
-           
-               
+                currentBulletNum--;
+
+                BulletNum.text = currentBulletNum.ToString();
+
+
+
             }
 
             return;
         }
 
         Fire(); // 일반 무기
+        currentBulletNum--;
+        BulletNum.text = currentBulletNum.ToString();
+
     }
 
     //void ReadyAttack()

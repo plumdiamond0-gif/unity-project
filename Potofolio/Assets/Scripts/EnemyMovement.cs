@@ -168,7 +168,6 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                 }
                 else if(attackType == EnemyAttackType.distant)
                 {
-                    anim.SetTrigger(AttackHash);
 
                     GameObject CBcopy = Instantiate(data.enemyBullet, FirePos.position, Quaternion.identity);
                     EnemyBall ball = CBcopy.GetComponent<EnemyBall>();
@@ -177,6 +176,8 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                     Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
                     if (CanonBallRB != null)
                     {
+                        anim.SetTrigger(AttackHash);
+
                         Vector3 shootDir = (player.transform.position - FirePos.position).normalized;
                         CanonBallRB.AddForce(
                             shootDir * attackSpeed,
@@ -184,6 +185,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                         );
 
                     }
+
                     agent.ResetPath();
 
                 }

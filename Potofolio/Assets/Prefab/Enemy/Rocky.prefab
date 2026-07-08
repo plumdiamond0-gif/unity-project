@@ -279,7 +279,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964480405027562052}
   serializedVersion: 5
-  m_Mass: 1
+  m_Mass: 26
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -724,7 +724,7 @@ Animator:
   m_GameObject: {fileID: 3071277257576261562}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 8b2d11d64877f0b4cad5d45ec7d53473, type: 3}
-  m_Controller: {fileID: 9100000, guid: 64e2ef14a02f69a4b94edbee54ca296a, type: 2}
+  m_Controller: {fileID: 9100000, guid: 494dd6fa8e7bed942bd042c9d86d00be, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

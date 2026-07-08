@@ -21,13 +21,12 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
 
     public void ApplySlow(float slowTime, float slowAmount)
     {
+        Debug.Log("Slow Apply");
         if (stunRoutine != null)
             return;
         if (slowRoutine != null)
         {
-            return;
-
-            //slowRoutine = null;
+            slowRoutine = null;
         }
         slowRoutine = StartCoroutine(Slow(slowTime, slowAmount));
 
@@ -37,15 +36,12 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
         playerStat.MoveSpeed *= slowAmount;
         yield return new WaitForSeconds(slowTime);
         playerStat.MoveSpeed /= slowAmount;
-        slowRoutine = null; 
         yield return null;
     }
     public void ApplyStun(float stunTime)
     {
         if (stunRoutine != null)
         {
-            //stunRoutine = null;
-
             return;
         }
             
@@ -56,9 +52,13 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     {
         Debug.Log("Slowed");
         playerMovement.CanMove = false;
+        Rigidbody Rb = GetComponent<Rigidbody>();
+        Rb.linearVelocity = new Vector3(0, Rb.linearVelocity.y, 0);
+
         yield return new WaitForSeconds(stunTime);
         playerMovement.CanMove = true;
         stunRoutine = null;
+
         yield return null;
     }
     public void ApplyDotDam(float dotDamage, float dotNum)

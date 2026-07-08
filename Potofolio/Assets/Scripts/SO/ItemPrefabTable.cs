@@ -80,6 +80,9 @@ public class ItemData
     public ItemType itemType;
     public InItemType inItemType;
     public OutItemType outItemType;
+
+    public bool isInvenItem;
+
     public string ItemName;
     public GameObject ItemPrefab;
 

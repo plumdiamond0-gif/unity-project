@@ -137,6 +137,7 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator walk()
     {
+
         while(!isSprint)
         {
             _walkAudio.Play();
@@ -157,7 +158,9 @@ public class PlayerMovement : MonoBehaviour
         }
     void OnJump(InputValue inputValue)
         {
-            if (!isGrounded)
+        if (!CanMove)
+            return;
+        if (!isGrounded)
             {
                 return;
             }
@@ -170,21 +173,29 @@ public class PlayerMovement : MonoBehaviour
     }
     void OnSprint()
         {
-        if(state == PlayerState.InBase) 
+        if (!CanMove)
+            return;
+
+        if (state == PlayerState.InBase) 
             return;
 
         Debug.Log("Sprint");
         isSprint = !isSprint;
 
-        PlayerSpeed = isSprint ? RunSpeed*stat.MoveSpeed : walkSpeed*stat.MoveSpeed;
-        
+        PlayerSpeed = isSprint ? RunSpeed : walkSpeed;
+        Debug.Log($"PlayerSpeed {PlayerSpeed} ,stat.MoveSpeed {stat.MoveSpeed} , final {RunSpeed * stat.MoveSpeed}");
+
+
     }
 
-  
+
 
 
     private void OnCollisionEnter(Collision collision)
     {
+        if (!CanMove)
+            return;
+
         if (collision.gameObject.CompareTag("Ground"))
         {
             Debug.Log("암인그라운드");
@@ -199,7 +210,7 @@ public class PlayerMovement : MonoBehaviour
         if (!CanMove)
             return;
         Vector3 MoveDir = ((transform.right * MovementX) + (transform.forward * MovementY)).normalized;
-        Vector3 targetVel = MoveDir * PlayerSpeed;
+        Vector3 targetVel = MoveDir * PlayerSpeed * stat.MoveSpeed;
 
         Vector3 currentVel = Rb.linearVelocity;
 

@@ -22,6 +22,7 @@ public class EnemyBall : MonoBehaviour
                 if (playerhealth != null)
                 {
                     playerhealth.TakeDamage(Damage);
+                Debug.Log("ÇÃ·¹ÀÌ¾î¿¡°Ô ±ø µ¥¹ÌÂ¢ ¤Ã¤§·æ");
                 if (data == null)
                     return;
                 foreach (var effectobjs in data.effects)

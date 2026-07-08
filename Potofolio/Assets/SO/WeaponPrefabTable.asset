@@ -39,7 +39,7 @@ MonoBehaviour:
     weaponImage: {fileID: 21300000, guid: ecd2584d7f96008498c95d940cce7155, type: 3}
     snappiness: 5
     returnSpeed: 2
-    chargeAmount: 2
+    chargeAmount: 1
     canCharge: 1
     coolTime: 1
     BaseRecoilX: 1
@@ -54,7 +54,7 @@ MonoBehaviour:
     WeaponBullet: {fileID: 8363767819308192229, guid: 9f2fb37adc018c94bb9d582a10b5bcba, type: 3}
     damage: 30
     Attackspeed: 25
-    BulletNum: 0
+    BulletNum: 300
     weaponImage: {fileID: 21300000, guid: ff2144f5158884c4d9381c5da6ba716a, type: 3}
     snappiness: 8
     returnSpeed: 3
@@ -73,7 +73,7 @@ MonoBehaviour:
     WeaponBullet: {fileID: 8363767819308192229, guid: a613198d0eea09b4499558d1ccf8ab97, type: 3}
     damage: 40
     Attackspeed: 50
-    BulletNum: 0
+    BulletNum: 200
     weaponImage: {fileID: 21300000, guid: 614e6328a5f51d6478b9494f0e319792, type: 3}
     snappiness: 4
     returnSpeed: 1.5
@@ -92,7 +92,7 @@ MonoBehaviour:
     WeaponBullet: {fileID: 8363767819308192229, guid: 22de006092143f84480069385fc6fb40, type: 3}
     damage: 20
     Attackspeed: 30
-    BulletNum: 0
+    BulletNum: 150
     weaponImage: {fileID: 21300000, guid: 80460d4a1aeb2de48a77811a504024fb, type: 3}
     snappiness: 20
     returnSpeed: 4
@@ -112,11 +112,11 @@ MonoBehaviour:
     WeaponBullet: {fileID: 8363767819308192229, guid: 86e81e14019f1c24b94f906625201ac6, type: 3}
     damage: 85
     Attackspeed: 70
-    BulletNum: 0
+    BulletNum: 100
     weaponImage: {fileID: 21300000, guid: deb8c4adf151eb646b7822680ea57787, type: 3}
     snappiness: 4
     returnSpeed: 1
-    chargeAmount: 4
+    chargeAmount: 2
     canCharge: 1
     coolTime: 2.5
     BaseRecoilX: 0.5
@@ -132,7 +132,7 @@ MonoBehaviour:
     WeaponBullet: {fileID: 8363767819308192229, guid: fee6bf91f9775cf4486e13efaea39fba, type: 3}
     damage: 300
     Attackspeed: 50
-    BulletNum: 0
+    BulletNum: 26
     weaponImage: {fileID: 21300000, guid: 10964cc78f69de1419462e2378fed368, type: 3}
     snappiness: 20
     returnSpeed: 4

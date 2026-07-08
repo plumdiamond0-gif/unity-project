@@ -10,6 +10,7 @@ public class PanelPlayer : MonoBehaviour
     public Image ExpFillImageUI;
     public Image WeapomImage;
     public TMP_Text WeapomText;
+    public TMP_Text BulletNum;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()

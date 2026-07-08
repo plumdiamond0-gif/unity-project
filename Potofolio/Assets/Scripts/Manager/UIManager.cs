@@ -122,6 +122,7 @@ public class UIManager : MonoBehaviour
                 playerAttack.AttackGuageBarFill = HUD.ChargeImageUI;
                 playerAttack.WeapomImage = HUD.WeapomImage;
                 playerAttack.WeapomText = HUD.WeapomText;   
+                playerAttack.BulletNum = HUD.BulletNum;
          
 
 

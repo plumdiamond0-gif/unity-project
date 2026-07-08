@@ -15,7 +15,7 @@ public class StunEffect : ScriptableObject, IWeaponEffect
         IWeaponEffectReceiver receiver = target.GetComponent<IWeaponEffectReceiver>();
         if (receiver != null)
         {
-            float finalStunTime = multiplier;
+            float finalStunTime = stunTime * multiplier;
             receiver.ApplyStun(finalStunTime);
             Debug.Log("slow");
         }

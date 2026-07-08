@@ -40,13 +40,13 @@ public class SD_User : ISaveData
 
     public Dictionary<WeaponState, int> weaponlevel = new()
     {
-        {WeaponState.Base, 0 },
-        {WeaponState.Improved, 0 },
-        {WeaponState.Slime, 0 },
-        {WeaponState.Toxic, 0 },
-        {WeaponState.Fire, 0 },
-        {WeaponState.Energy, 0 },
-        {WeaponState.Bomb, 0 },
+        {WeaponState.Base, 1 },
+        {WeaponState.Improved, 1 },
+        {WeaponState.Slime, 1 },
+        {WeaponState.Toxic, 1 },
+        {WeaponState.Fire, 1 },
+        {WeaponState.Energy, 1 },
+        {WeaponState.Bomb, 1 },
 
     };
     
