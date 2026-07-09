@@ -4144,17 +4144,21 @@ PrefabInstance:
       propertyPath: spawnAmount
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6229334864494980989, guid: 42443fec0d88a6744abd6870be55e976, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 97381436817fd6e4094279a77885c332, type: 2}
     - target: {fileID: 6243739231857298689, guid: 42443fec0d88a6744abd6870be55e976, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: -0.87
       objectReference: {fileID: 0}
     - target: {fileID: 6243739231857298689, guid: 42443fec0d88a6744abd6870be55e976, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 7
+      value: 5.26
       objectReference: {fileID: 0}
     - target: {fileID: 6243739231857298689, guid: 42443fec0d88a6744abd6870be55e976, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.17
       objectReference: {fileID: 0}
     - target: {fileID: 6243739231857298689, guid: 42443fec0d88a6744abd6870be55e976, type: 3}
       propertyPath: m_LocalRotation.w

@@ -49,7 +49,40 @@ public class PlayerAttack : MonoBehaviour
     public TMP_Text WeapomText;
     public TMP_Text BulletNum;
 
-    float currentBulletNum;
+    Dictionary<WeaponState, int> currentAmmo = new()
+    {
+        {WeaponState.Base, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
+            .Find(x => x.weaponState == WeaponState.Base).BulletNum + 
+            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Base],1.15f)-1)
+        },
+        {WeaponState.Improved, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
+            .Find(x => x.weaponState == WeaponState.Improved).BulletNum +
+            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Improved],1.15f)-1)
+        },
+                {WeaponState.Slime, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
+            .Find(x => x.weaponState == WeaponState.Slime).BulletNum +
+            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Slime],1.15f)-1)
+        },
+        {WeaponState.Fire, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
+            .Find(x => x.weaponState == WeaponState.Fire).BulletNum +
+            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Fire],1.15f)-1)
+        },
+                {WeaponState.Toxic, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
+            .Find(x => x.weaponState == WeaponState.Toxic).BulletNum +
+            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Toxic],1.15f)-1)
+        },
+        {WeaponState.Energy, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
+            .Find(x => x.weaponState == WeaponState.Energy).BulletNum +
+            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Energy],1.15f)-1)
+        },
+               {WeaponState.Bomb, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
+            .Find(x => x.weaponState == WeaponState.Bomb).BulletNum +
+            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Bomb],1.15f)-1)
+        },
+
+    };
+  
+       
 
     PlayerStat stat;
 
@@ -125,11 +158,7 @@ public class PlayerAttack : MonoBehaviour
         WeapomImage.sprite = currentweapondata.weaponImage;
         WeapomText.text = currentweapondata.weaponState.ToString();
 
-        float level = SaveManager.CurrentData.weaponlevel[currentweapondata.weaponState];
-
-        currentBulletNum = (int)Math.Pow(currentweapondata.BulletNum, level);
-
-        BulletNum.text = currentBulletNum.ToString();
+        BulletNum.text = currentAmmo[currentweapondata.weaponState].ToString();
 
         if (currentweapondata.WeaponBullet == null)
         {
@@ -154,7 +183,7 @@ public class PlayerAttack : MonoBehaviour
 
     void OnAttack(InputValue value)
     {
-        if(currentBulletNum <= 0)
+        if(currentAmmo[currentweapondata.weaponState] <= 0)
             return;
 
         if (currentweapondata.canCharge)
@@ -181,10 +210,7 @@ public class PlayerAttack : MonoBehaviour
                 }
 
                 Fire();
-                currentBulletNum--;
-
-                BulletNum.text = currentBulletNum.ToString();
-
+              
 
 
             }
@@ -193,8 +219,6 @@ public class PlayerAttack : MonoBehaviour
         }
 
         Fire(); // 일반 무기
-        currentBulletNum--;
-        BulletNum.text = currentBulletNum.ToString();
 
     }
 
@@ -276,8 +300,12 @@ public class PlayerAttack : MonoBehaviour
                 -shootDir * (currentweapondata.Attackspeed * stat.AttackSpeed),
                 ForceMode.Impulse
             );
+            currentAmmo[currentweapondata.weaponState]--;
 
-           // CanonBallRB.AddForce(Firepos.transform.forward * currentweapondata.Attackspeed, ForceMode.Impulse);
+            BulletNum.text = currentAmmo[currentweapondata.weaponState].ToString();
+
+
+            // CanonBallRB.AddForce(Firepos.transform.forward * currentweapondata.Attackspeed, ForceMode.Impulse);
         }
     }
 
@@ -292,6 +320,19 @@ public class PlayerAttack : MonoBehaviour
     //{
     //    stat.baseDamage += val;
     //}
+
+
+    public void HalfRemove()
+    {
+        EnemyMovement[] enemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
+
+        foreach (var enemy in enemies)
+        {
+            int ran = UnityEngine.Random.Range(0, 26);
+            if(ran%2==0)
+                Destroy(enemy); 
+        }
+    }
 }
 
 

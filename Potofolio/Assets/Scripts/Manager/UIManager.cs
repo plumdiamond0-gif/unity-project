@@ -139,6 +139,7 @@ public class UIManager : MonoBehaviour
             if (playerItem != null)
             {
                 playerItem.ExpFillImageUI = HUD.ExpFillImageUI;
+                playerItem.Inventory = HUD.Inventory;
             }    
         }
     }

@@ -8,6 +8,7 @@ public class Health : MonoBehaviour
     public float MaxHp;
     bool isInvincible = false;
     public Image HealthBarFill;
+    public float InvincibleTime = 0.1f;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -47,10 +48,21 @@ public void TakeDamage(float value)
     IEnumerator InvincibleTimer()
     {
         isInvincible = true;
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(InvincibleTime);
         isInvincible = false;
 
         yield return null;
+    }
+
+    public void InviciBuff(float val)
+    {
+        StartCoroutine(InviTime(val));
+    }
+    IEnumerator InviTime(float val)
+    {
+        InvincibleTime = val;
+        yield return new WaitForSeconds(InvincibleTime);
+        InvincibleTime = 0.1f;
     }
 
 

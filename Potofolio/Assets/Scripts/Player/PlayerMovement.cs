@@ -254,6 +254,17 @@ public class PlayerMovement : MonoBehaviour
      
     }
 
+    public void RecallBeacon(float val)
+    {
+        StartCoroutine(RecallRoutine(val, transform.position));
+    }
+
+    IEnumerator RecallRoutine(float val, Vector3 pos)
+    {
+        yield return new WaitForSeconds(val);
+        transform.position = pos;
+    }
+
 
 }
 /* 1ÀÎÄª

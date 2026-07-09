@@ -11,6 +11,7 @@ public class PanelPlayer : MonoBehaviour
     public Image WeapomImage;
     public TMP_Text WeapomText;
     public TMP_Text BulletNum;
+    public Image[] Inventory;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()

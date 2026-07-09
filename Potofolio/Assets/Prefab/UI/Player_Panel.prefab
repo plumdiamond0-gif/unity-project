@@ -147,6 +147,11 @@ MonoBehaviour:
   WeapomImage: {fileID: 728302045173475774}
   WeapomText: {fileID: 6669321328324069956}
   BulletNum: {fileID: 1352365417882362216}
+  Inventory:
+  - {fileID: 165984501752785570}
+  - {fileID: 7595101481208105079}
+  - {fileID: 4081279280620131427}
+  - {fileID: 7665537434791962041}
 --- !u!1 &196750216986220291
 GameObject:
   m_ObjectHideFlags: 0
@@ -881,7 +886,7 @@ GameObject:
   - component: {fileID: 4796384445783432421}
   - component: {fileID: 8310869721995484932}
   m_Layer: 5
-  m_Name: Image
+  m_Name: MiniMap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -912,7 +917,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 872, y: -261}
+  m_AnchoredPosition: {x: 741, y: -261}
   m_SizeDelta: {x: 336, y: 336}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4796384445783432421

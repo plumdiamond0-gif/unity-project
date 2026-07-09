@@ -9,10 +9,6 @@ public class Inventory : MonoBehaviour
 
     private void Start()
     {
-       for (int i = 0; i < Images.Length; i++)
-        {
-            Images[i].enabled = false;  
-        }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public void GetSprite(Sprite sprite)
