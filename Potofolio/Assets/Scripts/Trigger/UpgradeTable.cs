@@ -19,7 +19,7 @@ public class UpgradeTable : TriggerObject
                     Debug.Log("Weapon_Panel »ý¼ºÇÔ");
                     PanelWeapon panelWeapon = go.GetComponent<PanelWeapon>();
                     PlayerMovement player = entered.GetComponent<PlayerMovement>();
-                    player.CanMove = false;
+                    player.canMove = false;
                     if (player != null)
                     {
                         Debug.Log("null ¾Æ´Ô");

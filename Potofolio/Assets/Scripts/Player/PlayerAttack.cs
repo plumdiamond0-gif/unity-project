@@ -16,320 +16,305 @@ using static WeaponPrefabTable;
 
 public class PlayerAttack : MonoBehaviour
 {
+    #region UI Elements
+    [HideInInspector] public GameObject attackGaugeBar;
+    [HideInInspector] public Image attackGaugeBarFill;
+    [HideInInspector] public Image weaponImage;
+    [HideInInspector] public TMP_Text weaponText;
+    [HideInInspector] public TMP_Text bulletNumText;
+    #endregion
 
-    [Header("무기,공격")]
-    public int currntWeaponNum;
-    public int WeaponNum;
-    //public float CanonBallspeed;
+    #region Weapon & Attack Settings
+    [Header("Weapon & Attack Settings")]
+    public int currentWeaponNum;
+    public int totalWeaponCount;
 
+    [HideInInspector] public WeaponPrefabData currentWeaponData;
+    [SerializeField] private Transform firePos;
 
-    [Header("차지,반동")]
+    private List<WeaponPrefabData> _weaponList = new();
+    private Dictionary<WeaponState, int> _currentAmmo = new();
+    private bool _canAttack = true;
+    private float _attackRatio;
+    #endregion
+
+    #region Charge & Recoil Settings
+    [Header("Charge & Recoil Settings")]
     public float currentCharge = 0f;
     public float maxCharge;
     public float baseRecoilX;
     public float maxChargeBonus;
 
-    bool canAttack;
-    private bool isCharging;
-    private float AttackRatio;
-    CameraMovement cameraMovement;
-    Camera cam;
-    Rigidbody Rb;
-    public WeaponPrefabData currentweapondata;
-    [SerializeField] private Transform Firepos;
-    Animator anim;
-    List<WeaponPrefabData> weaponList = new();
+    private bool _isCharging;
+    #endregion
 
-
-    public GameObject AttackGuageBar;
-
-    public Image AttackGuageBarFill;
-
-    public Image WeapomImage;
-    public TMP_Text WeapomText;
-    public TMP_Text BulletNum;
-
-    Dictionary<WeaponState, int> currentAmmo = new();
-  
-
-    PlayerStat stat;
+    #region Player Components
+    private CameraMovement _cameraMovement;
+    private Camera _cam;
+    private Rigidbody _rb;
+    private Animator _anim;
+    private PlayerStat _stat;
+    #endregion
 
     void Start()
     {
-        currentAmmo = new()
-    {
-        {WeaponState.Base, GetAmoVal(WeaponState.Base)
-        },
-        {WeaponState.Improved, GetAmoVal(WeaponState.Improved)
-        },
-                {WeaponState.Slime, GetAmoVal(WeaponState.Slime)
-        },
-        {WeaponState.Fire, GetAmoVal(WeaponState.Fire)
-        },
-                {WeaponState.Toxic, GetAmoVal(WeaponState.Toxic)
-        },
-        {WeaponState.Energy, GetAmoVal(WeaponState.Energy)
-        },
-               {WeaponState.Bomb, GetAmoVal(WeaponState.Bomb)
-        },
-
-    };
-
-        stat  = GetComponent<PlayerStat>();
-        foreach (var weapon in GM.GetPrefabManager().
-            WeaponPrefabTable.weaponPrafabTableDatas)
+        // 탄약 딕셔너리 초기화
+        _currentAmmo = new()
         {
-            weaponList.Add(weapon);
-        }
-        anim = GetComponentInChildren<Animator>();    
-        //weaponList = GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas;
-       
-        cam = Camera.main;
+            { WeaponState.Base, GetAmmoValue(WeaponState.Base) },
+            { WeaponState.Improved, GetAmmoValue(WeaponState.Improved) },
+            { WeaponState.Slime, GetAmmoValue(WeaponState.Slime) },
+            { WeaponState.Fire, GetAmmoValue(WeaponState.Fire) },
+            { WeaponState.Toxic, GetAmmoValue(WeaponState.Toxic) },
+            { WeaponState.Energy, GetAmmoValue(WeaponState.Energy) },
+            { WeaponState.Bomb, GetAmmoValue(WeaponState.Bomb) }
+        };
 
-        cameraMovement = GetComponentInChildren<CameraMovement>();
-        //WeaponSpawnPos = transform.Find("WeaponSpawnPos");
-        Rb = GetComponent<Rigidbody>();
-        Rb.freezeRotation = true;
+        _stat = GetComponent<PlayerStat>();
+        _anim = GetComponentInChildren<Animator>();
+        _cam = Camera.main;
+        _cameraMovement = GetComponentInChildren<CameraMovement>();
+        _rb = GetComponent<Rigidbody>();
+
+        if (_rb != null)
+        {
+            _rb.freezeRotation = true;
+        }
+
+        // 매니저에서 무기 테이블 데이터 로드
+        if (GM.GetPrefabManager()?.WeaponPrefabTable?.weaponPrafabTableDatas != null)
+        {
+            foreach (var weapon in GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas)
+            {
+                _weaponList.Add(weapon);
+            }
+        }
 
         SelectWeapon(0);
-        canAttack = true;
-    
-        AttackGuageBarFill.fillAmount = 0;
+        _canAttack = true;
+
+        if (attackGaugeBarFill != null)
+        {
+            attackGaugeBarFill.fillAmount = 0f;
+        }
     }
 
     private void Update()
     {
-        
+        HandleWeaponScroll();
+        HandleCharging();
+    }
 
-        float Scrool = Mouse.current.scroll.ReadValue().y;
-        if (Scrool > 0)
+    private void HandleWeaponScroll()
+    {
+        float scroll = Mouse.current.scroll.ReadValue().y;
+        if (scroll > 0f)
         {
-            currntWeaponNum++;
-            if (currntWeaponNum > WeaponNum - 1)
+            currentWeaponNum++;
+            if (currentWeaponNum > totalWeaponCount - 1)
             {
-                currntWeaponNum = 0;
+                currentWeaponNum = 0;
             }
-            SelectWeapon(currntWeaponNum);
+            SelectWeapon(currentWeaponNum);
         }
-        else if (Scrool < 0)
+        else if (scroll < 0f)
         {
-            currntWeaponNum--;
-            if (currntWeaponNum < 0)
+            currentWeaponNum--;
+            if (currentWeaponNum < 0)
             {
-                currntWeaponNum = WeaponNum - 1;
-                //List는 0부터 시작
+                currentWeaponNum = totalWeaponCount - 1;
             }
-            SelectWeapon(currntWeaponNum);
-
+            SelectWeapon(currentWeaponNum);
         }
+    }
 
-        if(isCharging)
+    private void HandleCharging()
+    {
+        if (_isCharging)
         {
             currentCharge += Time.deltaTime;
             currentCharge = Mathf.Clamp(currentCharge, 0f, maxCharge);
-            AttackRatio = currentCharge / maxCharge;
-            AttackGuageBarFill.fillAmount = AttackRatio;
-            
+            _attackRatio = (maxCharge > 0f) ? (currentCharge / maxCharge) : 0f;
+
+            if (attackGaugeBarFill != null)
+            {
+                attackGaugeBarFill.fillAmount = _attackRatio;
+            }
         }
-        
     }
 
     public void SelectWeapon(int index)
     {
-  
-        //if (spawnedWeapon != null)
-        //{
-        //    Destroy(spawnedWeapon);
-        //}
-        currentweapondata = weaponList[index];
-        WeapomImage.sprite = currentweapondata.weaponImage;
-        WeapomText.text = currentweapondata.weaponState.ToString();
+        if (_weaponList == null || _weaponList.Count <= index) return;
 
-        BulletNum.text = currentAmmo[currentweapondata.weaponState].ToString();
+        currentWeaponData = _weaponList[index];
 
-        if (currentweapondata.WeaponBullet == null)
+        if (weaponImage != null) weaponImage.sprite = currentWeaponData.weaponImage;
+        if (weaponText != null) weaponText.text = currentWeaponData.weaponState.ToString();
+        if (bulletNumText != null) bulletNumText.text = _currentAmmo[currentWeaponData.weaponState].ToString();
+
+        if (currentWeaponData.WeaponBullet == null) return;
+
+        maxCharge = currentWeaponData.chargeAmount;
+        baseRecoilX = currentWeaponData.BaseRecoilX;
+        maxChargeBonus = currentWeaponData.maxChargeBonus;
+
+        if (attackGaugeBar != null)
         {
-          //  Debug.LogError($"{currentweapondata.WeaponName}의 프리팹 원본이 이미 파괴되었거나 할당되지 않았습니다!");
-            return;
+            attackGaugeBar.SetActive(currentWeaponData.canCharge);
         }
-        //Debug.Log("CurrntWeapon : " + currentweapondata.WeaponName);
-       //spawnedWeapon = Instantiate(currentweapondata.WeaponBullet, Firepos.position, Firepos.rotation, Firepos);
-        maxCharge = currentweapondata.chargeAmount;
-        baseRecoilX = currentweapondata.BaseRecoilX;
-        maxChargeBonus = currentweapondata.maxChargeBonus;
-        if (currentweapondata.canCharge)
-            {
-                AttackGuageBar.SetActive(true);
-            }
-            else
-            {
-                AttackGuageBar.SetActive(false);
-            }
     }
 
-
+    public void ResetCharge()
+    {
+        _isCharging = false;
+        currentCharge = 0f;
+        _attackRatio = 0f;
+        if (attackGaugeBarFill != null)
+        {
+            attackGaugeBarFill.fillAmount = 0f;
+        }
+    }
     void OnAttack(InputValue value)
     {
-        
-        if(currentAmmo[currentweapondata.weaponState] <= 0 )
-            return;
+        if (_currentAmmo[currentWeaponData.weaponState] <= 0) return;
 
-        if (currentweapondata.canCharge)
+        if (currentWeaponData.canCharge)
         {
             bool isPressed = value.isPressed;
 
             if (isPressed)
             {
-                isCharging = true;
+                _isCharging = true;
             }
             else
             {
-                isCharging = false;
-                foreach (var effect in currentweapondata.effects)
+                _isCharging = false;
+
+                // 이펙트 처리
+                if (currentWeaponData.effects != null)
                 {
-                    if(effect is DotdamEffect dotdamEffect)
+                    foreach (var effect in currentWeaponData.effects)
                     {
-                        dotdamEffect.GetCharge(currentCharge);
-                    }
-                    if (effect is KnockBackEffect knockBackEffect)
-                    {
-                        knockBackEffect.GetCharge(currentCharge);
+                        if (effect is DotdamEffect dotdamEffect)
+                        {
+                            dotdamEffect.GetCharge(currentCharge);
+                        }
+                        if (effect is KnockBackEffect knockBackEffect)
+                        {
+                            knockBackEffect.GetCharge(currentCharge);
+                        }
                     }
                 }
-
                 Fire();
-              
-
-
             }
-
             return;
         }
 
-        Fire(); // 일반 무기
-
-    }
-
-    //void ReadyAttack()
-    //{
-    //    float finalDamage;
-    //    finalDamage = currentweapondata.damage + (addDamage + AttackRatio * 10);
-    //    CannonBall currentBall = currentweapondata.WeaponBullet.GetComponent<CannonBall>();
-    //    currentBall.SetWeaponData(currentweapondata);
-    //    currentBall.SetDamage(finalDamage);
-    //    Debug.Log(finalDamage);
-    //    Fire();
-    //    anim.SetTrigger("Attack");
-    //}
-
-    public void RestCharge()
-    {
-        isCharging = false;
-        currentCharge = 0;
-        AttackRatio = 0;
-        AttackGuageBarFill.fillAmount = 0;
-        
+        Fire(); // 일반 무기 연사
     }
 
     public void Fire()
     {
-       
+        if (!_canAttack) return;
 
-        if (!canAttack)
+        StartCoroutine(CoolTimeRoutine());
+
+        if (_anim != null)
         {
-            return;
+            _anim.SetTrigger("Attack");
         }
-        StartCoroutine(coolTimeRouctine());
-        anim.SetTrigger("Attack");
 
-        GameObject CBcopy = GameManager.instance.GetPrefab
-            (currentweapondata.weaponState.ToString(), Firepos.transform.position, Quaternion.identity);
+        // 탄환 생성
+        GameObject cbCopy = GameManager.instance.GetPrefab(
+            currentWeaponData.weaponState.ToString(),
+            firePos.position,
+            Quaternion.identity
+        );
 
-        float finalDamage;
-        CannonBall currentBall = CBcopy.GetComponent<CannonBall>();
+        if (cbCopy == null) return;
 
-        finalDamage = currentweapondata.damage *stat.BaseDamage +(AttackRatio * maxChargeBonus);
-        currentBall.SetWeaponData(currentweapondata);
-        currentBall.SetDamage(finalDamage);
-        //Debug.Log(finalDamage); 
+        // 데미지 계산 및 설정
+        CannonBall currentBall = cbCopy.GetComponent<CannonBall>();
+        float baseStatDamage = (_stat != null) ? _stat.BaseDamage : 1f;
+        float finalDamage = (currentWeaponData.damage * baseStatDamage) + (_attackRatio * maxChargeBonus);
 
-        float currnetRecoilX = baseRecoilX * (1f + (AttackRatio * maxChargeBonus));
-        float YZRecoil = currentweapondata.YZRecoil;
-        cameraMovement.FireRecoil(currnetRecoilX, YZRecoil, YZRecoil);
-
-        RestCharge();
-        Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
-        if (CanonBallRB != null)
+        if (currentBall != null)
         {
-            if(cam == null)
-                Debug.Log("nocma!!!!");
-            Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            currentBall.SetWeaponData(currentWeaponData);
+            currentBall.SetDamage(finalDamage);
+        }
 
-            Vector3 targetPoint;
+        // 반동 적용
+        float currentRecoilX = baseRecoilX * (1f + (_attackRatio * maxChargeBonus));
+        float yzRecoil = currentWeaponData.YZRecoil;
+        if (_cameraMovement != null)
+        {
+            _cameraMovement.FireRecoil(currentRecoilX, yzRecoil, yzRecoil);
+        }
 
-            if (Physics.Raycast(ray, out RaycastHit hit, 1000f))
+        ResetCharge();
+
+        // 물리 발사 처리
+        Rigidbody cannonBallRB = cbCopy.GetComponent<Rigidbody>();
+        if (cannonBallRB != null)
+        {
+            if (_cam == null) Debug.LogWarning("메인 카메라를 찾을 수 없습니다!");
+
+            Ray ray = _cam != null ? _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f)) : new Ray(firePos.position, firePos.forward);
+            Vector3 targetPoint = Physics.Raycast(ray, out RaycastHit hit, 1000f) ? hit.point : ray.origin + ray.direction * 1000f;
+
+            Vector3 shootDir = (targetPoint - firePos.position).normalized;
+            Vector3 rightAxis = Vector3.Cross(Vector3.up, shootDir).normalized;
+            shootDir = Quaternion.AngleAxis(0f, rightAxis) * shootDir;
+
+            float attackSpeedStat = (_stat != null) ? _stat.AttackSpeed : 1f;
+            cannonBallRB.AddForce(-shootDir * (currentWeaponData.Attackspeed * attackSpeedStat), ForceMode.Impulse);
+
+            // UI 및 데이터 차감
+            _currentAmmo[currentWeaponData.weaponState]--;
+            if (bulletNumText != null)
             {
-                targetPoint = hit.point;
+                bulletNumText.text = _currentAmmo[currentWeaponData.weaponState].ToString();
             }
-            else
-            {
-                targetPoint = ray.origin + ray.direction * 1000f;
-            }
-            Vector3 shootDir =
-     (targetPoint - Firepos.position).normalized;
-
-            Vector3 rightAxis =
-                Vector3.Cross(Vector3.up, shootDir).normalized;
-
-            shootDir =
-                Quaternion.AngleAxis(0f,rightAxis) * shootDir;
-
-            CanonBallRB.AddForce(
-                -shootDir * (currentweapondata.Attackspeed * stat.AttackSpeed),
-                ForceMode.Impulse
-            );
-            currentAmmo[currentweapondata.weaponState]--;
-
-            BulletNum.text = currentAmmo[currentweapondata.weaponState].ToString();
-
-
-            // CanonBallRB.AddForce(Firepos.transform.forward * currentweapondata.Attackspeed, ForceMode.Impulse);
         }
     }
 
-    IEnumerator coolTimeRouctine()
+    IEnumerator CoolTimeRoutine()
     {
-        canAttack = false;
-        yield return new WaitForSeconds(currentweapondata.coolTime);
-        canAttack = true;
+        _canAttack = false;
+        yield return new WaitForSeconds(currentWeaponData.coolTime);
+        _canAttack = true;
     }
-
-    //public void DamageUpdate(float val)
-    //{
-    //    stat.baseDamage += val;
-    //}
-
 
     public void HalfRemove()
     {
-        Debug.Log("HalfRemove");
+        Debug.Log("HalfRemove 실행");
         EnemyMovement[] enemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
 
         foreach (var enemy in enemies)
         {
             int ran = UnityEngine.Random.Range(0, 260);
-            if(ran%2==0)
-                Destroy(enemy);
+            if (ran % 2 == 0)
+            {
+                Destroy(enemy.gameObject); // 컴포넌트만 파괴되던 버그를 오브젝트 파괴(gameObject)로 수정
+            }
         }
     }
 
-    int GetAmoVal(WeaponState weaponState)
+    private int GetAmmoValue(WeaponState weaponState)
     {
-        return ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
-            .Find(x => x.weaponState == weaponState).BulletNum +
-            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[weaponState], 1.15f) - 1);
+        if (GM.GetPrefabManager()?.WeaponPrefabTable?.weaponPrafabTableDatas == null) return 0;
+
+        var data = GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas.Find(x => x.weaponState == weaponState);
+        if (data == null) return 0;
+
+        int currentLevel = 0;
+        if (SaveManager.CurrentData?.weaponlevel != null && SaveManager.CurrentData.weaponlevel.ContainsKey(weaponState))
+        {
+            currentLevel = SaveManager.CurrentData.weaponlevel[weaponState];
+        }
+
+        return (int)data.BulletNum + (int)Mathf.Pow(currentLevel, 1.15f) - 1;
     }
 }
-
-
-

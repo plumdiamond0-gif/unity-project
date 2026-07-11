@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
@@ -11,38 +11,34 @@ using static WeaponPrefabTable;
 
 public class PlayerMovement : MonoBehaviour
 {
-    private float MovementX;
-    private float MovementY;
-    public float yRotation;
+    #region Rotation
+    private float _yRotation;
     public float xRotation;
-    private float mouseX;
-    private float mouseY;
-    public float MouseSpeed;
+    #endregion
 
-    //[SerializeField] AudioClip walk;
+    #region Mouse
+    private float _mouseX;
+    private float _mouseY;
+    [SerializeField] private float _mouseSpeed = 26f; // 초기값을 주지 않으면 마우스 회전이 안 됩니다.
+    #endregion
 
+    #region Movement
+    private float _movementX;
+    private float _movementY;
+    [Header("Movement")]
+    [SerializeField] private float playerSpeed = 1f;
+    [SerializeField] private float walkSpeed;
+    [SerializeField] private float runSpeed;
 
-    [SerializeField]private float PlayerSpeed = 1;
-    [SerializeField]float walkSpeed;
-    [SerializeField]float RunSpeed;
-    //public float JumpPower;
+    private float _currentSpeed;
+    public bool canMove;
+    #endregion
 
-    private bool isGrounded;
-    bool isSprint;
-    Animator anim;
+    #region State
+    private bool _isGrounded;
+    private bool _isSprinting;
 
-    float currentSpeed;
-    Coroutine walkRoutine;
-
-    Camera cam;
-    Rigidbody Rb;
-    public PlayerAttack PlayerAttack;
-
-    public bool CanMove;
-    bool isWalkingSoundPlaying = false;
-
-    [SerializeField]AudioSource walkAudio;
-    [SerializeField] AudioSource _walkAudio;
+    public PlayerState state;
 
     public enum PlayerState
     {
@@ -50,35 +46,52 @@ public class PlayerMovement : MonoBehaviour
         InBase,
         InBattle
     }
+    #endregion
 
-    public PlayerState state;
+    #region Components
+    private Animator _anim;
+    private Rigidbody _rb;
+    private Camera _cam;
+    private PlayerStat _stat;
 
-    PlayerStat stat;
+    [SerializeField] private AudioSource _walkAudio;
+    public PlayerAttack playerAttack;
+    #endregion
+
+    #region Coroutines
+    private Coroutine _walkRoutine;
+    #endregion
+
+    #region Audio
+    private bool _isWalkingSoundPlaying;
+    #endregion
 
     void Start()
     {
-        stat = GetComponent<PlayerStat>();
-        //TODO:Aim = StartWeapon.transform.Find("Aim");
-        stat = GetComponent<PlayerStat>();
-        anim = GetComponentInChildren<Animator>();
+        _stat = GetComponent<PlayerStat>();
+        _anim = GetComponentInChildren<Animator>();
 
-        isSprint = false;
-        cam = Camera.main;
+        _isSprinting = false;
+        _cam = Camera.main;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = true;
-        Rb = GetComponent<Rigidbody>();
-        Rb.freezeRotation = true;
-        walkAudio = GetComponent<AudioSource>();
-        walkAudio.Stop();
+        _rb = GetComponent<Rigidbody>();
+        _rb.freezeRotation = true;
 
-        PlayerSpeed = walkSpeed * stat.MoveSpeed;
-        Debug.Log(PlayerSpeed);
+        if (_walkAudio == null) _walkAudio = GetComponent<AudioSource>();
+        _walkAudio.Stop();
 
+        //주의: _stat이 null일 경우를 대비해 인스펙터 확인이 필요합니다.
+        if (_stat != null)
+        {
+            playerSpeed = walkSpeed * _stat.MoveSpeed;
+        }
+        Debug.Log(playerSpeed);
     }
 
     void Update()
     {
-        if(Keyboard.current.tabKey.wasPressedThisFrame)
+        if (Keyboard.current.tabKey.wasPressedThisFrame)
         {
             GM.GetUIManager().CreateUIPanel("ReturnToBase_Panel", (go) =>
             {
@@ -86,144 +99,78 @@ public class PlayerMovement : MonoBehaviour
             });
         }
 
-
-
-
-        if (!CanMove)
+        if (!canMove)
             return;
+
         Rotate();
 
-        float inputMagnitude = new Vector2(MovementX, MovementY).magnitude;
+        float inputMagnitude = new Vector2(_movementX, _movementY).magnitude;
         float targetSpeed = 0f;
 
         if (state == PlayerState.InBase)
         {
-            anim.SetBool("InBase", true);
+            _anim.SetBool("InBase", true);
             if (inputMagnitude > 0)
             {
-                targetSpeed = 1;
+                targetSpeed = 1f;
             }
         }
         else
         {
             if (inputMagnitude > 0)
             {
-                targetSpeed = isSprint ? 1f : 0.5f;
-
+                targetSpeed = _isSprinting ? 1f : 0.5f;
             }
         }
 
-        currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, 26f * Time.deltaTime);
+        _currentSpeed = Mathf.Lerp(_currentSpeed, targetSpeed, 26f * Time.deltaTime);
 
-        anim.SetFloat("Speed", currentSpeed);
+        _anim.SetFloat("Speed", _currentSpeed);
+        _anim.SetFloat("MoveX", _movementX);
+        _anim.SetFloat("MoveY", _movementY);
+        _anim.SetBool("IsGrounded", _isGrounded);
 
-        anim.SetFloat("MoveX", MovementX);
-        anim.SetFloat("MoveY", MovementY);
-        anim.SetBool("IsGrounded", isGrounded);
+        bool isMoving = _movementX != 0 || _movementY != 0;
 
-
-        bool isMoving = MovementX != 0 || MovementY != 0;
-
-        if (isMoving && !isWalkingSoundPlaying && isGrounded)
+        if (isMoving && !_isWalkingSoundPlaying && _isGrounded)
         {
-            if (isSprint)
-                walkAudio.Play();
+            if (_isSprinting)
+            {
+                _walkAudio.Play();
+            }
             else
-                if (walkRoutine == null)
             {
-                walkRoutine = StartCoroutine(walk());
+                if (_walkRoutine == null)
+                {
+                    _walkRoutine = StartCoroutine(walk());
+                }
             }
 
-            isWalkingSoundPlaying = true;
+            _isWalkingSoundPlaying = true;
         }
-        else if (!isMoving && isWalkingSoundPlaying || !isGrounded)
+        else if ((!isMoving && _isWalkingSoundPlaying) || !_isGrounded)
         {
-            walkAudio.Stop();
-            if(walkRoutine != null)
-            StopCoroutine(walkRoutine);
-            walkRoutine = null;
-            isWalkingSoundPlaying = false;
-        }
-
-    }
-    IEnumerator walk()
-    {
-
-        while(!isSprint)
-        {
-            _walkAudio.Play();
-            yield return new WaitForSeconds(0.8f); 
-        }
-        walkRoutine = null;
-    }
-
-    void OnMove(InputValue inputValue)
-        {
-        if(!CanMove)
-            return;
-        //GM.GetSoundManager().PlaySFX(walk);
-            Vector2 Movevalue = inputValue.Get<Vector2>();
-            MovementX = Movevalue.x;
-            MovementY = Movevalue.y;
-
-        }
-    void OnJump(InputValue inputValue)
-        {
-        if (!CanMove)
-            return;
-        if (!isGrounded)
+            _walkAudio.Stop();
+            if (_walkRoutine != null)
             {
-                return;
+                StopCoroutine(_walkRoutine);
             }
-        anim.SetTrigger("Jump");
-
-        Rb.linearVelocity = new Vector3(Rb.linearVelocity.x, 0, Rb.linearVelocity.z);
-            Rb.AddForce(transform.up * stat.JumpPower, ForceMode.Impulse);
-            isGrounded = false;
-
-    }
-    void OnSprint()
-        {
-        if (!CanMove)
-            return;
-
-        if (state == PlayerState.InBase) 
-            return;
-
-        Debug.Log("Sprint");
-        isSprint = !isSprint;
-
-        PlayerSpeed = isSprint ? RunSpeed : walkSpeed;
-        Debug.Log($"PlayerSpeed {PlayerSpeed} ,stat.MoveSpeed {stat.MoveSpeed} , final {RunSpeed * stat.MoveSpeed}");
-
-
-    }
-
-
-
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (!CanMove)
-            return;
-
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("���α׶���");
-            isGrounded = true;
-
+            _walkRoutine = null;
+            _isWalkingSoundPlaying = false;
         }
     }
-
 
     private void FixedUpdate()
     {
-        if (!CanMove)
+        if (!canMove)
             return;
-        Vector3 MoveDir = ((transform.right * MovementX) + (transform.forward * MovementY)).normalized;
-        Vector3 targetVel = MoveDir * PlayerSpeed * stat.MoveSpeed;
 
-        Vector3 currentVel = Rb.linearVelocity;
+        Vector3 MoveDir = ((transform.right * _movementX) + (transform.forward * _movementY)).normalized;
+
+        float speedMultiplier = (_stat != null) ? _stat.MoveSpeed : 1f;
+        Vector3 targetVel = MoveDir * playerSpeed * speedMultiplier;
+
+        Vector3 currentVel = _rb.linearVelocity;
 
         Vector3 newVel = Vector3.Lerp(
             new Vector3(currentVel.x, 0, currentVel.z),
@@ -231,38 +178,79 @@ public class PlayerMovement : MonoBehaviour
             10f * Time.deltaTime
         );
 
-        Rb.linearVelocity = new Vector3(
+        _rb.linearVelocity = new Vector3(
             newVel.x,
-            currentVel.y, 
+            currentVel.y,
             newVel.z
         );
-        // transform.position = new Vector3(MovementX, transform.position.y, MovementY); 
-
-
     }
 
-    //public void RestartGame()
-    //{
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    //}
+    IEnumerator walk()
+    {
+        while (!_isSprinting)
+        {
+            _walkAudio.Play();
+            yield return new WaitForSeconds(0.8f);
+        }
+        _walkRoutine = null;
+    }
+
+    void OnMove(InputValue inputValue)
+    {
+        if (!canMove)
+            return;
+
+        Vector2 Movevalue = inputValue.Get<Vector2>();
+        _movementX = Movevalue.x;
+        _movementY = Movevalue.y;
+    }
+
+    void OnJump(InputValue inputValue)
+    {
+        if (!canMove || !_isGrounded)
+            return;
+
+        _anim.SetTrigger("Jump");
+
+        _rb.linearVelocity = new Vector3(_rb.linearVelocity.x, 0, _rb.linearVelocity.z);
+
+        float jumpPower = (_stat != null) ? _stat.JumpPower : 5f;
+        _rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+        _isGrounded = false;
+    }
+
+    void OnSprint()
+    {
+        if (!canMove || state == PlayerState.InBase)
+            return;
+
+        _isSprinting = !_isSprinting;
+
+        playerSpeed = _isSprinting ? runSpeed : walkSpeed;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (!canMove)
+            return;
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Debug.Log("암인그라운드");
+            _isGrounded = true;
+        }
+    }
 
     void Rotate()
     {
-     
         Vector2 mouseVec = Mouse.current.delta.ReadValue();
-        mouseX = mouseVec.x * MouseSpeed * Time.deltaTime;
-        mouseY = mouseVec.y * MouseSpeed * Time.deltaTime;
+        _mouseX = mouseVec.x * _mouseSpeed * Time.deltaTime;
+        _mouseY = mouseVec.y * _mouseSpeed * Time.deltaTime;
 
-        xRotation -= mouseY;
-        yRotation += mouseX;
+        xRotation -= _mouseY;
+        _yRotation += _mouseX;
         xRotation = Mathf.Clamp(xRotation, -80f, 45f);
-        transform.rotation = Quaternion.Euler(0, yRotation, 0);
-        //if (PlayerAttack.spawnedWeapon != null)
-        //{
-        //    Debug.Log("��");
-        //    PlayerAttack.spawnedWeapon.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-        //}
-     
+        transform.rotation = Quaternion.Euler(0, _yRotation, 0);
     }
 
     public void RecallBeacon(float val)
@@ -275,22 +263,4 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(val);
         transform.position = pos;
     }
-
-
 }
-/* 1��Ī
-
- * void Rotate()
- {
-     Vector2 mouseVec = Mouse.current.delta.ReadValue();
-     float mouseX = mouseVec.x * MouseSpeed * Time.deltaTime;
-     float mouseY = mouseVec.y * MouseSpeed * Time.deltaTime;
-     xRotation -= mouseY;
-     yRotation += mouseX;
-
-     xRotation = Mathf.Clamp(xRotation, -90f, 90f);
-
-     cam.transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
-     transform.rotation = Quaternion.Euler(0, yRotation, 0);
-
- }*/

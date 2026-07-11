@@ -29,7 +29,7 @@ public class PanelWeapon : PanelBase
 
     public void MoveAgain()
     {
-        Player.CanMove=true;
+        Player.canMove =true;
     }
     void UpgradeAppear()
     {

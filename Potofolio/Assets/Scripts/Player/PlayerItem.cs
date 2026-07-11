@@ -1,164 +1,169 @@
-using JetBrains.Annotations;
-using NUnit.Framework;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-
-class InventorySlot
+[System.Serializable]
+public class InventorySlot
 {
     public ItemData item;
+
     public InventorySlot(ItemData item)
     {
         this.item = item;
     }
 }
+
 public class PlayerItem : MonoBehaviour
 {
-    [SerializeField] private TMP_Text CoinText;
+    #region UI Elements
+    [HideInInspector] public Image expFillImageUI;
+    [HideInInspector] public Image[] inventoryImages = new Image[4];
+    #endregion
 
-    Dictionary<OutItemType, int> resourcesData = new();
-    public Image ExpFillImageUI;
-    public float currentExp = 0;
-    public float maxExp;
-
-    public Image[] Inventory = new Image[4];
-
-    InventorySlot[] inventorySlots = new InventorySlot[4];
+    #region Experience Settings
+    [Header("Experience Settings")]
+    public float currentExp = 0f;
+    public float maxExp = 100f;
     public bool canShowPanel = true;
+    #endregion
+
+    #region Internal Data
+    private Dictionary<OutItemType, int> _resourcesData = new();
+    private InventorySlot[] _inventorySlots = new InventorySlot[4];
+    #endregion
+
+    #region Experience Logic
     public void GetExp(float exp)
     {
         currentExp += exp;
         UpdateExpUI();
     }
 
-    void UpdateExpUI()
+    private void UpdateExpUI()
     {
-        while (currentExp >= maxExp )
+        while (currentExp >= maxExp)
         {
-            if(!canShowPanel)
-                return;
+            if (!canShowPanel)
+                break; 
+
             canShowPanel = false;
-
-            currentExp = currentExp - maxExp;
-
+            currentExp -= maxExp;
             maxExp *= 1.5f;
-            GM.GetUIManager().CreateUIPanel("Reward_Panel",
-            (go) =>
+
+            GM.GetUIManager().CreateUIPanel("Reward_Panel", (go) =>
             {
                 go.SetActive(true);
                 PanelReward panel = go.GetComponent<PanelReward>();
-                StartCoroutine(CheckEnd(panel));
-                
+                if (panel != null)
+                {
+                    StartCoroutine(CheckEnd(panel));
+                }
             });
         }
 
-        currentExp = Mathf.Clamp(currentExp, 0, maxExp);
-        Debug.Log("Clamp");
-        float ratio = currentExp / maxExp;
-        ExpFillImageUI.fillAmount = ratio;
+        currentExp = Mathf.Clamp(currentExp, 0f, maxExp);
+        float ratio = (maxExp > 0f) ? (currentExp / maxExp) : 0f;
 
+        if (expFillImageUI != null)
+        {
+            expFillImageUI.fillAmount = ratio;
+        }
     }
 
-    IEnumerator CheckEnd(PanelReward panel)
+    private IEnumerator CheckEnd(PanelReward panel)
     {
-        while(!panel.isEnded)
+        // PanelReward가 끝날 때까지 대기
+        while (!panel.isEnded)
         {
             yield return null;
-            canShowPanel = true;
-            UpdateExpUI();
         }
-        
-    }
 
+        canShowPanel = true;
+        UpdateExpUI(); // 대기하는 동안 쌓인 남은 경험치 추가 정산
+    }
+    #endregion
+
+    #region Inventory & Item Logic
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Item"))
+        if (!other.CompareTag("Item")) return;
+
+        Item item = other.GetComponent<Item>();
+        if (item == null || item.data == null) return;
+
+        ItemData data = item.data;
+
+        if (item.itemType == ItemType.InGameItem)
         {
-
-            Item item = other.GetComponent<Item>();
-            ItemData data = item.data;
-
-            if (item.itemType == ItemType.InGameItem)
+            if (data.isInvenItem)
             {
-                InItemType itemType = item.inType;
-                if (data.isInvenItem)
+                // 인벤토리 빈 슬롯 검색 및 추가
+                for (int i = 0; i < inventoryImages.Length; i++)
                 {
-                    for (int i = 0; i < Inventory.Length; i++)
+                    if (inventoryImages[i] != null && inventoryImages[i].sprite == null)
                     {
-                        if (Inventory[i].sprite == null)
-                        {
-                            Inventory[i].sprite = data.itemSprite;
-                            inventorySlots[i] = new InventorySlot(data);
-                            Destroy(other.gameObject);
-                            return;
-                        }
+                        inventoryImages[i].sprite = data.itemSprite;
+                        _inventorySlots[i] = new InventorySlot(data);
+                        Destroy(other.gameObject);
+                        return;
                     }
                 }
-                else
-                    ItemEffect.Use(data);
-
             }
-            else if (item.data.itemType == ItemType.OutGameItem)
+            else
             {
-                OutItemType itemType = item.data.outItemType;
-                if (!resourcesData.ContainsKey(itemType))
-                {
-                    Debug.Log("지금 먹은 아이템타입에 " +
-                        "해당하는 키값이 없어서 추가함");
-                    resourcesData.Add(itemType, 1);
-                }
-                else
-                {
-                    Debug.Log($"{itemType.ToString()}값 하나 증가");
-                    resourcesData[itemType] += 1;
-                }
-                ItemEffect.Restore(itemType);
-
+                ItemEffect.Use(data);
             }
-            Destroy(other.gameObject);
+        }
+        else if (data.itemType == ItemType.OutGameItem)
+        {
+            OutItemType itemType = data.outItemType;
 
+            if (!_resourcesData.ContainsKey(itemType))
+            {
+                _resourcesData.Add(itemType, 1);
+            }
+            else
+            {
+                _resourcesData[itemType] += 1;
+            }
+
+            ItemEffect.Restore(itemType);
         }
 
+        Destroy(other.gameObject);
     }
-    void Update()
+
+    private void Update()
     {
-        if (Keyboard.current.digit1Key.wasPressedThisFrame)
-        {
-            UseInvenItem(1);
-        }
-
-        if (Keyboard.current.digit2Key.wasPressedThisFrame)
-        {
-            UseInvenItem(2);
-        }
-
-        if (Keyboard.current.digit3Key.wasPressedThisFrame)
-        {
-            UseInvenItem(3);
-        }
-
-        if (Keyboard.current.digit4Key.wasPressedThisFrame)
-        {
-            UseInvenItem(4);
-        }
+        HandleInventoryInput();
     }
 
-    void UseInvenItem(int num)
+    private void HandleInventoryInput()
+    {
+        if (Keyboard.current.digit1Key.wasPressedThisFrame) UseInventoryItem(1);
+        if (Keyboard.current.digit2Key.wasPressedThisFrame) UseInventoryItem(2);
+        if (Keyboard.current.digit3Key.wasPressedThisFrame) UseInventoryItem(3);
+        if (Keyboard.current.digit4Key.wasPressedThisFrame) UseInventoryItem(4);
+    }
+
+    private void UseInventoryItem(int slotIndex)
+    {
+        int arrayIndex = slotIndex - 1;
+
+        if (arrayIndex >= 0 && arrayIndex < _inventorySlots.Length && _inventorySlots[arrayIndex] != null)
         {
-            if (inventorySlots[num-1] != null)
+            ItemEffect.Use(_inventorySlots[arrayIndex].item);
+            _inventorySlots[arrayIndex] = null;
+
+            if (inventoryImages[arrayIndex] != null)
             {
-                ItemEffect.Use(inventorySlots[num - 1].item);
-                inventorySlots[num - 1] = null;
-                Inventory[num - 1].sprite = null;
+                inventoryImages[arrayIndex].sprite = null;
             }
-
         }
-
-    
+    }
+    #endregion
 }

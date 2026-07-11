@@ -1,0 +1,200 @@
+Blend Tree 기반 애니메이션 시스템
+개요
+
+플레이어의 입력과 상태를 실시간으로 분석하여 Animator의 파라미터를 갱신하고, Blend Tree를 통해 애니메이션이 자연스럽게 전환되도록 구현하였다.
+
+1. 이동 여부 판단
+float inputMagnitude = new Vector2(MovementX, MovementY).magnitude;
+기능
+
+입력 벡터의 크기를 계산하여 플레이어가 실제로 이동 중인지 판단한다.
+
+예를 들어
+
+입력	Magnitude
+(0, 0)	0
+(1, 0)	1
+(0, 1)	1
+(1, 1)	약 1.41
+
+Magnitude가 0보다 크면 이동 중으로 판단한다.
+
+2. 목표 애니메이션 속도 결정
+targetSpeed = isSprint ? 1f : 0.5f;
+기능
+
+플레이어의 상태에 따라 Blend Tree에 전달할 목표 Speed 값을 결정한다.
+
+예를 들어
+
+상태	Speed
+Idle	0
+Walk	0.5
+Run	1
+
+이를 통해 하나의 Blend Tree에서
+
+Idle ← Walk ← Run
+
+을 자연스럽게 전환할 수 있다.
+
+3. Speed를 Lerp로 보간
+currentSpeed = Mathf.Lerp(currentSpeed, targetSpeed, 26f * Time.deltaTime);
+기능
+
+목표 Speed로 즉시 변경하지 않고 점진적으로 변화시킨다.
+
+예를 들어
+
+0
+
+↓
+
+0.18
+
+↓
+
+0.36
+
+↓
+
+0.57
+
+↓
+
+0.74
+
+↓
+
+1
+
+처럼 서서히 증가한다.
+
+장점
+
+만약
+
+currentSpeed = targetSpeed;
+
+를 사용하면
+
+Idle
+
+↓
+
+Run
+
+으로 한 프레임 만에 바뀐다.
+
+반면 Lerp를 사용하면
+
+Idle
+
+↓
+
+Walk
+
+↓
+
+Run
+
+과 같이 자연스럽게 이어진다.
+
+따라서
+
+애니메이션 전환이 부드럽다.
+캐릭터 움직임이 자연스럽게 보인다.
+갑작스러운 전환으로 인한 이질감을 줄일 수 있다.
+4. Blend Tree에 값 전달
+anim.SetFloat("Speed", currentSpeed);
+기능
+
+Animator의 Speed 파라미터를 갱신한다.
+
+Blend Tree는 이 값을 읽어
+
+현재 어떤 애니메이션을 얼마나 섞을지 자동으로 계산한다.
+
+예를 들어
+
+Speed = 0
+
+→ Idle
+
+Speed = 0.5
+
+→ Walk
+
+Speed = 1
+
+→ Run
+
+Speed = 0.75
+
+→ Walk와 Run을 적절한 비율로 혼합
+
+즉, Speed 값이 변할수록 애니메이션도 연속적으로 변화한다.
+
+5. 이동 방향 전달
+anim.SetFloat("MoveX", MovementX);
+anim.SetFloat("MoveY", MovementY);
+기능
+
+입력 방향을 Animator에 전달한다.
+
+이를 통해 Blend Tree는
+
+앞
+
+뒤
+
+좌
+
+우
+
+대각선
+
+등의 방향 애니메이션을 자연스럽게 선택하거나 혼합할 수 있다.
+
+예를 들어
+
+MoveX	MoveY	결과
+0	1	전진
+0	-1	후진
+1	0	우측 이동
+-1	0	좌측 이동
+1	1	우측 대각선 이동
+6. 공중 상태 전달
+anim.SetBool("IsGrounded", isGrounded);
+기능
+
+플레이어가 지면에 있는지 여부를 Animator에 전달한다.
+
+이를 통해
+
+점프
+낙하
+착지
+
+애니메이션을 상태에 맞게 전환한다.
+
+전체 동작 흐름
+플레이어 입력
+      │
+      ▼
+입력 크기 계산(Magnitude)
+      │
+      ▼
+이동 상태 및 Sprint 여부 판단
+      │
+      ▼
+목표 Speed 결정
+      │
+      ▼
+Lerp를 이용해 Speed 보간
+      │
+      ▼
+Animator 파라미터 갱신
+      │
+      ▼
+Blend Tree가 애니메이션을 실시간으로 혼합

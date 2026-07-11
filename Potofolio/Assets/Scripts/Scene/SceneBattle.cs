@@ -29,7 +29,7 @@ public class SceneBattle : MonoBehaviour
                     Quaternion.Euler(Vector3.zero));
                 GameManager.OnPlayerSpawned?.Invoke(player);
                 PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
-                playerMovement.CanMove = true;
+                playerMovement.canMove = true;
                 playerMovement.state = PlayerMovement.PlayerState.InBattle;
 
 

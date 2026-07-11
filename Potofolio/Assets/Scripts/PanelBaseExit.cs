@@ -13,7 +13,7 @@ public class PanelBaseExit : MonoBehaviour
         Exit.onClick.AddListener(()=>
         {
             GameManager.instance.GetPlayer().
-         GetComponent<PlayerMovement>().CanMove = true;
+         GetComponent<PlayerMovement>().canMove = true;
         });
         GoBattle.onClick.AddListener(MoveToSceneBattle);
     }

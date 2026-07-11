@@ -80,10 +80,6 @@ public class UIManager : MonoBehaviour
         return gameObject.GetComponent<UIManager>();
     }
 
-    //public void GetPlayer(GameObject gameObject)
-    //{
-    //    playerInfo = gameObject;
-    //}
     public void SaveHUD(PanelPlayer panel)
     {
         HUD = panel;
@@ -116,17 +112,17 @@ public class UIManager : MonoBehaviour
                 Debug.Log($"HpUI : {HUD.HpUI}");
                 Debug.Log($"ExpUI : {HUD.ExpFillImageUI}");
 
-                Debug.Log($"Before : {playerAttack.AttackGuageBar}");
+                Debug.Log($"Before : {playerAttack.attackGaugeBar}");
                 if (HUD.ChargeUI != null)
-                    playerAttack.AttackGuageBar = HUD.ChargeUI;
-                playerAttack.AttackGuageBarFill = HUD.ChargeImageUI;
-                playerAttack.WeapomImage = HUD.WeapomImage;
-                playerAttack.WeapomText = HUD.WeapomText;   
-                playerAttack.BulletNum = HUD.BulletNum;
+                    playerAttack.attackGaugeBar = HUD.ChargeUI;
+                playerAttack.attackGaugeBarFill = HUD.ChargeImageUI;
+                playerAttack.weaponImage = HUD.WeapomImage;
+                playerAttack.weaponText = HUD.WeapomText;   
+                playerAttack.bulletNumText = HUD.BulletNum;
          
 
 
-                Debug.Log($"After : {playerAttack.AttackGuageBar}");
+                Debug.Log($"After : {playerAttack.attackGaugeBar}");
             }
 
             Health playerHealth = playerInfo.GetComponent<Health>();
@@ -138,8 +134,8 @@ public class UIManager : MonoBehaviour
             PlayerItem playerItem  = playerInfo.GetComponent<PlayerItem>();
             if (playerItem != null)
             {
-                playerItem.ExpFillImageUI = HUD.ExpFillImageUI;
-                playerItem.Inventory = HUD.Inventory;
+                playerItem.expFillImageUI = HUD.ExpFillImageUI;
+                playerItem.inventoryImages = HUD.Inventory;
             }    
         }
         GameManager.OnPlayerSpawned -= Bind;

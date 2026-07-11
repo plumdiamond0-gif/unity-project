@@ -20,12 +20,12 @@ public class CameraMovement : MonoBehaviour
         targetRotation =
             Vector3.Lerp
             (targetRotation, Vector3.zero, 
-            playerAttack.currentweapondata.returnSpeed
+            playerAttack.currentWeaponData.returnSpeed
             *Time.deltaTime);
         currentRotation = 
             Vector3.Slerp
             (currentRotation, targetRotation, 
-            playerAttack.currentweapondata.snappiness
+            playerAttack.currentWeaponData.snappiness
             *Time.fixedDeltaTime);
         //fixedDeltaTime은 프레임률에 상관없이 고정된 시간 간격을 가져 컴사양에 상관 없이 반동이 따라붙는 강도가 동일하게 느껴지도록.
         //transform.localRotation = Quaternion.Euler(currentRotation);

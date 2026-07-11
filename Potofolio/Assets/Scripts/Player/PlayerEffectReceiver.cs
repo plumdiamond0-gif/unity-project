@@ -51,12 +51,12 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     IEnumerator Stun(float stunTime)
     {
         Debug.Log("Slowed");
-        playerMovement.CanMove = false;
+        playerMovement.canMove = false;
         Rigidbody Rb = GetComponent<Rigidbody>();
         Rb.linearVelocity = new Vector3(0, Rb.linearVelocity.y, 0);
 
         yield return new WaitForSeconds(stunTime);
-        playerMovement.CanMove = true;
+        playerMovement.canMove = true;
         stunRoutine = null;
 
         yield return null;
