@@ -94,7 +94,6 @@ public class PlayerItem : MonoBehaviour
                         if (Inventory[i].sprite == null)
                         {
                             Inventory[i].sprite = data.itemSprite;
-                            Debug.Log("weqgwergqergrwegwerhergher");
                             inventorySlots[i] = new InventorySlot(data);
                             Destroy(other.gameObject);
                             return;

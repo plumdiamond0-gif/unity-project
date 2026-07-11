@@ -24,6 +24,8 @@ public class Generator : MonoBehaviour
     {
         player = go;
         GenerateReady();
+       GameManager.OnPlayerSpawned -= GetPlayer;
+
     }
     void Start()
     {

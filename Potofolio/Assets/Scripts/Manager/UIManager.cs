@@ -99,7 +99,7 @@ public class UIManager : MonoBehaviour
     {
         GameManager.OnPlayerSpawned += Bind;
     }
-
+  
     public void Bind(GameObject playerInfo)
     {
         Debug.Log("BIND");
@@ -142,6 +142,8 @@ public class UIManager : MonoBehaviour
                 playerItem.Inventory = HUD.Inventory;
             }    
         }
+        GameManager.OnPlayerSpawned -= Bind;
+
     }
-  
+
 }

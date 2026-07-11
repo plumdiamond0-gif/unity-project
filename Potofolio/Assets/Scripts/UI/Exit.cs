@@ -6,10 +6,6 @@ public class Exit : MonoBehaviour
     Button buttonExit;
    [SerializeField]private  GameObject currentPanel;
 
-    public void GetPanel(GameObject panel)
-    {
-        currentPanel = panel;   
-    }
 
     private void Start()
     {

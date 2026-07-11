@@ -15,6 +15,9 @@ public class GameManager : SingletonObject<GameManager>
     public SoundManager GetSoundManager { get; private set; } = null;
 
     public static Action<GameObject> OnPlayerSpawned;
+    public static Action<PanelPlayer> OnPlayerPanelSpawned;
+
+
 
     GameObject player;
 

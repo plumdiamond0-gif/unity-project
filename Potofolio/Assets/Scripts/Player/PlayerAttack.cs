@@ -49,45 +49,32 @@ public class PlayerAttack : MonoBehaviour
     public TMP_Text WeapomText;
     public TMP_Text BulletNum;
 
-    Dictionary<WeaponState, int> currentAmmo = new()
-    {
-        {WeaponState.Base, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
-            .Find(x => x.weaponState == WeaponState.Base).BulletNum + 
-            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Base],1.15f)-1)
-        },
-        {WeaponState.Improved, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
-            .Find(x => x.weaponState == WeaponState.Improved).BulletNum +
-            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Improved],1.15f)-1)
-        },
-                {WeaponState.Slime, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
-            .Find(x => x.weaponState == WeaponState.Slime).BulletNum +
-            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Slime],1.15f)-1)
-        },
-        {WeaponState.Fire, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
-            .Find(x => x.weaponState == WeaponState.Fire).BulletNum +
-            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Fire],1.15f)-1)
-        },
-                {WeaponState.Toxic, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
-            .Find(x => x.weaponState == WeaponState.Toxic).BulletNum +
-            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Toxic],1.15f)-1)
-        },
-        {WeaponState.Energy, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
-            .Find(x => x.weaponState == WeaponState.Energy).BulletNum +
-            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Energy],1.15f)-1)
-        },
-               {WeaponState.Bomb, ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
-            .Find(x => x.weaponState == WeaponState.Bomb).BulletNum +
-            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[WeaponState.Bomb],1.15f)-1)
-        },
-
-    };
+    Dictionary<WeaponState, int> currentAmmo = new();
   
-       
 
     PlayerStat stat;
 
     void Start()
     {
+        currentAmmo = new()
+    {
+        {WeaponState.Base, GetAmoVal(WeaponState.Base)
+        },
+        {WeaponState.Improved, GetAmoVal(WeaponState.Improved)
+        },
+                {WeaponState.Slime, GetAmoVal(WeaponState.Slime)
+        },
+        {WeaponState.Fire, GetAmoVal(WeaponState.Fire)
+        },
+                {WeaponState.Toxic, GetAmoVal(WeaponState.Toxic)
+        },
+        {WeaponState.Energy, GetAmoVal(WeaponState.Energy)
+        },
+               {WeaponState.Bomb, GetAmoVal(WeaponState.Bomb)
+        },
+
+    };
+
         stat  = GetComponent<PlayerStat>();
         foreach (var weapon in GM.GetPrefabManager().
             WeaponPrefabTable.weaponPrafabTableDatas)
@@ -183,7 +170,8 @@ public class PlayerAttack : MonoBehaviour
 
     void OnAttack(InputValue value)
     {
-        if(currentAmmo[currentweapondata.weaponState] <= 0)
+        
+        if(currentAmmo[currentweapondata.weaponState] <= 0 )
             return;
 
         if (currentweapondata.canCharge)
@@ -324,14 +312,22 @@ public class PlayerAttack : MonoBehaviour
 
     public void HalfRemove()
     {
+        Debug.Log("HalfRemove");
         EnemyMovement[] enemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
 
         foreach (var enemy in enemies)
         {
-            int ran = UnityEngine.Random.Range(0, 26);
+            int ran = UnityEngine.Random.Range(0, 260);
             if(ran%2==0)
-                Destroy(enemy); 
+                Destroy(enemy);
         }
+    }
+
+    int GetAmoVal(WeaponState weaponState)
+    {
+        return ((int)GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas
+            .Find(x => x.weaponState == weaponState).BulletNum +
+            (int)Mathf.Pow(SaveManager.CurrentData.weaponlevel[weaponState], 1.15f) - 1);
     }
 }
 
