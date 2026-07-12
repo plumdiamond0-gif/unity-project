@@ -1508,7 +1508,7 @@ GameObject:
   - component: {fileID: 4845071923647481026}
   m_Layer: 0
   m_Name: HardRock_01
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2648,7 +2648,7 @@ GameObject:
   - component: {fileID: 9119969384946343723}
   m_Layer: 0
   m_Name: HardRock_13
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2760,7 +2760,7 @@ GameObject:
   - component: {fileID: 7237527175118478186}
   m_Layer: 0
   m_Name: HardRock_19
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3137,7 +3137,7 @@ GameObject:
   - component: {fileID: 6065579487539197113}
   m_Layer: 0
   m_Name: HardRock_08
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3362,7 +3362,7 @@ GameObject:
   - component: {fileID: 1904897907928496964}
   m_Layer: 0
   m_Name: HardRock_20 (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4149,7 +4149,7 @@ GameObject:
   - component: {fileID: 1611730197239448884}
   m_Layer: 0
   m_Name: HardRock_11
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4709,7 +4709,7 @@ GameObject:
   - component: {fileID: 1679997070998503505}
   m_Layer: 0
   m_Name: HardRock_23
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4821,7 +4821,7 @@ GameObject:
   - component: {fileID: 7357885735316242429}
   m_Layer: 0
   m_Name: HardRock_19
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5159,7 +5159,7 @@ GameObject:
   - component: {fileID: 7908381239593997044}
   m_Layer: 0
   m_Name: HardRock_20
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5271,7 +5271,7 @@ GameObject:
   - component: {fileID: 3265705577880299198}
   m_Layer: 0
   m_Name: HardRock_21
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5383,7 +5383,7 @@ GameObject:
   - component: {fileID: 6747092902943580729}
   m_Layer: 0
   m_Name: HardRock_12
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5719,7 +5719,7 @@ GameObject:
   - component: {fileID: 9013509980544454882}
   m_Layer: 0
   m_Name: HardRock_20
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6281,7 +6281,7 @@ GameObject:
   - component: {fileID: 3843459147768462850}
   m_Layer: 0
   m_Name: HardRock_14
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

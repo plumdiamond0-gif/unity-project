@@ -79,7 +79,7 @@ public static class ItemEffect
     public static void DamageBuff(PlayerStat stat, float val)
     {
         Debug.Log($"데미지 {val}만큼 증가");
-        stat.BaseDamage *= val;
+        stat.DamageMultiplier *= val;
     }
     public static void MaxHpPlus(Health health, float val)
     {
@@ -89,17 +89,17 @@ public static class ItemEffect
     public static void MoveSpeedBuff(PlayerStat stat, float val)
     {
         Debug.Log($"이동속도 {val}만큼 증가");
-        stat.MoveSpeed *= val;
+        stat.MoveSpeedMultiplier *= val;
     }
     public static void AttackSpeedBuff(PlayerStat stat, float val)
     {
         Debug.Log($"공격속도 {val}만큼 증가");
-        stat.AttackSpeed *= val;
+        stat.AttackSpeedMultiplier *= val;
     }
     public static void JumpPowerBuff(PlayerStat stat, float val)
     {
         Debug.Log($"점프량 {val}만큼 증가");
-        stat.JumpPower *= val;
+        stat.JumpPowerMultiplier *= val;
     }
     public static void BeInvincible(Health health, float val)
     {

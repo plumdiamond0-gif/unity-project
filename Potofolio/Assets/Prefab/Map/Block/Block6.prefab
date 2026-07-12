@@ -48,7 +48,7 @@ GameObject:
   - component: {fileID: 1129634034443822373}
   m_Layer: 0
   m_Name: TileHex_12
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -502,6 +502,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_10 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7699999267161988258, guid: abb1ca7ca59aa174aa5a0330e21015df, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -523,6 +527,10 @@ PrefabInstance:
     - target: {fileID: 1609695021097556250, guid: a6d367aafa9b71c41a42e2234438c70d, type: 3}
       propertyPath: m_Name
       value: Jem_05 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609695021097556250, guid: a6d367aafa9b71c41a42e2234438c70d, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2097861293507363744, guid: a6d367aafa9b71c41a42e2234438c70d, type: 3}
       propertyPath: m_LocalScale.x
@@ -658,6 +666,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralNode_02_C
       objectReference: {fileID: 0}
+    - target: {fileID: 5562468253881135672, guid: 2ded96dfa90cf60468e24ebb650d52ef, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -679,6 +691,10 @@ PrefabInstance:
     - target: {fileID: 3642226890507477491, guid: 607df5bbdf40d1d4eb9f57facc37c1ff, type: 3}
       propertyPath: m_Name
       value: MineralNode_12_C
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642226890507477491, guid: 607df5bbdf40d1d4eb9f57facc37c1ff, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4161355346740427593, guid: 607df5bbdf40d1d4eb9f57facc37c1ff, type: 3}
       propertyPath: m_LocalScale.x
@@ -757,6 +773,10 @@ PrefabInstance:
     - target: {fileID: 444502953788429765, guid: e4172436fbe41e54f9107c23b082c6a6, type: 3}
       propertyPath: m_Name
       value: Jem_35 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 444502953788429765, guid: e4172436fbe41e54f9107c23b082c6a6, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 964018501932781439, guid: e4172436fbe41e54f9107c23b082c6a6, type: 3}
       propertyPath: m_LocalScale.x
@@ -892,6 +912,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_39
       objectReference: {fileID: 0}
+    - target: {fileID: 2255298481687449078, guid: 1d8e11c6871d0c740b713ade0b929581, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -913,6 +937,10 @@ PrefabInstance:
     - target: {fileID: 1187672833776523997, guid: 9bb5912f95a825b4ea3c31cea670faa3, type: 3}
       propertyPath: m_Name
       value: Jem_02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187672833776523997, guid: 9bb5912f95a825b4ea3c31cea670faa3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 1959248952965578855, guid: 9bb5912f95a825b4ea3c31cea670faa3, type: 3}
       propertyPath: m_LocalScale.x
@@ -991,6 +1019,10 @@ PrefabInstance:
     - target: {fileID: 1600414715582009799, guid: 8d9ea79900acb844a8a66654007cb838, type: 3}
       propertyPath: m_Name
       value: Jem_08
+      objectReference: {fileID: 0}
+    - target: {fileID: 1600414715582009799, guid: 8d9ea79900acb844a8a66654007cb838, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2125136180686261117, guid: 8d9ea79900acb844a8a66654007cb838, type: 3}
       propertyPath: m_LocalScale.x
@@ -1126,6 +1158,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralNode_11_C
       objectReference: {fileID: 0}
+    - target: {fileID: 4386663333170745479, guid: 4f0749e85acd55e458ab91cd5dcf4a40, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1147,6 +1183,10 @@ PrefabInstance:
     - target: {fileID: 245743906601655648, guid: 85b213274c5828e4c9f21300034b3946, type: 3}
       propertyPath: m_Name
       value: Jem_13
+      objectReference: {fileID: 0}
+    - target: {fileID: 245743906601655648, guid: 85b213274c5828e4c9f21300034b3946, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 586275454399612890, guid: 85b213274c5828e4c9f21300034b3946, type: 3}
       propertyPath: m_LocalScale.x
@@ -1226,6 +1266,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_04
       objectReference: {fileID: 0}
+    - target: {fileID: 84792197583342292, guid: 962e89c028b67054280e8a3eba79c292, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 749548765041283182, guid: 962e89c028b67054280e8a3eba79c292, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0048599998
@@ -1304,6 +1348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralNode_05_C
       objectReference: {fileID: 0}
+    - target: {fileID: 3935588852282388327, guid: c696589a0df3b9e4994cc2751b80fe8d, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 4455702260415411677, guid: c696589a0df3b9e4994cc2751b80fe8d, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0018600001
@@ -1381,6 +1429,10 @@ PrefabInstance:
     - target: {fileID: 3742216038416726604, guid: c3ebe81e1a2ddaa4184fc0cfbcf2d689, type: 3}
       propertyPath: m_Name
       value: Jem_26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3742216038416726604, guid: c3ebe81e1a2ddaa4184fc0cfbcf2d689, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4081621377342857462, guid: c3ebe81e1a2ddaa4184fc0cfbcf2d689, type: 3}
       propertyPath: m_LocalScale.x
@@ -1516,6 +1568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_10
       objectReference: {fileID: 0}
+    - target: {fileID: 7699999267161988258, guid: abb1ca7ca59aa174aa5a0330e21015df, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1537,6 +1593,10 @@ PrefabInstance:
     - target: {fileID: 5912529117714214147, guid: c5bdfddb22c2e9f46a56c6f0ef2bfb47, type: 3}
       propertyPath: m_Name
       value: Jem_12
+      objectReference: {fileID: 0}
+    - target: {fileID: 5912529117714214147, guid: c5bdfddb22c2e9f46a56c6f0ef2bfb47, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6432922870492575673, guid: c5bdfddb22c2e9f46a56c6f0ef2bfb47, type: 3}
       propertyPath: m_LocalScale.x
@@ -1616,6 +1676,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_34 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8498121874786575896, guid: 49a68b77f7fa9e742bac4a1dbebaa995, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 9125617195770002594, guid: 49a68b77f7fa9e742bac4a1dbebaa995, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.012879998
@@ -1693,6 +1757,10 @@ PrefabInstance:
     - target: {fileID: 1177827331961424518, guid: c9c039832c2b01e4c9fca9fdc323c948, type: 3}
       propertyPath: m_Name
       value: Jem_03
+      objectReference: {fileID: 0}
+    - target: {fileID: 1177827331961424518, guid: c9c039832c2b01e4c9fca9fdc323c948, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 1951091197292236860, guid: c9c039832c2b01e4c9fca9fdc323c948, type: 3}
       propertyPath: m_LocalScale.x
@@ -1772,6 +1840,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralNode_10_C
       objectReference: {fileID: 0}
+    - target: {fileID: 6315060179505291371, guid: 995c9becdff14eb4d81ee994aba08b7a, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 6694681569259485905, guid: 995c9becdff14eb4d81ee994aba08b7a, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0034600003
@@ -1849,6 +1921,10 @@ PrefabInstance:
     - target: {fileID: 8498121874786575896, guid: 49a68b77f7fa9e742bac4a1dbebaa995, type: 3}
       propertyPath: m_Name
       value: Jem_34
+      objectReference: {fileID: 0}
+    - target: {fileID: 8498121874786575896, guid: 49a68b77f7fa9e742bac4a1dbebaa995, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 9125617195770002594, guid: 49a68b77f7fa9e742bac4a1dbebaa995, type: 3}
       propertyPath: m_LocalScale.x
@@ -1984,6 +2060,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_09
       objectReference: {fileID: 0}
+    - target: {fileID: 1952608696826178080, guid: 459888a64e90bca47a16928abefa2753, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2005,6 +2085,10 @@ PrefabInstance:
     - target: {fileID: 3585357169554188647, guid: c4c1e6c6ae9a79a41b26bd0e5c45bb36, type: 3}
       propertyPath: m_Name
       value: MineralNode_01_C
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585357169554188647, guid: c4c1e6c6ae9a79a41b26bd0e5c45bb36, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4218307099557180381, guid: c4c1e6c6ae9a79a41b26bd0e5c45bb36, type: 3}
       propertyPath: m_LocalScale.x
@@ -2083,6 +2167,10 @@ PrefabInstance:
     - target: {fileID: 5056967507537027052, guid: 873230d633f0d374c919ee05766fb1e4, type: 3}
       propertyPath: m_Name
       value: MineralNode_15_C
+      objectReference: {fileID: 0}
+    - target: {fileID: 5056967507537027052, guid: 873230d633f0d374c919ee05766fb1e4, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 5577186468245243222, guid: 873230d633f0d374c919ee05766fb1e4, type: 3}
       propertyPath: m_LocalScale.x
@@ -2218,6 +2306,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralNode_13_C
       objectReference: {fileID: 0}
+    - target: {fileID: 7801917834077943167, guid: 62ff32002b5c5ab41b73ce26df98f5cb, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2239,6 +2331,10 @@ PrefabInstance:
     - target: {fileID: 5031052475766681310, guid: 9c60f48efd51b7f44a488004a3fda61e, type: 3}
       propertyPath: m_Name
       value: Jem_06
+      objectReference: {fileID: 0}
+    - target: {fileID: 5031052475766681310, guid: 9c60f48efd51b7f44a488004a3fda61e, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 5663895825619383396, guid: 9c60f48efd51b7f44a488004a3fda61e, type: 3}
       propertyPath: m_LocalScale.x
@@ -2318,6 +2414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_35
       objectReference: {fileID: 0}
+    - target: {fileID: 444502953788429765, guid: e4172436fbe41e54f9107c23b082c6a6, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 964018501932781439, guid: e4172436fbe41e54f9107c23b082c6a6, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.01006
@@ -2395,6 +2495,10 @@ PrefabInstance:
     - target: {fileID: 1609695021097556250, guid: a6d367aafa9b71c41a42e2234438c70d, type: 3}
       propertyPath: m_Name
       value: Jem_05
+      objectReference: {fileID: 0}
+    - target: {fileID: 1609695021097556250, guid: a6d367aafa9b71c41a42e2234438c70d, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2097861293507363744, guid: a6d367aafa9b71c41a42e2234438c70d, type: 3}
       propertyPath: m_LocalScale.x
@@ -2474,6 +2578,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_42
       objectReference: {fileID: 0}
+    - target: {fileID: 7297532870882536654, guid: ace9bbeaac2559c4fa144f583c4a425e, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 7930236239410689652, guid: ace9bbeaac2559c4fa144f583c4a425e, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.00486
@@ -2551,6 +2659,10 @@ PrefabInstance:
     - target: {fileID: 1187672833776523997, guid: 9bb5912f95a825b4ea3c31cea670faa3, type: 3}
       propertyPath: m_Name
       value: Jem_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187672833776523997, guid: 9bb5912f95a825b4ea3c31cea670faa3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 1959248952965578855, guid: 9bb5912f95a825b4ea3c31cea670faa3, type: 3}
       propertyPath: m_LocalScale.x
@@ -2686,6 +2798,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_24
       objectReference: {fileID: 0}
+    - target: {fileID: 6887640596368941007, guid: d9743b0fbdb80c2439493b8bb9e62797, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2763,6 +2879,10 @@ PrefabInstance:
     - target: {fileID: 5438390738828011325, guid: 1670dc87ddd774a429118ca88771a527, type: 3}
       propertyPath: m_Name
       value: Jem_36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5438390738828011325, guid: 1670dc87ddd774a429118ca88771a527, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2842,6 +2962,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralNode_14_C
       objectReference: {fileID: 0}
+    - target: {fileID: 6386913470332274612, guid: 96dcd99717846e640b49290e6b01f932, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -2863,6 +2987,10 @@ PrefabInstance:
     - target: {fileID: 3642226890507477491, guid: 607df5bbdf40d1d4eb9f57facc37c1ff, type: 3}
       propertyPath: m_Name
       value: MineralNode_12_C (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642226890507477491, guid: 607df5bbdf40d1d4eb9f57facc37c1ff, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4161355346740427593, guid: 607df5bbdf40d1d4eb9f57facc37c1ff, type: 3}
       propertyPath: m_LocalScale.x
@@ -2941,6 +3069,10 @@ PrefabInstance:
     - target: {fileID: 6031609880353264825, guid: b23db799927a80e45bd80cb894d4cfb8, type: 3}
       propertyPath: m_Name
       value: Jem_25
+      objectReference: {fileID: 0}
+    - target: {fileID: 6031609880353264825, guid: b23db799927a80e45bd80cb894d4cfb8, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6412920905692941827, guid: b23db799927a80e45bd80cb894d4cfb8, type: 3}
       propertyPath: m_LocalScale.x
@@ -3102,6 +3234,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralNode_04_C
       objectReference: {fileID: 0}
+    - target: {fileID: 383282586856561209, guid: 3ddd6179c16b8b0419529f263b564e88, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 1016232246209527939, guid: 3ddd6179c16b8b0419529f263b564e88, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0034599996
@@ -3236,6 +3372,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralNode_09_C
       objectReference: {fileID: 0}
+    - target: {fileID: 826521387320792937, guid: 9737f38f54a41ec47b57ca2ba520f084, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3314,6 +3454,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MineralNode_02_C (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5562468253881135672, guid: 2ded96dfa90cf60468e24ebb650d52ef, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3335,6 +3479,10 @@ PrefabInstance:
     - target: {fileID: 1187672833776523997, guid: 9bb5912f95a825b4ea3c31cea670faa3, type: 3}
       propertyPath: m_Name
       value: Jem_02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1187672833776523997, guid: 9bb5912f95a825b4ea3c31cea670faa3, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 1959248952965578855, guid: 9bb5912f95a825b4ea3c31cea670faa3, type: 3}
       propertyPath: m_LocalScale.x
@@ -3470,6 +3618,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_15
       objectReference: {fileID: 0}
+    - target: {fileID: 7773418802459828184, guid: a780bc1ea05053149b4cc6f42a93ee30, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3491,6 +3643,10 @@ PrefabInstance:
     - target: {fileID: 3585357169554188647, guid: c4c1e6c6ae9a79a41b26bd0e5c45bb36, type: 3}
       propertyPath: m_Name
       value: MineralNode_01_C (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3585357169554188647, guid: c4c1e6c6ae9a79a41b26bd0e5c45bb36, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 4218307099557180381, guid: c4c1e6c6ae9a79a41b26bd0e5c45bb36, type: 3}
       propertyPath: m_LocalScale.x
@@ -3569,6 +3725,10 @@ PrefabInstance:
     - target: {fileID: 1479966983909891114, guid: 1e9e9d5d8a38f1e498011e3221969437, type: 3}
       propertyPath: m_Name
       value: Jem_32
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479966983909891114, guid: 1e9e9d5d8a38f1e498011e3221969437, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2288451543800809104, guid: 1e9e9d5d8a38f1e498011e3221969437, type: 3}
       propertyPath: m_LocalScale.x
@@ -3704,6 +3864,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_01
       objectReference: {fileID: 0}
+    - target: {fileID: 7721170274500147585, guid: 280ccf0a74fd5d64496fd47f9767be70, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3808,6 +3972,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Jem_32 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1479966983909891114, guid: 1e9e9d5d8a38f1e498011e3221969437, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 2288451543800809104, guid: 1e9e9d5d8a38f1e498011e3221969437, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.0048599998
@@ -3885,6 +4053,10 @@ PrefabInstance:
     - target: {fileID: 1479966983909891114, guid: 1e9e9d5d8a38f1e498011e3221969437, type: 3}
       propertyPath: m_Name
       value: Jem_32 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1479966983909891114, guid: 1e9e9d5d8a38f1e498011e3221969437, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2288451543800809104, guid: 1e9e9d5d8a38f1e498011e3221969437, type: 3}
       propertyPath: m_LocalScale.x
@@ -4045,6 +4217,10 @@ PrefabInstance:
     - target: {fileID: 8439951668824516515, guid: 9d224b3dd81f9204e8b63bea778b70cd, type: 3}
       propertyPath: m_Name
       value: Jem_14
+      objectReference: {fileID: 0}
+    - target: {fileID: 8439951668824516515, guid: 9d224b3dd81f9204e8b63bea778b70cd, type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 9109493418264919321, guid: 9d224b3dd81f9204e8b63bea778b70cd, type: 3}
       propertyPath: m_LocalScale.x

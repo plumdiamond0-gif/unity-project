@@ -3,55 +3,59 @@ using static WeaponPrefabTable;
 
 public class CannonBall : MonoBehaviour
 {
-    WeaponPrefabData data;
-    float damage;
+    #region Internal Data
+    private WeaponPrefabData _data;
+    private float _damage;
+    #endregion
 
-    public void SetDamage(float finalDamage) {
-        damage = finalDamage;
+    #region Public Methods
+    public void SetDamage(float finalDamage)
+    {
+        _damage = finalDamage;
     }
     public void SetWeaponData(WeaponPrefabData weaponData)
-    {   
-        data = weaponData;
+    {
+        _data = weaponData;
     }
+    #endregion
 
+    #region Unity Lifecycle (Physics)
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
         {
-
             GameObject target = other.gameObject;
-            Health EnemyHealth = target.GetComponent<Health>();
-            if (EnemyHealth != null)
+            Health enemyHealth = target.GetComponent<Health>();
+
+            if (enemyHealth != null)
             {
-                EnemyHealth.TakeDamage(damage);
-                Debug.Log("캐논볼 에너미 데미지" + damage);
+                enemyHealth.TakeDamage(_damage);
 
-                //TODO : 왕잠시
-                foreach (var effectobjs in data.effects)
+                if (_data != null && _data.effects != null)
                 {
-                    float level = SaveManager.CurrentData.weaponlevel[data.weaponState];
-                    float multiplier = Mathf.Pow(level, 1.15f);
-                    if (effectobjs is IWeaponEffect effect)
+                    foreach (var effectObj in _data.effects)
                     {
-                        if (multiplier == 0)
-                            multiplier = 1;
-                        effect.Apply(target, multiplier);
-                        Debug.Log("적용");
+                        float level = SaveManager.CurrentData.weaponlevel[_data.weaponState];
+                        float multiplier = Mathf.Pow(level, 1.15f);
 
+                        if (multiplier == 0)
+                        {
+                            multiplier = 1f;
+                        }
+
+                        if (effectObj is IWeaponEffect effect)
+                        {
+                            effect.Apply(target, multiplier);
+                        }
                     }
                 }
             }
             Destroy(gameObject);
         }
-
-
-        else if (other.CompareTag("Ground") || other.CompareTag("Enemy"))
+        else if (other.CompareTag("Ground"))
         {
             Destroy(gameObject);
         }
     }
-
-
-
-
+    #endregion
 }

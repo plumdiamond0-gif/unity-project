@@ -101,7 +101,6 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!54 &1475209664219004511
 Rigidbody:
@@ -200,9 +199,10 @@ MonoBehaviour:
   playerSpeed: 1
   walkSpeed: 5
   runSpeed: 10
+  jumpPower: 5
   canMove: 0
   state: 0
-  _walkAudio: {fileID: 2823121015338912261}
+  _walkAudio: {fileID: 4249301999929927763}
   playerAttack: {fileID: 0}
 --- !u!114 &1532360809487390033
 MonoBehaviour:
@@ -275,15 +275,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ed0ba24253434e439011a8212b833d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  CoinText: {fileID: 0}
-  ExpFillImageUI: {fileID: 0}
+  expFillImageUI: {fileID: 0}
+  inventoryImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   currentExp: 0
   maxExp: 100
-  Inventory:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   canShowPanel: 1
 --- !u!114 &9001863938071665267
 MonoBehaviour:
@@ -297,10 +296,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f718e439d99f474ca51f9f17c1d6b58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerStat
-  MoveSpeed: 1
-  JumpPower: 5
-  BaseDamage: 1
-  AttackSpeed: 1
+  MoveSpeedMultiplier: 1
+  JumpPowerMultiplier: 1
+  DamageMultiplier: 1
+  AttackSpeedMultiplier: 1
 --- !u!82 &4249301999929927763
 AudioSource:
   m_ObjectHideFlags: 0

@@ -114,8 +114,8 @@ MonoBehaviour:
     Attackspeed: 70
     BulletNum: 100
     weaponImage: {fileID: 21300000, guid: deb8c4adf151eb646b7822680ea57787, type: 3}
-    snappiness: 4
-    returnSpeed: 1
+    snappiness: 18
+    returnSpeed: 5
     chargeAmount: 2
     canCharge: 1
     coolTime: 2.5

@@ -154,7 +154,7 @@ public class PlayerItem : MonoBehaviour
     {
         int arrayIndex = slotIndex - 1;
 
-        if (arrayIndex >= 0 && arrayIndex < _inventorySlots.Length && _inventorySlots[arrayIndex] != null)
+        if (_inventorySlots[arrayIndex] != null)
         {
             ItemEffect.Use(_inventorySlots[arrayIndex].item);
             _inventorySlots[arrayIndex] = null;

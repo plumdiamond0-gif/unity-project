@@ -33,9 +33,9 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     }
     IEnumerator Slow(float slowTime, float slowAmount)
     {
-        playerStat.MoveSpeed *= slowAmount;
+        playerStat.MoveSpeedMultiplier *= slowAmount;
         yield return new WaitForSeconds(slowTime);
-        playerStat.MoveSpeed /= slowAmount;
+        playerStat.MoveSpeedMultiplier /= slowAmount;
         yield return null;
     }
     public void ApplyStun(float stunTime)

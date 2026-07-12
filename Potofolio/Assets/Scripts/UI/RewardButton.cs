@@ -55,7 +55,7 @@ public class RewardButton : MonoBehaviour
 
                 break;
             case RewardType.DamageBuff:
-                stat.BaseDamage *= value;
+                stat.DamageMultiplier *= value;
                 Debug.Log("DamageUp");
 
                 break;
@@ -65,18 +65,18 @@ public class RewardButton : MonoBehaviour
 
                 break;
             case RewardType.AttackSpeedPlus:
-                stat.AttackSpeed *= value;
+                stat.AttackSpeedMultiplier *= value;
                 Debug.Log("AttackSpeedUp");
 
                 break;
             case RewardType.JumpPowerBuff:
-                stat.JumpPower *= value;
+                stat.JumpPowerMultiplier *= value;
                 Debug.Log("JumpPowerBuff");
 
                 break;
 
             case RewardType.MoveSpeedPlus:
-                stat.MoveSpeed *= value;
+                stat.MoveSpeedMultiplier *= value;
                 Debug.Log("MoveSpeedPlus");
 
                 break;

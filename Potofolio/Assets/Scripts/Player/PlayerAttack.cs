@@ -58,7 +58,6 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        // 탄약 딕셔너리 초기화
         _currentAmmo = new()
         {
             { WeaponState.Base, GetAmmoValue(WeaponState.Base) },
@@ -81,7 +80,6 @@ public class PlayerAttack : MonoBehaviour
             _rb.freezeRotation = true;
         }
 
-        // 매니저에서 무기 테이블 데이터 로드
         if (GM.GetPrefabManager()?.WeaponPrefabTable?.weaponPrafabTableDatas != null)
         {
             foreach (var weapon in GM.GetPrefabManager().WeaponPrefabTable.weaponPrafabTableDatas)
@@ -191,7 +189,6 @@ public class PlayerAttack : MonoBehaviour
             {
                 _isCharging = false;
 
-                // 이펙트 처리
                 if (currentWeaponData.effects != null)
                 {
                     foreach (var effect in currentWeaponData.effects)
@@ -211,7 +208,7 @@ public class PlayerAttack : MonoBehaviour
             return;
         }
 
-        Fire(); // 일반 무기 연사
+        Fire(); 
     }
 
     public void Fire()
@@ -225,7 +222,6 @@ public class PlayerAttack : MonoBehaviour
             _anim.SetTrigger("Attack");
         }
 
-        // 탄환 생성
         GameObject cbCopy = GameManager.instance.GetPrefab(
             currentWeaponData.weaponState.ToString(),
             firePos.position,
@@ -233,10 +229,8 @@ public class PlayerAttack : MonoBehaviour
         );
 
         if (cbCopy == null) return;
-
-        // 데미지 계산 및 설정
         CannonBall currentBall = cbCopy.GetComponent<CannonBall>();
-        float baseStatDamage = (_stat != null) ? _stat.BaseDamage : 1f;
+        float baseStatDamage = (_stat != null) ? _stat.DamageMultiplier : 1f;
         float finalDamage = (currentWeaponData.damage * baseStatDamage) + (_attackRatio * maxChargeBonus);
 
         if (currentBall != null)
@@ -245,7 +239,6 @@ public class PlayerAttack : MonoBehaviour
             currentBall.SetDamage(finalDamage);
         }
 
-        // 반동 적용
         float currentRecoilX = baseRecoilX * (1f + (_attackRatio * maxChargeBonus));
         float yzRecoil = currentWeaponData.YZRecoil;
         if (_cameraMovement != null)
@@ -255,7 +248,6 @@ public class PlayerAttack : MonoBehaviour
 
         ResetCharge();
 
-        // 물리 발사 처리
         Rigidbody cannonBallRB = cbCopy.GetComponent<Rigidbody>();
         if (cannonBallRB != null)
         {
@@ -268,10 +260,9 @@ public class PlayerAttack : MonoBehaviour
             Vector3 rightAxis = Vector3.Cross(Vector3.up, shootDir).normalized;
             shootDir = Quaternion.AngleAxis(0f, rightAxis) * shootDir;
 
-            float attackSpeedStat = (_stat != null) ? _stat.AttackSpeed : 1f;
+            float attackSpeedStat = (_stat != null) ? _stat.AttackSpeedMultiplier : 1f;
             cannonBallRB.AddForce(-shootDir * (currentWeaponData.Attackspeed * attackSpeedStat), ForceMode.Impulse);
 
-            // UI 및 데이터 차감
             _currentAmmo[currentWeaponData.weaponState]--;
             if (bulletNumText != null)
             {
@@ -297,7 +288,7 @@ public class PlayerAttack : MonoBehaviour
             int ran = UnityEngine.Random.Range(0, 260);
             if (ran % 2 == 0)
             {
-                Destroy(enemy.gameObject); // 컴포넌트만 파괴되던 버그를 오브젝트 파괴(gameObject)로 수정
+                Destroy(enemy.gameObject); 
             }
         }
     }
@@ -318,3 +309,4 @@ public class PlayerAttack : MonoBehaviour
         return (int)data.BulletNum + (int)Mathf.Pow(currentLevel, 1.15f) - 1;
     }
 }
+

@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿
+
+using System.Collections;
 using System.Collections.Generic;
 using Unity.Cinemachine;
 using Unity.VisualScripting;
@@ -29,6 +31,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float playerSpeed = 1f;
     [SerializeField] private float walkSpeed;
     [SerializeField] private float runSpeed;
+    [SerializeField] private float jumpPower;
+
 
     private float _currentSpeed;
     public bool canMove;
@@ -84,7 +88,7 @@ public class PlayerMovement : MonoBehaviour
         //주의: _stat이 null일 경우를 대비해 인스펙터 확인이 필요합니다.
         if (_stat != null)
         {
-            playerSpeed = walkSpeed * _stat.MoveSpeed;
+            playerSpeed = walkSpeed * _stat.MoveSpeedMultiplier;
         }
         Debug.Log(playerSpeed);
     }
@@ -167,8 +171,7 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 MoveDir = ((transform.right * _movementX) + (transform.forward * _movementY)).normalized;
 
-        float speedMultiplier = (_stat != null) ? _stat.MoveSpeed : 1f;
-        Vector3 targetVel = MoveDir * playerSpeed * speedMultiplier;
+        Vector3 targetVel = MoveDir * playerSpeed * _stat.MoveSpeedMultiplier;
 
         Vector3 currentVel = _rb.linearVelocity;
 
@@ -214,8 +217,7 @@ public class PlayerMovement : MonoBehaviour
 
         _rb.linearVelocity = new Vector3(_rb.linearVelocity.x, 0, _rb.linearVelocity.z);
 
-        float jumpPower = (_stat != null) ? _stat.JumpPower : 5f;
-        _rb.AddForce(transform.up * jumpPower, ForceMode.Impulse);
+        _rb.AddForce(transform.up * jumpPower * _stat.JumpPowerMultiplier, ForceMode.Impulse);
         _isGrounded = false;
     }
 
@@ -249,7 +251,6 @@ public class PlayerMovement : MonoBehaviour
 
         xRotation -= _mouseY;
         _yRotation += _mouseX;
-        xRotation = Mathf.Clamp(xRotation, -80f, 45f);
         transform.rotation = Quaternion.Euler(0, _yRotation, 0);
     }
 
@@ -264,3 +265,4 @@ public class PlayerMovement : MonoBehaviour
         transform.position = pos;
     }
 }
+
