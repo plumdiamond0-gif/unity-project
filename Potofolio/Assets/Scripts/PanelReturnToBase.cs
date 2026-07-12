@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PanelReturnToBase : PanelBase
 {
-    [SerializeField] private Button Exit;
+    [SerializeField] public Button Exit;
     [SerializeField] private Button ReturnToBase;
 
 
@@ -15,6 +15,8 @@ public class PanelReturnToBase : PanelBase
     {
         Exit.onClick.AddListener(() =>
         {
+            Time.timeScale = 1f;
+
             Destroy(gameObject);
         });
         ReturnToBase.onClick.AddListener(GoToBase);
@@ -34,15 +36,17 @@ public class PanelReturnToBase : PanelBase
 
             yield return null;
         }
-        Time.timeScale = 0f;
         isEnded = true;
+        Time.timeScale = 0f;
+
 
 
     }
     void GoToBase()
     {
-        if(!isEnded)
+        if (!isEnded)
             return;
+        Time.timeScale = 1f;
         Destroy(GameManager.instance.GetPlayer().gameObject);
         GM.GetSceneLoadManager().NextLoadScene("SceneBase", () =>
         {

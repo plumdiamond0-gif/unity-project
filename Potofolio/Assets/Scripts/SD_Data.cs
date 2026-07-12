@@ -3,10 +3,9 @@ using UnityEditor.Overlays;
 using UnityEngine;
 
 [System.Serializable] //Á÷·ÄÈ­
-public class SD_User : ISaveData
+public class SD_User 
 {
-    public ulong level;
-   
+    public string date;
 
     public Dictionary<WeaponState, bool> weaponActive = new()
     {
@@ -53,10 +52,10 @@ public class SD_User : ISaveData
         
     
 
-    public string GetSaveKey()
-    {
-        return nameof(SD_User);
-    }
+    //public string GetSaveKey()
+    //{
+    //    return nameof(SD_User);
+    //}
 
     public void CloneCopy(SD_User userData)
     {

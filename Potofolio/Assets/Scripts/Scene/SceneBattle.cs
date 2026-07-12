@@ -1,10 +1,12 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class SceneBattle : MonoBehaviour
 {
     [SerializeField] private Transform playerSpawnPos;
     [SerializeField] AudioClip Bgm;
     [SerializeField] private Transform RootCanvas;
+    bool canPanel = true;
 
 
     private void Awake()
@@ -36,5 +38,23 @@ public class SceneBattle : MonoBehaviour
             });
             });
 
+    }
+    private void Update()
+    {
+        if (Keyboard.current.tabKey.wasPressedThisFrame)
+        {
+            if(!canPanel)
+                return;
+            canPanel = false;
+            GM.GetUIManager().CreateUIPanel("ReturnToBase_Panel", (go) =>
+            {
+                PanelReturnToBase panel = go.GetComponent<PanelReturnToBase>();
+                panel.Exit.onClick.AddListener(() =>
+                {
+                    canPanel = true;
+                });
+                Debug.Log("ReturnToBase");
+            });
+        }
     }
 }

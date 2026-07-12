@@ -1,4 +1,5 @@
 using Newtonsoft.Json;
+using System;
 using UnityEngine;
 using UnityEngine.Android;
 
@@ -8,66 +9,77 @@ public class SaveManager : MonoBehaviour
 
     public void Init()
     {
-        //TODO : 세이브매니저 나중에 수정 
-        //CurrentData = LoadData<SD_User>();
-        if(CurrentData == null )
+        CurrentData = null;
+        LoadData("1");
+        if (CurrentData == null)
         {
+            Debug.Log("커렌트데이터 널");
             CurrentData = new SD_User();
-            //CurrentData = new SD_User();
-            SaveCurrentData();
         }
-        else
-            CurrentData = LoadData<SD_User>();
-
     }
-
-
-    public void SaveCurrentData()
+    public void NewSave(string keyVal)
     {
-        SaveData( CurrentData );
-    }
-   public void SaveData<T>(T data) where T : ISaveData
-    {
-        string key = data.GetSaveKey();
-        Debug.Log($"저장 시작 {key}");
-        if(PlayerPrefs.HasKey(key) )
+        Debug.Log($"저장 시작 {keyVal}");
+        if (PlayerPrefs.HasKey(keyVal))
         {
-            Debug.LogWarning($"저장 데이어{key} 있음");
+            Debug.LogWarning($"저장 데이어{keyVal} 있음");
+            return;
         }
-        string jsonData = JsonConvert.SerializeObject(data);
-        PlayerPrefs.SetString(key, jsonData);
+        CurrentData = new SD_User();
+        CurrentData.date = DateTime.Now.ToString();
+        string jsonData = JsonConvert.SerializeObject(CurrentData);
+        PlayerPrefs.SetString(keyVal, jsonData);
 
         PlayerPrefs.Save();
 
-        Debug.Log($"저장 완료 {key}, jsonData: {jsonData} ");
+        Debug.Log($"저장 완료 {keyVal}, jsonData: {jsonData} ");
     }
 
-    public T LoadData<T>() where T : ISaveData, new()
+    public void SaveData( string keyVal) 
     {
-        T data = new T();
-        string key = data.GetSaveKey();
+        CurrentData.date = DateTime.Now.ToString();
 
-        Debug.Log($"불러오기 시작 {key}");
-
-        if (!PlayerPrefs.HasKey(key))
+        Debug.Log($"저장 시작 {keyVal}");
+        if(PlayerPrefs.HasKey(keyVal) )
         {
-            Debug.Log($"저장 데이터 없음: {key} (처음 실행)");
-            return default;
+            Debug.LogWarning($"저장 데이어{keyVal} 있음");
+            return;
+        }
+        string jsonData = JsonConvert.SerializeObject(CurrentData);
+        PlayerPrefs.SetString(keyVal, jsonData);
+
+        PlayerPrefs.Save();
+
+        Debug.Log($"저장 완료 {keyVal}, jsonData: {jsonData} ");
+    }
+
+    public void LoadData(string keyVal)
+    {
+   
+        SD_User data = new SD_User();
+        //string key = data.GetSaveKey();
+
+        Debug.Log($"불러오기 시작 {keyVal}");
+
+        if (!PlayerPrefs.HasKey(keyVal))
+        {
+            Debug.Log($"저장 데이터 없음: {keyVal} (처음 실행)");
+            return;
         }
 
-        string loadData = PlayerPrefs.GetString(key);
+        string loadData = PlayerPrefs.GetString(keyVal);
 
         if (string.IsNullOrEmpty(loadData))
         {
-            Debug.LogWarning($"저장 데이터 비어있음: {key}");
-            return default;
+            Debug.LogWarning($"저장 데이터 비어있음: {keyVal}");
+            return;
         }
 
-        data = JsonConvert.DeserializeObject<T>(loadData);
+        data = JsonConvert.DeserializeObject<SD_User>(loadData);
 
-        Debug.Log($"불러오기 완료 {key}");
+        Debug.Log($"불러오기 완료 {keyVal}");
+        CurrentData = data; 
 
-        return data;
     }
 
     public void DeleteData(string key)

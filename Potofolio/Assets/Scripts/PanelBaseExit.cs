@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PanelBaseExit : PanelBase
 {
-    [SerializeField] private Button Exit;
+    [SerializeField] public Button Exit;
     [SerializeField] private Button GoBattle;
 
 
@@ -16,8 +16,9 @@ public class PanelBaseExit : PanelBase
     {
         Exit.onClick.AddListener(() =>
         {
-            GameManager.instance.GetPlayer().
-         GetComponent<PlayerMovement>().canMove = true;
+            Time.timeScale = 1f;
+
+            Destroy(gameObject);
         });
         GoBattle.onClick.AddListener(MoveToSceneBattle);
 
@@ -28,7 +29,6 @@ public class PanelBaseExit : PanelBase
     }
     IEnumerator MovePanel()
     {
-
         while (transform.localPosition != Vector3.zero)
         {
             transform.localPosition = Vector3.MoveTowards(
@@ -38,8 +38,8 @@ public class PanelBaseExit : PanelBase
 
             yield return null;
         }
-        Time.timeScale = 0f;
         isEnded = true;
+        Time.timeScale = 0f;
 
 
     }
@@ -47,8 +47,10 @@ public class PanelBaseExit : PanelBase
     {
         if(!isEnded)
             return;
+        Time.timeScale = 1f;
+
         GM.GetSceneLoadManager().NextLoadScene("SceneBattle", () =>
-        {
+        { 
             Debug.Log("SceneBattle ¿Ï·á");
         });
     }

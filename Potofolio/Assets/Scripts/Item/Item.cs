@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Item : MonoBehaviour
 {
-    public ItemData data;
+    [HideInInspector]public ItemData data;
     public ItemType itemType;
     public OutItemType outType;
     public InItemType  inType;

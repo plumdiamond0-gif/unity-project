@@ -95,13 +95,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Keyboard.current.tabKey.wasPressedThisFrame)
-        {
-            GM.GetUIManager().CreateUIPanel("ReturnToBase_Panel", (go) =>
-            {
-                Debug.Log("ReturnToBase");
-            });
-        }
+
 
         if (!canMove)
             return;
