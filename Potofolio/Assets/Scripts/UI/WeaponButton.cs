@@ -4,20 +4,29 @@ using UnityEngine.UI;
 public class WeaponButton : MonoBehaviour
 {
 
-    Image weaponImage;
+   [SerializeField] Image weaponImage;
    public Button Button;
     public WeaponState weaponState;
     public Image LockImage;
     public bool isActive;
     [SerializeField] private PanelWeaponUpgrade  panelWeaponUpgrade;
 
+    private void Awake()
+    {
+        weaponImage = GetComponent<Image>();
+        Button = GetComponent<Button>();
+
+    }
+
     void Start()
     {
         //LockImage = GetComponentInChildren<Image>();
-        weaponImage = GetComponent<Image>();
         weaponImage.sprite = GM.GetPrefabManager().WeaponPrefabTable
             .weaponPrafabTableDatas.Find(x => x.weaponState == weaponState).WeaponImage;
-        Button = GetComponent<Button>();
+        if (weaponImage == null)
+        {
+            Debug.Log("D@$@EWfergerghre");
+        }
 
         if (SaveManager.CurrentData.weaponActive[weaponState] == true)
         {
@@ -44,9 +53,6 @@ public class WeaponButton : MonoBehaviour
 
     public void BeActive()
     {
-        if (SaveManager.CurrentData.weaponActive[weaponState] != true)
-            return;
-        //인벤토리 칸 자식들 중에서 컴포넌트 꺼내워서 같은 무기 타입 갖고 있는 애의 함수 호출
         isActive = true;
         LockImage.enabled = false;
         weaponImage.enabled = true;

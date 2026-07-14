@@ -10,7 +10,12 @@ using UnityEngine.Rendering;
 using UnityEngine.SceneManagement;
 using static PlayerAttack;
 using static WeaponPrefabTable;
-
+public enum PlayerState
+{
+    Idle,
+    InBase,
+    InBattle
+}
 public class PlayerMovement : MonoBehaviour
 {
     #region Rotation
@@ -44,12 +49,7 @@ public class PlayerMovement : MonoBehaviour
 
     public PlayerState state;
 
-    public enum PlayerState
-    {
-        Idle,
-        InBase,
-        InBattle
-    }
+
     #endregion
 
     #region Components

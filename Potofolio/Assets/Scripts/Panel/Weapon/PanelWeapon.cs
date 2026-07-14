@@ -19,12 +19,7 @@ public class PanelWeapon : PanelBase
 
     public void GetPlayer(PlayerMovement player)
     {
-        Debug.Log("wefwe");
         Player = player;    
-        if(Player != null)
-        {
-            Debug.Log("³Î ¾Æ¹Ì");
-        }
     }
 
     public void MoveAgain()

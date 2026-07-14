@@ -22,10 +22,10 @@ public class SceneBase : MonoBehaviour
                 //GameManager.OnPlayerSpawned?.Invoke(player);
 
                 PlayerAttack playerAttack = player.GetComponent<PlayerAttack>();
-                playerAttack.enabled = false;   
+                playerAttack.CanAttack = false;   
                 PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
                 playerMovement.canMove = true;
-                playerMovement.state = PlayerMovement.PlayerState.InBase;
+                playerMovement.state = PlayerState.InBase;
                 
                 
                 Debug.Log("Player ½ºÆùµÊ");

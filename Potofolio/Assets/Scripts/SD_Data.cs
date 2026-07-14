@@ -20,19 +20,19 @@ public class SD_User
 
     public Dictionary<OutItemType, int> itemStates = new()
     {
-        {OutItemType.MonsterCoin, 0},
-        {OutItemType.RedJelly, 0},
-        {OutItemType.SlimeShell, 0},
-        {OutItemType.SporeSac, 0},
-        {OutItemType.WatchersEye, 0},
-        {OutItemType.GaleCrystal, 0},
-        {OutItemType.EmeraldShard, 0},
-        {OutItemType.ToxicThornFragment, 0},
-        {OutItemType.FlameCrystal, 0},
-        {OutItemType.HardenedFang, 0},
-        {OutItemType.KnightsEmblem, 0},
-        {OutItemType.ManaCrystal, 0},
-        {OutItemType.None, 0},
+        {OutItemType.MonsterCoin, 260},
+        {OutItemType.RedJelly, 260},
+        {OutItemType.SlimeShell, 260 },
+        {OutItemType.SporeSac, 260},
+        {OutItemType.WatchersEye, 260},
+        {OutItemType.GaleCrystal, 260},
+        {OutItemType.EmeraldShard, 260},
+        {OutItemType.ToxicThornFragment, 260},
+        {OutItemType.FlameCrystal, 260},
+        {OutItemType.HardenedFang, 260},
+        {OutItemType.KnightsEmblem, 260},
+        {OutItemType.ManaCrystal, 260},
+        {OutItemType.None, 260},
 
 
     };

@@ -56,6 +56,7 @@ public class PlayerAttack : MonoBehaviour
     private PlayerStat _stat;
     #endregion
 
+    public bool CanAttack;
     void Start()
     {
         _currentAmmo = new()
@@ -99,6 +100,8 @@ public class PlayerAttack : MonoBehaviour
 
     private void Update()
     {
+        if (CanAttack == false)
+            return;
         HandleWeaponScroll();
         HandleCharging();
     }
@@ -175,7 +178,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void OnAttack(InputValue value)
     {
-        if (_currentAmmo[currentWeaponData.weaponState] <= 0) return;
+        if (CanAttack == false || _currentAmmo[currentWeaponData.weaponState] <= 0) return;
 
         if (currentWeaponData.canCharge)
         {

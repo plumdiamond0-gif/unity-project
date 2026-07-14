@@ -9,16 +9,16 @@ public class UpgradeUI : MonoBehaviour
     [SerializeField] private CostUI costUI;
     public bool CanClick;
 
-    UpgradeCost currentcosts;
+    WeaponPrefabData data;
     int currentlevel;
     public void Start()
     {
         upgradeButton = GetComponent<Button>();
         upgradeButton.onClick.AddListener(ShowResults);   
     }
-    public void GetData(UpgradeCost costs, int level)
+    public void GetData(WeaponPrefabData data, int level)
     {
-        currentcosts = costs;
+        this.data = data;
         currentlevel = level;
         CanClick = true;
     }
@@ -27,7 +27,7 @@ public class UpgradeUI : MonoBehaviour
     {
         if(!CanClick)
             return;
-        costUI.ShowCosts(currentcosts, currentlevel);
+        costUI.GetData(data, currentlevel);
     }
 
     //private void Start()

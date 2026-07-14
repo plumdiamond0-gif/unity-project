@@ -32,7 +32,7 @@ public class SceneBattle : MonoBehaviour
                 GameManager.OnPlayerSpawned?.Invoke(player);
                 PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
                 playerMovement.canMove = true;
-                playerMovement.state = PlayerMovement.PlayerState.InBattle;
+                playerMovement.state = PlayerState.InBattle;
 
 
             });

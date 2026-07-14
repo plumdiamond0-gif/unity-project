@@ -21,7 +21,7 @@ public class SceneInit : MonoBehaviour
 
     private void OnNextSceneLoad()
     {
-        GM.GetSceneLoadManager().NextLoadScene("SceneOpening", () =>
+        GM.GetSceneLoadManager().NextLoadScene("SceneBase", () =>
             {
                 Debug.Log("SceneOpening ¿Ï·á");
             });

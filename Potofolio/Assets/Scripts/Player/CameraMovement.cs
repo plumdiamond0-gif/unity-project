@@ -37,7 +37,7 @@ public class CameraMovement : MonoBehaviour
 
     private void LateUpdate()
     {
-        float clampedX = Mathf.Clamp(player.xRotation, -270f, 5f);
+        float clampedX = Mathf.Clamp(player.xRotation, -80f, 0f);
 
         Quaternion horizontal = player.transform.rotation;
         Quaternion vertical = Quaternion.Euler(clampedX, 0, 0);
@@ -47,7 +47,7 @@ public class CameraMovement : MonoBehaviour
         transform.position = player.transform.position + rotatedOffset;
 
         transform.LookAt(player.transform.position + Vector3.up * 1f);
-        transform.rotation *= Quaternion.Euler(_currentRotation);
+        transform.localRotation*= Quaternion.Euler(_currentRotation);
     }
     #endregion
 
