@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
-public class SceneOpening : MonoBehaviour
+public class SceneOpening : SceneBase
 {
     public Canvas Rootcanvas;
 
@@ -19,7 +19,7 @@ public class SceneOpening : MonoBehaviour
     //    "cutScene_3",
     //    "cutScene_4",
     //};
-    void Start()
+    public override void Init()
     {
         GM.GetUIManager().GetRootCanvas(Rootcanvas.transform);
         GM.GetUIManager().CreateUIPanel("GameStart",

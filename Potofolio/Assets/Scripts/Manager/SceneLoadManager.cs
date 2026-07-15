@@ -71,15 +71,18 @@ public class SceneLoadManager : MonoBehaviour
             elapsed += Time.deltaTime;
             yield return null;
         }
+        Debug.Log("AFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTER");
 
         handle.allowSceneActivation = true;
 
         while (!handle.isDone)
             yield return null;
 
-        Debug.Log("AFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTER");
+
 
         OnSceneCompleted?.Invoke();
+        SceneBase sceneBase = (SceneBase)FindAnyObjectByType(typeof(SceneBase));
+        sceneBase.Init();
         yield return unloadUnusedAssets();
     }
 
@@ -88,10 +91,6 @@ public class SceneLoadManager : MonoBehaviour
         AsyncOperation async = Resources.UnloadUnusedAssets();
         yield return async;
 
-        GC.Collect();
-        GC.Collect();
-        GC.Collect();
-        GC.Collect();
         GC.Collect();
     }
 }

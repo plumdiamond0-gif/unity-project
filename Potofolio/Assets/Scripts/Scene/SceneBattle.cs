@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SceneBattle : MonoBehaviour
+public class SceneBattle : SceneBase
 {
     [SerializeField] private Transform playerSpawnPos;
     [SerializeField] AudioClip Bgm;
@@ -9,7 +9,7 @@ public class SceneBattle : MonoBehaviour
     bool canPanel = true;
 
 
-    private void Awake()
+    public override void Init()
     {
         GameManager.OnPlayerSpawned += GM.GetUIManager().Bind;
 
@@ -33,6 +33,8 @@ public class SceneBattle : MonoBehaviour
                 PlayerMovement playerMovement = player.GetComponent<PlayerMovement>();
                 playerMovement.canMove = true;
                 playerMovement.state = PlayerState.InBattle;
+                PlayerAttack playerAttack = player.GetComponent<PlayerAttack>();
+                playerAttack.CanAttack = true;
 
 
             });

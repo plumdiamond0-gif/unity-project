@@ -93,10 +93,10 @@ public class PanelOpening : PanelBase
             currentNum = cutScenes.Length;
             GM.GetSoundManager().StopBGM();
             Debug.Log("컷씬 종료");
-            GM.GetSceneLoadManager().NextLoadScene("SceneBase",
+            GM.GetSceneLoadManager().NextLoadScene("SceneSpaceShip",
                 () =>
                 {
-                    Debug.Log("SceneBase 로드 완료");
+                    Debug.Log("SceneSpaceShip 로드 완료");
                 });
             return;
         }
@@ -109,10 +109,10 @@ public class PanelOpening : PanelBase
                 {
                     GM.GetSoundManager().StopBGM();
                     Debug.Log("컷씬 종료");
-                    GM.GetSceneLoadManager().NextLoadScene("SceneBase",
+                    GM.GetSceneLoadManager().NextLoadScene("SceneSpaceShip",
                         () =>
                         {
-                            Debug.Log("SceneBase 로드 완료");
+                            Debug.Log("SceneSpaceShip 로드 완료");
                         });
                     return;
                 }

@@ -18,7 +18,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SceneOpening.unity
     guid: cc20ce353a01f1d468b09887758cf7fb
   - enabled: 1
-    path: Assets/Scenes/SceneBase.unity
+    path: Assets/Scenes/SceneSpaceShip.unity
     guid: 594201b6903203b4db8a6ddbdd2a2baf
   - enabled: 1
     path: Assets/Scenes/SceneBattle.unity

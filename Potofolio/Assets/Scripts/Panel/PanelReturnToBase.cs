@@ -48,9 +48,9 @@ public class PanelReturnToBase : PanelBase
             return;
         Time.timeScale = 1f;
         Destroy(GameManager.instance.GetPlayer().gameObject);
-        GM.GetSceneLoadManager().NextLoadScene("SceneBase", () =>
+        GM.GetSceneLoadManager().NextLoadScene("SceneSpaceShip", () =>
         {
-            Debug.Log("SceneBase 완료");
+            Debug.Log("SceneSpaceShip 완료");
         });
     }
 }

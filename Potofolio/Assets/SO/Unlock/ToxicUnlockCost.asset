@@ -9,16 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5034ff4d6e6a21b41929a06eac96e95d, type: 3}
-  m_Name: ToxicUpgradeCost
-  m_EditorClassIdentifier: Assembly-CSharp::UpgradeCost
+  m_Script: {fileID: 11500000, guid: 20eec54909146fb4e83474d0461f1bbc, type: 3}
+  m_Name: ToxicUnlockCost
+  m_EditorClassIdentifier: Assembly-CSharp::UnlockCost
   costs:
   - itemType: 1
     CostSprite: {fileID: 21300000, guid: 21628319500d3be44980d1d423e04bd3, type: 3}
-    amount: 500
+    amount: 3000
   - itemType: 8
-    CostSprite: {fileID: 21300000, guid: ca6f6167b7319f94f969e2722df29083, type: 3}
-    amount: 4
+    CostSprite: {fileID: 21300000, guid: 25b41063371146942b35f95d2f005d44, type: 3}
+    amount: 120
   - itemType: 9
     CostSprite: {fileID: 21300000, guid: 8739432d5c5489d4c8cdff92abe375ea, type: 3}
-    amount: 4
+    amount: 100

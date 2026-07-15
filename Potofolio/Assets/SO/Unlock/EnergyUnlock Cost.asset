@@ -9,19 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5034ff4d6e6a21b41929a06eac96e95d, type: 3}
-  m_Name: PulseGunUpgradeCost
-  m_EditorClassIdentifier: Assembly-CSharp::UpgradeCost
+  m_Script: {fileID: 11500000, guid: 20eec54909146fb4e83474d0461f1bbc, type: 3}
+  m_Name: EnergyUnlock Cost
+  m_EditorClassIdentifier: Assembly-CSharp::UnlockCost
   costs:
   - itemType: 1
     CostSprite: {fileID: 21300000, guid: 21628319500d3be44980d1d423e04bd3, type: 3}
-    amount: 1500
-  - itemType: 6
-    CostSprite: {fileID: 21300000, guid: 03e316e038465a242ac943c72b75cae8, type: 3}
-    amount: 10
+    amount: 5000
   - itemType: 5
     CostSprite: {fileID: 21300000, guid: 44991d149141bc54fa4cd5c1dcb72cd6, type: 3}
-    amount: 10
+    amount: 200
   - itemType: 10
     CostSprite: {fileID: 21300000, guid: a7645b023fe924c4ebe898daee786cec, type: 3}
-    amount: 10
+    amount: 170
+  - itemType: 6
+    CostSprite: {fileID: 21300000, guid: 03e316e038465a242ac943c72b75cae8, type: 3}
+    amount: 150

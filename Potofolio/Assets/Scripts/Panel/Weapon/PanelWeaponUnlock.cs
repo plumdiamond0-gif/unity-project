@@ -10,9 +10,10 @@ public class PanelWeaponUnlock: MonoBehaviour
     [SerializeField] Image LeftImage;
     [SerializeField] Image RightImage;
     [SerializeField] TMP_Text weaponNameText;
-    [SerializeField] GameObject unlockButton;
-    [SerializeField] GameObject LeftButton;
-    [SerializeField] GameObject RightButton;
+    [SerializeField] Button unlockButton;
+    [SerializeField] Button LeftButton;
+    [SerializeField] Button RightButton;
+    [SerializeField] UnlockCostUI unlockCostUI;
 
     private int currentIndex = 0;
 
@@ -20,29 +21,24 @@ public class PanelWeaponUnlock: MonoBehaviour
     WeaponPrefabData currentData => weaponPrefabDatas[currentIndex];
 
     List<WeaponPrefabData> weaponPrefabDatas;
-    //[Header("Data")]
-    //public List<WeaponState> weapons = new()
-    //{
-    //    WeaponState.Base,
-    //    WeaponState.Improved,
-    //    WeaponState.Slime,
-    //    WeaponState.Toxic,
-    //    WeaponState.Hypnosis,
-    //    WeaponState.Fire,
-    //    WeaponState.Energy,
-    //    WeaponState.Bomb,
-    //};
-
 
     void Start()
     {
         weaponPrefabTable = GM.GetPrefabManager().WeaponPrefabTable;
         weaponPrefabDatas = weaponPrefabTable.weaponPrafabTableDatas;
-        unlockButton.GetComponent<Button>().onClick.AddListener(UnlockCurrentWeapon);
-        LeftButton.GetComponent<Button>().onClick.AddListener(PrevWeapon);
-        RightButton.GetComponent<Button>().onClick.AddListener(NextWeapon);
+        LeftButton.onClick.AddListener(PrevWeapon);
+        RightButton.onClick.AddListener(NextWeapon);
+
+        unlockButton.onClick.AddListener(()=>
+        {
+            if (SaveManager.CurrentData.weaponActive[currentData.weaponState])
+                return;
+            unlockCostUI.ShowCosts(currentData);
+        });
 
         RefreshUI();
+
+
     }
 
     public void NextWeapon()
@@ -66,26 +62,10 @@ public class PanelWeaponUnlock: MonoBehaviour
         RefreshUI();
     }
 
-    public void UnlockCurrentWeapon()
-    {
-        if (SaveManager.CurrentData.weaponActive[currentData.weaponState])
-            return;
 
 
-        //if (playerCore >= bullet.unlockPrice)
-        //{
-        //    playerCore -= bullet.unlockPrice;
-        //    bullet.unlocked = true;
-        //    RefreshUI();
-        //}
 
-        //else
-        //{
-        //    Debug.Log("몬스터 코어 부족");
-        //}
-    }
-
-    void RefreshUI()
+    public void RefreshUI()
     {
         var data = currentData;
 
@@ -97,8 +77,8 @@ public class PanelWeaponUnlock: MonoBehaviour
 
         LeftImage.enabled = hasLeft;
         RightImage.enabled = hasRight;
-        LeftButton.SetActive(hasLeft);
-        RightButton.SetActive(hasRight);
+        LeftButton.gameObject.SetActive(hasLeft);
+        RightButton.gameObject.SetActive(hasRight);
 
         if (hasLeft)
             LeftImage.sprite = weaponPrefabDatas[currentIndex - 1].WeaponImage;

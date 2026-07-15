@@ -162,7 +162,7 @@ MonoBehaviour:
     AttackSpeedBuffAmount: 0
     MoveSpeedBuffAmount: 0
     MaxHpBuffAmount: 0
-    JumpPowerBuffAmount: 1.2
+    JumpPowerBuffAmount: 1.1
     itemType: 0
     inItemType: 5
     outItemType: 0

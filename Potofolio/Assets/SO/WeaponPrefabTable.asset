@@ -31,6 +31,7 @@ MonoBehaviour:
     effects: []
     upgradeCosts: {fileID: 11400000, guid: 13ce338445345fc44abadee2193d5711, type: 2}
     upgradeResults: {fileID: 11400000, guid: 2ec06e565e6aa7f4dbf27ecdd0984b59, type: 2}
+    unlockedCosts: {fileID: 0}
   - weaponState: 1
     WeaponBullet: {fileID: 8363767819308192229, guid: 2a5548c3d0139ee4db798ae4915ef60b, type: 3}
     damage: 45
@@ -50,6 +51,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 842f76e3e7d8dbe41957e6f16d561231, type: 2}
     upgradeCosts: {fileID: 11400000, guid: 07d22b366b0e6c649aa1e69787a14ea6, type: 2}
     upgradeResults: {fileID: 11400000, guid: 38dc056ac8ffd764d895915f6cbd7387, type: 2}
+    unlockedCosts: {fileID: 11400000, guid: 529ea43ea1556a640a2b7b51e1048f67, type: 2}
   - weaponState: 2
     WeaponBullet: {fileID: 8363767819308192229, guid: 9f2fb37adc018c94bb9d582a10b5bcba, type: 3}
     damage: 30
@@ -69,6 +71,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: db937833fc47f2d48acec545416b5300, type: 2}
     upgradeCosts: {fileID: 11400000, guid: e6c93a9e44fc49241803aba856628a98, type: 2}
     upgradeResults: {fileID: 11400000, guid: 8e076729a751d8042a72be89c7ee89c1, type: 2}
+    unlockedCosts: {fileID: 11400000, guid: 357932bd5a1548d4b8b69ae3ad8cc556, type: 2}
   - weaponState: 4
     WeaponBullet: {fileID: 8363767819308192229, guid: a613198d0eea09b4499558d1ccf8ab97, type: 3}
     damage: 40
@@ -88,6 +91,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4f61d25e1f1b25a4591b7e47309dd9d7, type: 2}
     upgradeCosts: {fileID: 11400000, guid: 2a469f6ef63d1c84c8176703cec91f95, type: 2}
     upgradeResults: {fileID: 11400000, guid: 616c6882adb2ec24284ce9ae817b18b6, type: 2}
+    unlockedCosts: {fileID: 11400000, guid: c35d1a8cb0c2f2d4fb83e148d2abc7f4, type: 2}
   - weaponState: 3
     WeaponBullet: {fileID: 8363767819308192229, guid: 22de006092143f84480069385fc6fb40, type: 3}
     damage: 20
@@ -108,6 +112,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 4ea7ff47fa55c3144afff543e52bda20, type: 2}
     upgradeCosts: {fileID: 11400000, guid: 45e24a0d8adc75c4190e26f0ec69f016, type: 2}
     upgradeResults: {fileID: 11400000, guid: 10d8799b0fc07f74f9669344e31b6419, type: 2}
+    unlockedCosts: {fileID: 11400000, guid: ea1159405db518245ab3390e5631b82d, type: 2}
   - weaponState: 5
     WeaponBullet: {fileID: 8363767819308192229, guid: 86e81e14019f1c24b94f906625201ac6, type: 3}
     damage: 85
@@ -128,6 +133,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: 837b7099aafc8eb4a91c466f3d71c615, type: 2}
     upgradeCosts: {fileID: 11400000, guid: b1d0077df0a649944a7813bc76de4c24, type: 2}
     upgradeResults: {fileID: 11400000, guid: 9f76187a3e3ea714b901ed852b24117a, type: 2}
+    unlockedCosts: {fileID: 11400000, guid: a47454162c7325d408359fcc8611f4b0, type: 2}
   - weaponState: 6
     WeaponBullet: {fileID: 8363767819308192229, guid: fee6bf91f9775cf4486e13efaea39fba, type: 3}
     damage: 300
@@ -148,3 +154,4 @@ MonoBehaviour:
     - {fileID: 11400000, guid: ce788339106990944a456ebab91b9ca7, type: 2}
     upgradeCosts: {fileID: 11400000, guid: 6022fb6b86ec661498f4c47b8a2898f5, type: 2}
     upgradeResults: {fileID: 11400000, guid: a416702341c651344b69de8f006c9590, type: 2}
+    unlockedCosts: {fileID: 11400000, guid: f013e5aa774ff2f4d8f7ab6a538fdbd6, type: 2}

@@ -6,7 +6,7 @@ using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class SceneInit : MonoBehaviour
+public class SceneInit : SceneBase
 {
   
     private void Awake()
@@ -21,14 +21,14 @@ public class SceneInit : MonoBehaviour
 
     private void OnNextSceneLoad()
     {
-        GM.GetSceneLoadManager().NextLoadScene("SceneBase", () =>
+        GM.GetSceneLoadManager().NextLoadScene("SceneBattle", () =>
             {
                 Debug.Log("SceneOpening ¿Ï·á");
             });
     }
 
     //SceneBattle
-   //SceneBase
+   //SceneSpaceShip
 
 
 

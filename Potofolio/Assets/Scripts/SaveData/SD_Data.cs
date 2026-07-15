@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Overlays;
 using UnityEngine;
 
@@ -20,19 +21,19 @@ public class SD_User
 
     public Dictionary<OutItemType, int> itemStates = new()
     {
-        {OutItemType.MonsterCoin, 260},
-        {OutItemType.RedJelly, 260},
-        {OutItemType.SlimeShell, 260 },
-        {OutItemType.SporeSac, 260},
-        {OutItemType.WatchersEye, 260},
-        {OutItemType.GaleCrystal, 260},
-        {OutItemType.EmeraldShard, 260},
-        {OutItemType.ToxicThornFragment, 260},
-        {OutItemType.FlameCrystal, 260},
-        {OutItemType.HardenedFang, 260},
-        {OutItemType.KnightsEmblem, 260},
-        {OutItemType.ManaCrystal, 260},
-        {OutItemType.None, 260},
+        {OutItemType.MonsterCoin, 8000},
+        {OutItemType.RedJelly, 8000},
+        {OutItemType.SlimeShell, 8000 },
+        {OutItemType.SporeSac, 8000},
+        {OutItemType.WatchersEye, 8000},
+        {OutItemType.CactusSpike, 8000},
+        {OutItemType.EmeraldShard, 8000},
+        {OutItemType.ToxicThornFragment, 8000},
+        {OutItemType.FlameCrystal, 8000},
+        {OutItemType.HardenedFang, 8000},
+        {OutItemType.KnightsEmblem, 8000},
+        {OutItemType.ManaCrystal, 8000},
+        {OutItemType.None, 8000},
 
 
     };

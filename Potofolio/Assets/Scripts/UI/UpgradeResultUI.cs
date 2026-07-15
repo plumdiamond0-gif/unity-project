@@ -46,9 +46,9 @@ public class UpgradeResultUI : MonoBehaviour
             if (i < results.results.Count)
             {
                 images[i].sprite = results.results[i].sprite;
-                texts[i].text = results.results[i].type.ToString() + ":" + (results.results[i].amount) *
-                                   Mathf.Pow(1.15f, level) + "->" + (results.results[i].amount) *
-                                   Mathf.Pow(1.15f, level + 1);
+                texts[i].text = results.results[i].type.ToString() + ":" + ((results.results[i].amount) *
+                                   Mathf.Pow(1.15f, level)).ToString("F2") + "->" + ((results.results[i].amount) *
+                                   (int)Mathf.Pow(1.15f, level + 1)).ToString("F2");
 
             }
 
