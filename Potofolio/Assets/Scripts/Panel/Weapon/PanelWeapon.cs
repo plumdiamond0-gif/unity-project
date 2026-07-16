@@ -12,9 +12,9 @@ public class PanelWeapon : PanelBase
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Upgrade.onClick.AddListener(UpgradeAppear);
-        Unlock.onClick.AddListener(UnlockAppear);
-        Exit.onClick.AddListener(MoveAgain);
+        Upgrade.onClick.AddListener(() =>{UpgradeAppear(); GM.GetSoundManager().PlaySFX(AudioType.Button);});
+        Unlock.onClick.AddListener(() => { UnlockAppear();GM.GetSoundManager().PlaySFX(AudioType.Button); });
+        Exit.onClick.AddListener(() => { MoveAgain(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
     }
 
     public void GetPlayer(PlayerMovement player)

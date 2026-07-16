@@ -19,7 +19,11 @@ public class PanelReturnToBase : PanelBase
 
             Destroy(gameObject);
         });
-        ReturnToBase.onClick.AddListener(GoToBase);
+        ReturnToBase.onClick.AddListener(()=>
+        {
+            GoToBase();
+            GM.GetSoundManager().PlaySFX(AudioType.Button);
+            });
         transform.localPosition = new Vector3(0, 1000, 0);
         StartCoroutine(MovePanel());
 

@@ -26,14 +26,15 @@ public class PanelWeaponUnlock: MonoBehaviour
     {
         weaponPrefabTable = GM.GetPrefabManager().WeaponPrefabTable;
         weaponPrefabDatas = weaponPrefabTable.weaponPrafabTableDatas;
-        LeftButton.onClick.AddListener(PrevWeapon);
-        RightButton.onClick.AddListener(NextWeapon);
+        LeftButton.onClick.AddListener(() => { PrevWeapon(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
+        RightButton.onClick.AddListener(() => { NextWeapon(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
 
         unlockButton.onClick.AddListener(()=>
         {
             if (SaveManager.CurrentData.weaponActive[currentData.weaponState])
                 return;
             unlockCostUI.ShowCosts(currentData);
+            GM.GetSoundManager().PlaySFX(AudioType.SpecialBtn);
         });
 
         RefreshUI();

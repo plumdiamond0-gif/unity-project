@@ -31,6 +31,7 @@ public class CostUI : MonoBehaviour
                 if (item.amount > currentNum)
                     return;
             }
+            GM.GetSoundManager().PlaySFX(AudioType.Upgrade);
             foreach (var item in costs.costs)
             {
                 SaveManager.CurrentData.itemStates[item.itemType] -= item.amount;

@@ -26,9 +26,9 @@ public class PanelSave : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        SaveButton.onClick.AddListener(SaveData);
-        NewGameButton.onClick.AddListener(NewGame);
-        DeleteAllButton.onClick.AddListener(DeleteAll);
+        SaveButton.onClick.AddListener(() => { SaveData(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
+        NewGameButton.onClick.AddListener(() => { NewGame(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
+        DeleteAllButton.onClick.AddListener(() => { DeleteAll(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
 
         foreach (var btn in LoadBtns)
         {

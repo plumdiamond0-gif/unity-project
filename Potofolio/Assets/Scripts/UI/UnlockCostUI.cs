@@ -32,6 +32,7 @@ public class UnlockCostUI : MonoBehaviour
                 if (item.amount > currentNum)
                     return;
             }
+            GM.GetSoundManager().PlaySFX(AudioType.Unlock);
             foreach (var item in costs.costs)
             {
                 SaveManager.CurrentData.itemStates[item.itemType] -= item.amount;
@@ -39,6 +40,7 @@ public class UnlockCostUI : MonoBehaviour
             SaveManager.CurrentData.weaponActive[weapondata.weaponState] = true;
             PanelWeaponUnlock panelWeaponUnlock = transform.parent.GetComponent<PanelWeaponUnlock>();
             panelWeaponUnlock.RefreshUI();
+
             gameObject.SetActive(false);
 
         });

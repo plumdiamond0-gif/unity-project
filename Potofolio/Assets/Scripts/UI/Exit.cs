@@ -11,7 +11,7 @@ public class Exit : MonoBehaviour
     {
         buttonExit = GetComponent<Button>();
         currentPanel = transform.parent.gameObject;
-        buttonExit.onClick.AddListener(RemovePanel);
+        buttonExit.onClick.AddListener(() => { RemovePanel(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
 
     }
 

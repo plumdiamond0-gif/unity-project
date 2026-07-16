@@ -230,6 +230,7 @@ MonoBehaviour:
     Attackspeed: 0
     BulletNum: 0
     weaponImage: {fileID: 0}
+    shootSound: {fileID: 0}
     snappiness: 0
     returnSpeed: 0
     chargeAmount: 0
@@ -242,11 +243,13 @@ MonoBehaviour:
     effects: []
     upgradeCosts: {fileID: 0}
     upgradeResults: {fileID: 0}
+    unlockedCosts: {fileID: 0}
   firePos: {fileID: 2762385274009636054}
   currentCharge: 0
   maxCharge: 0
   baseRecoilX: 0
   maxChargeBonus: 0
+  CanAttack: 0
 --- !u!114 &5147695606854780525
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -408,7 +411,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: e1d5238033da68244bed777415b3ad74, type: 3}
+  m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

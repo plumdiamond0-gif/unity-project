@@ -20,7 +20,11 @@ public class PanelBaseExit : PanelBase
 
             Destroy(gameObject);
         });
-        GoBattle.onClick.AddListener(MoveToSceneBattle);
+        GoBattle.onClick.AddListener(()=>
+        {
+            MoveToSceneBattle();
+            GM.GetSoundManager().PlaySFX(AudioType.Button);
+        } );
 
         transform.localPosition = new Vector3(0, 1000, 0);
 

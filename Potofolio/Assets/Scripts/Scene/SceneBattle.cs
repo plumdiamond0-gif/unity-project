@@ -4,13 +4,13 @@ using UnityEngine.InputSystem;
 public class SceneBattle : SceneBase
 {
     [SerializeField] private Transform playerSpawnPos;
-    [SerializeField] AudioClip Bgm;
     [SerializeField] private Transform RootCanvas;
     bool canPanel = true;
 
 
     public override void Init()
     {
+        GM.GetSoundManager().PlayBGM(AudioType.Battle);
         GameManager.OnPlayerSpawned += GM.GetUIManager().Bind;
 
         RootCanvas = GameObject.FindGameObjectWithTag("RootCanvas").transform;
@@ -50,6 +50,7 @@ public class SceneBattle : SceneBase
             canPanel = false;
             GM.GetUIManager().CreateUIPanel("ReturnToBase_Panel", (go) =>
             {
+                GM.GetSoundManager().PlaySFX(AudioType.Button);
                 PanelReturnToBase panel = go.GetComponent<PanelReturnToBase>();
                 panel.Exit.onClick.AddListener(() =>
                 {

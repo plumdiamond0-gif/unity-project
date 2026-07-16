@@ -13,8 +13,6 @@ public class PanelOpening : PanelBase
     Image image;
     TMP_Text text;
     private int currentNum = 0;
-    [SerializeField] AudioClip button;
-    [SerializeField] AudioClip bgm;
 
 
     [System.Serializable]
@@ -37,8 +35,6 @@ public class PanelOpening : PanelBase
 
         image = GetComponent<Image>();
         text = GetComponentInChildren<TMP_Text>();
-        GM.GetSoundManager().PlayBGM(bgm);
-
     }
 
     public override void Show()
@@ -104,7 +100,7 @@ public class PanelOpening : PanelBase
         {
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
-                GM.GetSoundManager().PlaySFX(button);
+                GM.GetSoundManager().PlaySFX(AudioType.Button);
                 if (IsFinished)
                 {
                     GM.GetSoundManager().StopBGM();

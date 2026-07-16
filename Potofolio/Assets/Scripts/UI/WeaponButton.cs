@@ -40,7 +40,7 @@ public class WeaponButton : MonoBehaviour
             LockImage.enabled = true;
             weaponImage.enabled = false;
         }
-            Button.onClick.AddListener(OnClick);
+            Button.onClick.AddListener(() => { OnClick(); GM.GetSoundManager().PlaySFX(AudioType.NormalBtn); });
     }
 
     public void OnClick()

@@ -24,14 +24,13 @@ public class WeaponPrefabData
     public float BulletNum;
 
     public Sprite weaponImage;
-
+    public AudioClip shootSound;
 
     public float snappiness;
     public float returnSpeed;
     public float chargeAmount;
     public bool canCharge;
     public float coolTime;
-    
 
     public float BaseRecoilX;
     public float maxChargeBonus;

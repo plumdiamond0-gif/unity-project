@@ -17,7 +17,7 @@ public class RewardButton : MonoBehaviour
     {
         button = GetComponent<Button>();
         text = GetComponentInChildren<TMP_Text>();
-        button.onClick.AddListener(ApplyBuff);
+        button.onClick.AddListener(() => { ApplyBuff(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
     }
 
     public void GetData(RewardData randData)

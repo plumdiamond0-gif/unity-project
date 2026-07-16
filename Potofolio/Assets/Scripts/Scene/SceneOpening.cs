@@ -27,11 +27,8 @@ public class SceneOpening : SceneBase
               {
                   panelOpening = go.GetComponent<PanelOpening>();
                   Debug.Log($"panelOpening load");
-
               });
-      
-
-        //panelNext();
+        GM.GetSoundManager().PlayBGM(AudioType.Opening);
     }
     //void panelNext()
     //{

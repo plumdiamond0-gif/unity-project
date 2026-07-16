@@ -3,7 +3,6 @@ using UnityEngine;
 public class SceneSpaceShip : SceneBase
 {
     [SerializeField] private Transform playerSpawnPos;
-    [SerializeField] AudioClip Bgm;
     [SerializeField] private Transform RootCanvas;
 
 
@@ -12,7 +11,7 @@ public class SceneSpaceShip : SceneBase
         RootCanvas = GameObject.FindGameObjectWithTag("RootCanvas").transform;
         GM.GetUIManager().GetRootCanvas(RootCanvas);
 
-        GM.GetSoundManager().PlayBGM(Bgm);
+        GM.GetSoundManager().PlayBGM(AudioType.SpaceShip);
         GM.GetAssetManager().LoadAsset<GameObject>("Player",
             (go)=>
             {

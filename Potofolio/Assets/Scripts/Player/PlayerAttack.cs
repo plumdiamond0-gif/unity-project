@@ -54,6 +54,7 @@ public class PlayerAttack : MonoBehaviour
     private Rigidbody _rb;
     private Animator _anim;
     private PlayerStat _stat;
+    private AudioSource _audioSource;
     #endregion
 
     public bool CanAttack;
@@ -178,7 +179,7 @@ public class PlayerAttack : MonoBehaviour
     }
     void OnAttack(InputValue value)
     {
-        if (CanAttack == false || _currentAmmo[currentWeaponData.weaponState] <= 0) return;
+        if (!CanAttack || _currentAmmo[currentWeaponData.weaponState] <= 0) return;
 
         if (currentWeaponData.canCharge)
         {
@@ -233,8 +234,7 @@ public class PlayerAttack : MonoBehaviour
 
         if (cbCopy == null) return;
         CannonBall currentBall = cbCopy.GetComponent<CannonBall>();
-        float baseStatDamage = (_stat != null) ? _stat.DamageMultiplier : 1f;
-        float finalDamage = (currentWeaponData.damage * baseStatDamage) + (_attackRatio * maxChargeBonus);
+        float finalDamage = (currentWeaponData.damage * _stat.DamageMultiplier) + (_attackRatio * maxChargeBonus);
 
         if (currentBall != null)
         {
@@ -265,13 +265,14 @@ public class PlayerAttack : MonoBehaviour
 
             float attackSpeedStat = (_stat != null) ? _stat.AttackSpeedMultiplier : 1f;
             cannonBallRB.AddForce(-shootDir * (currentWeaponData.Attackspeed * attackSpeedStat), ForceMode.Impulse);
-
-            _currentAmmo[currentWeaponData.weaponState]--;
-            if (bulletNumText != null)
-            {
-                bulletNumText.text = _currentAmmo[currentWeaponData.weaponState].ToString();
-            }
         }
+        _currentAmmo[currentWeaponData.weaponState]--;
+        if (bulletNumText != null)
+        {
+            bulletNumText.text = _currentAmmo[currentWeaponData.weaponState].ToString();
+        }
+        _audioSource.clip = currentWeaponData.shootSound;
+        _audioSource.Play();
     }
 
     IEnumerator CoolTimeRoutine()
