@@ -16,18 +16,18 @@ MonoBehaviour:
   - blockPrefab: {fileID: 7947189841035561631, guid: b79e33d4bf3d2b74fad8d00b9fc87ed9, type: 3}
     blockImage: {fileID: 21300000, guid: 16737a3b46af0a94b9517f986cf272d1, type: 3}
   - blockPrefab: {fileID: 4078864926925621393, guid: 3a876ea9b1158a444adacaf2a2c1d6e0, type: 3}
-    blockImage: {fileID: 21300000, guid: 16737a3b46af0a94b9517f986cf272d1, type: 3}
+    blockImage: {fileID: 21300000, guid: bb6ed6016d44b85418a53303140520db, type: 3}
   - blockPrefab: {fileID: 7629135571732499935, guid: 775b3b6aa7aa9fc42a42fb7090856f7c, type: 3}
     blockImage: {fileID: 21300000, guid: daf6f0e464113344c9cba982ade245d1, type: 3}
   - blockPrefab: {fileID: 3618336717944412620, guid: 9d79f26b51874524e8499874af9c2f82, type: 3}
-    blockImage: {fileID: 0}
+    blockImage: {fileID: 21300000, guid: d71b6f9e41c9a3547a96e2ca35c7ba6f, type: 3}
   - blockPrefab: {fileID: 6009496029054499501, guid: d5e7d9446b3d9124dbcc82350206351c, type: 3}
-    blockImage: {fileID: 0}
+    blockImage: {fileID: 21300000, guid: 54275d9ed1c3f014dba852e06e285040, type: 3}
   - blockPrefab: {fileID: 9136588447526383560, guid: 56d15bf18c1406f419e8dca197e014ed, type: 3}
-    blockImage: {fileID: 0}
+    blockImage: {fileID: 21300000, guid: ebf79fe8e4b542c4b863a98842dc7efd, type: 3}
   - blockPrefab: {fileID: 6302981878881869391, guid: bbe62bd5d79f4cb4ab25741ec13cd732, type: 3}
-    blockImage: {fileID: 0}
+    blockImage: {fileID: 21300000, guid: 3c3c2df0fbc9f1545a66347ac5678af5, type: 3}
   - blockPrefab: {fileID: 3778695689121040103, guid: a21c82b44e1f8a644b06c5823d7aaca2, type: 3}
-    blockImage: {fileID: 0}
+    blockImage: {fileID: 21300000, guid: e22f9c59916378845845bf4ff6a32c48, type: 3}
   - blockPrefab: {fileID: 2975671159847596812, guid: 5163c965d70c9eb44bd67bb1867b00c6, type: 3}
-    blockImage: {fileID: 0}
+    blockImage: {fileID: 21300000, guid: 39150887dd748cb4aa235b7cf41825ec, type: 3}

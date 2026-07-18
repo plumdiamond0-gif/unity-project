@@ -50,7 +50,7 @@ public class SceneBattle : SceneBase
             canPanel = false;
             GM.GetUIManager().CreateUIPanel("ReturnToBase_Panel", (go) =>
             {
-                GM.GetSoundManager().PlaySFX(AudioType.Button);
+                GM.GetSoundManager().PlaySFX(AudioType.SpecialBtn);
                 PanelReturnToBase panel = go.GetComponent<PanelReturnToBase>();
                 panel.Exit.onClick.AddListener(() =>
                 {
@@ -59,5 +59,19 @@ public class SceneBattle : SceneBase
                 Debug.Log("ReturnToBase");
             });
         }
+        if (Keyboard.current.iKey.wasPressedThisFrame)
+        {
+            if (!canPanel)
+                return;
+            canPanel = false;
+            GM.GetUIManager().CreateUIPanel("Inventory_Panel", (go) =>
+            {
+                GM.GetSoundManager().PlaySFX(AudioType.SpecialBtn);
+                PanelInventory panel = go.GetComponent<PanelInventory>();
+                panel.boolChange += ()=>
+                { canPanel = true; };
+            });
+        }
+
     }
 }

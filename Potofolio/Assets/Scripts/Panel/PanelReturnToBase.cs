@@ -8,10 +8,9 @@ public class PanelReturnToBase : PanelBase
     [SerializeField] public Button Exit;
     [SerializeField] private Button ReturnToBase;
 
-
     public bool isEnded { get; private set; }
 
-    public override void Init()
+    public override void Show()
     {
         Exit.onClick.AddListener(() =>
         {
@@ -40,11 +39,9 @@ public class PanelReturnToBase : PanelBase
 
             yield return null;
         }
-        isEnded = true;
         Time.timeScale = 0f;
 
-
-
+        isEnded = true;
     }
     void GoToBase()
     {
@@ -57,4 +54,5 @@ public class PanelReturnToBase : PanelBase
             Debug.Log("SceneSpaceShip ¿Ï·á");
         });
     }
+
 }

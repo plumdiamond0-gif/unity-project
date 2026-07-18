@@ -134,8 +134,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc58a266ce2db44f96a78ba9c14538c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  weaponImage: {fileID: 0}
   Button: {fileID: 0}
-  weaponState: 2
+  weaponState: 3
   LockImage: {fileID: 2249314790634529480}
   isActive: 1
   panelWeaponUpgrade: {fileID: 4279095548320060009}
@@ -965,6 +966,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1101,6 +1103,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1237,6 +1240,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1546,6 +1550,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -1713,8 +1718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc58a266ce2db44f96a78ba9c14538c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  weaponImage: {fileID: 0}
   Button: {fileID: 0}
-  weaponState: 3
+  weaponState: 4
   LockImage: {fileID: 3077019876768831090}
   isActive: 1
   panelWeaponUpgrade: {fileID: 4279095548320060009}
@@ -1852,8 +1858,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc58a266ce2db44f96a78ba9c14538c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  weaponImage: {fileID: 0}
   Button: {fileID: 0}
-  weaponState: 1
+  weaponState: 2
   LockImage: {fileID: 154973753626254837}
   isActive: 1
   panelWeaponUpgrade: {fileID: 4279095548320060009}
@@ -2081,6 +2088,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2248,8 +2256,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc58a266ce2db44f96a78ba9c14538c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  weaponImage: {fileID: 0}
   Button: {fileID: 0}
-  weaponState: 6
+  weaponState: 7
   LockImage: {fileID: 7780671993765287144}
   isActive: 1
   panelWeaponUpgrade: {fileID: 4279095548320060009}
@@ -2387,8 +2396,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc58a266ce2db44f96a78ba9c14538c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  weaponImage: {fileID: 0}
   Button: {fileID: 0}
-  weaponState: 5
+  weaponState: 6
   LockImage: {fileID: 3842600266527527753}
   isActive: 1
   panelWeaponUpgrade: {fileID: 4279095548320060009}
@@ -2647,6 +2657,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -2934,6 +2945,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3145,6 +3157,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -3312,8 +3325,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc58a266ce2db44f96a78ba9c14538c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  weaponImage: {fileID: 0}
   Button: {fileID: 0}
-  weaponState: 0
+  weaponState: 1
   LockImage: {fileID: 2599663492013291657}
   isActive: 1
   panelWeaponUpgrade: {fileID: 4279095548320060009}
@@ -3920,6 +3934,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -4132,6 +4147,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -4343,6 +4359,7 @@ MonoBehaviour:
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -4555,6 +4572,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -4722,8 +4740,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfc58a266ce2db44f96a78ba9c14538c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  weaponImage: {fileID: 0}
   Button: {fileID: 0}
-  weaponState: 4
+  weaponState: 5
   LockImage: {fileID: 5930664497794102530}
   isActive: 1
   panelWeaponUpgrade: {fileID: 4279095548320060009}
@@ -4964,6 +4983,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
@@ -5250,6 +5270,7 @@ MonoBehaviour:
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
+  m_characterHorizontalScale: 1
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0

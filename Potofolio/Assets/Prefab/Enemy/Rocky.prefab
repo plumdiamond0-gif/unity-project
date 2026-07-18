@@ -201,6 +201,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &7136638966311296631
 MonoBehaviour:
@@ -279,7 +280,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 964480405027562052}
   serializedVersion: 5
-  m_Mass: 26
+  m_Mass: 3
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -313,6 +314,7 @@ MonoBehaviour:
   CurrentHp: 0
   MaxHp: 260
   HealthBarFill: {fileID: 4458945183867330684}
+  InvincibleTime: 0.1
 --- !u!1 &1029116272232492475
 GameObject:
   m_ObjectHideFlags: 0
@@ -648,6 +650,7 @@ SkinnedMeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_MaskInteraction: 0
   serializedVersion: 2
   m_Quality: 0
   m_UpdateWhenOffscreen: 0

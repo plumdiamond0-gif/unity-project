@@ -38,14 +38,13 @@ public class PanelBaseExit : PanelBase
             transform.localPosition = Vector3.MoveTowards(
                 transform.localPosition,
                 Vector3.zero,
-                800f * Time.deltaTime);
+                2600f * Time.deltaTime);
 
             yield return null;
         }
-        isEnded = true;
         Time.timeScale = 0f;
 
-
+        isEnded = true;
     }
     void MoveToSceneBattle()
     {
@@ -58,4 +57,5 @@ public class PanelBaseExit : PanelBase
             Debug.Log("SceneBattle ¿Ï·á");
         });
     }
+
 }

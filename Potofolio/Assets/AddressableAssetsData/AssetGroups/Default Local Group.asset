@@ -80,6 +80,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c7c8e000d1918544c87acdfe50ef792f
+    m_Address: UI_Inventory_Panel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: cc20ce353a01f1d468b09887758cf7fb
     m_Address: SceneOpening
     m_ReadOnly: 0

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74d7226ee604ad1488f6cd856d85008a, type: 3}
   m_Name: BombKnockBackEffect
   m_EditorClassIdentifier: Assembly-CSharp::KnockBackEffect
-  radius: 20
-  force: 25
-  upModifier: 15
+  radius: 10
+  force: 40
+  upModifier: 30
   rangeDam: 100

@@ -147,7 +147,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void SelectWeapon(int index)
     {
-        if (_weaponList == null || _weaponList.Count <= index) return;
+        if (!CanAttack || _weaponList == null || _weaponList.Count <= index) return;
 
         currentWeaponData = _weaponList[index];
 
@@ -213,7 +213,7 @@ public class PlayerAttack : MonoBehaviour
                         }
                         if (effect is KnockBackEffect knockBackEffect)
                         {
-                            knockBackEffect.GetCharge(currentCharge);
+                            knockBackEffect.GetChrage(currentCharge);
                         }
                         if (effect is RangeEffect rangeEffect)
                         {
@@ -228,7 +228,6 @@ public class PlayerAttack : MonoBehaviour
 
         Fire(); 
     }
-
     public void Fire()
     {
         if (!_canAttack) return;
@@ -287,27 +286,27 @@ public class PlayerAttack : MonoBehaviour
         }
         _audioSource.Play();
     }
-
     IEnumerator CoolTimeRoutine()
     {
         _canAttack = false;
         yield return new WaitForSeconds(currentWeaponData.coolTime);
         _canAttack = true;
     }
-
     public void HalfRemove()
     {
         Debug.Log("HalfRemove ½ÇÇà");
         EnemyMovement[] enemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
-
+        int enemyNum = 0;
         foreach (var enemy in enemies)
         {
             int ran = UnityEngine.Random.Range(0, 260);
             if (ran % 2 == 0)
             {
+                enemyNum++;
                 Destroy(enemy.gameObject); 
             }
         }
+
     }
 
     private int GetAmmoValue(WeaponState weaponState)

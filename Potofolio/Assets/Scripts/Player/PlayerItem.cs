@@ -32,7 +32,7 @@ public class PlayerItem : MonoBehaviour
     #endregion
 
     #region Internal Data
-    private Dictionary<OutItemType, int> _resourcesData = new();
+    //private Dictionary<OutItemType, int> _resourcesData = new();
     private InventorySlot[] _inventorySlots = new InventorySlot[4];
     #endregion
 
@@ -134,14 +134,14 @@ public class PlayerItem : MonoBehaviour
         {
             OutItemType itemType = data.outItemType;
 
-            if (!_resourcesData.ContainsKey(itemType))
-            {
-                _resourcesData.Add(itemType, 1);
-            }
-            else
-            {
-                _resourcesData[itemType] += 1;
-            }
+            //if (!_resourcesData.ContainsKey(itemType))
+            //{
+            //    _resourcesData.Add(itemType, 1);
+            //}
+            //else
+            //{
+            //    _resourcesData[itemType] += 1;
+            //}
 
             ItemEffect.Restore(itemType);
         }
