@@ -36,6 +36,11 @@ public class PlayerItem : MonoBehaviour
     private InventorySlot[] _inventorySlots = new InventorySlot[4];
     #endregion
 
+    PlayerAttack playerAttack;
+    private void Awake()
+    {
+        playerAttack = GetComponent<PlayerAttack>();
+    }
     #region Experience Logic
     public void GetExp(float exp)
     {
@@ -48,14 +53,16 @@ public class PlayerItem : MonoBehaviour
         while (currentExp >= maxExp)
         {
             if (!canShowPanel)
-                break; 
+                break;
+            Debug.Log("sgsdrgerg");
 
             canShowPanel = false;
             currentExp -= maxExp;
             maxExp *= 1.5f;
-
+            playerAttack.CanAttack = false;
             GM.GetUIManager().CreateUIPanel("Reward_Panel", (go) =>
             {
+                Debug.Log("ShowReward");
                 go.SetActive(true);
                 PanelReward panel = go.GetComponent<PanelReward>();
                 if (panel != null)
@@ -99,6 +106,7 @@ public class PlayerItem : MonoBehaviour
 
         if (item.itemType == ItemType.InGameItem)
         {
+            
             if (data.isInvenItem)
             {
                 // 인벤토리 빈 슬롯 검색 및 추가
@@ -113,10 +121,14 @@ public class PlayerItem : MonoBehaviour
                     }
                 }
             }
-            else
+            else if (data.isBullet)
             {
-                ItemEffect.Use(data);
+                playerAttack.GetBullet(data.weaponState, data.bulletPlus);
+                Debug.Log("wf4aegwegawe");
+
             }
+            else
+                ItemEffect.Use(data);
         }
         else if (data.itemType == ItemType.OutGameItem)
         {
@@ -133,7 +145,6 @@ public class PlayerItem : MonoBehaviour
 
             ItemEffect.Restore(itemType);
         }
-
         Destroy(other.gameObject);
     }
 

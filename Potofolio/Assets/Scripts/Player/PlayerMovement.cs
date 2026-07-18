@@ -90,7 +90,6 @@ public class PlayerMovement : MonoBehaviour
         {
             playerSpeed = walkSpeed * _stat.MoveSpeedMultiplier;
         }
-        Debug.Log(playerSpeed);
     }
 
     void Update()
@@ -113,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
                 targetSpeed = 1f;
             }
         }
-        else
+        else if(state == PlayerState.InBattle)
         {
             if (inputMagnitude > 0)
             {
@@ -134,6 +133,7 @@ public class PlayerMovement : MonoBehaviour
         {
             if (_isSprinting)
             {
+                Debug.Log("Sprinting");
                 _walkAudio.Play();
             }
             else

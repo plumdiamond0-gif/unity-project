@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: StingWingSlowEffect
   m_EditorClassIdentifier: Assembly-CSharp::SlowEffect
   slowTime: 2
-  slowAmount: 0.5
+  slowAmount: 0.2

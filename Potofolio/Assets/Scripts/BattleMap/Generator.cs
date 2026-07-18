@@ -8,6 +8,7 @@ public class Generator : MonoBehaviour
     [SerializeField] float spawnAmount;
     [SerializeField] EnemyType enemyType;
     [SerializeField] InItemType inItemType;
+    [SerializeField] WeaponState bulletType;
 
     public bool canSpawn = true;
     [SerializeField] float detectdist;
@@ -29,17 +30,24 @@ public class Generator : MonoBehaviour
     }
     void Start()
     {
-        if(inItemType == InItemType.None)
-        {
-            spawnObject = GM.GetPrefabManager().
-            EnemyPrefabTable.EnemyPrefabDatas.Find
-            (x => x.enemyType == enemyType).enemyPrefab;
-        }
-        if(enemyType == EnemyType.None)
+        if (inItemType != InItemType.None)
         {
             spawnObject = GM.GetPrefabManager().
                 ItemPrefabTable.ItemDatas.Find
                 (x => x.inItemType == inItemType).ItemPrefab;
+
+        }
+        if (enemyType != EnemyType.None)
+        {
+            spawnObject = GM.GetPrefabManager().
+                EnemyPrefabTable.EnemyPrefabDatas.Find
+                (x => x.enemyType == enemyType).enemyPrefab;
+        }
+        if(bulletType != WeaponState.None)
+        {
+            spawnObject = GM.GetPrefabManager().
+                ItemPrefabTable.ItemDatas.Find
+                (x => x.weaponState == bulletType).ItemPrefab;
         }
     }
 

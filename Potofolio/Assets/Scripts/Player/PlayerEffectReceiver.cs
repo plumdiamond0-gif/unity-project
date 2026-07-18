@@ -76,5 +76,9 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
         yield return null;
 
     }
+    public void ApplyRangeDam(float damage)
+    {
+    }
+
 
 }

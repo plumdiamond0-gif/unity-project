@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BlockPrefabTable
   blockDatas:
   - blockPrefab: {fileID: 7947189841035561631, guid: b79e33d4bf3d2b74fad8d00b9fc87ed9, type: 3}
-    blockImage: {fileID: 21300000, guid: 54275d9ed1c3f014dba852e06e285040, type: 3}
+    blockImage: {fileID: 21300000, guid: 16737a3b46af0a94b9517f986cf272d1, type: 3}
   - blockPrefab: {fileID: 4078864926925621393, guid: 3a876ea9b1158a444adacaf2a2c1d6e0, type: 3}
     blockImage: {fileID: 21300000, guid: 16737a3b46af0a94b9517f986cf272d1, type: 3}
   - blockPrefab: {fileID: 7629135571732499935, guid: 775b3b6aa7aa9fc42a42fb7090856f7c, type: 3}

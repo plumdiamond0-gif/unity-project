@@ -25,6 +25,7 @@ public class SoundManager : MonoBehaviour
     {
         bgmSource = gameObject.AddComponent<AudioSource>();
         sfxSource = gameObject.AddComponent<AudioSource>();
+        bgmSource.volume = 0.2f;
     }
     // ======================
     // BGM

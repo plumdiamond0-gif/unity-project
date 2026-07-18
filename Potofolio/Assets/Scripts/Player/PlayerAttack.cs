@@ -54,7 +54,7 @@ public class PlayerAttack : MonoBehaviour
     private Rigidbody _rb;
     private Animator _anim;
     private PlayerStat _stat;
-    private AudioSource _audioSource;
+    [SerializeField]private AudioSource _audioSource;
     #endregion
 
     public bool CanAttack;
@@ -151,9 +151,10 @@ public class PlayerAttack : MonoBehaviour
 
         currentWeaponData = _weaponList[index];
 
-        if (weaponImage != null) weaponImage.sprite = currentWeaponData.weaponImage;
-        if (weaponText != null) weaponText.text = currentWeaponData.weaponState.ToString();
-        if (bulletNumText != null) bulletNumText.text = _currentAmmo[currentWeaponData.weaponState].ToString();
+        weaponImage.sprite = currentWeaponData.weaponImage;
+        weaponText.text = currentWeaponData.weaponState.ToString();
+        bulletNumText.text = _currentAmmo[currentWeaponData.weaponState].ToString();
+        _audioSource.clip = currentWeaponData.shootSound;
 
         if (currentWeaponData.WeaponBullet == null) return;
 
@@ -166,7 +167,16 @@ public class PlayerAttack : MonoBehaviour
             attackGaugeBar.SetActive(currentWeaponData.canCharge);
         }
     }
-
+    public void GetBullet(WeaponState weaponState, int bulletNum)
+    {
+        Debug.Log(_currentAmmo[weaponState]);
+        _currentAmmo[weaponState] += bulletNum;
+        if (currentWeaponData.weaponState == weaponState)
+        {
+            bulletNumText.text = _currentAmmo[weaponState].ToString();
+        }
+        Debug.Log(_currentAmmo[weaponState]);
+    }
     public void ResetCharge()
     {
         _isCharging = false;
@@ -204,6 +214,10 @@ public class PlayerAttack : MonoBehaviour
                         if (effect is KnockBackEffect knockBackEffect)
                         {
                             knockBackEffect.GetCharge(currentCharge);
+                        }
+                        if (effect is RangeEffect rangeEffect)
+                        {
+                            rangeEffect.GetCharge(currentCharge);
                         }
                     }
                 }
@@ -271,7 +285,6 @@ public class PlayerAttack : MonoBehaviour
         {
             bulletNumText.text = _currentAmmo[currentWeaponData.weaponState].ToString();
         }
-        _audioSource.clip = currentWeaponData.shootSound;
         _audioSource.Play();
     }
 

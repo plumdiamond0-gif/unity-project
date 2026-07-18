@@ -15,7 +15,6 @@ public static class ItemEffect
 
         switch (data.inItemType)
         {
-
             case InItemType.HealItem:
                 float healval = data.HealAmount;
                 Heal(health, healval);

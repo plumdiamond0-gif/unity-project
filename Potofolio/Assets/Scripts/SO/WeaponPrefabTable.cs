@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 public enum WeaponState
 {
+    None,
     Base,
     Improved,
     Slime,

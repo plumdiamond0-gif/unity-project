@@ -249,6 +249,7 @@ MonoBehaviour:
   maxCharge: 0
   baseRecoilX: 0
   maxChargeBonus: 0
+  _audioSource: {fileID: 2823121015338912261}
   CanAttack: 0
 --- !u!114 &5147695606854780525
 MonoBehaviour:

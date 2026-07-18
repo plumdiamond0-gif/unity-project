@@ -13,12 +13,13 @@ MonoBehaviour:
   m_Name: WeaponPrefabTable
   m_EditorClassIdentifier: Assembly-CSharp::PrefabTable
   weaponPrafabTableDatas:
-  - weaponState: 0
+  - weaponState: 1
     WeaponBullet: {fileID: 8363767819308192229, guid: 1881ef916111c3d4d9f10ef03c2564c4, type: 3}
     damage: 24
     Attackspeed: 20
     BulletNum: 1000
     weaponImage: {fileID: 21300000, guid: 3b1bb8a54bff5c848a5961f13d0b4f7b, type: 3}
+    shootSound: {fileID: 8300000, guid: de812cfb519929c4aad9d296f655c81d, type: 3}
     snappiness: 5
     returnSpeed: 5
     chargeAmount: 1
@@ -32,12 +33,13 @@ MonoBehaviour:
     upgradeCosts: {fileID: 11400000, guid: 13ce338445345fc44abadee2193d5711, type: 2}
     upgradeResults: {fileID: 11400000, guid: 2ec06e565e6aa7f4dbf27ecdd0984b59, type: 2}
     unlockedCosts: {fileID: 0}
-  - weaponState: 1
+  - weaponState: 2
     WeaponBullet: {fileID: 8363767819308192229, guid: 2a5548c3d0139ee4db798ae4915ef60b, type: 3}
     damage: 45
     Attackspeed: 30
     BulletNum: 500
     weaponImage: {fileID: 21300000, guid: ecd2584d7f96008498c95d940cce7155, type: 3}
+    shootSound: {fileID: 8300000, guid: 9f45e6a5f5cd816458d7c9359c903f4b, type: 3}
     snappiness: 5
     returnSpeed: 2
     chargeAmount: 1
@@ -52,12 +54,13 @@ MonoBehaviour:
     upgradeCosts: {fileID: 11400000, guid: 07d22b366b0e6c649aa1e69787a14ea6, type: 2}
     upgradeResults: {fileID: 11400000, guid: 38dc056ac8ffd764d895915f6cbd7387, type: 2}
     unlockedCosts: {fileID: 11400000, guid: 529ea43ea1556a640a2b7b51e1048f67, type: 2}
-  - weaponState: 2
+  - weaponState: 3
     WeaponBullet: {fileID: 8363767819308192229, guid: 9f2fb37adc018c94bb9d582a10b5bcba, type: 3}
     damage: 30
     Attackspeed: 25
     BulletNum: 300
     weaponImage: {fileID: 21300000, guid: ff2144f5158884c4d9381c5da6ba716a, type: 3}
+    shootSound: {fileID: 8300000, guid: 8154f5e18ea48164e9cb0132012cf432, type: 3}
     snappiness: 8
     returnSpeed: 3
     chargeAmount: 0
@@ -72,12 +75,13 @@ MonoBehaviour:
     upgradeCosts: {fileID: 11400000, guid: e6c93a9e44fc49241803aba856628a98, type: 2}
     upgradeResults: {fileID: 11400000, guid: 8e076729a751d8042a72be89c7ee89c1, type: 2}
     unlockedCosts: {fileID: 11400000, guid: 357932bd5a1548d4b8b69ae3ad8cc556, type: 2}
-  - weaponState: 4
+  - weaponState: 5
     WeaponBullet: {fileID: 8363767819308192229, guid: a613198d0eea09b4499558d1ccf8ab97, type: 3}
     damage: 40
     Attackspeed: 50
     BulletNum: 200
     weaponImage: {fileID: 21300000, guid: 614e6328a5f51d6478b9494f0e319792, type: 3}
+    shootSound: {fileID: 8300000, guid: 5dbc74a65da58144aa0a20190bcd4909, type: 3}
     snappiness: 4
     returnSpeed: 1.5
     chargeAmount: 0
@@ -88,16 +92,17 @@ MonoBehaviour:
     YZRecoil: 0.3
     WeaponImage: {fileID: 21300000, guid: 614e6328a5f51d6478b9494f0e319792, type: 3}
     effects:
-    - {fileID: 11400000, guid: 4f61d25e1f1b25a4591b7e47309dd9d7, type: 2}
+    - {fileID: 0}
     upgradeCosts: {fileID: 11400000, guid: 2a469f6ef63d1c84c8176703cec91f95, type: 2}
     upgradeResults: {fileID: 11400000, guid: 616c6882adb2ec24284ce9ae817b18b6, type: 2}
     unlockedCosts: {fileID: 11400000, guid: c35d1a8cb0c2f2d4fb83e148d2abc7f4, type: 2}
-  - weaponState: 3
+  - weaponState: 4
     WeaponBullet: {fileID: 8363767819308192229, guid: 22de006092143f84480069385fc6fb40, type: 3}
     damage: 20
     Attackspeed: 30
     BulletNum: 150
     weaponImage: {fileID: 21300000, guid: 80460d4a1aeb2de48a77811a504024fb, type: 3}
+    shootSound: {fileID: 8300000, guid: 50238a32333496c46bf4f0eef34ca63c, type: 3}
     snappiness: 20
     returnSpeed: 4
     chargeAmount: 0
@@ -113,12 +118,13 @@ MonoBehaviour:
     upgradeCosts: {fileID: 11400000, guid: 45e24a0d8adc75c4190e26f0ec69f016, type: 2}
     upgradeResults: {fileID: 11400000, guid: 10d8799b0fc07f74f9669344e31b6419, type: 2}
     unlockedCosts: {fileID: 11400000, guid: ea1159405db518245ab3390e5631b82d, type: 2}
-  - weaponState: 5
+  - weaponState: 6
     WeaponBullet: {fileID: 8363767819308192229, guid: 86e81e14019f1c24b94f906625201ac6, type: 3}
     damage: 85
     Attackspeed: 70
     BulletNum: 100
     weaponImage: {fileID: 21300000, guid: deb8c4adf151eb646b7822680ea57787, type: 3}
+    shootSound: {fileID: 8300000, guid: b590eb6e51c172d4ea06202230bf8177, type: 3}
     snappiness: 18
     returnSpeed: 5
     chargeAmount: 2
@@ -134,12 +140,13 @@ MonoBehaviour:
     upgradeCosts: {fileID: 11400000, guid: b1d0077df0a649944a7813bc76de4c24, type: 2}
     upgradeResults: {fileID: 11400000, guid: 9f76187a3e3ea714b901ed852b24117a, type: 2}
     unlockedCosts: {fileID: 11400000, guid: a47454162c7325d408359fcc8611f4b0, type: 2}
-  - weaponState: 6
+  - weaponState: 7
     WeaponBullet: {fileID: 8363767819308192229, guid: fee6bf91f9775cf4486e13efaea39fba, type: 3}
     damage: 300
     Attackspeed: 50
     BulletNum: 26
     weaponImage: {fileID: 21300000, guid: 10964cc78f69de1419462e2378fed368, type: 3}
+    shootSound: {fileID: 8300000, guid: cfa16117c62143e4c9055eb2c083673f, type: 3}
     snappiness: 20
     returnSpeed: 4
     chargeAmount: 0

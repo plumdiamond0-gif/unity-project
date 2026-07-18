@@ -26,29 +26,18 @@ public class CannonBall : MonoBehaviour
         {
             GameObject target = other.gameObject;
             Health enemyHealth = target.GetComponent<Health>();
-
-            if (enemyHealth != null)
+            if (_data != null && _data.effects != null && enemyHealth != null)
             {
                 enemyHealth.TakeDamage(_damage);
-
-                if (_data != null && _data.effects != null)
+                foreach (var effectObj in _data.effects)
                 {
-                    foreach (var effectObj in _data.effects)
-                    {
-                        float level = SaveManager.CurrentData.weaponlevel[_data.weaponState];
-                        float multiplier = Mathf.Pow(level, 1.15f);
+                    float level = SaveManager.CurrentData.weaponlevel[_data.weaponState];
+                    float multiplier = Mathf.Pow(level, 1.15f);
 
-                        if (multiplier == 0)
-                        {
-                            multiplier = 1f;
-                        }
-
-                        if (effectObj is IWeaponEffect effect)
-                        {
-                            effect.Apply(target, multiplier);
-                        }
-                    }
+                    if (multiplier == 0) multiplier = 1f;
+                    if (effectObj is IWeaponEffect effect) effect.Apply(target, multiplier);
                 }
+
             }
             Destroy(gameObject);
         }

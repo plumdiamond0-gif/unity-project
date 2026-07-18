@@ -15,19 +15,17 @@ MonoBehaviour:
   audioDatas:
   - audioType: 0
     audioClip: {fileID: 8300000, guid: 4bcda8eaa373c3e4aabf6d9ecf574c1f, type: 3}
-  - audioType: 8
-    audioClip: {fileID: 8300000, guid: 6961d5fc01528d74a833bd712dfc2a64, type: 3}
-  - audioType: 9
-    audioClip: {fileID: 8300000, guid: 1d12ea4ef1284e5498d72341c25505c0, type: 3}
   - audioType: 10
+    audioClip: {fileID: 8300000, guid: 6961d5fc01528d74a833bd712dfc2a64, type: 3}
+  - audioType: 11
+    audioClip: {fileID: 8300000, guid: 1d12ea4ef1284e5498d72341c25505c0, type: 3}
+  - audioType: 12
     audioClip: {fileID: 8300000, guid: 8b15ea86f8386a24f93e7ff86e71b4cd, type: 3}
   - audioType: 1
     audioClip: {fileID: 8300000, guid: a82cecc47edef5248b77674531c74f83, type: 3}
-  - audioType: 11
+  - audioType: 14
     audioClip: {fileID: 8300000, guid: 7bd6b897eb5ca4b7d88a205c4a51640c, type: 3}
-  - audioType: 12
+  - audioType: 13
     audioClip: {fileID: 8300000, guid: 52320e590bf774734a288886eba557ba, type: 3}
-  - audioType: 10
-    audioClip: {fileID: 8300000, guid: 8b15ea86f8386a24f93e7ff86e71b4cd, type: 3}
   - audioType: 2
     audioClip: {fileID: 8300000, guid: 938c9f6d75e03c14faad7aab8317d3a6, type: 3}

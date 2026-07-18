@@ -53,7 +53,8 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
 
     static readonly int MoveHash = Animator.StringToHash("Move");
     static readonly int AttackHash = Animator.StringToHash("Attack");
-    static readonly int CanAttackHash = Animator.StringToHash("CanAttack");
+    static readonly int DieHash = Animator.StringToHash("Die");
+
 
     //bool isSlow;
     //bool isStun;
@@ -101,7 +102,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
 
         if (health.CurrentHp <= 0)
         {
-            Die();
+            StartCoroutine(Die());
             return;
         }
         if (player == null)
@@ -226,35 +227,28 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
 
         }
     }
-    public void Die()
+    IEnumerator Die()
     {
         currentState = EnemyState.Die;
-        //float distance = 2f;
-
-        foreach (var item in data.dropItems.dropItems)
-        {
-            for (int i = 0; i < item.spawnNum; i++)
+        agent.enabled = false;
+        anim.SetTrigger(DieHash);
+        yield return new WaitForSeconds(2f);
+            foreach (var item in data.dropItems.dropItems)
             {
-                Vector2 rand = Random.insideUnitCircle;
-                Vector3 spawnPos = transform.position + new Vector3(rand.x, 0, rand.y);
-                GameObject dropObject = GM.GetPrefabManager().
-                    ItemPrefabTable.ItemDatas.
-                    Find(x => x.outItemType == item.itemType).ItemPrefab;
-                GameObject spawnedObject = Instantiate(dropObject, spawnPos, Quaternion.identity);
-                spawnedObject.transform.localScale *= 0.3f;
-
+                for (int i = 0; i < item.spawnNum; i++)
+                {
+                    Vector2 rand = Random.insideUnitCircle;
+                    Vector3 spawnPos = transform.position + new Vector3(rand.x, 0, rand.y);
+                    GameObject dropObject = GM.GetPrefabManager().
+                        ItemPrefabTable.ItemDatas.
+                        Find(x => x.outItemType == item.itemType).ItemPrefab;
+                    GameObject spawnedObject = Instantiate(dropObject, spawnPos, Quaternion.identity);
+                    spawnedObject.transform.localScale *= 0.3f;
+                }
             }
+            GameManager.instance.GetPlayer().GetComponent<PlayerItem>().GetExp(data.exp);
 
-        }
-        GameManager.instance.GetPlayer().GetComponent<PlayerItem>().GetExp(data.exp);
-
-       
-        Destroy(gameObject); 
-
-    }
-    public void TakeDamage(float Getdamage)
-    {
-        health.CurrentHp -= Getdamage;
+        Destroy(gameObject);
     }
     public void ApplyKnockBack()
     {
@@ -313,15 +307,20 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
         for (int i = 0; i < dotTime; i++)
         {
             
-            TakeDamage(dotDamage);
+            health.TakeDamage(dotDamage);
             Debug.Log(dotDamage);
             yield return new WaitForSeconds(0.8f);
             
         }
         yield return null;
     }
+    public void ApplyRangeDam(float damage)
+    {
+        health.TakeDamage(damage);
+    }
 
-  
+
+
 
 
 

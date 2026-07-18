@@ -15,9 +15,13 @@ public class RewardButton : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        PlayerAttack playerAttack =  GameManager.instance.GetPlayer().GetComponent<PlayerAttack>();
         button = GetComponent<Button>();
         text = GetComponentInChildren<TMP_Text>();
-        button.onClick.AddListener(() => { ApplyBuff(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
+        button.onClick.AddListener(() => {
+            playerAttack.CanAttack = true;
+            ApplyBuff(); 
+            GM.GetSoundManager().PlaySFX(AudioType.Button); });
     }
 
     public void GetData(RewardData randData)

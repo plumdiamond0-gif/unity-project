@@ -20,16 +20,9 @@ public enum InItemType
     MoveSpeedPlus,
     JumpPowerBuff,
     MaxHpPlus,
-
-
     BeInvincible,
     RecallBeacon,
     HalfRemove,
-
-
-
-    JetPack,
-    
 
 }
 public enum OutItemType
@@ -82,6 +75,9 @@ public class ItemData
     public OutItemType outItemType;
 
     public bool isInvenItem;
+    public bool isBullet;
+    public int bulletPlus;
+    public WeaponState weaponState; 
 
     public string ItemName;
     public GameObject ItemPrefab;
