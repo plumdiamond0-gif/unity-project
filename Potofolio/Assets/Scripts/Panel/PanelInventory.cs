@@ -8,6 +8,7 @@ using UnityEngine.UI;
 
 public class PanelInventory : PanelBase
 {
+    private bool isMaxed = false;
     private bool isEnded = false;
     Image[] inventories;
     public Action boolChange;
@@ -19,32 +20,64 @@ public class PanelInventory : PanelBase
     public override void Show()
     {
         transform.localPosition = new Vector3(0, 0, 0);
-        transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
-        StartCoroutine(MovePanel());
+        StartCoroutine(MaxiPanel());
     }
-    IEnumerator MovePanel()
+    IEnumerator MaxiPanel()
     {
-        for (int i = 0; i < 10; i++)
+        isEnded = false ;
+        transform.localScale = Vector3.one;
+        float duration = 0.5f;
+        float timer = 0f;
+
+        while (timer < duration)
         {
+            timer += Time.deltaTime;
 
+            float t = timer / duration;
+            float value = Mathf.Pow(t, 2);
+
+            transform.localScale = Vector3.one * value;
+
+            yield return null;
         }
-        Time.timeScale = 0f;
 
+        transform.localScale = Vector3.one;
+
+        Time.timeScale = 0f;
         isEnded = true;
+        isMaxed = true;
+    }
+
+    IEnumerator MiniPanel()
+    {
+        isEnded = false;
+        transform.localScale = Vector3.one;
+        Time.timeScale = 1f;
+
+        float duration = 1f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+            float t = 1 - (timer / duration);
+            transform.localScale *= t;  
+            yield return null;
+        }
+        isMaxed = false;
+        isEnded = true;
+        Destroy(gameObject);
+
     }
 
     private void Update()
     {
+        if(!isEnded) return;
         if (Keyboard.current.iKey.wasPressedThisFrame)
         {
-            Time.timeScale = 1f;
             boolChange?.Invoke();
             GM.GetSoundManager().PlaySFX(AudioType.SpecialBtn);
-            Destroy(gameObject);
+            StartCoroutine(isMaxed ? MiniPanel() : MaxiPanel());
         }
     }
-
-
-
-
 }

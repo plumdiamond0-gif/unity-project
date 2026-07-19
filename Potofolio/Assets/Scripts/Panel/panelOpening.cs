@@ -77,7 +77,7 @@ public class PanelOpening : PanelBase
         }
 
         canvasGroup.alpha = 1;
-        yield return new WaitForSeconds(currentNum == 1 ? 1.5f : 3f);
+        yield return new WaitForSeconds(currentNum == 1 ? 1.5f : 2f);
 
         IsPlaying = false;
     }

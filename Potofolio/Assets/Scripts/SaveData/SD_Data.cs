@@ -11,12 +11,12 @@ public class SD_User
     public Dictionary<WeaponState, bool> weaponActive = new()
     {
         {WeaponState.Base, true},
-        {WeaponState.Improved, true},
-        {WeaponState.Slime, true},
-        {WeaponState.Fire, true},
-        {WeaponState.Toxic, true},
-        {WeaponState.Energy, true},
-        {WeaponState.Bomb, true},
+        {WeaponState.Improved, false},
+        {WeaponState.Slime, false},
+        {WeaponState.Fire, false},
+        {WeaponState.Toxic, false},
+        {WeaponState.Energy, false},
+        {WeaponState.Bomb, false},
     };
 
     public Dictionary<OutItemType, int> itemStates = new()
