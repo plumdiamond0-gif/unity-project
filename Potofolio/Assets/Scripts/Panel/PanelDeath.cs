@@ -1,0 +1,35 @@
+using System.Collections;
+using UnityEngine;
+
+public class PanelDeath : PanelBase
+{
+    public override void Show()
+    {
+        transform.localPosition = new Vector3(0, 1000, 0);
+        StartCoroutine(MovePanel());
+    }
+    IEnumerator MovePanel()
+    {
+        while (transform.localPosition != Vector3.zero)
+        {
+            transform.localPosition = Vector3.MoveTowards(
+                transform.localPosition,
+                Vector3.zero,
+                800f * Time.deltaTime);
+
+            yield return null;
+        }
+        Time.timeScale = 0f;
+        yield return new WaitForSeconds(1);
+        GoToBase();
+    }
+    void GoToBase()
+    {
+        Time.timeScale = 1f;
+        Destroy(GameManager.instance.GetPlayer().gameObject);
+        GM.GetSceneLoadManager().NextLoadScene("SceneSpaceShip", () =>
+        {
+            Debug.Log("SceneSpaceShip ¿Ï·á");
+        });
+    }
+}

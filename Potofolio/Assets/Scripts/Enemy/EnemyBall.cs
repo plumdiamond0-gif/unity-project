@@ -4,6 +4,7 @@ public class EnemyBall : MonoBehaviour
 {
     EnemyPrefabData data;
     float Damage;
+    Vector3 prevPos;
 
     public void SetEnemyData(EnemyPrefabData enemyData)
     {
@@ -14,14 +15,18 @@ public class EnemyBall : MonoBehaviour
     {
         Damage = damage;    
     }
+    public void SetPos(Vector3 pos)
+    {
+        prevPos = pos;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Health playerhealth = other.GetComponent<Health>();
-                if (playerhealth != null)
+            PlayerMovement player = other.GetComponent<PlayerMovement>(); 
+                if (player != null)
                 {
-                    playerhealth.TakeDamage(Damage);
+                player.TakeDamage(Damage);
                 Debug.Log("ÇÃ·¹ÀÌ¾î¿¡°Ô ±ø µ¥¹ÌÂ¢ ¤Ã¤§·æ");
                 if (data == null)
                     return;
@@ -34,12 +39,18 @@ public class EnemyBall : MonoBehaviour
                     }
                 }
             }
-                Destroy(gameObject);
+            GM.GetEnemyBulletManager().projectilePool[data.enemyType].Return(gameObject);
         }
         else if(other.CompareTag("Ground"))
         {
-            Destroy(gameObject);
+            GM.GetEnemyBulletManager().projectilePool[data.enemyType].Return(gameObject);
         }
     }
-
+    private void Update()
+    {
+        if (Vector3.Distance(prevPos, transform.position) > 57)
+        {
+            GM.GetEnemyBulletManager().projectilePool[data.enemyType].Return(gameObject);
+        }
+    }
 }

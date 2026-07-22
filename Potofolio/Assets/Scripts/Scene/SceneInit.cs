@@ -21,7 +21,7 @@ public class SceneInit : SceneBase
 
     private void OnNextSceneLoad()
     {
-        GM.GetSceneLoadManager().NextLoadScene("SceneOpening", () =>
+        GM.GetSceneLoadManager().NextLoadScene("SceneSpaceShip", () =>
             {
                 Debug.Log("SceneOpening ¿Ï·á");
             });

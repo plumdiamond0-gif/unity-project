@@ -13,13 +13,13 @@ using static WeaponPrefabTable;
 public class UpgradeResultUI : MonoBehaviour
 {
     //[SerializeField] private List<TMP_Text> texts;
-    private Image[] images = new Image[5];
-    private TMP_Text[] texts = new TMP_Text[5];
+    [SerializeField] private Image[] images = new Image[5];
+    [SerializeField] private TMP_Text[] texts = new TMP_Text[5];
     [SerializeField] private TMP_Text preLv;
     [SerializeField] private TMP_Text AftLv;
 
 
-    public void Start()
+    public void Awake()
     {
         images = GetComponentsInChildren<Image>().
             Where(x => x.gameObject != gameObject).ToArray();
@@ -29,7 +29,6 @@ public class UpgradeResultUI : MonoBehaviour
         {
             images[i].sprite = null;
             texts[i].text = null;
-
         }
     }
 
@@ -45,10 +44,14 @@ public class UpgradeResultUI : MonoBehaviour
         {
             if (i < results.results.Count)
             {
+                if (results.results[i].sprite == null)
+                    Debug.Log("results.results[i].sprite == null");
+                if(images[i].sprite == null)
+                    Debug.Log("images[i].sprite == null");
                 images[i].sprite = results.results[i].sprite;
-                texts[i].text = results.results[i].type.ToString() + ":" + ((results.results[i].amount) *
-                                   Mathf.Pow(1.15f, level)).ToString("F2") + "->" + ((results.results[i].amount) *
-                                   (int)Mathf.Pow(1.15f, level + 1)).ToString("F2");
+                texts[i].text = results.results[i].type.ToString() + ":" +   ((results.results[i].amount) *
+                                   (int)Mathf.Pow(1.15f, level + 1)).ToString("F2") + "->" + ((results.results[i].amount) *
+                                   Mathf.Pow(1.15f, level)).ToString("F2");
 
             }
 

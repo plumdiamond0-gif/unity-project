@@ -21,7 +21,7 @@ public class SD_User
 
     public Dictionary<OutItemType, int> itemStates = new()
     {
-        {OutItemType.MonsterCoin, 8000},
+        {OutItemType.MonsterCoin, 80000},
         {OutItemType.RedJelly, 8000},
         {OutItemType.SlimeShell, 8000 },
         {OutItemType.SporeSac, 8000},

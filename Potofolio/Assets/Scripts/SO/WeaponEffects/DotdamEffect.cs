@@ -11,8 +11,14 @@ public class DotdamEffect : ScriptableObject, IWeaponEffect
 {
     [SerializeField] float dotDamage;
     [SerializeField] float dotTime;
+    //[SerializeField] private float _particleTime;
+    //[SerializeField] private ParticleType _particleType;
+    //public float particleTime => _particleTime;
+    //public ParticleType particleType => _particleType;
 
     float charge;
+
+
     public void GetCharge(float charge)
     {
         this.charge = charge;

@@ -20,6 +20,7 @@ public class WeaponPrefabData
     public WeaponState weaponState;
     //public string WeaponName;
     public GameObject WeaponBullet;
+    public int bulletCount;
     public float damage;
     public float Attackspeed;
     public float BulletNum;

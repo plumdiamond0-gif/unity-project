@@ -123,6 +123,8 @@ public class PlayerItem : MonoBehaviour
             }
             else if (data.isBullet)
             {
+                if (!SaveManager.CurrentData.weaponActive[data.weaponState])
+                    return;
                 playerAttack.GetBullet(data.weaponState, data.bulletPlus);
                 Debug.Log("wf4aegwegawe");
 

@@ -1,4 +1,5 @@
 
+using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,6 +19,16 @@ public class PanelWeaponUpgrade
 
     WeaponButton[] weaponButtons;
 
+    private void Start()
+    {
+        weaponButtons = ItemList.GetComponentsInChildren<WeaponButton>();
+        foreach (var item in weaponButtons)
+        {
+            item.BeActive();
+            item.Button.onClick.AddListener(() => { costUI.gameObject.SetActive(false); });
+        }
+        Show(WeaponState.Base);
+    }
 
     public void Show(WeaponState weaponState)
     {
@@ -27,18 +38,10 @@ public class PanelWeaponUpgrade
         UpgradeResults results = data.upgradeResults;
         UpgradeCost cost = data.upgradeCosts;
         int level = SaveManager.CurrentData.weaponlevel[weaponState];
-        weaponButtons = ItemList.GetComponentsInChildren<WeaponButton>();
-        foreach(var item in weaponButtons)
-        {
-            item.BeActive();
-            item.Button.onClick.AddListener(() => { costUI.gameObject.SetActive(false); });
-        }
-
         upgradeResultUI.ShowResults(data);
         WeaponImageUI.Show(data.WeaponImage);
         upgradeUI.GetData(data, level);
     }
-
 
 
 

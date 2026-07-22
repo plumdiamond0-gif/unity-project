@@ -6,6 +6,7 @@ public class CannonBall : MonoBehaviour
     #region Internal Data
     private WeaponPrefabData _data;
     private float _damage;
+    Vector3 prevPos;
     #endregion
 
     #region Public Methods
@@ -16,6 +17,10 @@ public class CannonBall : MonoBehaviour
     public void SetWeaponData(WeaponPrefabData weaponData)
     {
         _data = weaponData;
+    }
+    public void SetPos(Vector3 pos)
+    {
+        prevPos = pos;  
     }
     #endregion
 
@@ -39,11 +44,19 @@ public class CannonBall : MonoBehaviour
                 }
 
             }
-            Destroy(gameObject);
+            GM.GetBulletManager().projectilePool[_data.weaponState].Return(gameObject);
         }
         else if (other.CompareTag("Ground"))
         {
-            Destroy(gameObject);
+            GM.GetBulletManager().projectilePool[_data.weaponState].Return(gameObject);
+        }
+    }
+
+    private void Update()
+    {
+        if (Vector3.Distance(prevPos, transform.position) > 57)
+        {
+            GM.GetBulletManager().projectilePool[_data.weaponState].Return(gameObject);
         }
     }
     #endregion

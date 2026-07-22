@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98e0eb7a3ea8be47b115afc359337fb, type: 3}
+  m_Name: Particle Prefab Table
+  m_EditorClassIdentifier: Assembly-CSharp::ParticlePrefabTable
+  particleDatas:
+  - particlePrefab: {fileID: 0}
+    particleType: 0
+    particleCount: 20
+  - particlePrefab: {fileID: 0}
+    particleType: 1
+    particleCount: 10
+  - particlePrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
+    particleType: 2
+    particleCount: 10
+  - particlePrefab: {fileID: 1329845292236604, guid: 9bba9cf244c53c5439505dfc96fdd11c, type: 3}
+    particleType: 3
+    particleCount: 10
+  - particlePrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
+    particleType: 4
+    particleCount: 20

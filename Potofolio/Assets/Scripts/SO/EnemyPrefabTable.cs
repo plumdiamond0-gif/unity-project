@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 
@@ -28,6 +29,7 @@ public class EnemyPrefabData
     public string enemyName;
     public GameObject enemyPrefab;
     public GameObject enemyBullet;
+    public int bulletCount;
     public List<ScriptableObject> effects;
     public EnemyDropItems dropItems;
     public float exp;

@@ -2,6 +2,7 @@ using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PanelReward : PanelBase
 {
@@ -9,6 +10,7 @@ public class PanelReward : PanelBase
     RewardDataTable rewardDataTable;
 
     List<RewardData> temps;
+    Button[] buttons = new Button[3];
     RewardButton[] rewards = new RewardButton[3];
 
     bool isMoved;
@@ -20,13 +22,17 @@ public class PanelReward : PanelBase
         rewards = GetComponentsInChildren<RewardButton>();
         transform.localPosition = new Vector3(0, 1000, 0);
         isMoved = (transform.position == Vector3.zero);
-
+        for (int i = 0; i < 3; i++)
+        {
+            buttons[i] = rewards[i].gameObject.GetComponent<Button>();
+        }
         StartCoroutine(MovePanel());
 
     }
     IEnumerator MovePanel()
     {
-
+        foreach (var item in buttons)
+            item.interactable = false;  
         while (transform.localPosition != Vector3.zero)
         {
             transform.localPosition = Vector3.MoveTowards(
@@ -36,8 +42,9 @@ public class PanelReward : PanelBase
 
             yield return null;
         }
-        ShowReward();
-
+        ShowReward(); 
+        foreach (var item in rewards)
+            item.GetComponent<Button>().interactable = true;
     }
 
     public void ShowReward()

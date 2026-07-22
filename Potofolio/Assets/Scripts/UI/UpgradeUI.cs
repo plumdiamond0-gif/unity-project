@@ -11,7 +11,7 @@ public class UpgradeUI : MonoBehaviour
 
     WeaponPrefabData data;
     int currentlevel;
-    public void Start()
+    public void Awake()
     {
         upgradeButton = GetComponent<Button>();
         upgradeButton.onClick.AddListener(ShowResults);   
@@ -27,7 +27,7 @@ public class UpgradeUI : MonoBehaviour
     {
         if(!CanClick)
             return;
-        costUI.GetData(data, currentlevel);
+        costUI.GetData(data);
     }
 
     //private void Start()

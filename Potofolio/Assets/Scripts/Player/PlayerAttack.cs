@@ -58,6 +58,7 @@ public class PlayerAttack : MonoBehaviour
     #endregion
 
     public bool CanAttack;
+    
     void Start()
     {
         _currentAmmo = new()
@@ -147,7 +148,7 @@ public class PlayerAttack : MonoBehaviour
 
     public void SelectWeapon(int index)
     {
-        if (!CanAttack || _weaponList == null || _weaponList.Count <= index) return;
+        if (!CanAttack || _weaponList == null || _weaponList.Count <= index || !SaveManager.CurrentData.weaponActive[_weaponList[index].weaponState]) return;
 
         currentWeaponData = _weaponList[index];
 
@@ -239,11 +240,8 @@ public class PlayerAttack : MonoBehaviour
             _anim.SetTrigger("Attack");
         }
 
-        GameObject cbCopy = GameManager.instance.GetPrefab(
-            currentWeaponData.weaponState.ToString(),
-            firePos.position,
-            Quaternion.identity
-        );
+        GameObject cbCopy = GM.GetBulletManager().GetBullet(currentWeaponData.weaponState, firePos.position,
+            firePos.localRotation);
 
         if (cbCopy == null) return;
         CannonBall currentBall = cbCopy.GetComponent<CannonBall>();
@@ -253,6 +251,8 @@ public class PlayerAttack : MonoBehaviour
         {
             currentBall.SetWeaponData(currentWeaponData);
             currentBall.SetDamage(finalDamage);
+            currentBall.SetPos(firePos.position);
+
         }
 
         float currentRecoilX = baseRecoilX * (1f + (_attackRatio * maxChargeBonus));
@@ -268,7 +268,8 @@ public class PlayerAttack : MonoBehaviour
         if (cannonBallRB != null)
         {
             if (_cam == null) Debug.LogWarning("메인 카메라를 찾을 수 없습니다!");
-
+            cannonBallRB.linearVelocity = Vector3.zero; // Unity 6
+            cannonBallRB.angularVelocity = Vector3.zero;
             Ray ray = _cam != null ? _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f)) : new Ray(firePos.position, firePos.forward);
             Vector3 targetPoint = Physics.Raycast(ray, out RaycastHit hit, 1000f) ? hit.point : ray.origin + ray.direction * 1000f;
 
@@ -277,6 +278,7 @@ public class PlayerAttack : MonoBehaviour
             shootDir = Quaternion.AngleAxis(0f, rightAxis) * shootDir;
 
             float attackSpeedStat = (_stat != null) ? _stat.AttackSpeedMultiplier : 1f;
+
             cannonBallRB.AddForce(-shootDir * (currentWeaponData.Attackspeed * attackSpeedStat), ForceMode.Impulse);
         }
         _currentAmmo[currentWeaponData.weaponState]--;

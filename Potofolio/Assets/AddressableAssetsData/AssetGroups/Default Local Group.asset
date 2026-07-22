@@ -30,6 +30,11 @@ MonoBehaviour:
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 1eca415e2d51099499b487826931a23c
+    m_Address: UI_Death_Panel.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 278225a1079b0e041a70f34d0eb6a303
     m_Address: UI_Upgrade_Panel.prefab
     m_ReadOnly: 0

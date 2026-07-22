@@ -43,6 +43,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     Health health;
     //GameObject Coin;
     GameObject player;
+    PlayerMovement playerMovement;
 
     private NavMeshAgent agent;
     private Rigidbody rb;
@@ -87,6 +88,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
         anim.SetFloat(MoveHash, 0);
 
         player = transform.parent.GetComponent<Generator>().player;
+        playerMovement = player.GetComponent<PlayerMovement>();
         agent.SetDestination(player.transform.position);
 
         data = GM.GetPrefabManager().EnemyPrefabTable.EnemyPrefabDatas.Find(x => x.enemyType == enemyType);
@@ -148,11 +150,10 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                 StartCoroutine(AttackCoolTime());
                 if (attackType == EnemyAttackType.close)
                 {
-                    Health playerhealth = player.GetComponent<Health>();
-                    if (playerhealth != null)
+                    if (playerMovement!= null)
                     {
                         anim.SetTrigger(AttackHash);
-                        playerhealth.TakeDamage(damage);
+                        playerMovement.TakeDamage(damage);
                         if(data.effects == null)
                             return;
                         foreach (var effectobjs in data.effects)
@@ -170,10 +171,11 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                 else if(attackType == EnemyAttackType.distant)
                 {
 
-                    GameObject CBcopy = Instantiate(data.enemyBullet, FirePos.position, Quaternion.identity);
+                    GameObject CBcopy = GM.GetEnemyBulletManager().GetBullet(data.enemyType, FirePos.position, Quaternion.identity);
                     EnemyBall ball = CBcopy.GetComponent<EnemyBall>();
                     ball.SetDamage(damage);
                     ball.SetEnemyData(data);
+                    ball.SetPos(FirePos.position);
                     Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
                     if (CanonBallRB != null)
                     {

@@ -7,6 +7,7 @@ public class PrefabManager : MonoBehaviour
     public EnemyPrefabTable EnemyPrefabTable;
     public ItemPrefabTable ItemPrefabTable;
     public BlockPrefabTable BlockPrefabTable;
+    public ParticlePrefabTable ParticlePrefabTable;
     
     public static PrefabManager CreatePrefabManager(GameObject res, Transform parent)
     {
@@ -50,5 +51,12 @@ public class PrefabManager : MonoBehaviour
         BlockPrefabTable = go;
         OnComplete?.Invoke();
         });
+
+//        GM.GetAssetManager().LoadAsset<ParticlePrefabTable>
+//("ParticlePrefabTable", (go) =>
+//{
+//    ParticlePrefabTable = go;
+//    OnComplete?.Invoke();
+//});
     }
 }

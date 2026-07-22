@@ -78,7 +78,6 @@ public class PanelOpening : PanelBase
 
         canvasGroup.alpha = 1;
         yield return new WaitForSeconds(currentNum == 1 ? 1.5f : 2f);
-
         IsPlaying = false;
     }
 
@@ -122,7 +121,7 @@ public class PanelOpening : PanelBase
         {
             if (!string.IsNullOrEmpty(cutScenes[shownIndex].texts))
             {
-                float alpha = (Mathf.Sin(Time.time * 3f) + 1) * 0.5f;
+                float alpha = 1 - ((Mathf.Sin(Time.time * 3f) + 1) * 0.5f);
                 text.alpha = alpha;
             }
         }

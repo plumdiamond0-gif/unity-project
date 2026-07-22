@@ -60,6 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private AudioSource _walkAudio;
     public PlayerAttack playerAttack;
+    Health health;
     #endregion
 
     #region Coroutines
@@ -74,6 +75,7 @@ public class PlayerMovement : MonoBehaviour
     {
         _stat = GetComponent<PlayerStat>();
         _anim = GetComponentInChildren<Animator>();
+        health = GetComponent<Health>();    
 
         _isSprinting = false;
         _cam = Camera.main;
@@ -97,7 +99,12 @@ public class PlayerMovement : MonoBehaviour
 
 
         if (!canMove)
+        { 
+            _walkAudio.Stop();
+        _isWalkingSoundPlaying = false;
+        _currentSpeed = 0;
             return;
+        }
 
         Rotate();
 
@@ -132,16 +139,11 @@ public class PlayerMovement : MonoBehaviour
         if (isMoving && !_isWalkingSoundPlaying && _isGrounded)
         {
             if (_isSprinting)
-            {
-                Debug.Log("Sprinting");
                 _walkAudio.Play();
-            }
-            else
+            else if(!_isSprinting)
             {
                 if (_walkRoutine == null)
-                {
                     _walkRoutine = StartCoroutine(walk());
-                }
             }
 
             _isWalkingSoundPlaying = true;
@@ -149,10 +151,10 @@ public class PlayerMovement : MonoBehaviour
         else if ((!isMoving && _isWalkingSoundPlaying) || !_isGrounded)
         {
             _walkAudio.Stop();
+
             if (_walkRoutine != null)
-            {
                 StopCoroutine(_walkRoutine);
-            }
+
             _walkRoutine = null;
             _isWalkingSoundPlaying = false;
         }
@@ -257,6 +259,19 @@ public class PlayerMovement : MonoBehaviour
     {
         yield return new WaitForSeconds(val);
         transform.position = pos;
+    }
+    public void TakeDamage(float damage)
+    {
+        health.TakeDamage(damage);
+        if(health.CurrentHp <= 0)
+        {
+            _anim.SetTrigger("isDead");
+            Time.timeScale = 0;
+            GM.GetUIManager().CreateUIPanel("Death_Panel", (go) =>
+            {
+
+            });
+        }
     }
 }
 
