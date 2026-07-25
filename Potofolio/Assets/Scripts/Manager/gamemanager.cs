@@ -123,6 +123,7 @@ public class GameManager : SingletonObject<GameManager>
                 go.transform.localPosition = Vector3.zero;
                 go.transform.localRotation = Quaternion.identity;
                 GetUIManager = go.AddComponent<UIManager>();
+                OnPlayerSpawned += GetUIManager.Bind;
 
                 Debug.Log("UIManager 초기화 완료");
 
@@ -164,6 +165,7 @@ public class GameManager : SingletonObject<GameManager>
                 go.transform.localPosition = Vector3.zero;
                 go.transform.localRotation = Quaternion.identity;
                 GetEffectManager = go.AddComponent<EffectManager>();
+                GetEffectManager.Init();
                 Debug.Log("EffectManager 초기화 완료");
             }
             {
@@ -172,6 +174,7 @@ public class GameManager : SingletonObject<GameManager>
                 go.transform.localPosition = Vector3.zero;
                 go.transform.localRotation = Quaternion.identity;
                 GetBulletManager = go.AddComponent<BulletManager>();
+                GetBulletManager.Init();
                 Debug.Log("BulletManager 초기화 완료");
             }
             {
@@ -180,6 +183,7 @@ public class GameManager : SingletonObject<GameManager>
                 go.transform.localPosition = Vector3.zero;
                 go.transform.localRotation = Quaternion.identity;
                 GetEnemyBulletManager = go.AddComponent<EnemyBulletManager>();
+                GetEnemyBulletManager.Init();
                 Debug.Log("EnemyBulletManager 초기화 완료");
             }
             Debug.Log("매니저 초기화 완료");

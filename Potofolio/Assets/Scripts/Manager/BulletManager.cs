@@ -6,7 +6,7 @@ public class BulletManager : MonoBehaviour
 {
     public readonly Dictionary<WeaponState, ObjectPool> projectilePool = new();
 
-    private void Awake()
+    public void Init()
     {
         WeaponPrefabTable weaponPrefabTable = GM.GetPrefabManager().WeaponPrefabTable;
                 foreach (var data in weaponPrefabTable.weaponPrafabTableDatas)

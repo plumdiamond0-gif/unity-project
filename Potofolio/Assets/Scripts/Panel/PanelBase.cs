@@ -13,12 +13,9 @@ public class PanelBase : MonoBehaviour
     public virtual void OnEnable()
     {
     }
-
     public virtual void OnDisable()
     {
     }
-
-
     public virtual void Show() 
     { 
         OnBeforeShow?.Invoke();    
@@ -28,5 +25,15 @@ public class PanelBase : MonoBehaviour
     {
         OnHideCompleted?.Invoke();
     }
+    public virtual void SlideIn()
+    {
+
+    }
+
+    public virtual void SlideOut()
+    {
+
+    }
+
 
 }

@@ -22,10 +22,10 @@ public class SceneOpening : SceneBase
     public override void Init()
     {
         GM.GetUIManager().GetRootCanvas(Rootcanvas.transform);
-        GM.GetUIManager().CreateUIPanel("GameStart",
+        GM.GetUIManager().CreateUIPanel<PanelOpening>("GameStart",
               (go) =>
               {
-                  panelOpening = go.GetComponent<PanelOpening>();
+                  panelOpening = go;
                   Debug.Log($"panelOpening load");
               });
         GM.GetSoundManager().PlayBGM(AudioType.Opening);

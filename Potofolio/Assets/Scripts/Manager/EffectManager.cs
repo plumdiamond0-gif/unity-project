@@ -4,7 +4,7 @@ using UnityEngine;
 public class EffectManager : MonoBehaviour
 {
     private readonly Dictionary<ParticleType, ObjectPool> paticlePools = new();
-    private void Start()
+    public void Init()
     {
         ParticlePrefabTable particlePrefabTable =
             GM.GetPrefabManager().ParticlePrefabTable;

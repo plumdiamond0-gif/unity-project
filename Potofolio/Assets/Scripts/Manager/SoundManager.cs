@@ -17,20 +17,12 @@ public class SoundManager : MonoBehaviour
         (go)=>
         {
             audioTable = go;
+            bgmSource = gameObject.AddComponent<AudioSource>();
+            sfxSource = gameObject.AddComponent<AudioSource>();
+            bgmSource.volume = 0.2f;
             Debug.Log("AudioTable 불러오기");
         });
     }
-
-    private void Awake()
-    {
-        bgmSource = gameObject.AddComponent<AudioSource>();
-        sfxSource = gameObject.AddComponent<AudioSource>();
-        bgmSource.volume = 0.2f;
-    }
-    // ======================
-    // BGM
-    // ======================
-
     public void PlayBGM(AudioType audioType, bool loop = true)
     {
         AudioClip clip = audioTable.audioDatas.Find(x => x.audioType == audioType).audioClip; 
@@ -61,11 +53,6 @@ public class SoundManager : MonoBehaviour
     {
         bgmSource.volume = volume;
     }
-
-    // ======================
-    // SFX
-    // ======================
-
     public void PlaySFX(AudioType audioType)
     {
         AudioClip clip = audioTable.audioDatas.Find(x => x.audioType == audioType).audioClip;
@@ -77,14 +64,4 @@ public class SoundManager : MonoBehaviour
     {
         sfxSource.volume = volume;
     }
-
-    // ======================
-    // UI
-    // ======================
-
-    //public void PlayButtonClick()
-    //{
-    //    if (buttonClickSound != null)
-    //        sfxSource.PlayOneShot(buttonClickSound);
-    //}
 }

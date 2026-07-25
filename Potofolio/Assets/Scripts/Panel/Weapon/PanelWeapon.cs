@@ -29,7 +29,7 @@ public class PanelWeapon : PanelBase
     void UpgradeAppear()
     {
         
-        GM.GetUIManager().CreateUIPanel("Upgrade_Panel", (go) =>
+        GM.GetUIManager().CreateUIPanel<PanelWeaponUpgrade>("Upgrade_Panel", (go) =>
         {
             Debug.Log("Upgrade_Panel ∫∏ø©¡‹");
             
@@ -37,7 +37,7 @@ public class PanelWeapon : PanelBase
     }
     void UnlockAppear()
     {
-        GM.GetUIManager().CreateUIPanel("Unlock_Panel", (go) =>
+        GM.GetUIManager().CreateUIPanel<PanelWeaponUnlock>("Unlock_Panel", (go) =>
         {
             Debug.Log("Unlock_Panel ∫∏ø©¡‹");
         });

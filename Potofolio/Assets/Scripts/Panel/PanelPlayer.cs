@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PanelPlayer : MonoBehaviour
+public class PanelPlayer : PanelBase
 {
     public Image HpUI;
     public GameObject ChargeUI;

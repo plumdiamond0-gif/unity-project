@@ -13,18 +13,17 @@ public class UpgradeTable : TriggerObject
     {
         if ((entered.CompareTag("Player")))
         {
-            GM.GetUIManager().CreateUIPanel("Weapon_Panel",
+            GM.GetUIManager().CreateUIPanel<PanelWeapon>("Weapon_Panel",
                 (go) =>
                 {
                     Debug.Log("Weapon_Panel »ý¼ºÇÔ");
-                    PanelWeapon panelWeapon = go.GetComponent<PanelWeapon>();
                     PlayerMovement player = entered.GetComponent<PlayerMovement>();
                     player.canMove = false;
                     if (player != null)
                     {
                         Debug.Log("null ¾Æ´Ô");
                     }
-                    panelWeapon.GetPlayer(player);
+                    go.GetPlayer(player);
                 });
            
             //player.CanMove = false;

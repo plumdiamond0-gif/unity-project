@@ -60,14 +60,13 @@ public class PlayerItem : MonoBehaviour
             currentExp -= maxExp;
             maxExp *= 1.5f;
             playerAttack.CanAttack = false;
-            GM.GetUIManager().CreateUIPanel("Reward_Panel", (go) =>
+            GM.GetUIManager().CreateUIPanel<PanelReward>("Reward_Panel", (go) =>
             {
                 Debug.Log("ShowReward");
-                go.SetActive(true);
-                PanelReward panel = go.GetComponent<PanelReward>();
-                if (panel != null)
+                go.gameObject.SetActive(true);
+                if (go != null)
                 {
-                    StartCoroutine(CheckEnd(panel));
+                    StartCoroutine(CheckEnd(go));
                 }
             });
         }

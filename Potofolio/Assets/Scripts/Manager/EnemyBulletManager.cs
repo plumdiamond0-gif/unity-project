@@ -4,7 +4,7 @@ using UnityEngine;
 public class EnemyBulletManager : MonoBehaviour
 {
     public readonly Dictionary<EnemyType, ObjectPool> projectilePool = new();
-    private void Awake()
+    public void Init()
     {
         EnemyPrefabTable enemyPrefabTable = GM.GetPrefabManager().EnemyPrefabTable;
         foreach (var data in enemyPrefabTable.EnemyPrefabDatas)

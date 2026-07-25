@@ -241,7 +241,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _anim.SetTrigger("isDead");
             Time.timeScale = 0;
-            GM.GetUIManager().CreateUIPanel("Death_Panel", (go) =>
+            GM.GetUIManager().CreateUIPanel<PanelDeath>("Death_Panel", (go) =>
             {
 
             });
@@ -276,7 +276,7 @@ public class PlayerMovement : MonoBehaviour
         {
             _anim.SetTrigger("isDead");
             Time.timeScale = 0;
-            GM.GetUIManager().CreateUIPanel("Death_Panel", (go) =>
+            GM.GetUIManager().CreateUIPanel<PanelDeath>("Death_Panel", (go) =>
             {
 
             });

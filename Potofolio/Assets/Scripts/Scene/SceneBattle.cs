@@ -16,7 +16,7 @@ public class SceneBattle : SceneBase
         RootCanvas = GameObject.FindGameObjectWithTag("RootCanvas").transform;
         GM.GetUIManager().GetRootCanvas(RootCanvas);
 
-        GM.GetUIManager().CreateUIPanel("Player_Panel",
+        GM.GetUIManager().CreateUIPanel<PanelPlayer>("Player_Panel",
             (go) =>
             {
                 PanelPlayer panelPlayer = go.GetComponent<PanelPlayer>();
@@ -48,11 +48,10 @@ public class SceneBattle : SceneBase
             if(!canPanel)
                 return;
             canPanel = false;
-            GM.GetUIManager().CreateUIPanel("ReturnToBase_Panel", (go) =>
+            GM.GetUIManager().CreateUIPanel<PanelReturnToBase>("ReturnToBase_Panel", (go) =>
             {
                 GM.GetSoundManager().PlaySFX(AudioType.SpecialBtn);
-                PanelReturnToBase panel = go.GetComponent<PanelReturnToBase>();
-                panel.Exit.onClick.AddListener(() =>
+                go.Exit.onClick.AddListener(() =>
                 {
                     canPanel = true;
                 });
@@ -64,11 +63,10 @@ public class SceneBattle : SceneBase
             if (!canPanel)
                 return;
             canPanel = false;
-            GM.GetUIManager().CreateUIPanel("Inventory_Panel", (go) =>
+            GM.GetUIManager().CreateUIPanel<PanelInventory>("Inventory_Panel", (go) =>
             {
                 GM.GetSoundManager().PlaySFX(AudioType.SpecialBtn);
-                PanelInventory panel = go.GetComponent<PanelInventory>();
-                panel.boolChange += ()=>
+                go.boolChange += ()=>
                 { canPanel = true; };
             });
         }

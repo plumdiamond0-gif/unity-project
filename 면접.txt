@@ -1,0 +1,47 @@
+정의 :
+-객체
+-싱글톤 패턴
+-클래스
+-오브젝트
+-씬
+-구조체
+-상속
+-인터페이스
+-델리게이트
+-단일 책임 원칙(SRP)
+-저결합도(Low Coupling)
+-객체지향
+-오브젝트 풀링
+-NET
+-참조
+-인터페이스 구현 
+-컴포넌트
+-직렬화
+-자료구조
+-FSM
+-AI
+-Path Finding
+-SOLID 원칙
+-
+
+
+c++과 c#의 차이
+
+IWeaponEffect 다형성 관련:
+
+"IWeaponEffect 인터페이스를 써서 여러 효과를 순차 적용했다고 적었는데, 
+만약 'Stun(기절)' 효과와 'KnockBack(넉백)' 효과가 동시에 들어갈 때 실행 순서 문제나 
+프레임 단위 충돌 문제는 어떻게 해결했나요?"
+
+WeaponPrefabTable 오타 및 구조 관련:
+
+"ScriptableObject로 무기 데이터를 관리하셨는데, 직렬화(Serialization)를 할 때 
+Dictionary 대신 어떤 자료구조를 사용해 Inspecter창에서 편집하셨나요?"
+"그럼 왜 Dictionary를 직접 직렬화하지 않았나요?"
+
+GameManager 싱글톤 관련:
+
+"GameManager 아래 자식으로 다른 매니저들을 붙여 중복을 막았다고 했는데, 
+씬이 전환될 때 자식 매니저들의 Awake나 Start 호출 순서 제어는 어떻게 처리했나요?"
+"UIManager나 SoundManager는 Init()도 없는데 Awake 순서는 상관없나요?"
+

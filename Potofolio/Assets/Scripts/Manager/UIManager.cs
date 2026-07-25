@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
 
     public Health PlayerHealth;
 
-    public void CreateUIPanel(string panelName, Action<GameObject> callback)
+    public void CreateUIPanel<T>(string panelName, Action<T> callback) where T : PanelBase  
     {
         string uiTitle = $"UI_{panelName}.prefab";
         GM.GetAssetManager().LoadAsset<GameObject>(uiTitle,
@@ -28,7 +28,6 @@ public class UIManager : MonoBehaviour
                     Debug.LogError("RootCanvas == null");
                     return;
                 }
-
                 RectTransform rt = Instantiate(go).GetComponent<RectTransform>();
                 rt.SetParent(RootCanvas, false);
 
@@ -38,7 +37,7 @@ public class UIManager : MonoBehaviour
 
                 //TODO: 오프닝 이미지에 패널베이스 상속받는 스프킬븥 넣기, 처음 불러와질 때, 숨길 때 페이드 인으로 
 
-                PanelBase panelBase = rt.GetComponent<PanelBase>();
+                T panelBase = go.GetComponent<T>();
 
                 if (panelBase != null)
                 {
@@ -53,7 +52,7 @@ public class UIManager : MonoBehaviour
                    // panelBase.Hide();
                 }
 
-                callback?.Invoke(rt.gameObject);
+                callback?.Invoke(panelBase);
             });
     }
 

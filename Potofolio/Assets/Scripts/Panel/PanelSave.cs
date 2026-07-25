@@ -14,7 +14,7 @@ class LoadBtn
     public string key;
     public Button Delete;
 }
-public class PanelSave : MonoBehaviour
+public class PanelSave : PanelBase
 {
     [SerializeField] Button SaveButton;
     [SerializeField] Button NewGameButton;
@@ -24,7 +24,7 @@ public class PanelSave : MonoBehaviour
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public override void Init()
     {
         SaveButton.onClick.AddListener(() => { SaveData(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
         NewGameButton.onClick.AddListener(() => { NewGame(); GM.GetSoundManager().PlaySFX(AudioType.Button); });

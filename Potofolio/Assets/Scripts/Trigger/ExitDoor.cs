@@ -9,13 +9,12 @@ public class ExitDoor : TriggerObject
             return;
         if ((entered.CompareTag("Player")))
         {
-            GM.GetUIManager().CreateUIPanel("BaseExit_Panel",
+            GM.GetUIManager().CreateUIPanel<PanelBaseExit>("BaseExit_Panel",
             (go) =>
             {
                 canPanel = false;
                 Debug.Log($"panelBaseExit load");
-                PanelBaseExit panelBaseExit = go.GetComponent<PanelBaseExit>();
-                panelBaseExit.Exit.onClick.AddListener(() =>
+                go.Exit.onClick.AddListener(() =>
                 {
                     canPanel = true;
                 });

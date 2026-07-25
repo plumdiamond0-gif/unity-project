@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 
-public class PanelWeaponUnlock: MonoBehaviour
+public class PanelWeaponUnlock: PanelBase
 {
     [Header("UI")]
     [SerializeField] Image CenterImage;
