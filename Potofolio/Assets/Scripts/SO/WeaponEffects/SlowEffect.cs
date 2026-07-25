@@ -12,7 +12,10 @@ public class SlowEffect : ScriptableObject, IWeaponEffect
 {
     [SerializeField] float slowTime;
     [SerializeField] float slowAmount;
+    public void GetCharge(float charge)
+    {
 
+    }
     public void Apply(GameObject target, float multiplier)
     {
         IWeaponEffectReceiver receiver = target.GetComponent<IWeaponEffectReceiver>();

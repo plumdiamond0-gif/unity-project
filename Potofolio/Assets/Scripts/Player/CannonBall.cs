@@ -1,26 +1,23 @@
 using UnityEngine;
 using static WeaponPrefabTable;
 
-public class CannonBall : MonoBehaviour
+public class CannonBall : PoolObject
 {
     #region Internal Data
     private WeaponPrefabData _data;
     private float _damage;
+    private float _charge;
     Vector3 prevPos;
     #endregion
 
     #region Public Methods
-    public void SetDamage(float finalDamage)
+    public void SetDatas(float finalDamage,
+        WeaponPrefabData weaponData, Vector3 pos,float charge)
     {
         _damage = finalDamage;
-    }
-    public void SetWeaponData(WeaponPrefabData weaponData)
-    {
         _data = weaponData;
-    }
-    public void SetPos(Vector3 pos)
-    {
-        prevPos = pos;  
+        prevPos = pos;
+        _charge = charge;
     }
     #endregion
 
@@ -40,7 +37,11 @@ public class CannonBall : MonoBehaviour
                     float multiplier = Mathf.Pow(level, 1.15f);
 
                     if (multiplier == 0) multiplier = 1f;
-                    if (effectObj is IWeaponEffect effect) effect.Apply(target, multiplier);
+                    if (effectObj is IWeaponEffect effect)
+                    {
+                        effect.GetCharge(_charge);
+                        effect.Apply(target, multiplier); 
+                    }
                 }
 
             }

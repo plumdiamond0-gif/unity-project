@@ -52,7 +52,7 @@ MonoBehaviour:
     enemyBullet: {fileID: 8363767819308192229, guid: 7a485cbc6bdffbd468e5207a80a69053, type: 3}
     bulletCount: 10
     effects:
-    - {fileID: 11400000, guid: 4c17b5e6ded982b478dedccd8a06a918, type: 2}
+    - {fileID: 11400000, guid: a8a4f17ad8425974f99e3cdd54eefcad, type: 2}
     dropItems: {fileID: 11400000, guid: 78883a2e77ca3f948aaf0f416aee17e5, type: 2}
     exp: 15
   - enemyType: 6
@@ -62,7 +62,7 @@ MonoBehaviour:
     bulletCount: 10
     effects:
     - {fileID: 11400000, guid: 50e40e84c2f82a44094ec4b7135c59c6, type: 2}
-    - {fileID: 11400000, guid: 44638b327659d334bbe9f74b0815e678, type: 2}
+    - {fileID: 11400000, guid: 48ce999fe17919d43a9a7dbd57e9550c, type: 2}
     dropItems: {fileID: 11400000, guid: 6650be264fe069e439f7fb11d2bd1b67, type: 2}
     exp: 30
   - enemyType: 7
@@ -87,6 +87,7 @@ MonoBehaviour:
     enemyPrefab: {fileID: 964480405027562052, guid: f6a39af6ef1d55440b3ea496eeaec13f, type: 3}
     enemyBullet: {fileID: 0}
     bulletCount: 0
-    effects: []
+    effects:
+    - {fileID: 11400000, guid: ebfcde966f28f94478a3203e272a67fa, type: 2}
     dropItems: {fileID: 11400000, guid: f4153893950ef0c42bb29c91f295d9ad, type: 2}
     exp: 100

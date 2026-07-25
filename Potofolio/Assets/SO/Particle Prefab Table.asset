@@ -13,18 +13,15 @@ MonoBehaviour:
   m_Name: Particle Prefab Table
   m_EditorClassIdentifier: Assembly-CSharp::ParticlePrefabTable
   particleDatas:
-  - particlePrefab: {fileID: 0}
+  - particlePrefab: {fileID: 1947871717301538, guid: a990e3ac1318b834488c784d851f42a9, type: 3}
     particleType: 0
-    particleCount: 20
-  - particlePrefab: {fileID: 0}
-    particleType: 1
     particleCount: 10
-  - particlePrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
+  - particlePrefab: {fileID: 1000011396044746, guid: 96b2ec0239d11fa4b9792311efceb8ed, type: 3}
     particleType: 2
     particleCount: 10
-  - particlePrefab: {fileID: 1329845292236604, guid: 9bba9cf244c53c5439505dfc96fdd11c, type: 3}
+  - particlePrefab: {fileID: 1240250018707908, guid: 5656e7ea1f1a75d4c895547ec2b824b3, type: 3}
+    particleType: 1
+    particleCount: 10
+  - particlePrefab: {fileID: 1547757601392324, guid: 6f672a31584a6a748912a49c1dce2f0c, type: 3}
     particleType: 3
     particleCount: 10
-  - particlePrefab: {fileID: 1000012909287652, guid: abb9f519b142e304d9c45b56afa768bc, type: 3}
-    particleType: 4
-    particleCount: 20

@@ -14,6 +14,7 @@ public class ObjectPool
         for (int i = 0; i < count; ++i)
         {
             GameObject go = Object.Instantiate(prefab, Vector3.zero, Quaternion.identity, parent);
+            go.GetComponent<PoolObject>().parentPool = this;
             poolObjects.Enqueue(go);
             go.SetActive(false);
         }
@@ -29,6 +30,7 @@ public class ObjectPool
         else
         {
             GameObject go = Object.Instantiate(prefab, Vector3.zero, Quaternion.identity, parent);
+            go.GetComponent<PoolObject>().parentPool = this;
             go.SetActive(true);
             return go;
         }

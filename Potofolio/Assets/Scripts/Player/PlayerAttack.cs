@@ -204,24 +204,6 @@ public class PlayerAttack : MonoBehaviour
             {
                 _isCharging = false;
 
-                if (currentWeaponData.effects != null)
-                {
-                    foreach (var effect in currentWeaponData.effects)
-                    {
-                        if (effect is DotdamEffect dotdamEffect)
-                        {
-                            dotdamEffect.GetCharge(currentCharge);
-                        }
-                        if (effect is KnockBackEffect knockBackEffect)
-                        {
-                            knockBackEffect.GetChrage(currentCharge);
-                        }
-                        if (effect is RangeEffect rangeEffect)
-                        {
-                            rangeEffect.GetCharge(currentCharge);
-                        }
-                    }
-                }
                 Fire();
             }
             return;
@@ -247,13 +229,7 @@ public class PlayerAttack : MonoBehaviour
         CannonBall currentBall = cbCopy.GetComponent<CannonBall>();
         float finalDamage = (currentWeaponData.damage * _stat.DamageMultiplier) + (_attackRatio * maxChargeBonus);
 
-        if (currentBall != null)
-        {
-            currentBall.SetWeaponData(currentWeaponData);
-            currentBall.SetDamage(finalDamage);
-            currentBall.SetPos(firePos.position);
-
-        }
+        currentBall.SetDatas(finalDamage, currentWeaponData, firePos.position, currentCharge);
 
         float currentRecoilX = baseRecoilX * (1f + (_attackRatio * maxChargeBonus));
         float yzRecoil = currentWeaponData.YZRecoil;
@@ -268,7 +244,7 @@ public class PlayerAttack : MonoBehaviour
         if (cannonBallRB != null)
         {
             if (_cam == null) Debug.LogWarning("메인 카메라를 찾을 수 없습니다!");
-            cannonBallRB.linearVelocity = Vector3.zero; // Unity 6
+            cannonBallRB.linearVelocity = Vector3.zero; 
             cannonBallRB.angularVelocity = Vector3.zero;
             Ray ray = _cam != null ? _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f)) : new Ray(firePos.position, firePos.forward);
             Vector3 targetPoint = Physics.Raycast(ray, out RaycastHit hit, 1000f) ? hit.point : ray.origin + ray.direction * 1000f;

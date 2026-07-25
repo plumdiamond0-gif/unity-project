@@ -13,7 +13,7 @@ public class GameManager : SingletonObject<GameManager>
     public SceneLoadManager GetSceneLoadManager { get; private set; } = null;   
     public SaveManager GetSaveManager { get; private set; }=null;
     public SoundManager GetSoundManager { get; private set; } = null;
-    //public EffectManager GetEffectManager { get; private set; } 
+    public EffectManager GetEffectManager { get; private set; } 
     public BulletManager GetBulletManager { get; private set; } = null;    
     public EnemyBulletManager GetEnemyBulletManager { get; private set; } = null;
 
@@ -49,10 +49,10 @@ public class GameManager : SingletonObject<GameManager>
     {
         return GetSoundManager;
     }
-    //public EffectManager Get_EffectManager()
-    //{
-    //    return GetEffectManager;
-    //}
+    public EffectManager Get_EffectManager()
+    {
+        return GetEffectManager;
+    }
     public BulletManager Get_BulletManager()
     {
         return GetBulletManager;
@@ -66,8 +66,6 @@ public class GameManager : SingletonObject<GameManager>
     {
         base.Awake();
         OnPlayerSpawned += SavePlayer;
-        //prefabManager = PrefabManager.CreatePrefabManager(prefabManager.gameObject, transform);
-        //UIManager = UIManager.CreateUIManager(UIManager.gameObject, transform);
     }
     void SavePlayer(GameObject go)
     {
@@ -92,7 +90,7 @@ public class GameManager : SingletonObject<GameManager>
 
     IEnumerator ProcessInit()
     {
-        { 
+        {
             Debug.Log("매니저 초기화 시작");
             {
                 GameObject go = new GameObject("AssetManager");
@@ -116,7 +114,7 @@ public class GameManager : SingletonObject<GameManager>
                 {
                     done = true;
                 });
-              yield return new WaitUntil(() => done);
+                yield return new WaitUntil(() => done);
                 Debug.Log("PrefabManager 초기화 완료");
             }
             {
@@ -129,14 +127,13 @@ public class GameManager : SingletonObject<GameManager>
                 Debug.Log("UIManager 초기화 완료");
 
             }
-           
+
             {
                 GameObject go = new GameObject("SceneLoadManager");
                 go.transform.parent = transform;
                 go.transform.localPosition = Vector3.zero;
                 go.transform.localRotation = Quaternion.identity;
                 GetSceneLoadManager = go.AddComponent<SceneLoadManager>();
-                GetSceneLoadManager.Init(GetAssetManager);
 
                 Debug.Log("SceneLoadManager 초기화 완료");
             }
@@ -161,14 +158,14 @@ public class GameManager : SingletonObject<GameManager>
 
                 Debug.Log("SoundManager 초기화 완료");
             }
-            //{
-            //    GameObject go = new GameObject("EffectManager");
-            //    go.transform.parent = transform;
-            //    go.transform.localPosition = Vector3.zero;
-            //    go.transform.localRotation = Quaternion.identity;
-            //    GetEffectManager = go.AddComponent<EffectManager>();
-            //    Debug.Log("EffectManager 초기화 완료");
-            //}
+            {
+                GameObject go = new GameObject("EffectManager");
+                go.transform.parent = transform;
+                go.transform.localPosition = Vector3.zero;
+                go.transform.localRotation = Quaternion.identity;
+                GetEffectManager = go.AddComponent<EffectManager>();
+                Debug.Log("EffectManager 초기화 완료");
+            }
             {
                 GameObject go = new GameObject("BulletManager");
                 go.transform.parent = transform;
@@ -192,21 +189,6 @@ public class GameManager : SingletonObject<GameManager>
         OnInit?.Invoke();
         yield return null;
     }
-
-    //public GameObject GetPrefab(string prefabname, Vector3 spawnpos, Quaternion spawnrot)
-    //{
-    //    var data = GetPrefabManager.WeaponPrefabTable.weaponPrafabTableDatas.Find(x => x.weaponState.ToString() == prefabname);
-    //    if (data != null)
-    //    {
-    //        GameObject CBcoy = Instantiate(data.WeaponBullet, spawnpos, spawnrot);
-    //        return CBcoy;
-    //    }
-    //    else
-    //    {
-    //        return null;
-    //    }
-    //}
-
 }
 public static class GM
 {
@@ -240,11 +222,11 @@ public static class GM
         Debug.Log("GetSoundManager");
         return GameManager.instance.Get_SoundManager();
     }
-    //public static EffectManager GetEffectManager()
-    //{
-    //    Debug.Log("GetEffectManager");
-    //    return GameManager.instance.Get_EffectManager();
-    //}
+    public static EffectManager GetEffectManager()
+    {
+        Debug.Log("GetEffectManager");
+        return GameManager.instance.Get_EffectManager();
+    }
     public static BulletManager GetBulletManager()
     {
         Debug.Log("GetBulletManager");

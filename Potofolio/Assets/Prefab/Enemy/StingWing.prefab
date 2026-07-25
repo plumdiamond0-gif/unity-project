@@ -287,7 +287,7 @@ MonoBehaviour:
   damage: 12
   CoinNum: 5
   attackSpeed: 30
-  attackCoolTime: 4
+  attackCoolTime: 1
   isKnockbacking: 0
   attackType: 1
   FirePos: {fileID: 719846326233721734}
@@ -379,6 +379,7 @@ MonoBehaviour:
   CurrentHp: 0
   MaxHp: 50
   HealthBarFill: {fileID: 4458945183867330684}
+  InvincibleTime: 0.1
 --- !u!1 &1207905829233913411
 GameObject:
   m_ObjectHideFlags: 0

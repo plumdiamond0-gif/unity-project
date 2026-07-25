@@ -5,16 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoadManager : MonoBehaviour
 {
-    private AssetManager _assetManager;
 
     public string NextSceneName { get; private set; }
     public string CurrentSceneName => SceneManager.GetActiveScene().name;
-
-    public void Init(AssetManager assetManager)
-    {
-        _assetManager = assetManager;
-    }
-
     public void NextLoadScene(string nextSceneName, Action OnSceneCompleted)
     {
         if (string.IsNullOrEmpty(nextSceneName))
@@ -49,29 +42,18 @@ public class SceneLoadManager : MonoBehaviour
             Debug.LogError("nextSceneName IsNullOrEmpty");
             yield break;
         }
-
-        //if (_assetManager == null)
-        //{
-        //    yield break;
-        //}
-        //_assetManager.LoadScene(NextSceneName, OnSceneCompleted);
-        //yield return handle;
-        Debug.Log("BEFOREBEFOREBEFOREBEFOREBEFOREBEFOREBEFOREBEFOREBEFOREBEFOREBEFORE");
-
         float elapsed = 0f;
         const float minLoadingTime = 2f;
 
         AsyncOperation handle = SceneManager.LoadSceneAsync(NextSceneName);
 
         handle.allowSceneActivation = false;
-
-
+        
         while (handle.progress < 0.9f || elapsed < minLoadingTime)
         {
             elapsed += Time.deltaTime;
             yield return null;
         }
-        Debug.Log("AFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTERAFTER");
 
         handle.allowSceneActivation = true;
 

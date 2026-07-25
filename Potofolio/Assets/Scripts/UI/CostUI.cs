@@ -62,6 +62,8 @@ public class CostUI : MonoBehaviour
         {
             if (i < costs.costs.Count)
             {
+                images[i].gameObject.SetActive(true);
+                texts[i].gameObject.SetActive(true);
                 UpgradeCost.CostData costData = costs.costs[i];
                 images[i].sprite = costData.CostSprite;
 
@@ -72,8 +74,8 @@ public class CostUI : MonoBehaviour
             }
             else
             {
-                images[i].sprite = null;
-                texts[i].text = null;
+                images[i].gameObject.SetActive(false);
+                texts[i].gameObject.SetActive(false);
             }
 
         }

@@ -4,21 +4,14 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Rendering.Universal;
 
-[CreateAssetMenu(menuName = "Weapon/Effects/Dotdam")]
+[CreateAssetMenu(menuName = "Weapon/Effects/Toxic")]
 
 
-public class DotdamEffect : ScriptableObject, IWeaponEffect
+public class ToxicEffect : ScriptableObject, IWeaponEffect
 {
     [SerializeField] float dotDamage;
     [SerializeField] float dotTime;
-    //[SerializeField] private float _particleTime;
-    //[SerializeField] private ParticleType _particleType;
-    //public float particleTime => _particleTime;
-    //public ParticleType particleType => _particleType;
-
     float charge;
-
-
     public void GetCharge(float charge)
     {
         this.charge = charge;
@@ -29,7 +22,7 @@ public class DotdamEffect : ScriptableObject, IWeaponEffect
         if (receiver != null) { 
             float finalDotDam = dotDamage * (charge+1) * multiplier;
             float finalDotNum= dotTime * (charge + 1) * multiplier;
-            receiver.ApplyDotDam(finalDotDam, finalDotNum);
+            receiver.ApplyToxic(finalDotDam, finalDotNum);
         }
 
     }

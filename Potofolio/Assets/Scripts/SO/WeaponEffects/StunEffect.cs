@@ -10,6 +10,10 @@ using UnityEngine.Rendering.Universal;
 public class StunEffect : ScriptableObject, IWeaponEffect
 {
     [SerializeField] float stunTime;
+    public void GetCharge(float charge)
+    {
+
+    }
     public void Apply(GameObject target, float multiplier)
     {
         IWeaponEffectReceiver receiver = target.GetComponent<IWeaponEffectReceiver>();

@@ -5,9 +5,9 @@ using UnityEngine;
 public enum ParticleType
 {
     Fire,
-    Toxic,
-    Energy,
-    Slime
+    Slow,
+    Stun,
+    Toxic
 }
 
 [System.Serializable]

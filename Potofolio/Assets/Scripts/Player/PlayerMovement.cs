@@ -237,6 +237,15 @@ public class PlayerMovement : MonoBehaviour
             Debug.Log("암인그라운드");
             _isGrounded = true;
         }
+        else if(collision.gameObject.CompareTag("Ground"))
+        {
+            _anim.SetTrigger("isDead");
+            Time.timeScale = 0;
+            GM.GetUIManager().CreateUIPanel("Death_Panel", (go) =>
+            {
+
+            });
+        }
     }
 
     void Rotate()

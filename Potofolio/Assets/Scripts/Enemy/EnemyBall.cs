@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class EnemyBall : MonoBehaviour
+public class EnemyBall : PoolObject
 {
     EnemyPrefabData data;
     float Damage;

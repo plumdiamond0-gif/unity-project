@@ -53,6 +53,7 @@ MonoBehaviour:
     WeaponImage: {fileID: 21300000, guid: ecd2584d7f96008498c95d940cce7155, type: 3}
     effects:
     - {fileID: 11400000, guid: 842f76e3e7d8dbe41957e6f16d561231, type: 2}
+    - {fileID: 11400000, guid: 13d5d23cf98ecf345bb4a974dcffbed8, type: 2}
     upgradeCosts: {fileID: 11400000, guid: 07d22b366b0e6c649aa1e69787a14ea6, type: 2}
     upgradeResults: {fileID: 11400000, guid: 38dc056ac8ffd764d895915f6cbd7387, type: 2}
     unlockedCosts: {fileID: 11400000, guid: 529ea43ea1556a640a2b7b51e1048f67, type: 2}
@@ -120,6 +121,7 @@ MonoBehaviour:
     effects:
     - {fileID: 11400000, guid: 227372e9cd2797f4e8e8203cf495f8f9, type: 2}
     - {fileID: 11400000, guid: 4ea7ff47fa55c3144afff543e52bda20, type: 2}
+    - {fileID: 11400000, guid: 8a6e2ca0a81552f42b14132a1f932a0c, type: 2}
     upgradeCosts: {fileID: 11400000, guid: 45e24a0d8adc75c4190e26f0ec69f016, type: 2}
     upgradeResults: {fileID: 11400000, guid: 10d8799b0fc07f74f9669344e31b6419, type: 2}
     unlockedCosts: {fileID: 11400000, guid: ea1159405db518245ab3390e5631b82d, type: 2}
@@ -141,7 +143,7 @@ MonoBehaviour:
     YZRecoil: 2
     WeaponImage: {fileID: 21300000, guid: deb8c4adf151eb646b7822680ea57787, type: 3}
     effects:
-    - {fileID: 11400000, guid: c5f77091e34ca044594247c1801df74a, type: 2}
+    - {fileID: 11400000, guid: 79f1f86e7a4bee1468dae474bfd961c0, type: 2}
     - {fileID: 11400000, guid: 837b7099aafc8eb4a91c466f3d71c615, type: 2}
     upgradeCosts: {fileID: 11400000, guid: b1d0077df0a649944a7813bc76de4c24, type: 2}
     upgradeResults: {fileID: 11400000, guid: 9f76187a3e3ea714b901ed852b24117a, type: 2}
@@ -165,7 +167,7 @@ MonoBehaviour:
     WeaponImage: {fileID: 21300000, guid: 10964cc78f69de1419462e2378fed368, type: 3}
     effects:
     - {fileID: 11400000, guid: 2beb50444c9100542950bc3e5a14600a, type: 2}
-    - {fileID: 11400000, guid: ce788339106990944a456ebab91b9ca7, type: 2}
+    - {fileID: 11400000, guid: d5f2c3b1893dd59409172d7c8f791904, type: 2}
     upgradeCosts: {fileID: 11400000, guid: 6022fb6b86ec661498f4c47b8a2898f5, type: 2}
     upgradeResults: {fileID: 11400000, guid: a416702341c651344b69de8f006c9590, type: 2}
     unlockedCosts: {fileID: 11400000, guid: f013e5aa774ff2f4d8f7ab6a538fdbd6, type: 2}

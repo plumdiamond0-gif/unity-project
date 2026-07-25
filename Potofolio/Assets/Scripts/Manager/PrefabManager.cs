@@ -52,11 +52,11 @@ public class PrefabManager : MonoBehaviour
         OnComplete?.Invoke();
         });
 
-//        GM.GetAssetManager().LoadAsset<ParticlePrefabTable>
-//("ParticlePrefabTable", (go) =>
-//{
-//    ParticlePrefabTable = go;
-//    OnComplete?.Invoke();
-//});
+        GM.GetAssetManager().LoadAsset<ParticlePrefabTable>
+("ParticlePrefabTable", (go) =>
+{
+    ParticlePrefabTable = go;
+    OnComplete?.Invoke();
+});
     }
 }

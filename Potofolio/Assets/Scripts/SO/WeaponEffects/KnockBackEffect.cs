@@ -11,7 +11,7 @@ public class KnockBackEffect : ScriptableObject, IWeaponEffect
     [SerializeField] float upModifier;   // 위로 띄우는 정도 (이게 있어야 시원하게 날아감)
     [SerializeField] float rangeDam;
 
-    public void GetChrage(float charge)
+    public void GetCharge(float charge)
     {
         this.charge = charge;
     }

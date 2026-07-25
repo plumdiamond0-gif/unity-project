@@ -44,21 +44,17 @@ public class UpgradeResultUI : MonoBehaviour
         {
             if (i < results.results.Count)
             {
-                if (results.results[i].sprite == null)
-                    Debug.Log("results.results[i].sprite == null");
-                if(images[i].sprite == null)
-                    Debug.Log("images[i].sprite == null");
+                images[i].gameObject.SetActive(true);
+                texts[i].gameObject.SetActive(true);
                 images[i].sprite = results.results[i].sprite;
                 texts[i].text = results.results[i].type.ToString() + ":" +   ((results.results[i].amount) *
                                    (int)Mathf.Pow(1.15f, level + 1)).ToString("F2") + "->" + ((results.results[i].amount) *
                                    Mathf.Pow(1.15f, level)).ToString("F2");
-
             }
-
             else
             {
-                images[i].sprite = null;
-                texts[i].text = null;
+                images[i].gameObject.SetActive(false);
+                texts[i].gameObject.SetActive(false);
             }
             
         }

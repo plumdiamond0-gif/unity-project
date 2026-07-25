@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 56d0b2e68aeefa641bb3371275d1dac3, type: 3}
-  m_Name: StinWingDotdamEffect 1
-  m_EditorClassIdentifier: Assembly-CSharp::DotdamEffect
-  dotDamage: 5
-  dotTime: 5
+  m_Script: {fileID: 11500000, guid: c2ba3bbbe6f68054fb3b4de2716b36e8, type: 3}
+  m_Name: BombFire Effect
+  m_EditorClassIdentifier: Assembly-CSharp::FireEffect
+  dotDamage: 20
+  dotTime: 10

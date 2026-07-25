@@ -6,7 +6,9 @@ public class RangeDotDamEffect : ScriptableObject, IWeaponEffect
     [SerializeField] float dotDamage;
     [SerializeField] float dotTime;
     [SerializeField] float range;
-
+    public void GetCharge(float charge)
+    {
+    }
     public void Apply(GameObject target, float multiplier)
     {
         float finalRange = range * multiplier;
@@ -20,7 +22,7 @@ public class RangeDotDamEffect : ScriptableObject, IWeaponEffect
                 Mathf.Clamp(dist, 1f, 3f);
             IWeaponEffectReceiver receiver = collider.GetComponent<IWeaponEffectReceiver>();
             if (receiver != null)
-                receiver.ApplyDotDam(finalDotDam, dotTime);
+                receiver.ApplyFire(finalDotDam, dotTime);
         }
 
     }
