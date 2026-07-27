@@ -148,11 +148,13 @@ public class PlayerAttack : MonoBehaviour
 
     public void SelectWeapon(int index)
     {
+        Debug.Log("공격해!!!");
         if (!CanAttack || _weaponList == null || _weaponList.Count <= index || !SaveManager.CurrentData.weaponActive[_weaponList[index].weaponState]) return;
+        Debug.Log("공격해!!ㄷㄱㅎㄷㄱㅎㄱㄷㅎㄷㄱㅎㄱ!");
 
         currentWeaponData = _weaponList[index];
 
-        weaponImage.sprite = currentWeaponData.weaponImage;
+        weaponImage.sprite = currentWeaponData.WeaponImage;
         weaponText.text = currentWeaponData.weaponState.ToString();
         bulletNumText.text = _currentAmmo[currentWeaponData.weaponState].ToString();
         _audioSource.clip = currentWeaponData.shootSound;
@@ -222,7 +224,7 @@ public class PlayerAttack : MonoBehaviour
             _anim.SetTrigger("Attack");
         }
 
-        GameObject cbCopy = GM.GetBulletManager().GetBullet(currentWeaponData.weaponState, firePos.position,
+        GameObject cbCopy = GM.GetPoolManager().GetBullet(currentWeaponData.weaponState, firePos.position, new Vector3(0.5f, 0.5f, 0.5f),
             firePos.localRotation);
 
         if (cbCopy == null) return;

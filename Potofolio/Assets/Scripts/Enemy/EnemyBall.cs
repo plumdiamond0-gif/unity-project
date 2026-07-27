@@ -39,18 +39,18 @@ public class EnemyBall : PoolObject
                     }
                 }
             }
-            GM.GetEnemyBulletManager().projectilePool[data.enemyType].Return(gameObject);
+            GM.GetPoolManager().enemyBulletPool[data.enemyType].Return(gameObject);
         }
         else if(other.CompareTag("Ground"))
         {
-            GM.GetEnemyBulletManager().projectilePool[data.enemyType].Return(gameObject);
+            GM.GetPoolManager().enemyBulletPool[data.enemyType].Return(gameObject);
         }
     }
     private void Update()
     {
         if (Vector3.Distance(prevPos, transform.position) > 57)
         {
-            GM.GetEnemyBulletManager().projectilePool[data.enemyType].Return(gameObject);
+            GM.GetPoolManager().enemyBulletPool [data.enemyType].Return(gameObject);
         }
     }
 }

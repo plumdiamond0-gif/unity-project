@@ -18,7 +18,6 @@ public class PanelBase : MonoBehaviour
     }
     public virtual void Show() 
     { 
-        OnBeforeShow?.Invoke();    
     }
 
     public virtual void Hide()

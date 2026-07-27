@@ -171,7 +171,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                 else if(attackType == EnemyAttackType.distant)
                 {
                     anim.SetTrigger(AttackHash);
-                    GameObject CBcopy = GM.GetEnemyBulletManager().GetBullet(data.enemyType, FirePos.position, Quaternion.identity);
+                    GameObject CBcopy = GM.GetPoolManager().GetEnemyBullet(data.enemyType, FirePos.position, Vector3.one, Quaternion.identity);
                     EnemyBall ball = CBcopy.GetComponent<EnemyBall>();
                     ball.SetDamage(damage);
                     ball.SetEnemyData(data);
@@ -275,12 +275,12 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     IEnumerator Slow(float slowTime, float slowAmount)
     {
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        GameObject go = GM.GetEffectManager().PlayParticle(ParticleType.Slow, pos, Quaternion.identity, new Vector3(2, 2, 2), transform);
+        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Slow, pos, Quaternion.identity, new Vector3(2, 2, 2), transform);
         Debug.Log("Slowed");
         float orispeed = agent.speed;
         agent.speed *= slowAmount;
         yield return new WaitForSeconds(slowTime);
-        GM.GetEffectManager().StopParticle(go);
+        GM.GetPoolManager().StopParticle(go);
         agent.speed = orispeed;
         yield return null;
     }
@@ -294,11 +294,12 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     IEnumerator Stun(float stunTime)
     {
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        GameObject go = GM.GetEffectManager().PlayParticle(ParticleType.Stun, pos, Quaternion.identity, new Vector3(2, 2, 2), transform);
+        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Stun, pos, Quaternion.identity, new Vector3(2, 2, 2), transform);
         Debug.Log("Slowed");
         agent.isStopped = true;
         yield return new WaitForSeconds(stunTime);
-        GM.GetEffectManager().StopParticle(go);
+        currentState = EnemyState.Stun;
+        GM.GetPoolManager().StopParticle(go);
         agent.isStopped = false;
         yield return null;
     }
@@ -310,13 +311,13 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     }
     IEnumerator Fire(float dotDamage, float dotTime)
     {
-        GameObject go = GM.GetEffectManager().PlayParticle(ParticleType.Fire, transform.position, Quaternion.identity, Vector3.one, transform);
+        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Fire, transform.position, Quaternion.identity, Vector3.one, transform);
         for (int i = 0; i < dotTime; i++)
         {
             health.TakeDamage(dotDamage);
             yield return new WaitForSeconds(0.8f);
         }
-        GM.GetEffectManager().StopParticle(go);
+        GM.GetPoolManager().StopParticle(go);
         yield return null;
     }
     public void ApplyToxic(float dotDamage, float dotNum)
@@ -327,13 +328,13 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     }
     IEnumerator Toxic(float dotDamage, float dotTime)
     {
-        GameObject go = GM.GetEffectManager().PlayParticle(ParticleType.Toxic, transform.position, Quaternion.identity, Vector3.one, transform);
+        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Toxic, transform.position, Quaternion.identity, Vector3.one, transform);
         for (int i = 0; i < dotTime; i++)
         {
             health.TakeDamage(dotDamage);
             yield return new WaitForSeconds(0.8f);
         }
-        GM.GetEffectManager().StopParticle(go);
+        GM.GetPoolManager().StopParticle(go);
         yield return null;
     }
     public void ApplyRangeDam(float damage)

@@ -37,7 +37,7 @@ public class UIManager : MonoBehaviour
 
                 //TODO: 오프닝 이미지에 패널베이스 상속받는 스프킬븥 넣기, 처음 불러와질 때, 숨길 때 페이드 인으로 
 
-                T panelBase = go.GetComponent<T>();
+                T panelBase = rt.gameObject.GetComponent<T>();
 
                 if (panelBase != null)
                 {
@@ -89,39 +89,19 @@ public class UIManager : MonoBehaviour
     }
 
 
-
-    private void Awake()
-    {
-        GameManager.OnPlayerSpawned += Bind;
-    }
-  
     public void Bind(GameObject playerInfo)
     {
-        Debug.Log("BIND");
         if (HUD != null)
         {
-            Debug.Log("HUD bull 아님");
 
             PlayerAttack playerAttack = playerInfo.GetComponent<PlayerAttack>();
             if (playerAttack != null)
             {
-                Debug.Log($"HUD : {HUD}");
-                Debug.Log($"ChargeUI : {HUD.ChargeUI}");
-                Debug.Log($"ChargeFill : {HUD.ChargeImageUI}");
-                Debug.Log($"HpUI : {HUD.HpUI}");
-                Debug.Log($"ExpUI : {HUD.ExpFillImageUI}");
-
-                Debug.Log($"Before : {playerAttack.attackGaugeBar}");
-                if (HUD.ChargeUI != null)
                     playerAttack.attackGaugeBar = HUD.ChargeUI;
                 playerAttack.attackGaugeBarFill = HUD.ChargeImageUI;
                 playerAttack.weaponImage = HUD.WeapomImage;
                 playerAttack.weaponText = HUD.WeapomText;   
                 playerAttack.bulletNumText = HUD.BulletNum;
-         
-
-
-                Debug.Log($"After : {playerAttack.attackGaugeBar}");
             }
 
             Health playerHealth = playerInfo.GetComponent<Health>();

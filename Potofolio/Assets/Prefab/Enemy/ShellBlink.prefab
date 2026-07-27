@@ -207,6 +207,7 @@ MonoBehaviour:
   CurrentHp: 0
   MaxHp: 50
   HealthBarFill: {fileID: 5715363030775092235}
+  InvincibleTime: 0.1
 --- !u!1 &326030162874121879
 GameObject:
   m_ObjectHideFlags: 0

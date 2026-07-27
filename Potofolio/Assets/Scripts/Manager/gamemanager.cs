@@ -13,9 +13,7 @@ public class GameManager : SingletonObject<GameManager>
     public SceneLoadManager GetSceneLoadManager { get; private set; } = null;   
     public SaveManager GetSaveManager { get; private set; }=null;
     public SoundManager GetSoundManager { get; private set; } = null;
-    public EffectManager GetEffectManager { get; private set; } 
-    public BulletManager GetBulletManager { get; private set; } = null;    
-    public EnemyBulletManager GetEnemyBulletManager { get; private set; } = null;
+    public PoolManager GetPoolManager { get; private set; } 
 
     public static Action<GameObject> OnPlayerSpawned;
     public static Action<PanelPlayer> OnPlayerPanelSpawned;
@@ -49,17 +47,9 @@ public class GameManager : SingletonObject<GameManager>
     {
         return GetSoundManager;
     }
-    public EffectManager Get_EffectManager()
+    public PoolManager Get_EffectManager()
     {
-        return GetEffectManager;
-    }
-    public BulletManager Get_BulletManager()
-    {
-        return GetBulletManager;
-    }
-    public EnemyBulletManager Get_EnemyBulletManager()
-    {
-        return GetEnemyBulletManager;
+        return GetPoolManager;
     }
 
     void Awake()
@@ -160,31 +150,13 @@ public class GameManager : SingletonObject<GameManager>
                 Debug.Log("SoundManager 초기화 완료");
             }
             {
-                GameObject go = new GameObject("EffectManager");
+                GameObject go = new GameObject("GetPoolManager");
                 go.transform.parent = transform;
                 go.transform.localPosition = Vector3.zero;
                 go.transform.localRotation = Quaternion.identity;
-                GetEffectManager = go.AddComponent<EffectManager>();
-                GetEffectManager.Init();
-                Debug.Log("EffectManager 초기화 완료");
-            }
-            {
-                GameObject go = new GameObject("BulletManager");
-                go.transform.parent = transform;
-                go.transform.localPosition = Vector3.zero;
-                go.transform.localRotation = Quaternion.identity;
-                GetBulletManager = go.AddComponent<BulletManager>();
-                GetBulletManager.Init();
-                Debug.Log("BulletManager 초기화 완료");
-            }
-            {
-                GameObject go = new GameObject("EnemyBulletManager");
-                go.transform.parent = transform;
-                go.transform.localPosition = Vector3.zero;
-                go.transform.localRotation = Quaternion.identity;
-                GetEnemyBulletManager = go.AddComponent<EnemyBulletManager>();
-                GetEnemyBulletManager.Init();
-                Debug.Log("EnemyBulletManager 초기화 완료");
+                GetPoolManager = go.AddComponent<PoolManager>();
+                GetPoolManager.Init();
+                Debug.Log("PoolManager 초기화 완료");
             }
             Debug.Log("매니저 초기화 완료");
 
@@ -226,22 +198,10 @@ public static class GM
         Debug.Log("GetSoundManager");
         return GameManager.instance.Get_SoundManager();
     }
-    public static EffectManager GetEffectManager()
+    public static PoolManager GetPoolManager()
     {
         Debug.Log("GetEffectManager");
         return GameManager.instance.Get_EffectManager();
     }
-    public static BulletManager GetBulletManager()
-    {
-        Debug.Log("GetBulletManager");
-        return GameManager.instance.Get_BulletManager();
-    }
-    public static EnemyBulletManager GetEnemyBulletManager()
-    {
-        Debug.Log("GetEnemyBulletManager");
-        return GameManager.instance.Get_EnemyBulletManager();
-    }
-
-
 }
 

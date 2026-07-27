@@ -29,6 +29,7 @@ public class EnemyPrefabData
     public string enemyName;
     public GameObject enemyPrefab;
     public GameObject enemyBullet;
+    public int enemyCount;
     public int bulletCount;
     public List<ScriptableObject> effects;
     public EnemyDropItems dropItems;

@@ -19,8 +19,8 @@ public class SceneBattle : SceneBase
         GM.GetUIManager().CreateUIPanel<PanelPlayer>("Player_Panel",
             (go) =>
             {
-                PanelPlayer panelPlayer = go.GetComponent<PanelPlayer>();
-                GM.GetUIManager().SaveHUD(go.GetComponent<PanelPlayer>());
+                PanelPlayer panelPlayer = go;
+                GM.GetUIManager().SaveHUD(go);
                 GameManager.OnPlayerPanelSpawned?.Invoke(panelPlayer);
 
 

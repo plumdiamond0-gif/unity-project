@@ -17,6 +17,7 @@ MonoBehaviour:
     enemyName: Blink
     enemyPrefab: {fileID: 964480405027562052, guid: 75f627f43d6e9944eade19b0ca15f5f4, type: 3}
     enemyBullet: {fileID: 0}
+    enemyCount: 20
     bulletCount: 0
     effects: []
     dropItems: {fileID: 11400000, guid: 2a46c33adf5ede940914bd3689486e2c, type: 2}
@@ -25,6 +26,7 @@ MonoBehaviour:
     enemyName: ShellBlink
     enemyPrefab: {fileID: 282274447850904860, guid: bda289ce78096ac4b8cc69950bd76c5b, type: 3}
     enemyBullet: {fileID: 8363767819308192229, guid: c136c61848c292b4f9bec0a667668125, type: 3}
+    enemyCount: 0
     bulletCount: 0
     effects:
     - {fileID: 11400000, guid: ebfcde966f28f94478a3203e272a67fa, type: 2}
@@ -34,6 +36,7 @@ MonoBehaviour:
     enemyName: Chesty
     enemyPrefab: {fileID: 964480405027562052, guid: da5a403aed7e97b419fd9769b7a851da, type: 3}
     enemyBullet: {fileID: 0}
+    enemyCount: 20
     bulletCount: 0
     effects: []
     dropItems: {fileID: 11400000, guid: 3e57576ebd8d7424c825f6716e558be9, type: 2}
@@ -42,6 +45,7 @@ MonoBehaviour:
     enemyName: Obsi
     enemyPrefab: {fileID: 964480405027562052, guid: 0c3097e1d4491ff4a812e635df364a9f, type: 3}
     enemyBullet: {fileID: 0}
+    enemyCount: 20
     bulletCount: 0
     effects: []
     dropItems: {fileID: 11400000, guid: d1f7669c334e1564d9bb4021d9a8a5e1, type: 2}
@@ -50,6 +54,7 @@ MonoBehaviour:
     enemyName: FlmaeNewt
     enemyPrefab: {fileID: 964480405027562052, guid: 16f6c8c96a949ea4f9380b9d8ef45ae2, type: 3}
     enemyBullet: {fileID: 8363767819308192229, guid: 7a485cbc6bdffbd468e5207a80a69053, type: 3}
+    enemyCount: 20
     bulletCount: 10
     effects:
     - {fileID: 11400000, guid: a8a4f17ad8425974f99e3cdd54eefcad, type: 2}
@@ -59,6 +64,7 @@ MonoBehaviour:
     enemyName: StingWing
     enemyPrefab: {fileID: 964480405027562052, guid: 81f8cd0556961004bb82f4ead2a270a2, type: 3}
     enemyBullet: {fileID: 8363767819308192229, guid: c136c61848c292b4f9bec0a667668125, type: 3}
+    enemyCount: 20
     bulletCount: 10
     effects:
     - {fileID: 11400000, guid: 50e40e84c2f82a44094ec4b7135c59c6, type: 2}
@@ -69,6 +75,7 @@ MonoBehaviour:
     enemyName: Spike
     enemyPrefab: {fileID: 964480405027562052, guid: 42b4bdefd4f385f4b85442eda65a7ab0, type: 3}
     enemyBullet: {fileID: 8363767819308192229, guid: 7a2807ae4f4924546b01d912c3778825, type: 3}
+    enemyCount: 20
     bulletCount: 10
     effects:
     - {fileID: 11400000, guid: e8f69f76e844cd84db9399001be768ed, type: 2}
@@ -78,6 +85,7 @@ MonoBehaviour:
     enemyName: Mush
     enemyPrefab: {fileID: 964480405027562052, guid: 3bb66ae1b61efe04788a197f354d1ebc, type: 3}
     enemyBullet: {fileID: 0}
+    enemyCount: 20
     bulletCount: 0
     effects: []
     dropItems: {fileID: 11400000, guid: 58d8c84e3dd8a94418cfe1083c4257a4, type: 2}
@@ -86,6 +94,7 @@ MonoBehaviour:
     enemyName: Rocky
     enemyPrefab: {fileID: 964480405027562052, guid: f6a39af6ef1d55440b3ea496eeaec13f, type: 3}
     enemyBullet: {fileID: 0}
+    enemyCount: 20
     bulletCount: 0
     effects:
     - {fileID: 11400000, guid: ebfcde966f28f94478a3203e272a67fa, type: 2}

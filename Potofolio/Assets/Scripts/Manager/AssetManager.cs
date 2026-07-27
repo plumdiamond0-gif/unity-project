@@ -54,6 +54,13 @@ public class AssetManager : MonoBehaviour
         }
 
     }
-
+    public void Release(string key)
+    {
+        if (_dicHandles.TryGetValue(key, out var handle))
+        {
+            Addressables.Release(handle);
+            _dicHandles.Remove(key);
+        }
+    }
 
 }

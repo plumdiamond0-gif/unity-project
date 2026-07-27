@@ -25,7 +25,6 @@ public class WeaponPrefabData
     public float Attackspeed;
     public float BulletNum;
 
-    public Sprite weaponImage;
     public AudioClip shootSound;
 
     public float snappiness;

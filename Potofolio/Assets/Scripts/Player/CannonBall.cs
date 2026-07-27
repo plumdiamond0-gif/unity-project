@@ -45,11 +45,11 @@ public class CannonBall : PoolObject
                 }
 
             }
-            GM.GetBulletManager().projectilePool[_data.weaponState].Return(gameObject);
+            GM.GetPoolManager().bulletPool[_data.weaponState].Return(gameObject);
         }
         else if (other.CompareTag("Ground"))
         {
-            GM.GetBulletManager().projectilePool[_data.weaponState].Return(gameObject);
+            GM.GetPoolManager().bulletPool[_data.weaponState].Return(gameObject);
         }
     }
 
@@ -57,7 +57,7 @@ public class CannonBall : PoolObject
     {
         if (Vector3.Distance(prevPos, transform.position) > 57)
         {
-            GM.GetBulletManager().projectilePool[_data.weaponState].Return(gameObject);
+            GM.GetPoolManager().bulletPool[_data.weaponState].Return(gameObject);
         }
     }
     #endregion

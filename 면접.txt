@@ -22,10 +22,11 @@
 -AI
 -Path Finding
 -SOLID 원칙
--
+-GC 가비비 컬랙터
 
 
 c++과 c#의 차이
+왜 동적 할당이 메모리 사용 최적화
 
 IWeaponEffect 다형성 관련:
 

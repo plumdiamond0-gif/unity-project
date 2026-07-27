@@ -31,10 +31,10 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     IEnumerator Slow(float slowTime, float slowAmount)
     {
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        GameObject go = GM.GetEffectManager().PlayParticle(ParticleType.Slow, pos, Quaternion.identity, new Vector3(2, 2, 2), transform);
+        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Slow, pos, Quaternion.identity, new Vector3(2, 2, 2), transform);
         playerStat.MoveSpeedMultiplier *= slowAmount;
         yield return new WaitForSeconds(slowTime);
-        GM.GetEffectManager().StopParticle(go);
+        GM.GetPoolManager().StopParticle(go);
         playerStat.MoveSpeedMultiplier /= slowAmount;
         slowRoutine = null;
         yield return null;
@@ -49,13 +49,13 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     IEnumerator Stun(float stunTime)
     {
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        GameObject go = GM.GetEffectManager().PlayParticle(ParticleType.Stun, pos, Quaternion.identity, new Vector3(2, 2, 2), transform);
+        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Stun, pos, Quaternion.identity, new Vector3(2, 2, 2), transform);
         float orispeed = playerStat.MoveSpeedMultiplier;
         Rigidbody Rb = GetComponent<Rigidbody>();
         Rb.linearVelocity = new Vector3(0, Rb.linearVelocity.y, 0);
         playerStat.MoveSpeedMultiplier = 0;
         yield return new WaitForSeconds(stunTime);
-        GM.GetEffectManager().StopParticle(go);
+        GM.GetPoolManager().StopParticle(go);
         playerStat.MoveSpeedMultiplier = orispeed;
         stunRoutine = null;
 
@@ -71,8 +71,8 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     }
     IEnumerator Fire(float dotDamage, float dotTime)
     {
-        GameObject go = GM.GetEffectManager().PlayParticle(ParticleType.Fire, transform.position, Quaternion.identity, Vector3.one, transform);
-        Debug.Log("Slowed");
+        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Fire, transform.position, Quaternion.identity, Vector3.one, transform);
+        Debug.Log("Slowed");    
         for (int i = 0; i < dotTime; i++)
         {
             playerHealth.TakeDamage(dotDamage);
@@ -80,7 +80,7 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
             yield return new WaitForSeconds(0.8f);
 
         }
-        GM.GetEffectManager().StopParticle(go);
+        GM.GetPoolManager().StopParticle(go);
         dotdamRoutine = null;
         yield return null;
 
@@ -96,7 +96,7 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     }
     IEnumerator Toxic(float dotDamage, float dotTime)
     {
-        GameObject go = GM.GetEffectManager().PlayParticle(ParticleType.Toxic, transform.position, Quaternion.identity, Vector3.one, transform);
+        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Toxic, transform.position, Quaternion.identity, Vector3.one, transform);
         Debug.Log("Slowed");
         for (int i = 0; i < dotTime; i++)
         {
@@ -105,7 +105,7 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
             yield return new WaitForSeconds(0.8f);
 
         }
-        GM.GetEffectManager().StopParticle(go);
+        GM.GetPoolManager().StopParticle(go);
         dotdamRoutine = null;
         yield return null;
 
