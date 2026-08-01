@@ -14,7 +14,7 @@ public class PanelWeapon : PanelBase
     {
         Upgrade.onClick.AddListener(() =>{UpgradeAppear(); GM.GetSoundManager().PlaySFX(AudioType.Button);});
         Unlock.onClick.AddListener(() => { UnlockAppear();GM.GetSoundManager().PlaySFX(AudioType.Button); });
-        Exit.onClick.AddListener(() => { MoveAgain(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
+        Exit.onClick.AddListener(() => { GM.GetAssetManager().Release("Weapon_Panel");  MoveAgain(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
     }
 
     public void GetPlayer(PlayerMovement player)

@@ -104,53 +104,36 @@ public class PlayerAttack : MonoBehaviour
     {
         if (CanAttack == false)
             return;
-        HandleWeaponScroll();
-        HandleCharging();
-    }
-
-    private void HandleWeaponScroll()
-    {
         float scroll = Mouse.current.scroll.ReadValue().y;
         if (scroll > 0f)
         {
             currentWeaponNum++;
             if (currentWeaponNum > totalWeaponCount - 1)
-            {
                 currentWeaponNum = 0;
-            }
             SelectWeapon(currentWeaponNum);
         }
         else if (scroll < 0f)
         {
             currentWeaponNum--;
             if (currentWeaponNum < 0)
-            {
                 currentWeaponNum = totalWeaponCount - 1;
-            }
             SelectWeapon(currentWeaponNum);
         }
-    }
-
-    private void HandleCharging()
-    {
         if (_isCharging)
         {
             currentCharge += Time.deltaTime;
-            currentCharge = Mathf.Clamp(currentCharge, 0f, maxCharge);
-            _attackRatio = (maxCharge > 0f) ? (currentCharge / maxCharge) : 0f;
-
+            currentCharge = Mathf.Clamp
+                (currentCharge, 0f, maxCharge);
+            _attackRatio = (maxCharge > 0f) ? 
+                (currentCharge / maxCharge) : 0f;
             if (attackGaugeBarFill != null)
-            {
                 attackGaugeBarFill.fillAmount = _attackRatio;
-            }
         }
     }
-
     public void SelectWeapon(int index)
     {
-        Debug.Log("공격해!!!");
-        if (!CanAttack || _weaponList == null || _weaponList.Count <= index || !SaveManager.CurrentData.weaponActive[_weaponList[index].weaponState]) return;
-        Debug.Log("공격해!!ㄷㄱㅎㄷㄱㅎㄱㄷㅎㄷㄱㅎㄱ!");
+        if (!CanAttack || _weaponList == null || _weaponList.Count <= index || 
+            !SaveManager.CurrentData.weaponActive[_weaponList[index].weaponState]) return;
 
         currentWeaponData = _weaponList[index];
 
@@ -166,9 +149,7 @@ public class PlayerAttack : MonoBehaviour
         maxChargeBonus = currentWeaponData.maxChargeBonus;
 
         if (attackGaugeBar != null)
-        {
             attackGaugeBar.SetActive(currentWeaponData.canCharge);
-        }
     }
     public void GetBullet(WeaponState weaponState, int bulletNum)
     {
@@ -197,20 +178,15 @@ public class PlayerAttack : MonoBehaviour
         if (currentWeaponData.canCharge)
         {
             bool isPressed = value.isPressed;
-
             if (isPressed)
-            {
                 _isCharging = true;
-            }
             else
             {
                 _isCharging = false;
-
                 Fire();
             }
             return;
         }
-
         Fire(); 
     }
     public void Fire()
@@ -219,51 +195,36 @@ public class PlayerAttack : MonoBehaviour
 
         StartCoroutine(CoolTimeRoutine());
 
-        if (_anim != null)
-        {
-            _anim.SetTrigger("Attack");
-        }
+        _anim.SetTrigger("Attack");
 
-        GameObject cbCopy = GM.GetPoolManager().GetBullet(currentWeaponData.weaponState, firePos.position, new Vector3(0.5f, 0.5f, 0.5f),
+        GameObject cbCopy = GM.GetPoolManager().GetBullet(currentWeaponData.weaponState, 
+            firePos.position, new Vector3(0.5f, 0.5f, 0.5f),
             firePos.localRotation);
-
         if (cbCopy == null) return;
         CannonBall currentBall = cbCopy.GetComponent<CannonBall>();
-        float finalDamage = (currentWeaponData.damage * _stat.DamageMultiplier) + (_attackRatio * maxChargeBonus);
-
+        float finalDamage = (currentWeaponData.damage * 
+            _stat.DamageMultiplier) + (_attackRatio * maxChargeBonus);
         currentBall.SetDatas(finalDamage, currentWeaponData, firePos.position, currentCharge);
-
         float currentRecoilX = baseRecoilX * (1f + (_attackRatio * maxChargeBonus));
         float yzRecoil = currentWeaponData.YZRecoil;
-        if (_cameraMovement != null)
-        {
-            _cameraMovement.FireRecoil(currentRecoilX, yzRecoil, yzRecoil);
-        }
-
-        ResetCharge();
+        _cameraMovement.FireRecoil(currentRecoilX, yzRecoil, yzRecoil);
 
         Rigidbody cannonBallRB = cbCopy.GetComponent<Rigidbody>();
         if (cannonBallRB != null)
         {
-            if (_cam == null) Debug.LogWarning("메인 카메라를 찾을 수 없습니다!");
             cannonBallRB.linearVelocity = Vector3.zero; 
             cannonBallRB.angularVelocity = Vector3.zero;
-            Ray ray = _cam != null ? _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f)) : new Ray(firePos.position, firePos.forward);
-            Vector3 targetPoint = Physics.Raycast(ray, out RaycastHit hit, 1000f) ? hit.point : ray.origin + ray.direction * 1000f;
-
+            Ray ray = _cam.ViewportPointToRay(new Vector3(0.5f, 0.5f));
+            Vector3 targetPoint = Physics.Raycast(ray, out RaycastHit hit, 1000f) ? 
+                hit.point : ray.origin + ray.direction * 1000f;
             Vector3 shootDir = (targetPoint - firePos.position).normalized;
-            Vector3 rightAxis = Vector3.Cross(Vector3.up, shootDir).normalized;
-            shootDir = Quaternion.AngleAxis(0f, rightAxis) * shootDir;
-
-            float attackSpeedStat = (_stat != null) ? _stat.AttackSpeedMultiplier : 1f;
-
-            cannonBallRB.AddForce(-shootDir * (currentWeaponData.Attackspeed * attackSpeedStat), ForceMode.Impulse);
+            cannonBallRB.AddForce(-shootDir * (currentWeaponData.Attackspeed * 
+                _stat.AttackSpeedMultiplier), ForceMode.Impulse);
         }
+        ResetCharge();
         _currentAmmo[currentWeaponData.weaponState]--;
-        if (bulletNumText != null)
-        {
-            bulletNumText.text = _currentAmmo[currentWeaponData.weaponState].ToString();
-        }
+        if (bulletNumText != null) bulletNumText.text = 
+                _currentAmmo[currentWeaponData.weaponState].ToString();
         _audioSource.Play();
     }
     IEnumerator CoolTimeRoutine()

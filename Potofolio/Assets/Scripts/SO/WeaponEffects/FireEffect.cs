@@ -32,7 +32,6 @@ public class FireEffect : ScriptableObject, IWeaponEffect
             float finalDotNum = dotTime * (charge + 1) * multiplier;
             receiver.ApplyFire(finalDotDam, finalDotNum);
         }
-
     }
 
 

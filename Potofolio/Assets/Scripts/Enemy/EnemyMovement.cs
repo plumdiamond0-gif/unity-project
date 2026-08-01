@@ -41,7 +41,6 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
 
 
     Health health;
-    //GameObject Coin;
     GameObject player;
     PlayerMovement playerMovement;
 
@@ -55,34 +54,22 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     static readonly int MoveHash = Animator.StringToHash("Move");
     static readonly int AttackHash = Animator.StringToHash("Attack");
     static readonly int DieHash = Animator.StringToHash("Die");
-
-
-    //bool isSlow;
-    //bool isStun;
-    //bool isdotdam;
-    //bool isdot;
-
     Coroutine slowRoutine;
     Coroutine stunRoutine;
     Coroutine dotdamRoutine;
-
     public Transform FirePos;
-
-
     public bool isGrounded;
     bool canAttack;
-
     Animator anim;
-
     EnemyPrefabData data;
-    
+
     void Awake()
     {
         canAttack = true;
-        health = GetComponent<Health>();    
+        health = GetComponent<Health>();
         agent = GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
-        rb.isKinematic = true; 
+        rb.isKinematic = true;
         anim = GetComponentInChildren<Animator>();
 
         anim.SetFloat(MoveHash, 0);
@@ -92,42 +79,23 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
         agent.SetDestination(player.transform.position);
 
         data = GM.GetPrefabManager().EnemyPrefabTable.EnemyPrefabDatas.Find(x => x.enemyType == enemyType);
-        //Coin = GM.GetPrefabManager().ItemPrefabTable.EnemyDropItems.Find(x => x.ItemName == "MonsterCore").ItemPrefab;
-
     }
-    // Update is called once per frame
     void Update()
     {
-
-        if (currentState == EnemyState.Knockback || currentState == EnemyState.Stun || currentState == EnemyState.Die)
+        if (currentState == EnemyState.Knockback || 
+            currentState == EnemyState.Stun || 
+            currentState == EnemyState.Die)
             return;
-
         if (health.CurrentHp <= 0)
-        {
-            StartCoroutine(Die());
-            return;
-        }
-        if (player == null)
-            return;
-        float dist = Vector3.Distance(transform.position, player.transform.position);
-
-        if (dist > detectRange)
+        {StartCoroutine(Die()); return;}
+        float dist = Vector3.Distance
+            (transform.position, player.transform.position);
+        if (dist > detectRange) 
             ChangeState(EnemyState.Idle);
-        else if (dist > attackRange)
+        else if (dist > attackRange) 
             ChangeState(EnemyState.Chase);
-        else
-            ChangeState(EnemyState.Attack);
-
+        else ChangeState(EnemyState.Attack);
         HandleState();
-
-
-
-        /*if (agent != null && player != null)
-        //{
-        //    agent.SetDestination(player.position);
-        //}
-        매 프레임마다 계속 플레이어 위치 목적지로 삼아 코드가 매우 무거워짐*/
-
     }
     private void HandleState()
     {
@@ -140,7 +108,8 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                 anim.SetFloat(MoveHash, 0);
                 break;
             case EnemyState.Chase:
-                agent.SetDestination(player.transform.position);
+                agent.SetDestination
+                    (player.transform.position);
                 anim.SetFloat(MoveHash, 1);
                 break;
             case EnemyState.Attack:
@@ -150,32 +119,27 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                 StartCoroutine(AttackCoolTime());
                 if (attackType == EnemyAttackType.close)
                 {
-                    if (playerMovement!= null)
+                    if (playerMovement != null)
                     {
                         anim.SetTrigger(AttackHash);
                         playerMovement.TakeDamage(damage);
-                        if(data.effects == null)
+                        if (data.effects == null)
                             return;
                         foreach (var effectobjs in data.effects)
                         {
                             if (effectobjs is IWeaponEffect effect)
-                            {
                                 effect.Apply(player, 1);
-                            }
                         }
-
-
                     }
                     agent.ResetPath();
                 }
-                else if(attackType == EnemyAttackType.distant)
+                else if (attackType == EnemyAttackType.distant)
                 {
                     anim.SetTrigger(AttackHash);
-                    GameObject CBcopy = GM.GetPoolManager().GetEnemyBullet(data.enemyType, FirePos.position, Vector3.one, Quaternion.identity);
+                    GameObject CBcopy = GM.GetPoolManager().GetEnemyBullet(data.enemyType, 
+                        FirePos.position, Vector3.one, Quaternion.identity);
                     EnemyBall ball = CBcopy.GetComponent<EnemyBall>();
-                    ball.SetDamage(damage);
-                    ball.SetEnemyData(data);
-                    ball.SetPos(FirePos.position);
+                    ball.SetData(data, damage, FirePos.position);
                     Rigidbody CanonBallRB = CBcopy.GetComponent<Rigidbody>();
                     if (CanonBallRB != null)
                     {
@@ -186,14 +150,10 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
                             shootDir * attackSpeed,
                             ForceMode.Impulse
                         );
-
                     }
-
                     agent.ResetPath();
-
                 }
                 break;
-
             default:
                 break;
         }
@@ -213,10 +173,10 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Ground"))
+        if (other.CompareTag("Ground"))
         {
             isGrounded = true;
-            if(isKnockbacking)
+            if (isKnockbacking)
             {
                 rb.linearVelocity = Vector3.zero;
                 rb.angularVelocity = Vector3.zero;
@@ -235,24 +195,39 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
         agent.enabled = false;
         anim.SetTrigger(DieHash);
         yield return new WaitForSeconds(2f);
-            foreach (var item in data.dropItems.dropItems)
+        foreach (var item in data.dropItems.dropItems)
+        {
+            for (int i = 0; i < item.spawnNum; i++)
             {
-                for (int i = 0; i < item.spawnNum; i++)
-                {
-                    Vector2 rand = Random.insideUnitCircle;
-                    Vector3 spawnPos = transform.position + new Vector3(rand.x, 0, rand.y);
-                    GameObject dropObject = GM.GetPrefabManager().
-                        ItemPrefabTable.ItemDatas.
-                        Find(x => x.outItemType == item.itemType).ItemPrefab;
-                    GameObject spawnedObject = Instantiate(dropObject, spawnPos, Quaternion.identity);
-                    spawnedObject.transform.localScale *= 0.3f;
-                }
+                Vector2 rand = Random.insideUnitCircle;
+                Vector3 spawnPos = transform.position + new Vector3(rand.x, 0, rand.y);
+                GameObject dropObject = GM.GetPrefabManager().
+                    ItemPrefabTable.ItemDatas.
+                    Find(x => x.outItemType == item.itemType).ItemPrefab;
+                GameObject spawnedObject = Instantiate(dropObject, spawnPos, Quaternion.identity);
+                spawnedObject.transform.localScale *= 0.3f;
             }
-            GameManager.instance.GetPlayer().GetComponent<PlayerItem>().GetExp(data.exp);
+        }
+        GameManager.instance.GetPlayer().GetComponent<PlayerItem>().GetExp(data.exp);
 
         Destroy(gameObject);
     }
-    public void ApplyKnockBack()
+    public void ApplyKnockBack(float force, float upModifier,float radius, float rangeDam)
+    {
+        Vector3 explosionPoint = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(explosionPoint, radius);
+        foreach (Collider hit in colliders)
+        {
+            Rigidbody rb = hit.GetComponent<Rigidbody>();
+            EnemyMovement enemy = hit.GetComponent<EnemyMovement>();
+            Health health = hit.GetComponent<Health>();
+            if (enemy != null && health != null)
+            {enemy.KnockBacked(); health.TakeDamage(rangeDam);}
+            if (rb != null)
+            { rb.AddExplosionForce(force, transform.position, radius, upModifier, ForceMode.Impulse); }
+        }
+    }
+    public void KnockBacked()
     {
         if (isKnockbacking)
             return;
@@ -263,9 +238,9 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     }
     public void ApplySlow(float slowTime, float slowAmount)
     {
-        if(stunRoutine != null)
+        if (stunRoutine != null)
             return;
-        if(slowRoutine != null)
+        if (slowRoutine != null)
         {
             slowRoutine = null;
         }
@@ -287,7 +262,7 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     public void ApplyStun(float stunTime)
     {
         if (stunRoutine != null)
-             stunRoutine = null; 
+            stunRoutine = null;
         StartCoroutine(Stun(stunTime));
 
     }
@@ -337,14 +312,18 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
         GM.GetPoolManager().StopParticle(go);
         yield return null;
     }
-    public void ApplyRangeDam(float damage)
+    public void ApplyRangeDam(float damage, float range)
     {
-        health.TakeDamage(damage);
+        Vector3 point = transform.position;
+        Collider[] colliders = 
+            Physics.OverlapSphere(point, range);
+        foreach (Collider collider in colliders)
+        {
+            float dist = Vector3.Distance
+                (point, collider.transform.position);
+            float finalRangeDam = range / 
+                Mathf.Clamp(dist, 1f, 3f);
+            health.TakeDamage(finalRangeDam);
+        }
     }
-
-
-
-
-
-
 }

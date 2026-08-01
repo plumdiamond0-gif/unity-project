@@ -21,14 +21,16 @@ public class PanelSave : PanelBase
     [SerializeField] Button DeleteAllButton;
 
     [SerializeField] LoadBtn[] LoadBtns;
+    [SerializeField] private Button Exit;
+    PlayerMovement Player;
 
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     public override void Init()
     {
         SaveButton.onClick.AddListener(() => { SaveData(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
         NewGameButton.onClick.AddListener(() => { NewGame(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
         DeleteAllButton.onClick.AddListener(() => { DeleteAll(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
+        Exit.onClick.AddListener(() => { GM.GetAssetManager().Release("Save_Panel"); MoveAgain(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
 
         foreach (var btn in LoadBtns)
         {
@@ -88,6 +90,15 @@ public class PanelSave : PanelBase
         {
             btn.LoadText.text = $"Load {btn.key}";
         }
+    }
+
+    public void GetPlayer(PlayerMovement player)
+    {
+        this.Player = player;
+    }
+    public void MoveAgain()
+    {
+        Player.canMove = true;
     }
 
 

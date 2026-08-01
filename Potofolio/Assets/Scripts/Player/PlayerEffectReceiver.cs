@@ -8,6 +8,7 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     PlayerStat playerStat;
     PlayerMovement playerMovement;
     Health playerHealth;
+    Rigidbody rb;
 
     Coroutine stunRoutine;
     Coroutine dotdamRoutine;
@@ -18,20 +19,21 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
         playerStat = GetComponent<PlayerStat>();
         playerHealth = GetComponent<Health>();
         playerMovement = GetComponent<PlayerMovement>();    
+        rb = GetComponent<Rigidbody>(); 
     }
 
     public void ApplySlow(float slowTime, float slowAmount)
     {
-        Debug.Log("Slow Apply");
-        if (slowRoutine != null)
-            return;
+        if (slowRoutine != null) return;
         slowRoutine = StartCoroutine(Slow(slowTime, slowAmount));
-
     }
     IEnumerator Slow(float slowTime, float slowAmount)
     {
-        Vector3 pos = new Vector3(transform.position.x, transform.position.y + 1, transform.position.z);
-        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Slow, pos, Quaternion.identity, new Vector3(2, 2, 2), transform);
+            Vector3 pos = new Vector3(transform.position.x,
+                transform.position.y + 1, transform.position.z);
+            GameObject go = GM.GetPoolManager().PlayParticle
+                (ParticleType.Slow, pos, Quaternion.identity,
+                new Vector3(2, 2, 2), transform);
         playerStat.MoveSpeedMultiplier *= slowAmount;
         yield return new WaitForSeconds(slowTime);
         GM.GetPoolManager().StopParticle(go);
@@ -65,14 +67,12 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
     {
         if (dotdamRoutine != null)
             return;
-            //dotdamRoutine = null;
         dotdamRoutine = StartCoroutine(Fire(dotDamage, dotNum));
-
     }
     IEnumerator Fire(float dotDamage, float dotTime)
     {
-        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Fire, transform.position, Quaternion.identity, Vector3.one, transform);
-        Debug.Log("Slowed");    
+        GameObject go = GM.GetPoolManager().PlayParticle(ParticleType.Fire, 
+            transform.position, Quaternion.identity, Vector3.one, transform);
         for (int i = 0; i < dotTime; i++)
         {
             playerHealth.TakeDamage(dotDamage);
@@ -83,14 +83,12 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
         GM.GetPoolManager().StopParticle(go);
         dotdamRoutine = null;
         yield return null;
-
     }
 
     public void ApplyToxic(float dotDamage, float dotNum)
     {
         if (dotdamRoutine != null)
             return;
-        //dotdamRoutine = null;
         dotdamRoutine = StartCoroutine(Toxic(dotDamage, dotNum));
 
     }
@@ -110,9 +108,22 @@ public class PlayerEffectReceiver : MonoBehaviour, IWeaponEffectReceiver
         yield return null;
 
     }
-    public void ApplyRangeDam(float damage)
+    public void ApplyRangeDam(float damage, float range)
     {
+        Vector3 point = transform.position;
+        Collider[] colliders = Physics.OverlapSphere(point, range);
+        foreach (Collider collider in colliders)
+        {
+            float dist = Vector3.Distance(point, collider.transform.position);
+            float finalRangeDam = range / Mathf.Clamp(dist, 1f, 3f);
+            playerHealth.TakeDamage(finalRangeDam);
+        }
     }
-
+    public void ApplyKnockBack(float force, float upModifier, float radius, float rangeDam)
+    {
+        Vector3 explosionPoint = transform.position;
+        rb.AddExplosionForce(force, transform.position,
+    radius, upModifier, ForceMode.Impulse);
+    }
 
 }

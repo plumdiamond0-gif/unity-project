@@ -11,37 +11,21 @@ public class SceneLoadManager : MonoBehaviour
     public void NextLoadScene(string nextSceneName, Action OnSceneCompleted)
     {
         if (string.IsNullOrEmpty(nextSceneName))
-        {
-            Debug.LogError("nextSceneName IsNullOrEmpty");
             return;
-        }
-
         NextSceneName = nextSceneName;
-
         StartCoroutine(ProcessEmptyScene(OnSceneCompleted));
     }
-
     private IEnumerator ProcessEmptyScene(Action OnSceneCompleted)
     {
-        yield return unloadUnusedAssets();
-
-
         yield return SceneManager.LoadSceneAsync("SceneEmpty");
-
-      
-
+        yield return unloadUnusedAssets();
         StartCoroutine(ProcessNextScene(OnSceneCompleted));
-            
-        
     }
 
     private IEnumerator ProcessNextScene(Action OnSceneCompleted)
     {
         if (string.IsNullOrEmpty(NextSceneName))
-        {
-            Debug.LogError("nextSceneName IsNullOrEmpty");
             yield break;
-        }
         float elapsed = 0f;
         const float minLoadingTime = 2f;
 
@@ -60,11 +44,10 @@ public class SceneLoadManager : MonoBehaviour
         while (!handle.isDone)
             yield return null;
 
-
-
-        OnSceneCompleted?.Invoke();
         SceneBase sceneBase = (SceneBase)FindAnyObjectByType(typeof(SceneBase));
         sceneBase.Init();
+        OnSceneCompleted?.Invoke();
+
         yield return unloadUnusedAssets();
     }
 

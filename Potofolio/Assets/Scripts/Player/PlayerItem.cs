@@ -97,18 +97,14 @@ public class PlayerItem : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("Item")) return;
-
         Item item = other.GetComponent<Item>();
         if (item == null || item.data == null) return;
-
         ItemData data = item.data;
 
         if (item.itemType == ItemType.InGameItem)
         {
-            
             if (data.isInvenItem)
             {
-                // 인벤토리 빈 슬롯 검색 및 추가
                 for (int i = 0; i < inventoryImages.Length; i++)
                 {
                     if (inventoryImages[i] != null && inventoryImages[i].sprite == null)
@@ -125,8 +121,6 @@ public class PlayerItem : MonoBehaviour
                 if (!SaveManager.CurrentData.weaponActive[data.weaponState])
                     return;
                 playerAttack.GetBullet(data.weaponState, data.bulletPlus);
-                Debug.Log("wf4aegwegawe");
-
             }
             else
                 ItemEffect.Use(data);
@@ -134,16 +128,6 @@ public class PlayerItem : MonoBehaviour
         else if (data.itemType == ItemType.OutGameItem)
         {
             OutItemType itemType = data.outItemType;
-
-            //if (!_resourcesData.ContainsKey(itemType))
-            //{
-            //    _resourcesData.Add(itemType, 1);
-            //}
-            //else
-            //{
-            //    _resourcesData[itemType] += 1;
-            //}
-
             ItemEffect.Restore(itemType);
         }
         Destroy(other.gameObject);

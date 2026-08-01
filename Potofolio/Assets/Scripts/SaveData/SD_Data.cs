@@ -3,7 +3,7 @@ using TMPro;
 using UnityEditor.Overlays;
 using UnityEngine;
 
-[System.Serializable] //Á÷·ÄÈ­
+[System.Serializable] 
 public class SD_User 
 {
     public string date;
@@ -49,20 +49,4 @@ public class SD_User
         {WeaponState.Bomb, 1 },
 
     };
-    
-        
-    
-
-    //public string GetSaveKey()
-    //{
-    //    return nameof(SD_User);
-    //}
-
-    public void CloneCopy(SD_User userData)
-    {
-        weaponActive = userData.weaponActive;   
-        weaponlevel = userData.weaponlevel;
-        itemStates = userData.itemStates;   
-
-    }
 }

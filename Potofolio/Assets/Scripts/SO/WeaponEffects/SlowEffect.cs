@@ -6,16 +6,11 @@ using UnityEngine.AI;
 using UnityEngine.Rendering.Universal;
 
 [CreateAssetMenu(menuName = "Weapon/Effects/Slow")]
-
-
 public class SlowEffect : ScriptableObject, IWeaponEffect
 {
     [SerializeField] float slowTime;
     [SerializeField] float slowAmount;
-    public void GetCharge(float charge)
-    {
-
-    }
+    public void GetCharge(float charge) { }
     public void Apply(GameObject target, float multiplier)
     {
         IWeaponEffectReceiver receiver = target.GetComponent<IWeaponEffectReceiver>();
@@ -24,10 +19,7 @@ public class SlowEffect : ScriptableObject, IWeaponEffect
             float fianlSlowTime = slowTime * multiplier;
             float finalSlowAmount = slowAmount * multiplier;
             receiver.ApplySlow(fianlSlowTime, finalSlowAmount);
-            Debug.Log("slow");
         }
     }
-
-
-   
 }
+

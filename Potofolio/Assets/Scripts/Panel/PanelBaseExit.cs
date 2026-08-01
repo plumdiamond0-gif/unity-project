@@ -53,7 +53,8 @@ public class PanelBaseExit : PanelBase
         Time.timeScale = 1f;
 
         GM.GetSceneLoadManager().NextLoadScene("SceneBattle", () =>
-        { 
+        {
+            GM.GetAssetManager().Release("BaseExit_Panel");
             Debug.Log("SceneBattle ¿Ï·á");
         });
     }

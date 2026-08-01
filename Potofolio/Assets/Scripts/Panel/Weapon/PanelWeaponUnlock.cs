@@ -28,7 +28,6 @@ public class PanelWeaponUnlock: PanelBase
         weaponPrefabDatas = weaponPrefabTable.weaponPrafabTableDatas;
         LeftButton.onClick.AddListener(() => { PrevWeapon(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
         RightButton.onClick.AddListener(() => { NextWeapon(); GM.GetSoundManager().PlaySFX(AudioType.Button); });
-
         unlockButton.onClick.AddListener(()=>
         {
             if (SaveManager.CurrentData.weaponActive[currentData.weaponState])
@@ -36,10 +35,7 @@ public class PanelWeaponUnlock: PanelBase
             unlockCostUI.ShowCosts(currentData);
             GM.GetSoundManager().PlaySFX(AudioType.SpecialBtn);
         });
-
         RefreshUI();
-
-
     }
 
     public void NextWeapon()

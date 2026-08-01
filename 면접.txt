@@ -23,6 +23,12 @@
 -Path Finding
 -SOLID 원칙
 -GC 가비비 컬랙터
+-Addressables
+-Resources
+-Memory Peak
+-API
+-짐벌락 문제
+-LINQ
 
 
 c++과 c#의 차이

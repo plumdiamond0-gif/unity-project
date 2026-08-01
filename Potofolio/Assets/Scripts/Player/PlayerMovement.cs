@@ -96,8 +96,6 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
-
         if (!canMove)
         { 
             _walkAudio.Stop();
@@ -105,12 +103,9 @@ public class PlayerMovement : MonoBehaviour
         _currentSpeed = 0;
             return;
         }
-
         Rotate();
-
         float inputMagnitude = new Vector2(_movementX, _movementY).magnitude;
         float targetSpeed = 0f;
-
         if (state == PlayerState.InBase)
         {
             _anim.SetBool("InBase", true);
@@ -128,7 +123,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         _currentSpeed = Mathf.Lerp(_currentSpeed, targetSpeed, 26f * Time.deltaTime);
-
         _anim.SetFloat("Speed", _currentSpeed);
         _anim.SetFloat("MoveX", _movementX);
         _anim.SetFloat("MoveY", _movementY);
@@ -211,9 +205,11 @@ public class PlayerMovement : MonoBehaviour
 
         _anim.SetTrigger("Jump");
 
-        _rb.linearVelocity = new Vector3(_rb.linearVelocity.x, 0, _rb.linearVelocity.z);
+        _rb.linearVelocity = new Vector3(_rb.linearVelocity.x, 
+            0, _rb.linearVelocity.z);
 
-        _rb.AddForce(transform.up * jumpPower * _stat.JumpPowerMultiplier, ForceMode.Impulse);
+        _rb.AddForce(transform.up * jumpPower 
+            * _stat.JumpPowerMultiplier, ForceMode.Impulse);
         _isGrounded = false;
     }
 
@@ -231,20 +227,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!canMove)
             return;
-
         if (collision.gameObject.CompareTag("Ground"))
-        {
-            Debug.Log("암인그라운드");
             _isGrounded = true;
-        }
-        else if(collision.gameObject.CompareTag("Ground"))
+        else if(collision.gameObject.CompareTag("Death"))
         {
             _anim.SetTrigger("isDead");
             Time.timeScale = 0;
-            GM.GetUIManager().CreateUIPanel<PanelDeath>("Death_Panel", (go) =>
-            {
-
-            });
+            GM.GetUIManager().CreateUIPanel<PanelDeath>("Death_Panel", (go) =>{});
         }
     }
 

@@ -24,60 +24,49 @@ public class UIManager : MonoBehaviour
             (go) =>
             {
                 if(RootCanvas == null)
-                {
-                    Debug.LogError("RootCanvas == null");
                     return;
-                }
                 RectTransform rt = Instantiate(go).GetComponent<RectTransform>();
-                rt.SetParent(RootCanvas, false);
-
-                rt.localPosition = Vector3.zero;
-                rt.localRotation = Quaternion.identity;
-                rt.localScale = Vector3.one;
-
-                //TODO: 오프닝 이미지에 패널베이스 상속받는 스프킬븥 넣기, 처음 불러와질 때, 숨길 때 페이드 인으로 
-
+                {
+                    rt.SetParent(RootCanvas, false);
+                    rt.localPosition = Vector3.zero;
+                    rt.localRotation = Quaternion.identity;
+                    rt.localScale = Vector3.one;
+                }// rt 초기화
                 T panelBase = rt.gameObject.GetComponent<T>();
-
                 if (panelBase != null)
                 {
                     string name = panelName.Replace("_", "");
                     if (!_dicContentPanels.ContainsKey(name))
                     {
                         _dicContentPanels[name] = panelBase;
+                        panelBase.Init();
+                        panelBase.Show();
                     }
-
-                    panelBase.Init();
-                    panelBase.Show();
-                   // panelBase.Hide();
                 }
-
                 callback?.Invoke(panelBase);
             });
     }
 
-    public T GetPanel<T>() where T : PanelBase
-    {
-        string name = typeof(T).ToString();
-        Debug.Log("name: " + name);
-        PanelBase panel = null;
-        _dicContentPanels.TryGetValue(name, out panel);
+    //public T GetPanel<T>() where T : PanelBase
+    //{
+    //    string name = typeof(T).ToString();
+    //    Debug.Log("name: " + name);
+    //    PanelBase panel = null;
+    //    _dicContentPanels.TryGetValue(name, out panel);
 
-        return (T) panel;
+    //    return (T) panel;
 
-    }
-    public Inventory Inventory;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public static UIManager CreateUIManager(GameObject res, Transform parent)
-    {
-        if (res == null)
-        {
-            return null;
-        }
-        GameObject gameObject = Instantiate(res, parent);
+    //}
+    //public static UIManager CreateUIManager(GameObject res, Transform parent)
+    //{
+    //    if (res == null)
+    //    {
+    //        return null;
+    //    }
+    //    GameObject gameObject = Instantiate(res, parent);
 
-        return gameObject.GetComponent<UIManager>();
-    }
+    //    return gameObject.GetComponent<UIManager>();
+    //}
 
     public void SaveHUD(PanelPlayer panel)
     {
@@ -97,7 +86,7 @@ public class UIManager : MonoBehaviour
             PlayerAttack playerAttack = playerInfo.GetComponent<PlayerAttack>();
             if (playerAttack != null)
             {
-                    playerAttack.attackGaugeBar = HUD.ChargeUI;
+                playerAttack.attackGaugeBar = HUD.ChargeUI;
                 playerAttack.attackGaugeBarFill = HUD.ChargeImageUI;
                 playerAttack.weaponImage = HUD.WeapomImage;
                 playerAttack.weaponText = HUD.WeapomText;   

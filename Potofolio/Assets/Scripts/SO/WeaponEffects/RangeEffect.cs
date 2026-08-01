@@ -16,19 +16,12 @@ public class RangeEffect : ScriptableObject, IWeaponEffect
     }
     public void Apply(GameObject target, float multiplier)
     {
-            float fimalRange = range * (charge + 1) * multiplier;
-            Vector3 point = target.transform.position;
-
-            Collider[] colliders = Physics.OverlapSphere(point, fimalRange);
-            foreach (Collider collider in colliders)
-            {
-            float dist = Vector3.Distance(point, collider.transform.position);
-            float finalRangeDam = (rangeDam * (charge + 1) * multiplier) / 
-                Mathf.Clamp(dist, 1f, 3f);
-            IWeaponEffectReceiver receiver = collider.GetComponent<IWeaponEffectReceiver>();
-            if (receiver != null)
-                receiver.ApplyRangeDam(finalRangeDam);
-            }
+        float finalRange = range * (charge + 1) * multiplier;
+        IWeaponEffectReceiver receiver = target.GetComponent<IWeaponEffectReceiver>();
+        if (receiver != null)
+            receiver.ApplyRangeDam(rangeDam, finalRange);
+    
+           
 
     }
 }

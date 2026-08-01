@@ -62,20 +62,14 @@ public class PanelOpening : PanelBase
     }
     IEnumerator FadeIn()
     {
-
         canvasGroup.alpha = 0;
-
         float time = 0;
-
         while (time < fadeTime)
         {
             time += Time.deltaTime;
-
             canvasGroup.alpha = time / fadeTime;
-
             yield return null;
         }
-
         canvasGroup.alpha = 1;
         yield return new WaitForSeconds(currentNum == 1 ? 1.5f : 2f);
         IsPlaying = false;
@@ -95,7 +89,7 @@ public class PanelOpening : PanelBase
                 });
             return;
         }
-            if (!IsPlaying)
+        if (!IsPlaying)
         {
             if (Keyboard.current.spaceKey.wasPressedThisFrame)
             {
@@ -103,12 +97,7 @@ public class PanelOpening : PanelBase
                 if (IsFinished)
                 {
                     GM.GetSoundManager().StopBGM();
-                    Debug.Log("ÄÆ¾À Á¾·á");
-                    GM.GetSceneLoadManager().NextLoadScene("SceneSpaceShip",
-                        () =>
-                        {
-                            Debug.Log("SceneSpaceShip ·Îµå ¿Ï·á");
-                        });
+                    GM.GetSceneLoadManager().NextLoadScene("SceneSpaceShip", () => { });
                     return;
                 }
                 Show();

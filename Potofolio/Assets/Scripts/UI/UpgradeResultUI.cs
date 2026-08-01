@@ -60,68 +60,7 @@ public class UpgradeResultUI : MonoBehaviour
         }
     }
 }
-        //임의로 설정해놓은 수
-        //{
-        //    if (i < upgradeResults.results.Count)
-        //    {
-        //        UpgradeResultsData ResultsData = 
-        //            upgradeResults.results[i];
-
-        //            switch (ResultsData.type)
-        //            {
-        //                case ResultType.None:
-        //                    {
-        //                        break;
-        //                    }
-        //                case ResultType.Damage:
-        //                    {
-        //                        images[i].sprite = ResultsData.sprite;
-        //                        texts[i].text = $"{ResultsData.amount * (ResultsData.type[])} / " +
-        //                        $"{SaveManager.CurrentData.weaponStates}";
-        //                        break;
-        //                    }
-        //            case ResultType.Speed:
-        //                {
-        //                    images[i].sprite = ResultsData.sprite;
-        //                    texts[i].text = $"{ResultsData.amount} / {SaveManager.CurrentData.}";
-        //                    break;
-        //                }
-        //            case ResultType.BulletNum:
-        //                {
-        //                    images[i].sprite = ResultsData.sprite;
-        //                    texts[i].text = $"{ResultsData.amount} / {SaveManager.CurrentData.}";
-        //                    break;
-        //                }
-
-
-        //            }
-
-                
-
-        //    }
-
-            //else
-            //{
-            //        images[i].sprite = null;
-            //        texts[i].text = null;
-            //}
-             
         
-
-
-    //    for(int i = 0; i < 5; i++) {
-    //    {
-    //    //    CostData upgradeCost= WeaponData.upgradeCosts.costs[i];
-    //    //        WeaponData  = WeaponData.upgradeCosts.Find(
-    //    //x => x.weaponType == targetType);
-    
-    //    //        UpgradeCost upgradeCost = 
-    //    //    sprites[i] = WeaponData.upgradeCosts.costs[i].CostSPrite;
-
-    //    //    string cost = $"{WeaponData.upgradeCosts.costs[i].amount.ToString()} / {GM.GetSaveManager().CurrentData.}";
-    //    }
-        
-            
         
 
         

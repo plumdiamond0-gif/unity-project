@@ -6,17 +6,10 @@ public class EnemyBall : PoolObject
     float Damage;
     Vector3 prevPos;
 
-    public void SetEnemyData(EnemyPrefabData enemyData)
+    public void SetData(EnemyPrefabData enemyData, float damage, Vector3 pos)
     {
         data = enemyData;
-    }
-
-    public void SetDamage(float damage)
-    {
-        Damage = damage;    
-    }
-    public void SetPos(Vector3 pos)
-    {
+        Damage = damage;
         prevPos = pos;
     }
     private void OnTriggerEnter(Collider other)
