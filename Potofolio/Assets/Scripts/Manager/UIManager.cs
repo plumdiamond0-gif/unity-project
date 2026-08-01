@@ -46,28 +46,6 @@ public class UIManager : MonoBehaviour
                 callback?.Invoke(panelBase);
             });
     }
-
-    //public T GetPanel<T>() where T : PanelBase
-    //{
-    //    string name = typeof(T).ToString();
-    //    Debug.Log("name: " + name);
-    //    PanelBase panel = null;
-    //    _dicContentPanels.TryGetValue(name, out panel);
-
-    //    return (T) panel;
-
-    //}
-    //public static UIManager CreateUIManager(GameObject res, Transform parent)
-    //{
-    //    if (res == null)
-    //    {
-    //        return null;
-    //    }
-    //    GameObject gameObject = Instantiate(res, parent);
-
-    //    return gameObject.GetComponent<UIManager>();
-    //}
-
     public void SaveHUD(PanelPlayer panel)
     {
         HUD = panel;
@@ -76,8 +54,6 @@ public class UIManager : MonoBehaviour
     {
         return HUD; 
     }
-
-
     public void Bind(GameObject playerInfo)
     {
         if (HUD != null)
@@ -109,5 +85,8 @@ public class UIManager : MonoBehaviour
         GameManager.OnPlayerSpawned -= Bind;
 
     }
-
+    public void RemoveKey(string key)
+    {
+        _dicContentPanels.Remove(key);
+    }
 }

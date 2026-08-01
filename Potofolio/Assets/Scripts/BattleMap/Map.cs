@@ -25,37 +25,21 @@ public class Map : MonoBehaviour
     {
         List<BlockData> randomBlocks = new();
         foreach (var item in GM.GetPrefabManager().BlockPrefabTable.blockDatas)
-        {
-            randomBlocks.Add(item);
-        }
-        shuffle(randomBlocks);
-        int[] yRotations =
-        {
-            0,
-            90,
-            180,
-            270
-        };
-        
+        { randomBlocks.Add(item); }
+        Shuffle(randomBlocks);
+        int[] yRotations = { 0, 90, 180, 270 };
         for (int i = 0;i < randomBlocks.Count;i++)
         {
             int rand = yRotations[Random.Range(0, yRotations.Length)];
-            Vector3 rot = new Vector3(0, rand, 0);
-
-             playerPanel.miniMapImages[i].sprite = randomBlocks[i].blockImage;
-
+            playerPanel.miniMapImages[i].sprite = randomBlocks[i].blockImage;
             GameObject block = Instantiate(randomBlocks[i].blockPrefab, blockPositions[i].position, 
-                Quaternion.Euler(rot)
+                Quaternion.Euler(new Vector3(0, rand, 0))
                 , blockPositions[i]);
             block.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
         }
-
         GameManager.OnPlayerPanelSpawned -= CreateMap;
-
-
     }
-
-    void shuffle(List<BlockData> list)
+    void Shuffle(List<BlockData> list)
     {
         for (int i = 0; i < list.Count; i++)
         {

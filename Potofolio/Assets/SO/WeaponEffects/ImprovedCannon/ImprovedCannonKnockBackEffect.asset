@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ImprovedCannonKnockBackEffect
   m_EditorClassIdentifier: Assembly-CSharp::KnockBackEffect
   radius: 1
-  force: 2
-  upModifier: 3
+  force: 4
+  upModifier: 4
   rangeDam: 5

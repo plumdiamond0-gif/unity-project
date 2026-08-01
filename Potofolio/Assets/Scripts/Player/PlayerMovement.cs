@@ -46,6 +46,7 @@ public class PlayerMovement : MonoBehaviour
     #region State
     private bool _isGrounded;
     private bool _isSprinting;
+    bool _isDead = false;
 
     public PlayerState state;
 
@@ -93,7 +94,6 @@ public class PlayerMovement : MonoBehaviour
             playerSpeed = walkSpeed * _stat.MoveSpeedMultiplier;
         }
     }
-
     void Update()
     {
         if (!canMove)
@@ -110,16 +110,12 @@ public class PlayerMovement : MonoBehaviour
         {
             _anim.SetBool("InBase", true);
             if (inputMagnitude > 0)
-            {
                 targetSpeed = 1f;
-            }
         }
         else if(state == PlayerState.InBattle)
         {
             if (inputMagnitude > 0)
-            {
                 targetSpeed = _isSprinting ? 1f : 0.5f;
-            }
         }
 
         _currentSpeed = Mathf.Lerp(_currentSpeed, targetSpeed, 26f * Time.deltaTime);
@@ -139,16 +135,13 @@ public class PlayerMovement : MonoBehaviour
                 if (_walkRoutine == null)
                     _walkRoutine = StartCoroutine(walk());
             }
-
             _isWalkingSoundPlaying = true;
         }
         else if ((!isMoving && _isWalkingSoundPlaying) || !_isGrounded)
         {
             _walkAudio.Stop();
-
             if (_walkRoutine != null)
                 StopCoroutine(_walkRoutine);
-
             _walkRoutine = null;
             _isWalkingSoundPlaying = false;
         }
@@ -261,10 +254,10 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health.TakeDamage(damage);
-        if(health.CurrentHp <= 0)
+        if(health.CurrentHp <= 0 && !_isDead)
         {
-            _anim.SetTrigger("isDead");
-            Time.timeScale = 0;
+            _isDead = true;
+            _anim.SetTrigger("IsDead");
             GM.GetUIManager().CreateUIPanel<PanelDeath>("Death_Panel", (go) =>
             {
 

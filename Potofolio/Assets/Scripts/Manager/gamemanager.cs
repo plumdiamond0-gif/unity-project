@@ -170,37 +170,30 @@ public static class GM
 {
     public static PrefabManager GetPrefabManager()
     {
-       
         return GameManager.instance.Get_PrefabManager();
     }
     public static UIManager GetUIManager()
     {
-        Debug.Log("GetUIManager");
         return GameManager.instance.Get_UIManager();
     }
     public static AssetManager GetAssetManager()
     {
-        Debug.Log("GetUIManager");
         return GameManager.instance.Get_AssetManager();
     }
     public static SceneLoadManager GetSceneLoadManager()
     {
-        Debug.Log("GetSceneLoadManager");
         return GameManager.instance.Get_SceneLoadManager();
     }
     public static SaveManager GetSaveManager()
     {
-        Debug.Log("GetSaveManager");
         return GameManager.instance.Get_SaveManager();
     }
     public static SoundManager GetSoundManager()
     {
-        Debug.Log("GetSoundManager");
         return GameManager.instance.Get_SoundManager();
     }
     public static PoolManager GetPoolManager()
     {
-        Debug.Log("GetEffectManager");
         return GameManager.instance.Get_EffectManager();
     }
 }

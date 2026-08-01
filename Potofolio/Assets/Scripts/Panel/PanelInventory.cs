@@ -66,8 +66,9 @@ public class PanelInventory : PanelBase
         }
         isMaxed = false;
         isEnded = true;
+        GM.GetAssetManager().Release("Inventory_Panel");
+        boolChange?.Invoke();
         Destroy(gameObject);
-
     }
 
     private void Update()
@@ -75,7 +76,6 @@ public class PanelInventory : PanelBase
         if(!isEnded) return;
         if (Keyboard.current.iKey.wasPressedThisFrame)
         {
-            boolChange?.Invoke();
             GM.GetSoundManager().PlaySFX(AudioType.SpecialBtn);
             StartCoroutine(isMaxed ? MiniPanel() : MaxiPanel());
         }

@@ -19,13 +19,11 @@ public class PanelDeath : PanelBase
 
             yield return null;
         }
-        Time.timeScale = 0f;
         yield return new WaitForSeconds(1);
         GoToBase();
     }
     void GoToBase()
     {
-        Time.timeScale = 1f;
         Destroy(GameManager.instance.GetPlayer().gameObject);
         GM.GetSceneLoadManager().NextLoadScene("SceneSpaceShip", () =>
         {
