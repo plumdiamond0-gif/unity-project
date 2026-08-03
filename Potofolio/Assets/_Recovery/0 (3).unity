@@ -839,7 +839,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   PlayerHealth: {fileID: 0}
-  Inventory: {fileID: 618482258}
 --- !u!4 &753114365
 Transform:
   m_ObjectHideFlags: 0

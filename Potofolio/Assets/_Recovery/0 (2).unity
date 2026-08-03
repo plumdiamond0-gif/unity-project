@@ -479,19 +479,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 056c1c6a16c823447b802c7a5bb02737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currntWeaponNum: 0
-  WeaponNum: 5
-  currentCharge: 0
-  maxCharge: 1
-  baseRecoilX: -5
-  maxChargeBonus: 5
-  currentweapondata:
+  attackGaugeBar: {fileID: 0}
+  attackGaugeBarFill: {fileID: 0}
+  weaponImage: {fileID: 0}
+  weaponText: {fileID: 0}
+  bulletNumText: {fileID: 0}
+  currentWeaponNum: 0
+  totalWeaponCount: 0
+  currentWeaponData:
     weaponState: 0
     WeaponBullet: {fileID: 0}
+    bulletCount: 0
     damage: 0
     Attackspeed: 0
     BulletNum: 0
-    weaponImage: {fileID: 0}
+    shootSound: {fileID: 0}
     snappiness: 0
     returnSpeed: 0
     chargeAmount: 0
@@ -504,11 +506,14 @@ MonoBehaviour:
     effects: []
     upgradeCosts: {fileID: 0}
     upgradeResults: {fileID: 0}
-  Firepos: {fileID: 1986766959}
-  AttackGuageBar: {fileID: 0}
-  AttackGuageBarFill: {fileID: 0}
-  WeapomImage: {fileID: 0}
-  WeapomText: {fileID: 0}
+    unlockedCosts: {fileID: 0}
+  firePos: {fileID: 0}
+  currentCharge: 0
+  maxCharge: 1
+  baseRecoilX: -5
+  maxChargeBonus: 5
+  _audioSource: {fileID: 0}
+  CanAttack: 0
 --- !u!114 &384408929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,17 +526,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 923ab0c5a014c3641a6c9e0f5f5f5b0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Player
-  yRotation: 0
   xRotation: 0
-  MouseSpeed: 200
-  PlayerSpeed: 10
+  _mouseSpeed: 26
+  playerSpeed: 1
   walkSpeed: 5
-  RunSpeed: 0
-  PlayerAttack: {fileID: 384408928}
-  CanMove: 0
-  walkAudio: {fileID: 0}
-  _walkAudio: {fileID: 0}
+  runSpeed: 0
+  jumpPower: 0
+  canMove: 0
+  isDead: 0
   state: 0
+  _walkAudio: {fileID: 0}
+  playerAttack: {fileID: 0}
 --- !u!114 &384408930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -547,6 +552,7 @@ MonoBehaviour:
   CurrentHp: 0
   MaxHp: 0
   HealthBarFill: {fileID: 0}
+  InvincibleTime: 0.1
 --- !u!1 &385705542
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   PlayerHealth: {fileID: 384408930}
-  Inventory: {fileID: 279954758}
 --- !u!4 &753114365
 Transform:
   m_ObjectHideFlags: 0

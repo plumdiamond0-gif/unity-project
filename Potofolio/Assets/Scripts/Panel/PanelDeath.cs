@@ -15,7 +15,7 @@ public class PanelDeath : PanelBase
             transform.localPosition = Vector3.MoveTowards(
                 transform.localPosition,
                 Vector3.zero,
-                800f * Time.deltaTime);
+                2600f * Time.deltaTime);
 
             yield return null;
         }
@@ -24,7 +24,6 @@ public class PanelDeath : PanelBase
     }
     void GoToBase()
     {
-        Destroy(GameManager.instance.GetPlayer().gameObject);
         GM.GetSceneLoadManager().NextLoadScene("SceneSpaceShip", () =>
         {
             Debug.Log("SceneSpaceShip ¿Ï·á");

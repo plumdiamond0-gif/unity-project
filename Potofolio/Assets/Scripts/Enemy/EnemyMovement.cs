@@ -82,9 +82,11 @@ public class EnemyMovement : MonoBehaviour, IWeaponEffectReceiver
     }
     void Update()
     {
-        if (currentState == EnemyState.Knockback || 
-            currentState == EnemyState.Stun || 
-            currentState == EnemyState.Die)
+        if (currentState == EnemyState.Knockback ||
+            currentState == EnemyState.Stun ||
+            currentState == EnemyState.Die ||
+            playerMovement.isDead
+            )
             return;
         if (health.CurrentHp <= 0)
         {StartCoroutine(Die()); return;}

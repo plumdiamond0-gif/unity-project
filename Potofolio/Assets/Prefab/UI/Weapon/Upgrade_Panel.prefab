@@ -1442,6 +1442,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f512f0eeca8eecf4cb718c377388d6a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CostUI
+  images:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  texts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   preLv: {fileID: 6862541563432318701}
   AftLv: {fileID: 8419865484025025450}
 --- !u!1 &2447118966798088866

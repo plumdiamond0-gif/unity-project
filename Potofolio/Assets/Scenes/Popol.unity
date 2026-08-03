@@ -228,7 +228,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   PlayerHealth: {fileID: 0}
-  Inventory: {fileID: 4768130737002296467}
 --- !u!4 &753114365
 Transform:
   m_ObjectHideFlags: 0
@@ -693,17 +692,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8813155147602961445, guid: c34aaba539a51ba429d0a3a41d4b01dd, type: 3}
   m_PrefabInstance: {fileID: 1426950600488386147}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4768130737002296467 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3582732787723853086, guid: c34aaba539a51ba429d0a3a41d4b01dd, type: 3}
-  m_PrefabInstance: {fileID: 1426950600488386147}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9a6bd75217e45c4dad74e79c764905c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Inventory
 --- !u!223 &5158489644302627415
 Canvas:
   m_ObjectHideFlags: 0

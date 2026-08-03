@@ -43,11 +43,13 @@ public class PanelSave : PanelBase
             btn.LoadButton.onClick.AddListener(()=>
             {
                 GM.GetSaveManager().LoadData(btn.key);
+                GM.GetSoundManager().PlaySFX(AudioType.Unlock);
             });
 
             btn.Delete.onClick.AddListener(() =>
             {
                 GM.GetSaveManager().DeleteData(btn.key);
+                GM.GetSoundManager().PlaySFX(AudioType.SpecialBtn);
                 btn.LoadText.text = $"Load{btn.key}";
             });
         }

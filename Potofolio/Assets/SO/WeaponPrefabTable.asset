@@ -19,7 +19,6 @@ MonoBehaviour:
     damage: 24
     Attackspeed: 20
     BulletNum: 1000
-    weaponImage: {fileID: 21300000, guid: 3b1bb8a54bff5c848a5961f13d0b4f7b, type: 3}
     shootSound: {fileID: 8300000, guid: de812cfb519929c4aad9d296f655c81d, type: 3}
     snappiness: 5
     returnSpeed: 5
@@ -40,7 +39,6 @@ MonoBehaviour:
     damage: 45
     Attackspeed: 30
     BulletNum: 500
-    weaponImage: {fileID: 21300000, guid: ecd2584d7f96008498c95d940cce7155, type: 3}
     shootSound: {fileID: 8300000, guid: 9f45e6a5f5cd816458d7c9359c903f4b, type: 3}
     snappiness: 5
     returnSpeed: 2
@@ -63,7 +61,6 @@ MonoBehaviour:
     damage: 30
     Attackspeed: 25
     BulletNum: 300
-    weaponImage: {fileID: 21300000, guid: ff2144f5158884c4d9381c5da6ba716a, type: 3}
     shootSound: {fileID: 8300000, guid: 8154f5e18ea48164e9cb0132012cf432, type: 3}
     snappiness: 8
     returnSpeed: 3
@@ -85,7 +82,6 @@ MonoBehaviour:
     damage: 40
     Attackspeed: 50
     BulletNum: 200
-    weaponImage: {fileID: 21300000, guid: 614e6328a5f51d6478b9494f0e319792, type: 3}
     shootSound: {fileID: 8300000, guid: 5dbc74a65da58144aa0a20190bcd4909, type: 3}
     snappiness: 4
     returnSpeed: 1.5
@@ -107,7 +103,6 @@ MonoBehaviour:
     damage: 20
     Attackspeed: 30
     BulletNum: 150
-    weaponImage: {fileID: 21300000, guid: 80460d4a1aeb2de48a77811a504024fb, type: 3}
     shootSound: {fileID: 8300000, guid: 50238a32333496c46bf4f0eef34ca63c, type: 3}
     snappiness: 20
     returnSpeed: 4
@@ -131,7 +126,6 @@ MonoBehaviour:
     damage: 85
     Attackspeed: 70
     BulletNum: 100
-    weaponImage: {fileID: 21300000, guid: deb8c4adf151eb646b7822680ea57787, type: 3}
     shootSound: {fileID: 8300000, guid: b590eb6e51c172d4ea06202230bf8177, type: 3}
     snappiness: 18
     returnSpeed: 5
@@ -154,7 +148,6 @@ MonoBehaviour:
     damage: 300
     Attackspeed: 50
     BulletNum: 26
-    weaponImage: {fileID: 21300000, guid: 10964cc78f69de1419462e2378fed368, type: 3}
     shootSound: {fileID: 8300000, guid: cfa16117c62143e4c9055eb2c083673f, type: 3}
     snappiness: 20
     returnSpeed: 4
@@ -167,7 +160,7 @@ MonoBehaviour:
     WeaponImage: {fileID: 21300000, guid: 10964cc78f69de1419462e2378fed368, type: 3}
     effects:
     - {fileID: 11400000, guid: 2beb50444c9100542950bc3e5a14600a, type: 2}
-    - {fileID: 11400000, guid: d5f2c3b1893dd59409172d7c8f791904, type: 2}
+    - {fileID: 11400000, guid: d06826d1458e8ec40bd9bc050ead74a0, type: 2}
     upgradeCosts: {fileID: 11400000, guid: 6022fb6b86ec661498f4c47b8a2898f5, type: 2}
     upgradeResults: {fileID: 11400000, guid: a416702341c651344b69de8f006c9590, type: 2}
     unlockedCosts: {fileID: 11400000, guid: f013e5aa774ff2f4d8f7ab6a538fdbd6, type: 2}

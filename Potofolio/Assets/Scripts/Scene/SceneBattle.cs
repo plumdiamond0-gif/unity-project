@@ -68,7 +68,6 @@ public class SceneBattle : SceneBase
                 GM.GetSoundManager().PlaySFX(AudioType.SpecialBtn);
                 go.boolChange += ()=>
                 { canPanel = true;
-                    GM.GetUIManager().RemoveKey("InventoryPanel");
                 };
             });
         }

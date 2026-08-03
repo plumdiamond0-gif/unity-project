@@ -9,8 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c2ba3bbbe6f68054fb3b4de2716b36e8, type: 3}
-  m_Name: BombFire Effect
-  m_EditorClassIdentifier: Assembly-CSharp::FireEffect
+  m_Script: {fileID: 11500000, guid: 8e3e832ef64fac049b8875b2aabc2fdf, type: 3}
+  m_Name: BombRangeFireEffect
+  m_EditorClassIdentifier: Assembly-CSharp::RangeDotDamEffect
   dotDamage: 20
   dotTime: 10
+  range: 3

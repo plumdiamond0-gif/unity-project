@@ -9,7 +9,6 @@ public class UIManager : MonoBehaviour
     PanelPlayer HUD;
 
 
-    private readonly Dictionary<string, PanelBase> _dicContentPanels = new();
 
     private Transform RootCanvas;
     public void GetRootCanvas(Transform rootCanvas) => RootCanvas = rootCanvas;
@@ -36,12 +35,8 @@ public class UIManager : MonoBehaviour
                 if (panelBase != null)
                 {
                     string name = panelName.Replace("_", "");
-                    if (!_dicContentPanels.ContainsKey(name))
-                    {
-                        _dicContentPanels[name] = panelBase;
                         panelBase.Init();
                         panelBase.Show();
-                    }
                 }
                 callback?.Invoke(panelBase);
             });
@@ -84,9 +79,5 @@ public class UIManager : MonoBehaviour
         }
         GameManager.OnPlayerSpawned -= Bind;
 
-    }
-    public void RemoveKey(string key)
-    {
-        _dicContentPanels.Remove(key);
     }
 }

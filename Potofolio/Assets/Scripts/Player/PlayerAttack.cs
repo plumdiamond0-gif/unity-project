@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
 using Unity.VisualScripting;
-using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
@@ -237,14 +236,12 @@ public class PlayerAttack : MonoBehaviour
     {
         Debug.Log("HalfRemove ½ÇÇà");
         EnemyMovement[] enemies = FindObjectsByType<EnemyMovement>(FindObjectsSortMode.None);
-        int enemyNum = 0;
         foreach (var enemy in enemies)
         {
             int ran = UnityEngine.Random.Range(0, 260);
             if (ran % 2 == 0)
             {
-                enemyNum++;
-                Destroy(enemy.gameObject); 
+                enemy.GetComponent<Health>().TakeDamage(2600);
             }
         }
 

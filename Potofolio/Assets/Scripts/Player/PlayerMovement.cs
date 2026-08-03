@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     #region State
     private bool _isGrounded;
     private bool _isSprinting;
-    bool _isDead = false;
+    public bool isDead = false;
 
     public PlayerState state;
 
@@ -224,8 +224,7 @@ public class PlayerMovement : MonoBehaviour
             _isGrounded = true;
         else if(collision.gameObject.CompareTag("Death"))
         {
-            _anim.SetTrigger("isDead");
-            Time.timeScale = 0;
+            _anim.SetTrigger("IsDead");
             GM.GetUIManager().CreateUIPanel<PanelDeath>("Death_Panel", (go) =>{});
         }
     }
@@ -254,9 +253,9 @@ public class PlayerMovement : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health.TakeDamage(damage);
-        if(health.CurrentHp <= 0 && !_isDead)
+        if(health.CurrentHp <= 0 && !isDead)
         {
-            _isDead = true;
+            isDead = true;
             _anim.SetTrigger("IsDead");
             GM.GetUIManager().CreateUIPanel<PanelDeath>("Death_Panel", (go) =>
             {

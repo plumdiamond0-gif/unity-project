@@ -1,5 +1,6 @@
 using TMPro;
 using Unity.VisualScripting.Antlr3.Runtime;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -21,7 +22,10 @@ public class RewardButton : MonoBehaviour
         button.onClick.AddListener(() => {
             playerAttack.CanAttack = true;
             ApplyBuff(); 
-            GM.GetSoundManager().PlaySFX(AudioType.Button); });
+            GM.GetSoundManager().PlaySFX(AudioType.Button);
+            GM.GetAssetManager().Release("Reward_Panel");
+        });
+
     }
 
     public void GetData(RewardData randData)
